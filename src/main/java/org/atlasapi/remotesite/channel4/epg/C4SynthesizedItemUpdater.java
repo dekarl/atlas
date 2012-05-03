@@ -10,6 +10,7 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 import com.metabroadcast.common.base.Maybe;
 
+@Deprecated
 public class C4SynthesizedItemUpdater {
 
     private final ContentResolver contentResolver;
@@ -58,6 +59,7 @@ public class C4SynthesizedItemUpdater {
     private String synthItemUri(String broadcastId, String brandUri) {
         return brandUri+"/synthesized/"+broadcastId.substring(broadcastId.indexOf(':')+1);
     }
+    
     private String synthesizedBrandlessEpisodeUriFrom(String broadcastId) {
         return "http://www.channel4.com/programmes/synthesized/" + broadcastId;
     }

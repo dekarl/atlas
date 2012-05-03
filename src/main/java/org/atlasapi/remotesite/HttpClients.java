@@ -1,8 +1,12 @@
 package org.atlasapi.remotesite;
 
-import com.metabroadcast.common.http.OAuthSimpleHttpClient;
+import java.net.URL;
+import java.security.KeyStore;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.http.conn.ssl.SSLSocketFactory;
+
+import com.metabroadcast.common.http.OAuthSimpleHttpClient;
 import com.metabroadcast.common.http.SimpleHttpClient;
 import com.metabroadcast.common.http.SimpleHttpClientBuilder;
 import com.metabroadcast.common.media.MimeType;

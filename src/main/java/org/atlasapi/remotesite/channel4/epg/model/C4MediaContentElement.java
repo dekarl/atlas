@@ -1,4 +1,4 @@
-package org.atlasapi.remotesite.channel4.epg;
+package org.atlasapi.remotesite.channel4.epg.model;
 
 import nu.xom.Element;
 import nu.xom.Elements;

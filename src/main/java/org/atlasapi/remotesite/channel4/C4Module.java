@@ -2,12 +2,11 @@ package org.atlasapi.remotesite.channel4;
 
 import static org.atlasapi.media.entity.Publisher.C4;
 
+import java.io.File;
+import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
 import javax.annotation.PostConstruct;
-
-import nu.xom.Builder;
-import nu.xom.Document;
 
 import org.atlasapi.media.channel.ChannelResolver;
 import org.atlasapi.persistence.content.ContentResolver;
@@ -18,9 +17,6 @@ import org.atlasapi.persistence.logging.AdapterLogEntry;
 import org.atlasapi.persistence.logging.AdapterLogEntry.Severity;
 import org.atlasapi.persistence.system.RemoteSiteClient;
 import org.atlasapi.remotesite.HttpClients;
-import org.atlasapi.remotesite.channel4.epg.C4EpgBrandlessEntryProcessor;
-import org.atlasapi.remotesite.channel4.epg.C4EpgElementFactory;
-import org.atlasapi.remotesite.channel4.epg.C4EpgEntryProcessor;
 import org.atlasapi.remotesite.channel4.epg.C4EpgUpdater;
 import org.atlasapi.remotesite.channel4.epg.ScheduleResolverBroadcastTrimmer;
 import org.atlasapi.remotesite.support.atom.AtomClient;
@@ -33,12 +29,12 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import com.metabroadcast.common.http.RequestLimitingSimpleHttpClient;
+import com.google.common.base.Throwables;
 import com.metabroadcast.common.http.SimpleHttpClient;
 import com.metabroadcast.common.http.SimpleHttpClientBuilder;
 import com.metabroadcast.common.media.MimeType;
 import com.metabroadcast.common.scheduling.RepetitionRule;
 import com.metabroadcast.common.scheduling.RepetitionRules;
-import com.metabroadcast.common.scheduling.RepetitionRules.Daily;
 import com.metabroadcast.common.scheduling.SimpleScheduler;
 import com.metabroadcast.common.time.DayRangeGenerator;
 import com.sun.syndication.feed.atom.Feed;
@@ -46,8 +42,8 @@ import com.sun.syndication.feed.atom.Feed;
 @Configuration
 public class C4Module {
 
-	private final static Daily BRAND_UPDATE_TIME = RepetitionRules.daily(new LocalTime(2, 0, 0));
-	private final static Daily HIGHLIGHTS_UPDATE_TIME = RepetitionRules.daily(new LocalTime(10, 0, 0));
+	private final static RepetitionRule BRAND_UPDATE_TIME = RepetitionRules.daily(new LocalTime(2, 0, 0));
+	private final static RepetitionRule HIGHLIGHTS_UPDATE_TIME = RepetitionRules.daily(new LocalTime(10, 0, 0));
 	private final static RepetitionRule TWO_HOURS = RepetitionRules.every(Duration.standardHours(2));
 
 	private @Autowired SimpleScheduler scheduler;
@@ -61,6 +57,9 @@ public class C4Module {
 	private @Autowired ScheduleResolver scheduleResolver;
 	private @Autowired ChannelResolver channelResolver;
 	
+	private @Value("${c4.keystore.path") String keyStorePath;
+	private @Value("${c4.keystore.password}") String keyStorePass;
+	
     @PostConstruct
     public void startBackgroundTasks() {
         if ("DISABLED".equals(c4ApiKey)) {
@@ -73,21 +72,16 @@ public class C4Module {
         log.record(new AdapterLogEntry(Severity.INFO).withDescription("C4 update scheduled tasks installed").withSource(getClass()));
     }
 
+    @Bean C4AtomApi atomApi() {
+        return new C4AtomApi(channelResolver);
+    }
+    
 	@Bean public C4EpgUpdater c4EpgUpdater() {
 	    ScheduleResolverBroadcastTrimmer trimmer = new ScheduleResolverBroadcastTrimmer(C4, scheduleResolver, contentResolver, lastUpdatedSettingContentWriter());
-        return new C4EpgUpdater(
-                c4EpgAtomClient(), 
-                new C4EpgEntryProcessor(lastUpdatedSettingContentWriter(), contentResolver, c4BrandFetcher(), log), 
-                new C4EpgBrandlessEntryProcessor(lastUpdatedSettingContentWriter(), contentResolver, c4BrandFetcher(), log), 
-                trimmer,
-                log,
-                new DayRangeGenerator().withLookAhead(7).withLookBack(7), channelResolver);
+        return new C4EpgUpdater(atomApi(), httpsClient(), lastUpdatedSettingContentWriter(),
+                contentResolver, c4BrandFetcher(), trimmer, log, new DayRangeGenerator().withLookAhead(7).withLookBack(7));
     }
 	
-	@Bean public RemoteSiteClient<Document> c4EpgAtomClient() {
-        return new ApiKeyAwareClient<Document>(c4ApiKey, new XmlClient(requestLimitedHttpClient(), new Builder(new C4EpgElementFactory())));
-	}
-
     @Bean C4AtoZAtomContentLoader c4AtozUpdater() {
 		return new C4AtoZAtomContentLoader(c4AtomFetcher(), c4BrandFetcher(), log);
 	}
@@ -97,11 +91,16 @@ public class C4Module {
     }
 
 	protected @Bean RemoteSiteClient<Feed> c4AtomFetcher() {
-	    return new ApiKeyAwareClient<Feed>(c4ApiKey, new AtomClient(requestLimitedHttpClient()));
+	    return new ApiKeyAwareClient<Feed>(c4ApiKey, new AtomClient(httpsClient()));
 	}
 	
-	protected @Bean SimpleHttpClient requestLimitedHttpClient() {
-	    return new RequestLimitingSimpleHttpClient(HttpClients.webserviceClient(), 4);
+	protected @Bean SimpleHttpClient httpsClient() {
+	    try {
+	        URL jksFile = new File(keyStorePath).toURI().toURL();
+            return HttpClients.httpsClient(jksFile, keyStorePass);
+        } catch (Exception e) {
+            throw Throwables.propagate(e);
+        }
 	}
 
 	protected @Bean C4AtomBackedBrandUpdater c4BrandFetcher() {
@@ -120,10 +119,11 @@ public class C4Module {
         .withAcceptHeader(MimeType.TEXT_HTML)
         .withRetries(3)
         .withHeader("X-C4-API-Key", lakeviewAvailabilityFeedKey)
-    .build(), 4);
+        .build(), 4);
 	}
 	
     @Bean protected LastUpdatedSettingContentWriter lastUpdatedSettingContentWriter() {
         return new LastUpdatedSettingContentWriter(contentResolver, new LastUpdatedCheckingContentWriter(log, contentWriter));
     }
+    
 }

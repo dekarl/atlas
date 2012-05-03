@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms" xml:base="http://pmlsc.channel4.com">
+  <id>tag:pmlsc.channel4.com,2009:/tv-listings/daily/2012/04/26/c4</id>
+  <title type="text">Channel 4 EPG for Thursday 26 April 2012</title>
+  <link href="http://pmlsc.channel4.com/pmlsd/tv-listings/daily/2012/04/26/c4.atom" rel="self" type="application/atom+xml" />
+  <link href="http://pmlsc.channel4.com/pmlsd/tv-listings/daily/2012/04/25/c4.atom" rel="previous" type="application/atom+xml" />
+  <link href="http://pmlsc.channel4.com/pmlsd/tv-listings/daily/2012/04/27/c4.atom" rel="next" type="application/atom+xml" />
+  <author>
+    <name>Channel 4 Television</name>
+  </author>
+  <updated>2012-05-08T14:27:26.474Z</updated>
+  <logo imageSource="default">http://cache.channel4.com/static/programmes/images/c4-atom-logo.gif</logo>
+  <dc:relation.platformClientVersion>1.0</dc:relation.platformClientVersion>
+  <generator version="1.27.2">PMLSD</generator>
+  <entry>
+    <id>tag:pmlsc.channel4.com,2009:slot/26424438</id>
+    <title type="text">The Treacle People</title>
+    <summary type="html">One Flu Over the Boggart's Nest: When an outbreak of the dreaded Boggart flu occurs, every Boggart in Sabden falls sick. Luckily, Brendon's Scottish cousin has a guaranteed cure.</summary>
+    <updated>2012-05-08T14:27:26.474Z</updated>
+    <dc:date.TXDate>2012-04-26T05:05:00.000Z</dc:date.TXDate>
+    <dc:relation.TXChannel>C4</dc:relation.TXChannel>
+    <dc:relation.Subtitles>true</dc:relation.Subtitles>
+    <dc:relation.AudioDescription>false</dc:relation.AudioDescription>
+    <dc:relation.Duration>10:00</dc:relation.Duration>
+    <dc:relation.WideScreen>false</dc:relation.WideScreen>
+    <dc:relation.Signing>false</dc:relation.Signing>
+    <dc:relation.Repeat>true</dc:relation.Repeat>
+    <dc:relation.programmeId>40635/014</dc:relation.programmeId>
+    <dc:relation.SimulcastRights>true</dc:relation.SimulcastRights>
+  </entry>
+  <entry>
+    <id>tag:pmlsc.channel4.com,2009:slot/26424439</id>
+    <title type="text">Hello</title>
+    <summary type="html">Groove thinks there can't be a better way of saying hello than giving his tail a good old wagga-wagga - it's almost as good as a Hoobledigger! But how do the Tiddlypeeps say hello to their friends when they're really pleased to see them?</summary>
+    <updated>2010-11-03T05:57:50.175Z</updated>
+    <link href="http://www.channel4.com/programmes/the-hoobs/4od#2924127" rel="alternate" type="text/html" />
+    <link href="http://pmlsc.channel4.com/pmlsd/the-hoobs/episode-guide/series-1/episode-3.atom" rel="related" type="application/atom+xml" />
+    <media:group>
+      <media:player url="http://www.channel4.com/programmes/the-hoobs/4od#2924127" />
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/the-hoobs/series-1/the-hoobs-s1-20090623112301_200x113.jpg" height="113" width="200" imageSource="fallback" />
+      <media:rating>nonadult</media:rating>
+      <media:copyright url="http://cache.channel4.com/terms_and_conditions.html">Terms and Conditions</media:copyright>
+      <media:restriction relationship="allow" type="country">gb,im,je,gg,ie</media:restriction>
+      <media:rights status="official" />
+    </media:group>
+    <dc:relation.BrandTitle>The Hoobs</dc:relation.BrandTitle>
+    <dcterms:available>start=2009-06-07T22:00:00.000Z; end=2018-12-07T00:00:00.000Z; scheme=W3C-DTF</dcterms:available>
+    <dc:relation.SeriesNumber>1</dc:relation.SeriesNumber>
+    <dc:relation.EpisodeNumber>3</dc:relation.EpisodeNumber>
+    <dc:relation.RelatedEntryId feedId="tag:pmlsc.channel4.com,2009:/programmes/the-hoobs/episode-guide/series-1">tag:pmlsc.channel4.com,2009:/programmes/the-hoobs/episode-guide/series-1/episode-3</dc:relation.RelatedEntryId>
+    <dc:relation.AgeRating>0</dc:relation.AgeRating>
+    <dc:date.TXDate>2012-04-26T05:15:00.000Z</dc:date.TXDate>
+    <dc:relation.TXChannel>C4</dc:relation.TXChannel>
+    <dc:relation.Subtitles>true</dc:relation.Subtitles>
+    <dc:relation.AudioDescription>false</dc:relation.AudioDescription>
+    <dc:relation.Duration>24:15</dc:relation.Duration>
+    <dc:relation.LoginRequired>true</dc:relation.LoginRequired>
+    <dc:relation.requestType>ARCHIVE</dc:relation.requestType>
+    <dc:relation.programmeId>30630/003</dc:relation.programmeId>
+    <dc:relation.SimulcastRights>true</dc:relation.SimulcastRights>
+  </entry>
+</feed>

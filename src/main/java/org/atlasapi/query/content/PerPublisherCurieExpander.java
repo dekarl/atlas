@@ -74,7 +74,7 @@ public class PerPublisherCurieExpander implements CurieExpander {
 				}
 			}
 			
-			final Pattern c4CuriePattern = Pattern.compile("([a-zA-Z0-9-]+?)(-series-\\d+)?(-episode-\\d+)?");
+			final Pattern c4CuriePattern = Pattern.compile("([a-zA-Z0-9-/]+?)(-series-\\d+)?(-episode-\\d+)?");
 
 			final Pattern c4BrandIdPattern = Pattern.compile("http://www.channel4.com/programmes/([^\\./&=]+)(?:/episode-guide/(series-\\d+)(?:/(episode-\\d+))?)?");
 			final Pattern c4odPattern = Pattern.compile("http://www.channel4.com/programmes/([^\\./&=]+)/4od#([^\\./&=]+).*");

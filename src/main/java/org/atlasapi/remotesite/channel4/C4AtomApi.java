@@ -35,7 +35,7 @@ public class C4AtomApi {
 	public static final Namespace NS_MEDIA_RSS = Namespace.getNamespace("http://search.yahoo.com/mrss/");
 
     public static final String DC_DURATION = "dc:relation.Duration";
-	private static final String PROGRAMMES_BASE = "http://www.channel4.com/programmes/";
+	public static final String PROGRAMMES_BASE = "http://www.channel4.com/programmes/";
 	
 	private static final String WEB_SAFE_NAME_PATTERN = "[a-z0-9\\-]+";
 	private static final String FEED_ID_PREFIX_PATTERN = "tag:www.channel4.com,\\d{4}:/programmes/";

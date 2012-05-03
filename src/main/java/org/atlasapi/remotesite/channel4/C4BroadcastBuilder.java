@@ -23,7 +23,8 @@ public class C4BroadcastBuilder {
         .put("http://www.4music.com", "4M")
         .put("www.channel4.com/4seven", "4S").build();
     
-    private final static Pattern ID_PATTERN = Pattern.compile("tag:([^,]+),(\\d{4}):slot/(\\d+)");
+    private static final Pattern ID_PATTERN = Pattern.compile("tag:([^,]+),(\\d{4}):slot/(\\d+)");
+    private static final String tagPrefix = "tag:www.channel4.com,2009:slot/";
     
     private String channelUri;
     private DateTime start;
@@ -73,7 +74,7 @@ public class C4BroadcastBuilder {
 
     public static String aliasFrom(String channelUri, String id) {
         int slashIndex = id.lastIndexOf("/")+1;
-        return id.substring(0, slashIndex) + CHANNEL_MAP.get(channelUri) + id.substring(slashIndex);
+        return tagPrefix + CHANNEL_MAP.get(channelUri) + id.substring(slashIndex);
     }
     
     public static String idFrom(String channelUri, String atomId) {

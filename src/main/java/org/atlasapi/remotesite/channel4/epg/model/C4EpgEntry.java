@@ -1,12 +1,11 @@
-package org.atlasapi.remotesite.channel4.epg;
+package org.atlasapi.remotesite.channel4.epg.model;
 
 import java.util.List;
-import java.util.regex.Matcher;
 
-import org.atlasapi.remotesite.channel4.C4AtomApi;
-import org.atlasapi.remotesite.channel4.C4RelatedEntry;
 import org.joda.time.DateTime;
 import org.joda.time.Duration;
+
+import com.google.common.collect.ImmutableList;
 
 public class C4EpgEntry {
 
@@ -14,7 +13,7 @@ public class C4EpgEntry {
     private String title;
     private DateTime updated;
     private String summary;
-    private List<String> links;
+    private List<TypedLink> links = ImmutableList.of();
     private C4EpgMedia media;
     private String brandTitle;
     private String available;
@@ -26,7 +25,11 @@ public class C4EpgEntry {
     private Boolean subtitles;
     private Boolean audioDescription;
     private Duration duration;
-    private C4RelatedEntry relatedEntry;
+    private Boolean wideScreen;
+    private Boolean signing;
+    private Boolean repeat;
+    private String programmeId;
+    private Boolean simulcastRights;
 
     public static C4EpgEntry from(C4EpgEntryElement element) {
         C4EpgEntry entry = new C4EpgEntry(element.id());
@@ -39,12 +42,16 @@ public class C4EpgEntry {
                 .withAvailable(element.available())
                 .withSeriesNumber(element.seriesNumber())
                 .withEpisodeNumber(element.episodeNumber())
-                .withRelatedEntry(element.relatedEntry())
                 .withAgeRating(element.ageRating())
                 .withTxDate(element.txDate())
                 .withTxChannel(element.txChannel())
                 .withSubtitles(element.subtitles())
                 .withAudioDescription(element.audioDescription())
+                .withWideScreen(element.wideScreen())
+                .withSigning(element.signing())
+                .withRepeat(element.repeat())
+                .withProgrammeId(element.programmeId())
+                .withSimulcastRights(element.simulcastRights())
                 .withDuration(element.duration());
         return entry;
     }
@@ -53,10 +60,6 @@ public class C4EpgEntry {
         this.id = id;
     }
     
-    public C4EpgEntry withRelatedEntry(C4RelatedEntry relatedEntry) {
-        this.relatedEntry = relatedEntry;
-        return this;
-    }
     
     public C4EpgEntry withDuration(Duration duration) {
         this.duration = duration;
@@ -70,6 +73,31 @@ public class C4EpgEntry {
 
     public C4EpgEntry withSubtitles(Boolean subtitles) {
         this.subtitles = subtitles;
+        return this;
+    }
+    
+    public C4EpgEntry withWideScreen(Boolean wideScreen) {
+        this.wideScreen = wideScreen;
+        return this;
+    }
+
+    public C4EpgEntry withSigning(Boolean signing) {
+        this.signing = signing;
+        return this;
+    }
+
+    public C4EpgEntry withRepeat(Boolean repeat) {
+        this.repeat = repeat;
+        return this;
+    }
+
+    public C4EpgEntry withProgrammeId(String programmeId) {
+        this.programmeId = programmeId;
+        return this;
+    }
+
+    public C4EpgEntry withSimulcastRights(Boolean simulcastRights) {
+        this.simulcastRights = simulcastRights;
         return this;
     }
 
@@ -113,7 +141,7 @@ public class C4EpgEntry {
         return this;
     }
 
-    public C4EpgEntry withLinks(List<String> links) {
+    public C4EpgEntry withLinks(List<TypedLink> links) {
         this.links = links;
         return this;
     }
@@ -136,18 +164,6 @@ public class C4EpgEntry {
     public String id() {
         return id;
     }
-    
-    public String slotId() {
-        Matcher matcher = C4AtomApi.SLOT_PATTERN.matcher(id);
-        if (matcher.matches()) {
-            return matcher.group(1);
-        }
-        return null;
-    }
-    
-    public C4RelatedEntry relatedEntry() {
-        return relatedEntry;
-    }
 
     public String title() {
         return title;
@@ -161,7 +177,7 @@ public class C4EpgEntry {
         return summary;
     }
 
-    public List<String> links() {
+    public List<TypedLink> links() {
         return links;
     }
     
@@ -208,4 +224,38 @@ public class C4EpgEntry {
     public Duration duration() {
         return duration;
     }
+
+    public String getRelatedLink() {
+        for (int i = 0; i < links.size(); i++) {
+            if (links.get(i).getRelationship().equals("related")) {
+                return links.get(i).getTarget();
+            }
+        }
+        return null;
+    }
+    
+    public boolean hasRelatedLink() {
+        return getRelatedLink() != null;
+    }
+    
+    public Boolean wideScreen() {
+        return this.wideScreen;
+    }
+
+    public Boolean signing() {
+        return this.signing;
+    }
+
+    public Boolean repeat() {
+        return this.repeat;
+    }
+
+    public String programmeId() {
+        return this.programmeId;
+    }
+
+    public Boolean simulcastRights() {
+        return this.simulcastRights;
+    }
+
 }

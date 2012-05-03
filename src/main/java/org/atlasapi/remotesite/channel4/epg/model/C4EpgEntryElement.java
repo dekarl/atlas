@@ -1,4 +1,4 @@
-package org.atlasapi.remotesite.channel4.epg;
+package org.atlasapi.remotesite.channel4.epg.model;
 
 import java.util.List;
 
@@ -86,11 +86,13 @@ public class C4EpgEntryElement extends Element {
         return new C4RelatedEntry(element.getAttributeValue("feedId"), element.getValue());
     }
 
-    public List<String> links() {
+    public List<TypedLink> links() {
         Elements elements = this.getChildElements("link", ATOM_NS);
-        List<String> linkHrefs = Lists.newArrayListWithExpectedSize(elements.size());
+        List<TypedLink> linkHrefs = Lists.newArrayListWithExpectedSize(elements.size());
         for (int i = 0; i < elements.size(); i++) {
-            linkHrefs.add(elements.get(i).getAttribute("href").getValue());
+            String target = elements.get(i).getAttribute("href").getValue();
+            String relation = elements.get(i).getAttribute("rel").getValue();
+            linkHrefs.add(new TypedLink(target, relation));
         }
         return linkHrefs;
     }
@@ -176,5 +178,14 @@ public class C4EpgEntryElement extends Element {
     @Override
     public String toString() {
         return "Epg Entry Element";
+    }
+
+    public String programmeId() {
+        return getDublinCoreElementValue("relation.programmeId");
+    }
+
+    public Boolean simulcastRights() {
+        String value = getDublinCoreElementValue("relation.SimulcastRights");
+        return !Strings.isNullOrEmpty(value) ? Boolean.parseBoolean(value) : null;
     }
 }
