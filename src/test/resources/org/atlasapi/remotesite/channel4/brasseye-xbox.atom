@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xmlns:dc="http://purl.org/dc/elements/1.1/" xml:base="http://pmlsc.channel4.com">
+  <id>tag:xbox.pmlsc.channel4.com,2009:/programmes/brass-eye</id>
+  <title type="text">Brass Eye</title>
+  <subtitle type="html">Anarchic spoof news comedy, fronted by Chris Morris. A top investigative reporter turns his 'moral-o-meter' on modern Britain - and comes up with some extremely disturbing results...</subtitle>
+  <updated>2011-12-05T15:47:07.223Z</updated>
+  <author>
+    <name>Channel 4 Television</name>
+  </author>
+  <logo imageSource="own">http://cache.channel4.com/assets/programmes/images/brass-eye/brass-eye_200x113.jpg</logo>
+  <link href="https://xbox.channel4.com/pmlsd/brass-eye.atom?platform=xbox" rel="self" type="application/atom+xml" />
+  <link href="https://xbox.channel4.com/pmlsd/brass-eye/episode-guide.atom?platform=xbox" rel="related" type="application/atom+xml" title="Episode Guide" />
+  <link href="https://xbox.channel4.com/pmlsd/brass-eye/4od.atom?platform=xbox" rel="related" type="application/atom+xml" title="4oD" />
+  <category term="https://xbox.channel4.com/pmlsd/tags/comedy.atom?platform=xbox" scheme="tag:xbox.channel4.com,2010:/category/primary" label="Comedy" />
+  <dc:relation.BrandFlattened>false</dc:relation.BrandFlattened>
+  <dc:relation.presentationBrand>C4</dc:relation.presentationBrand>
+  <dc:relation.platformClientVersion>1.0</dc:relation.platformClientVersion>
+  <generator version="1.27.2">PMLSD</generator>
+</feed>

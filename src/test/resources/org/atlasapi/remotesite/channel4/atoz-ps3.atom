@@ -1,0 +1,485 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:fh="http://purl.org/syndication/history/1.0" xml:base="http://pmlsc.channel4.com">
+  <id>tag:ps3.pmlsc.channel4.com,2009:/programmes/atoz/a</id>
+  <title type="text">Programmes beginning with "A"</title>
+  <updated>2012-05-14T12:17:26.445Z</updated>
+  <author>
+    <name>Channel 4 Television</name>
+  </author>
+  <logo imageSource="default">http://cache.channel4.com/static/programmes/images/c4-atom-logo.gif</logo>
+  <link href="http://ps3.channel4.com/pmlsd/atoz/a.atom?platform=ps3" rel="self" type="application/atom+xml" />
+  <link href="http://ps3.channel4.com/pmlsd/atoz.atom?platform=ps3" rel="up" type="application/atom+xml" />
+  <fh:complete />
+  <link href="http://ps3.channel4.com/pmlsd/atoz/a/4od.atom?platform=ps3" rel="related" type="application/atom+xml" title="4oD" />
+  <dc:relation.4oDProgrammeCount>9</dc:relation.4oDProgrammeCount>
+  <dc:relation.AllProgrammeCount>38</dc:relation.AllProgrammeCount>
+  <dc:relation.platformClientVersion>1.0</dc:relation.platformClientVersion>
+  <generator version="1.27.2">PMLSD</generator>
+  <entry>
+    <id>tag:ps3.pmlsc.channel4.com,2009:/brand/a-place-by-the-sea</id>
+    <title type="text">A Place by the Sea</title>
+    <summary type="text">Property expert Seetha Hallett shows potential house-buyers fantastic properties right on the British coast.</summary>
+    <updated>2011-04-11T08:57:50.964Z</updated>
+    <dc:relation.sortLetter>A</dc:relation.sortLetter>
+    <media:content>
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/a-place-by-the-sea/a-place-by-the-sea_200x113.jpg" height="113" width="200" imageSource="own" />
+    </media:content>
+    <link href="http://ps3.channel4.com/pmlsd/a-place-by-the-sea.atom?platform=ps3" rel="self" type="application/atom+xml" />
+    <link href="http://ps3.channel4.com/pmlsd/a-place-by-the-sea/episode-guide.atom?platform=ps3" rel="related" type="application/atom+xml" title="Episode Guide" />
+  </entry>
+  <entry>
+    <id>tag:ps3.pmlsc.channel4.com,2009:/brand/a-place-in-the-sun-home-or-away</id>
+    <title type="text">A Place in the Sun: Home or Away</title>
+    <summary type="text">Jonnie Irwin and Jasmine Harman help property owners find the ideal new homes they've always wanted - but will they stay on British soil or settle on some distant sunny shore?</summary>
+    <updated>2010-12-30T11:01:58.287Z</updated>
+    <dc:relation.sortLetter>A</dc:relation.sortLetter>
+    <media:content>
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/a-place-in-the-sun-home-or-away/a-place-in-the-sun-home-or-away_200x113.jpg" height="113" width="200" imageSource="own" />
+    </media:content>
+    <link href="http://ps3.channel4.com/pmlsd/a-place-in-the-sun-home-or-away.atom?platform=ps3" rel="self" type="application/atom+xml" />
+    <link href="http://ps3.channel4.com/pmlsd/a-place-in-the-sun-home-or-away/episode-guide.atom?platform=ps3" rel="related" type="application/atom+xml" title="Episode Guide" />
+  </entry>
+  <entry>
+    <id>tag:ps3.pmlsc.channel4.com,2009:/brand/a-place-in-the-sun-winter-sun</id>
+    <title type="text">A Place in the Sun: Winter Sun</title>
+    <summary type="text">Property experts help househunters find their dream properties in the winter sun.</summary>
+    <updated>2012-02-02T17:13:18.843Z</updated>
+    <dc:relation.sortLetter>A</dc:relation.sortLetter>
+    <media:content>
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/a-place-in-the-sun-winter-sun/3f9a8464-c976-427c-8c19-b4d2a699328b_200x113.jpg" height="113" width="200" imageSource="own" />
+    </media:content>
+    <link href="http://ps3.channel4.com/pmlsd/a-place-in-the-sun-winter-sun.atom?platform=ps3" rel="self" type="application/atom+xml" />
+    <link href="http://ps3.channel4.com/pmlsd/a-place-in-the-sun-winter-sun/episode-guide.atom?platform=ps3" rel="related" type="application/atom+xml" title="Episode Guide" />
+  </entry>
+  <entry>
+    <id>tag:ps3.pmlsc.channel4.com,2009:/brand/a-very-dangerous-doctor</id>
+    <title type="text">A Very Dangerous Doctor</title>
+    <summary type="text">The story of the doctor who dared to accuse mothers of abusing their own children, and the mothers who say he abused his power in order to use their children for research.</summary>
+    <updated>2011-05-06T15:33:55.002Z</updated>
+    <dc:relation.sortLetter>A</dc:relation.sortLetter>
+    <media:content>
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/a-very-dangerous-doctor/480a7ba0-3b29-42cd-95ff-e5ccc1dcb477_200x113.jpg" height="113" width="200" imageSource="own" />
+    </media:content>
+    <link href="http://ps3.channel4.com/pmlsd/a-very-dangerous-doctor.atom?platform=ps3" rel="self" type="application/atom+xml" />
+    <link href="http://ps3.channel4.com/pmlsd/a-very-dangerous-doctor/episode-guide.atom?platform=ps3" rel="related" type="application/atom+xml" title="Episode Guide" />
+  </entry>
+  <entry>
+    <id>tag:ps3.pmlsc.channel4.com,2009:/brand/a-z-of-star-wars-episode-i-t4-movie-special</id>
+    <title type="text">A-Z of Star Wars Episode I: T4 Movie Special</title>
+    <summary type="text">A journey through the characters and creations in the first chapter of the epic Star Wars saga.</summary>
+    <updated>2012-02-06T16:43:55.513Z</updated>
+    <dc:relation.sortLetter>A</dc:relation.sortLetter>
+    <media:content>
+      <media:thumbnail url="http://cache.channel4.com/static/programmes/images/defaultImages/mediumADefaultImage.png" height="113" width="200" imageSource="default" />
+    </media:content>
+    <link href="http://ps3.channel4.com/pmlsd/a-z-of-star-wars-episode-i-t4-movie-special.atom?platform=ps3" rel="self" type="application/atom+xml" />
+    <link href="http://ps3.channel4.com/pmlsd/a-z-of-star-wars-episode-i-t4-movie-special/episode-guide.atom?platform=ps3" rel="related" type="application/atom+xml" title="Episode Guide" />
+  </entry>
+  <entry>
+    <id>tag:ps3.pmlsc.channel4.com,2009:/brand/abbey-road-debuts</id>
+    <title type="text">Abbey Road Debuts</title>
+    <summary type="text">Filmed at the legendary Abbey Road Studios, this programme, presented by Tom Ravenscroft, showcases hotly-tipped new acts.</summary>
+    <updated>2011-04-04T12:46:26.297Z</updated>
+    <dc:relation.sortLetter>A</dc:relation.sortLetter>
+    <media:content>
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/abbey-road-debuts/62054ebb-ec3a-4d72-90fd-0d9c4830f4a4_200x113.jpg" height="113" width="200" imageSource="own" />
+    </media:content>
+    <link href="http://ps3.channel4.com/pmlsd/abbey-road-debuts.atom?platform=ps3" rel="self" type="application/atom+xml" />
+    <link href="http://ps3.channel4.com/pmlsd/abbey-road-debuts/episode-guide.atom?platform=ps3" rel="related" type="application/atom+xml" title="Episode Guide" />
+  </entry>
+  <entry>
+    <id>tag:ps3.pmlsc.channel4.com,2009:/brand/abduction-t4-movie-special</id>
+    <title type="text">Abduction: T4 Movie Special</title>
+    <summary type="text">Twilight star Taylor Lautner and Lily Collins chat to Miquita Oliver about the new action-packed thriller Abduction. There's also behind the scenes footage and gossip from the premiere held at London's IMAX cinema.</summary>
+    <updated>2011-09-28T11:17:58.310Z</updated>
+    <dc:relation.sortLetter>A</dc:relation.sortLetter>
+    <media:content>
+      <media:thumbnail url="http://cache.channel4.com/static/programmes/images/defaultImages/mediumADefaultImage.png" height="113" width="200" imageSource="default" />
+    </media:content>
+    <link href="http://ps3.channel4.com/pmlsd/abduction-t4-movie-special.atom?platform=ps3" rel="self" type="application/atom+xml" />
+    <link href="http://ps3.channel4.com/pmlsd/abduction-t4-movie-special/episode-guide.atom?platform=ps3" rel="related" type="application/atom+xml" title="Episode Guide" />
+  </entry>
+  <entry>
+    <id>tag:ps3.pmlsc.channel4.com,2009:/brand/accused-the-74-stone-babysitter</id>
+    <title type="text">Accused: The 74 Stone Babysitter</title>
+    <summary type="text">The story of one of the most incredible murder trials America has witnessed, following the twists and turns in the case of Mayra Rosales and the death of her two-year-old nephew in 2008.</summary>
+    <updated>2011-12-29T17:56:09.927Z</updated>
+    <dc:relation.sortLetter>A</dc:relation.sortLetter>
+    <media:content>
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/accused-the-74-stone-babysitter/4ba981dd-957e-4386-b9f5-afa042683f90_200x113.jpg" height="113" width="200" imageSource="own" />
+    </media:content>
+    <link href="http://ps3.channel4.com/pmlsd/accused-the-74-stone-babysitter.atom?platform=ps3" rel="self" type="application/atom+xml" />
+    <link href="http://ps3.channel4.com/pmlsd/accused-the-74-stone-babysitter/4od.atom?platform=ps3" rel="related" type="application/atom+xml" title="4oD" />
+    <link href="http://ps3.channel4.com/pmlsd/accused-the-74-stone-babysitter/episode-guide.atom?platform=ps3" rel="related" type="application/atom+xml" title="Episode Guide" />
+  </entry>
+  <entry>
+    <id>tag:ps3.pmlsc.channel4.com,2009:/brand/the-adam-and-joe-show</id>
+    <title type="text">The Adam and Joe Show</title>
+    <summary type="text">Hilarious and irreverent comedy from award-winning duo Adam Buxton and Joe Cornish. Featuring inspired toy animations and hard-hitting reports on the youth of today from Adam's dad.</summary>
+    <updated>2012-01-31T10:04:38.223Z</updated>
+    <dc:relation.sortLetter>A</dc:relation.sortLetter>
+    <media:content>
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/the-adam-and-joe-show/the-adam-and-joe-show_200x113.jpg" height="113" width="200" imageSource="own" />
+    </media:content>
+    <link href="http://ps3.channel4.com/pmlsd/the-adam-and-joe-show.atom?platform=ps3" rel="self" type="application/atom+xml" />
+    <link href="http://ps3.channel4.com/pmlsd/the-adam-and-joe-show/4od.atom?platform=ps3" rel="related" type="application/atom+xml" title="4oD" />
+    <link href="http://ps3.channel4.com/pmlsd/the-adam-and-joe-show/episode-guide.atom?platform=ps3" rel="related" type="application/atom+xml" title="Episode Guide" />
+  </entry>
+  <entry>
+    <id>tag:ps3.pmlsc.channel4.com,2009:/brand/after-the-apocalypse</id>
+    <title type="text">After the Apocalypse</title>
+    <summary type="text">The story of the people of Semipalatinsk in Kazakhstan, who were used as guinea pigs in the Soviet Union's testing of nuclear weapons.</summary>
+    <updated>2011-07-12T10:21:37.620Z</updated>
+    <dc:relation.sortLetter>A</dc:relation.sortLetter>
+    <media:content>
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/after-the-apocalypse/eecc8b7e-081d-45df-a5a2-b3e4f7b03326_200x113.jpg" height="113" width="200" imageSource="own" />
+    </media:content>
+    <link href="http://ps3.channel4.com/pmlsd/after-the-apocalypse.atom?platform=ps3" rel="self" type="application/atom+xml" />
+    <link href="http://ps3.channel4.com/pmlsd/after-the-apocalypse/episode-guide.atom?platform=ps3" rel="related" type="application/atom+xml" title="Episode Guide" />
+  </entry>
+  <entry>
+    <id>tag:ps3.pmlsc.channel4.com,2009:/brand/alan-carrs-new-year-specstacular</id>
+    <title type="text">Alan Carr's New Year Specstacular</title>
+    <summary type="text">Alan's dazzling party. His guests include Jonathan Ross, Micky Flanagan, Gok Wan, Alesha Dixon, Bruno Tonioli, Heston Blumenthal, Paddy McGuinness, Olly Murs, JLS and The Ting Tings.</summary>
+    <updated>2011-12-29T11:05:40.464Z</updated>
+    <dc:relation.sortLetter>A</dc:relation.sortLetter>
+    <media:content>
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/alan-carrs-new-year-specstacular/0cc12326-efbb-48ff-bea1-95d253b6ff2f_200x113.jpg" height="113" width="200" imageSource="own" />
+    </media:content>
+    <link href="http://ps3.channel4.com/pmlsd/alan-carrs-new-year-specstacular.atom?platform=ps3" rel="self" type="application/atom+xml" />
+    <link href="http://ps3.channel4.com/pmlsd/alan-carrs-new-year-specstacular/episode-guide.atom?platform=ps3" rel="related" type="application/atom+xml" title="Episode Guide" />
+  </entry>
+  <entry>
+    <id>tag:ps3.pmlsc.channel4.com,2009:/brand/alan-carr-chatty-man</id>
+    <title type="text">Alan Carr: Chatty Man</title>
+    <summary type="text">Alan Carr's chat show, packed with celebrity guests, topical showbiz news and highlights from the world of telly and the web.</summary>
+    <updated>2010-12-10T16:13:58.520Z</updated>
+    <dc:relation.sortLetter>A</dc:relation.sortLetter>
+    <media:content>
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/alan-carr-chatty-man/8d8fe5cb-f383-43be-bcd6-75aee5c015de_200x113.jpg" height="113" width="200" imageSource="own" />
+    </media:content>
+    <link href="http://ps3.channel4.com/pmlsd/alan-carr-chatty-man.atom?platform=ps3" rel="self" type="application/atom+xml" />
+    <link href="http://ps3.channel4.com/pmlsd/alan-carr-chatty-man/4od.atom?platform=ps3" rel="related" type="application/atom+xml" title="4oD" />
+    <link href="http://ps3.channel4.com/pmlsd/alan-carr-chatty-man/episode-guide.atom?platform=ps3" rel="related" type="application/atom+xml" title="Episode Guide" />
+  </entry>
+  <entry>
+    <id>tag:ps3.pmlsc.channel4.com,2009:/brand/alan-carr-tooth-fairy-live</id>
+    <title type="text">Alan Carr: Tooth Fairy Live</title>
+    <summary type="text">Award-winning comedian Alan Carr's outrageous live performance at the Hammersmith Apollo in front of a sell-out audience.</summary>
+    <updated>2010-12-10T13:10:31.445Z</updated>
+    <dc:relation.sortLetter>A</dc:relation.sortLetter>
+    <media:content>
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/alan-carr-tooth-fairy-live/afb90fcc-2069-4b32-a175-86cbbba162e2_200x113.jpg" height="113" width="200" imageSource="own" />
+    </media:content>
+    <link href="http://ps3.channel4.com/pmlsd/alan-carr-tooth-fairy-live.atom?platform=ps3" rel="self" type="application/atom+xml" />
+    <link href="http://ps3.channel4.com/pmlsd/alan-carr-tooth-fairy-live/episode-guide.atom?platform=ps3" rel="related" type="application/atom+xml" title="Episode Guide" />
+  </entry>
+  <entry>
+    <id>tag:ps3.pmlsc.channel4.com,2009:/brand/the-album-chart-show-with-tesco-entertainment</id>
+    <title type="text">The Album Chart Show with Tesco Entertainment</title>
+    <summary type="text">A music show which features performances from new and established acts at London's Koko club plus a round-up of the week's single releases.</summary>
+    <updated>2012-02-02T14:02:36.479Z</updated>
+    <dc:relation.sortLetter>A</dc:relation.sortLetter>
+    <media:content>
+      <media:thumbnail url="http://cache.channel4.com/static/programmes/images/defaultImages/mediumADefaultImage.png" height="113" width="200" imageSource="default" />
+    </media:content>
+    <link href="http://ps3.channel4.com/pmlsd/the-album-chart-show-with-tesco-entertainment.atom?platform=ps3" rel="self" type="application/atom+xml" />
+    <link href="http://ps3.channel4.com/pmlsd/the-album-chart-show-with-tesco-entertainment/4od.atom?platform=ps3" rel="related" type="application/atom+xml" title="4oD" />
+    <link href="http://ps3.channel4.com/pmlsd/the-album-chart-show-with-tesco-entertainment/episode-guide.atom?platform=ps3" rel="related" type="application/atom+xml" title="Episode Guide" />
+  </entry>
+  <entry>
+    <id>tag:ps3.pmlsc.channel4.com,2009:/brand/alex-zane-pops-out</id>
+    <title type="text">Alex Zane Pops Out</title>
+    <summary type="text">Alex Zane gives his unique take on this year's music in this new comedy and music show, taking an irreverent and affectionate romp through music in the news, and on TV and the internet.</summary>
+    <updated>2012-03-13T15:45:31.846Z</updated>
+    <dc:relation.sortLetter>A</dc:relation.sortLetter>
+    <media:content>
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/alex-zane-pops-out/9df41e4d-fe65-47ee-9b86-93a05d7ffd83_200x113.jpg" height="113" width="200" imageSource="own" />
+    </media:content>
+    <link href="http://ps3.channel4.com/pmlsd/alex-zane-pops-out.atom?platform=ps3" rel="self" type="application/atom+xml" />
+    <link href="http://ps3.channel4.com/pmlsd/alex-zane-pops-out/4od.atom?platform=ps3" rel="related" type="application/atom+xml" title="4oD" />
+    <link href="http://ps3.channel4.com/pmlsd/alex-zane-pops-out/episode-guide.atom?platform=ps3" rel="related" type="application/atom+xml" title="Episode Guide" />
+  </entry>
+  <entry>
+    <id>tag:ps3.pmlsc.channel4.com,2009:/brand/allen-gregory</id>
+    <title type="text">Allen Gregory</title>
+    <summary type="text">Allen Gregory De Longpre may be just seven years old, but he's travelled the world and considers himself intelligent, sophisticated, worldly, artistic and romantic. But now he faces his biggest challenge: elementary school.</summary>
+    <updated>2012-02-08T16:30:50.138Z</updated>
+    <dc:relation.sortLetter>A</dc:relation.sortLetter>
+    <media:content>
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/allen-gregory/06950196-1308-4f1b-930f-c7222e8753ed_200x113.jpg" height="113" width="200" imageSource="own" />
+    </media:content>
+    <link href="http://ps3.channel4.com/pmlsd/allen-gregory.atom?platform=ps3" rel="self" type="application/atom+xml" />
+    <link href="http://ps3.channel4.com/pmlsd/allen-gregory/episode-guide.atom?platform=ps3" rel="related" type="application/atom+xml" title="Episode Guide" />
+  </entry>
+  <entry>
+    <id>tag:ps3.pmlsc.channel4.com,2009:/brand/alone-in-the-wild</id>
+    <title type="text">Alone in the Wild</title>
+    <summary type="text">A remarkable series charting one man's experiences as he attempts to survive in the wild. As an experienced extreme cameraman who has scaled Everest and filmed in some of the world's most inhospitable places, Ed is a tough guy who relishes a challenge.</summary>
+    <updated>2012-05-01T14:52:05.070Z</updated>
+    <dc:relation.sortLetter>A</dc:relation.sortLetter>
+    <media:content>
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/alone-in-the-wild/01dc5f3f-45f6-49ed-8fd7-939144a376eb_200x113.jpg" height="113" width="200" imageSource="own" />
+    </media:content>
+    <link href="http://ps3.channel4.com/pmlsd/alone-in-the-wild.atom?platform=ps3" rel="self" type="application/atom+xml" />
+    <link href="http://ps3.channel4.com/pmlsd/alone-in-the-wild/4od.atom?platform=ps3" rel="related" type="application/atom+xml" title="4oD" />
+    <link href="http://ps3.channel4.com/pmlsd/alone-in-the-wild/episode-guide.atom?platform=ps3" rel="related" type="application/atom+xml" title="Episode Guide" />
+  </entry>
+  <entry>
+    <id>tag:ps3.pmlsc.channel4.com,2009:/brand/americas-serial-killer</id>
+    <title type="text">America's Serial Killer</title>
+    <summary type="text">In just two years police have discovered 11 bodies on an isolated road on Long Island. Four of them were sex workers who'd advertised online.</summary>
+    <updated>2012-02-13T15:35:52.112Z</updated>
+    <dc:relation.sortLetter>A</dc:relation.sortLetter>
+    <media:content>
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/americas-serial-killer/747f3a16-f0c2-412e-a639-cb6d36f2ec29_200x113.jpg" height="113" width="200" imageSource="own" />
+    </media:content>
+    <link href="http://ps3.channel4.com/pmlsd/americas-serial-killer.atom?platform=ps3" rel="self" type="application/atom+xml" />
+    <link href="http://ps3.channel4.com/pmlsd/americas-serial-killer/4od.atom?platform=ps3" rel="related" type="application/atom+xml" title="4oD" />
+    <link href="http://ps3.channel4.com/pmlsd/americas-serial-killer/episode-guide.atom?platform=ps3" rel="related" type="application/atom+xml" title="Episode Guide" />
+  </entry>
+  <entry>
+    <id>tag:ps3.pmlsc.channel4.com,2009:/brand/the-amy-winehouse-story</id>
+    <title type="text">The Amy Winehouse Story</title>
+    <summary type="text">Jacques Peretti examines the life of the late Amy Winehouse, one of the most talented singers of her generation, in a revised and updated edition of his documentary What Really Happened.</summary>
+    <updated>2011-07-26T11:14:17.877Z</updated>
+    <dc:relation.sortLetter>A</dc:relation.sortLetter>
+    <media:content>
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/the-amy-winehouse-story/dacaeefd-5c1a-459b-b656-a490669afbfe_200x113.jpg" height="113" width="200" imageSource="own" />
+    </media:content>
+    <link href="http://ps3.channel4.com/pmlsd/the-amy-winehouse-story.atom?platform=ps3" rel="self" type="application/atom+xml" />
+    <link href="http://ps3.channel4.com/pmlsd/the-amy-winehouse-story/episode-guide.atom?platform=ps3" rel="related" type="application/atom+xml" title="Episode Guide" />
+  </entry>
+  <entry>
+    <id>tag:ps3.pmlsc.channel4.com,2009:/brand/an-alternative-christmas-message</id>
+    <title type="text">An Alternative Christmas Message</title>
+    <summary type="text">Inspirational people from 2011's most powerful and celebratory factual programming give their unique take on Christmas.</summary>
+    <updated>2011-12-28T11:46:49.014Z</updated>
+    <dc:relation.sortLetter>A</dc:relation.sortLetter>
+    <media:content>
+      <media:thumbnail url="http://cache.channel4.com/static/programmes/images/defaultImages/mediumADefaultImage.png" height="113" width="200" imageSource="default" />
+    </media:content>
+    <link href="http://ps3.channel4.com/pmlsd/an-alternative-christmas-message.atom?platform=ps3" rel="self" type="application/atom+xml" />
+    <link href="http://ps3.channel4.com/pmlsd/an-alternative-christmas-message/episode-guide.atom?platform=ps3" rel="related" type="application/atom+xml" title="Episode Guide" />
+  </entry>
+  <entry>
+    <id>tag:ps3.pmlsc.channel4.com,2009:/brand/the-ancient-skeletons-of-peru</id>
+    <title type="text">The Ancient Skeletons of Peru</title>
+    <summary type="text">High in the Andes in the 16th century, the fiercely independent Chachapoya tribes suddenly disappeared. Now archaeologists have found startling evidence that may indicate what happened to them.</summary>
+    <updated>2011-05-13T11:32:51.217Z</updated>
+    <dc:relation.sortLetter>A</dc:relation.sortLetter>
+    <media:content>
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/the-ancient-skeletons-of-peru/6c084bad-4cbd-4944-aa34-39b46334c4e4_200x113.jpg" height="113" width="200" imageSource="own" />
+    </media:content>
+    <link href="http://ps3.channel4.com/pmlsd/the-ancient-skeletons-of-peru.atom?platform=ps3" rel="self" type="application/atom+xml" />
+    <link href="http://ps3.channel4.com/pmlsd/the-ancient-skeletons-of-peru/episode-guide.atom?platform=ps3" rel="related" type="application/atom+xml" title="Episode Guide" />
+  </entry>
+  <entry>
+    <id>tag:ps3.pmlsc.channel4.com,2009:/brand/the-ancient-world-with-bettany-hughes</id>
+    <title type="text">The Ancient World with Bettany Hughes</title>
+    <summary type="text">Bettany Hughes tells the definitive history of the ancient world and classical civilisation.</summary>
+    <updated>2011-08-31T14:01:31.900Z</updated>
+    <dc:relation.sortLetter>A</dc:relation.sortLetter>
+    <media:content>
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/the-ancient-world-with-bettany-hughes/ca3601e6-f145-44a2-97c0-fe32d240b865_200x113.jpg" height="113" width="200" imageSource="own" />
+    </media:content>
+    <link href="http://ps3.channel4.com/pmlsd/the-ancient-world-with-bettany-hughes.atom?platform=ps3" rel="self" type="application/atom+xml" />
+    <link href="http://ps3.channel4.com/pmlsd/the-ancient-world-with-bettany-hughes/episode-guide.atom?platform=ps3" rel="related" type="application/atom+xml" title="Episode Guide" />
+  </entry>
+  <entry>
+    <id>tag:ps3.pmlsc.channel4.com,2009:/brand/the-angelos-neil-epithemiou-show</id>
+    <title type="text">The Angelos Neil Epithemiou Show</title>
+    <summary type="text">Slapstick, jokes, high-energy dancing, catchy singing and sophisticated magic from a modern-day clown living in an oversized world of pure fun.</summary>
+    <updated>2011-12-29T10:44:23.066Z</updated>
+    <dc:relation.sortLetter>A</dc:relation.sortLetter>
+    <media:content>
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/the-angelos-neil-epithemiou-show/b71965f9-c2c7-40b1-bc6e-1b3cd382e2f2_200x113.jpg" height="113" width="200" imageSource="own" />
+    </media:content>
+    <link href="http://ps3.channel4.com/pmlsd/the-angelos-neil-epithemiou-show.atom?platform=ps3" rel="self" type="application/atom+xml" />
+    <link href="http://ps3.channel4.com/pmlsd/the-angelos-neil-epithemiou-show/4od.atom?platform=ps3" rel="related" type="application/atom+xml" title="4oD" />
+    <link href="http://ps3.channel4.com/pmlsd/the-angelos-neil-epithemiou-show/episode-guide.atom?platform=ps3" rel="related" type="application/atom+xml" title="Episode Guide" />
+  </entry>
+  <entry>
+    <id>tag:ps3.pmlsc.channel4.com,2009:/brand/animal-madhouse</id>
+    <title type="text">Animal Madhouse</title>
+    <summary type="text">The show which explores some of the extraordinary ailments and conditions that affect all creatures big and small. 
+
+From pets to livestock and zoo creatures, and everything in between, from a house full of oversexed canines toand cats with lazy bladders, nothing is off limits.</summary>
+    <updated>2010-12-02T15:13:18.735Z</updated>
+    <dc:relation.sortLetter>A</dc:relation.sortLetter>
+    <media:content>
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/animal-madhouse/9c676e34-3f02-4500-a299-85120443d6d7_200x113.jpg" height="113" width="200" imageSource="own" />
+    </media:content>
+    <link href="http://ps3.channel4.com/pmlsd/animal-madhouse.atom?platform=ps3" rel="self" type="application/atom+xml" />
+    <link href="http://ps3.channel4.com/pmlsd/animal-madhouse/episode-guide.atom?platform=ps3" rel="related" type="application/atom+xml" title="Episode Guide" />
+  </entry>
+  <entry>
+    <id>tag:ps3.pmlsc.channel4.com,2009:/brand/animals-in-the-womb</id>
+    <title type="text">Animals in the Womb</title>
+    <summary type="text">Using revolutionary four-dimensional scanning technology, scientists shine a light on the hidden secrets of mammalian embryonic development</summary>
+    <updated>2011-06-03T11:49:31.322Z</updated>
+    <dc:relation.sortLetter>A</dc:relation.sortLetter>
+    <media:content>
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/animals-in-the-womb/169ea2c9-1886-4d30-91be-19bfdc842090_200x113.jpg" height="113" width="200" imageSource="own" />
+    </media:content>
+    <link href="http://ps3.channel4.com/pmlsd/animals-in-the-womb.atom?platform=ps3" rel="self" type="application/atom+xml" />
+    <link href="http://ps3.channel4.com/pmlsd/animals-in-the-womb/episode-guide.atom?platform=ps3" rel="related" type="application/atom+xml" title="Episode Guide" />
+  </entry>
+  <entry>
+    <id>tag:ps3.pmlsc.channel4.com,2009:/brand/the-antics-roadshow</id>
+    <title type="text">The Antics Roadshow</title>
+    <summary type="text">The Antics Roadshow brings together individuals with all sorts of motivations, who have all hijacked the public arena to make a noise, whether for comedic, artistic or political ends.</summary>
+    <updated>2011-08-10T10:28:13.123Z</updated>
+    <dc:relation.sortLetter>A</dc:relation.sortLetter>
+    <media:content>
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/the-antics-roadshow/41d7b616-64f2-4f0b-8c5f-80b5914116b2_200x113.jpg" height="113" width="200" imageSource="own" />
+    </media:content>
+    <link href="http://ps3.channel4.com/pmlsd/the-antics-roadshow.atom?platform=ps3" rel="self" type="application/atom+xml" />
+    <link href="http://ps3.channel4.com/pmlsd/the-antics-roadshow/episode-guide.atom?platform=ps3" rel="related" type="application/atom+xml" title="Episode Guide" />
+  </entry>
+  <entry>
+    <id>tag:ps3.pmlsc.channel4.com,2009:/brand/any-human-heart</id>
+    <title type="text">Any Human Heart</title>
+    <summary type="text">Jim Broadbent, Matthew Macfadyen and Sam Claflin take the lead role in William Boyd's funny, moving and ambitious adaptation of his best-selling novel, exploring one man's tumultuous and unpredictable journey through the 20th century</summary>
+    <updated>2010-12-01T17:48:35.878Z</updated>
+    <dc:relation.sortLetter>A</dc:relation.sortLetter>
+    <media:content>
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/any-human-heart/8c4f0553-d22f-492e-bff7-f86baafde76a_200x113.jpg" height="113" width="200" imageSource="own" />
+    </media:content>
+    <link href="http://ps3.channel4.com/pmlsd/any-human-heart.atom?platform=ps3" rel="self" type="application/atom+xml" />
+    <link href="http://ps3.channel4.com/pmlsd/any-human-heart/episode-guide.atom?platform=ps3" rel="related" type="application/atom+xml" title="Episode Guide" />
+  </entry>
+  <entry>
+    <id>tag:ps3.pmlsc.channel4.com,2009:/brand/apocalypse-the-second-world-war</id>
+    <title type="text">Apocalypse: The Second World War</title>
+    <summary type="text">The story of World War II, told in digitally colourised and evocative footage, and through the personal testimony of those who were there.</summary>
+    <updated>2010-12-02T10:20:37.687Z</updated>
+    <dc:relation.sortLetter>A</dc:relation.sortLetter>
+    <media:content>
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/apocalypse-the-second-world-war/b9eabb70-80ff-4d11-b526-a92bbc25726f_200x113.jpg" height="113" width="200" imageSource="own" />
+    </media:content>
+    <link href="http://ps3.channel4.com/pmlsd/apocalypse-the-second-world-war.atom?platform=ps3" rel="self" type="application/atom+xml" />
+    <link href="http://ps3.channel4.com/pmlsd/apocalypse-the-second-world-war/episode-guide.atom?platform=ps3" rel="related" type="application/atom+xml" title="Episode Guide" />
+  </entry>
+  <entry>
+    <id>tag:ps3.pmlsc.channel4.com,2009:/brand/the-arbor</id>
+    <title type="text">The Arbor</title>
+    <summary type="text">The powerful true story of playwright Andrea Dunbar, who wrote Rita, Sue and Bob Too! and died at the age of 29, when her daughter Lorraine was just ten years old</summary>
+    <updated>2011-12-14T15:33:00.794Z</updated>
+    <dc:relation.sortLetter>A</dc:relation.sortLetter>
+    <media:content>
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/the-arbor/9859a44e-1072-488d-96dd-c1a7cd7d176f_200x113.jpg" height="113" width="200" imageSource="own" />
+    </media:content>
+    <link href="http://ps3.channel4.com/pmlsd/the-arbor.atom?platform=ps3" rel="self" type="application/atom+xml" />
+    <link href="http://ps3.channel4.com/pmlsd/the-arbor/episode-guide.atom?platform=ps3" rel="related" type="application/atom+xml" title="Episode Guide" />
+  </entry>
+  <entry>
+    <id>tag:ps3.pmlsc.channel4.com,2009:/brand/armadillo-frontline-afghanistan</id>
+    <title type="text">Armadillo: Frontline Afghanistan</title>
+    <summary type="text">Armadillo follows two young soldiers on their first mission to Afghanistan as their idealism clashes with reality, and growing mistrust and paranoia lead to alienation and disillusion.</summary>
+    <updated>2011-09-05T08:48:40.595Z</updated>
+    <dc:relation.sortLetter>A</dc:relation.sortLetter>
+    <media:content>
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/armadillo/15935d84-ef7c-4abf-a6f4-e47f345d2cc2_200x113.jpg" height="113" width="200" imageSource="own" />
+    </media:content>
+    <link href="http://ps3.channel4.com/pmlsd/armadillo-frontline-afghanistan.atom?platform=ps3" rel="self" type="application/atom+xml" />
+    <link href="http://ps3.channel4.com/pmlsd/armadillo-frontline-afghanistan/episode-guide.atom?platform=ps3" rel="related" type="application/atom+xml" title="Episode Guide" />
+  </entry>
+  <entry>
+    <id>tag:ps3.pmlsc.channel4.com,2009:/brand/armstrong-miller</id>
+    <title type="text">Armstrong &amp; Miller</title>
+    <summary type="text">A look at some favourite moments from Alexander Armstrong and Ben Miller's Channel 4 sketch show, featuring classic sketches from their fourth series.</summary>
+    <updated>2012-01-10T16:06:49.945Z</updated>
+    <dc:relation.sortLetter>A</dc:relation.sortLetter>
+    <media:content>
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/armstrong-miller/00043ec9-b3b2-4a58-90a6-37baa38a3dbd_200x113.jpg" height="113" width="200" imageSource="own" />
+    </media:content>
+    <link href="http://ps3.channel4.com/pmlsd/armstrong-miller.atom?platform=ps3" rel="self" type="application/atom+xml" />
+    <link href="http://ps3.channel4.com/pmlsd/armstrong-miller/4od.atom?platform=ps3" rel="related" type="application/atom+xml" title="4oD" />
+    <link href="http://ps3.channel4.com/pmlsd/armstrong-miller/episode-guide.atom?platform=ps3" rel="related" type="application/atom+xml" title="Episode Guide" />
+  </entry>
+  <entry>
+    <id>tag:ps3.pmlsc.channel4.com,2009:/brand/arthurs-day</id>
+    <title type="text">Arthur's Day</title>
+    <summary type="text">A musical celebration of the day Arthur Guinness signed the lease for the world famous brewery in Dublin. Performances and interviews with Scissor Sisters, Stereophonics and Aloe Blacc.</summary>
+    <updated>2011-09-30T09:50:41.576Z</updated>
+    <dc:relation.sortLetter>A</dc:relation.sortLetter>
+    <media:content>
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/arthurs-day/2d8aa6bb-b55e-4ee4-9a6d-a48a0bd4e577_200x113.jpg" height="113" width="200" imageSource="own" />
+    </media:content>
+    <link href="http://ps3.channel4.com/pmlsd/arthurs-day.atom?platform=ps3" rel="self" type="application/atom+xml" />
+    <link href="http://ps3.channel4.com/pmlsd/arthurs-day/episode-guide.atom?platform=ps3" rel="related" type="application/atom+xml" title="Episode Guide" />
+  </entry>
+  <entry>
+    <id>tag:ps3.pmlsc.channel4.com,2009:/brand/arthurs-hell-on-high-water</id>
+    <title type="text">Arthur's Hell on High Water</title>
+    <summary type="text">Many environmentalists would like to see an end to commercial trawler fishing. Arthur Potts Dawson takes to the seas for a week with trawlermen to challenge his preconceptions about commercial fishing.</summary>
+    <updated>2011-01-12T11:08:25.284Z</updated>
+    <dc:relation.sortLetter>A</dc:relation.sortLetter>
+    <media:content>
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/arthurs-hell-on-high-water/eb848305-6e63-4ca5-a1fe-383b6dc42ba2_200x113.jpg" height="113" width="200" imageSource="own" />
+    </media:content>
+    <link href="http://ps3.channel4.com/pmlsd/arthurs-hell-on-high-water.atom?platform=ps3" rel="self" type="application/atom+xml" />
+    <link href="http://ps3.channel4.com/pmlsd/arthurs-hell-on-high-water/episode-guide.atom?platform=ps3" rel="related" type="application/atom+xml" title="Episode Guide" />
+  </entry>
+  <entry>
+    <id>tag:ps3.pmlsc.channel4.com,2009:/brand/arthur-t4-movie-special</id>
+    <title type="text">Arthur: T4 Movie Special</title>
+    <summary type="text">Russell Brand chats to Rick Edwards about his latest film Arthur which is a re-imagining of the 1980s classic comedy starring Dudley Moore.</summary>
+    <updated>2011-04-20T12:35:05.301Z</updated>
+    <dc:relation.sortLetter>A</dc:relation.sortLetter>
+    <media:content>
+      <media:thumbnail url="http://cache.channel4.com/static/programmes/images/defaultImages/mediumADefaultImage.png" height="113" width="200" imageSource="default" />
+    </media:content>
+    <link href="http://ps3.channel4.com/pmlsd/arthur-t4-movie-special.atom?platform=ps3" rel="self" type="application/atom+xml" />
+    <link href="http://ps3.channel4.com/pmlsd/arthur-t4-movie-special/episode-guide.atom?platform=ps3" rel="related" type="application/atom+xml" title="Episode Guide" />
+  </entry>
+  <entry>
+    <id>tag:ps3.pmlsc.channel4.com,2009:/brand/asian-gracefully</id>
+    <title type="text">Asian Gracefully</title>
+    <summary type="text">An intimate look behind the doors of one of the few residential care homes in Britain exclusively for the Asian elderly.</summary>
+    <updated>2011-02-28T09:48:42.160Z</updated>
+    <dc:relation.sortLetter>A</dc:relation.sortLetter>
+    <media:content>
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/asian-gracefully/28258220-41da-46b4-8b41-08af798c7242_200x113.jpg" height="113" width="200" imageSource="own" />
+    </media:content>
+    <link href="http://ps3.channel4.com/pmlsd/asian-gracefully.atom?platform=ps3" rel="self" type="application/atom+xml" />
+    <link href="http://ps3.channel4.com/pmlsd/asian-gracefully/episode-guide.atom?platform=ps3" rel="related" type="application/atom+xml" title="Episode Guide" />
+  </entry>
+  <entry>
+    <id>tag:ps3.pmlsc.channel4.com,2009:/brand/athletics-iaaf-world-championships-2011</id>
+    <title type="text">Athletics: IAAF World Championships 2011</title>
+    <summary type="text">Coverage of the 13th IAAF World Athletics Championships from Daegu in South Korea.</summary>
+    <updated>2011-08-19T15:05:17.795Z</updated>
+    <dc:relation.sortLetter>A</dc:relation.sortLetter>
+    <media:content>
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/athletics-iaaf-world-championships/299efb8b-d086-491e-8f1e-1b27106387f0_200x113.jpg" height="113" width="200" imageSource="own" />
+    </media:content>
+    <link href="http://ps3.channel4.com/pmlsd/athletics-iaaf-world-championships-2011.atom?platform=ps3" rel="self" type="application/atom+xml" />
+    <link href="http://ps3.channel4.com/pmlsd/athletics-iaaf-world-championships-2011/episode-guide.atom?platform=ps3" rel="related" type="application/atom+xml" title="Episode Guide" />
+  </entry>
+  <entry>
+    <id>tag:ps3.pmlsc.channel4.com,2009:/brand/athletics-the-iaaf-world-youth-championships</id>
+    <title type="text">Athletics: The IAAF World Youth Championships</title>
+    <summary type="text">Highlights from the 2011 meeting in Lille, northern France, as the world's best youngsters compete for gold in track and field.</summary>
+    <updated>2011-07-13T10:25:46.012Z</updated>
+    <dc:relation.sortLetter>A</dc:relation.sortLetter>
+    <media:content>
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/athletics-the-iaaf-world-youth-championships/10104d7e-3b35-4f5f-92af-602254e93b58_200x113.jpg" height="113" width="200" imageSource="own" />
+    </media:content>
+    <link href="http://ps3.channel4.com/pmlsd/athletics-the-iaaf-world-youth-championships.atom?platform=ps3" rel="self" type="application/atom+xml" />
+    <link href="http://ps3.channel4.com/pmlsd/athletics-the-iaaf-world-youth-championships/episode-guide.atom?platform=ps3" rel="related" type="application/atom+xml" title="Episode Guide" />
+  </entry>
+  <entry>
+    <id>tag:ps3.pmlsc.channel4.com,2009:/brand/aviva-indoor-uk-trials-championships</id>
+    <title type="text">Aviva Indoor UK Trials &amp; Championships</title>
+    <summary type="text">Britain's best athletes compete for a place at the European Indoor Championships in Paris.</summary>
+    <updated>2012-02-20T17:34:25.596Z</updated>
+    <dc:relation.sortLetter>A</dc:relation.sortLetter>
+    <media:content>
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/aviva-indoor-uk-trials-championships/3a65ee1c-af04-4d5a-b629-fadbc998956d_200x113.jpg" height="113" width="200" imageSource="own" />
+    </media:content>
+    <link href="http://ps3.channel4.com/pmlsd/aviva-indoor-uk-trials-championships.atom?platform=ps3" rel="self" type="application/atom+xml" />
+    <link href="http://ps3.channel4.com/pmlsd/aviva-indoor-uk-trials-championships/episode-guide.atom?platform=ps3" rel="related" type="application/atom+xml" title="Episode Guide" />
+  </entry>
+</feed>

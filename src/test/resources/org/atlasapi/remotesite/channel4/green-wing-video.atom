@@ -1,0 +1,288 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <id>tag:pmlsc.channel4.com,2009:/programmes/green-wing/video</id>
+  <title type="text">Green Wing Clips</title>
+  <subtitle type="html">From the award-winning team behind Smack the Pony comes this quick-fire (and occasionally slow motion) genre-defying comedy, set in a surreal hospital, despite no discernible medical content...</subtitle>
+  <updated>2012-05-18T09:53:07.368Z</updated>
+  <author>
+    <name>Channel 4 Television</name>
+  </author>
+  <logo imageSource="own">http://cache.channel4.com/assets/programmes/images/green-wing/green-wing_200x113.jpg</logo>
+  <dc:relation.platformClientVersion>1.0</dc:relation.platformClientVersion>
+  <link href="http://www.channel4.com/programmes/green-wing/video" rel="alternate" type="text/html" />
+  <link href="http://pmlsc.channel4.com/pmlsd/green-wing/video.atom" rel="self" type="application/atom+xml" />
+  <link href="http://pmlsc.channel4.com/pmlsd/green-wing.atom" rel="up" type="application/atom+xml" />
+  <link href="http://pmlsc.channel4.com/pmlsd/green-wing/video/page-2.atom" rel="next" type="application/atom+xml" />
+  <dc:relation.Sharable>false</dc:relation.Sharable>
+  <generator version="1.27.2">PMLSD</generator>
+  <entry xmlns:dcterms="http://purl.org/dc/terms">
+    <id>tag:pmlsc.channel4.com,2009:clip/TCGS_CLIP_0000002445</id>
+    <title type="text">Guyball</title>
+    <summary type="html">'This country could soon have a new world champion'</summary>
+    <updated>2012-05-18T09:53:07.377Z</updated>
+    <link href="http://pmlsc.channel4.com/pmlsd/green-wing/video/series-1/episode-7/guyball.atom" rel="self" type="application/atom+xml" />
+    <link href="http://www.channel4.com/programmes/green-wing/video/series-1/episode-7/guyball" rel="alternate" type="text/html" />
+    <link href="http://pmlsc.channel4.com/pmlsd/green-wing/episode-guide/series-1/episode-7.atom" rel="related" type="application/atom+xml" title="Episode Guide" />
+    <media:group>
+      <media:player url="http://www.channel4.com/programmes/green-wing/video/series-1/episode-7/guyball" />
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/green-wing/series-1/episode-7/guyball/green-wing-s1e7-guyball_200x113.jpg" height="113" width="200" />
+      <media:rating>nonadult</media:rating>
+      <media:copyright url="http://cache.channel4.com/terms_and_conditions.html">Terms and Conditions</media:copyright>
+      <media:restriction relationship="allow" type="country">uk,ie</media:restriction>
+      <media:rights status="official" />
+    </media:group>
+    <dcterms:available>start=2007-11-28T00:00:00.000Z; end=3000-01-01T00:00:00.000Z; scheme=W3C-DTF</dcterms:available>
+    <dc:relation.AgeRating>0</dc:relation.AgeRating>
+    <dc:relation.Duration>1:19</dc:relation.Duration>
+    <dc:relation.SeriesNumber>1</dc:relation.SeriesNumber>
+    <dc:relation.EpisodeNumber>7</dc:relation.EpisodeNumber>
+  </entry>
+  <entry xmlns:dcterms="http://purl.org/dc/terms">
+    <id>tag:pmlsc.channel4.com,2009:clip/TCGS_CLIP_0000002446</id>
+    <title type="text">Disappearing Trick</title>
+    <summary type="html">Dr Alan Stratham turns to Sue White for comfort. Big mistake.</summary>
+    <updated>2012-05-18T09:53:07.381Z</updated>
+    <link href="http://pmlsc.channel4.com/pmlsd/green-wing/video/series-1/episode-7/disappearing-trick.atom" rel="self" type="application/atom+xml" />
+    <link href="http://www.channel4.com/programmes/green-wing/video/series-1/episode-7/disappearing-trick" rel="alternate" type="text/html" />
+    <link href="http://pmlsc.channel4.com/pmlsd/green-wing/episode-guide/series-1/episode-7.atom" rel="related" type="application/atom+xml" title="Episode Guide" />
+    <media:group>
+      <media:player url="http://www.channel4.com/programmes/green-wing/video/series-1/episode-7/disappearing-trick" />
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/green-wing/series-1/episode-7/disappearing-trick/green-wing-s1e7-disappearing-trick_200x113.jpg" height="113" width="200" />
+      <media:rating>nonadult</media:rating>
+      <media:copyright url="http://cache.channel4.com/terms_and_conditions.html">Terms and Conditions</media:copyright>
+      <media:restriction relationship="allow" type="country">uk,ie</media:restriction>
+      <media:rights status="official" />
+    </media:group>
+    <dcterms:available>start=2007-11-28T00:00:00.000Z; end=3000-01-01T00:00:00.000Z; scheme=W3C-DTF</dcterms:available>
+    <dc:relation.AgeRating>0</dc:relation.AgeRating>
+    <dc:relation.Duration>1:39</dc:relation.Duration>
+    <dc:relation.SeriesNumber>1</dc:relation.SeriesNumber>
+    <dc:relation.EpisodeNumber>7</dc:relation.EpisodeNumber>
+  </entry>
+  <entry xmlns:dcterms="http://purl.org/dc/terms">
+    <id>tag:pmlsc.channel4.com,2009:clip/TCGS_CLIP_0000002443</id>
+    <title type="text">Liar, Liar...</title>
+    <summary type="html">Tension rises when Angela accuses Caroline of wearing her pants...</summary>
+    <updated>2012-05-18T09:53:07.382Z</updated>
+    <link href="http://pmlsc.channel4.com/pmlsd/green-wing/video/series-1/episode-6/liar-liar.atom" rel="self" type="application/atom+xml" />
+    <link href="http://www.channel4.com/programmes/green-wing/video/series-1/episode-6/liar-liar" rel="alternate" type="text/html" />
+    <link href="http://pmlsc.channel4.com/pmlsd/green-wing/episode-guide/series-1/episode-6.atom" rel="related" type="application/atom+xml" title="Episode Guide" />
+    <media:group>
+      <media:player url="http://www.channel4.com/programmes/green-wing/video/series-1/episode-6/liar-liar" />
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/green-wing/series-1/episode-6/liar-liar/green-wing-s1e6-liar-liar_200x113.jpg" height="113" width="200" />
+      <media:rating>adult</media:rating>
+      <media:copyright url="http://cache.channel4.com/terms_and_conditions.html">Terms and Conditions</media:copyright>
+      <media:restriction relationship="allow" type="country">uk,ie</media:restriction>
+      <media:rights status="official" />
+    </media:group>
+    <dcterms:available>start=2007-11-28T00:00:00.000Z; end=3000-01-01T00:00:00.000Z; scheme=W3C-DTF</dcterms:available>
+    <dc:relation.AgeRating>16</dc:relation.AgeRating>
+    <dc:relation.Guidance>WARNING This clip features adult themes</dc:relation.Guidance>
+    <dc:relation.Duration>2:22</dc:relation.Duration>
+    <dc:relation.SeriesNumber>1</dc:relation.SeriesNumber>
+    <dc:relation.EpisodeNumber>6</dc:relation.EpisodeNumber>
+  </entry>
+  <entry xmlns:dcterms="http://purl.org/dc/terms">
+    <id>tag:pmlsc.channel4.com,2009:clip/TCGS_CLIP_0000002444</id>
+    <title type="text">Shoot to Kill</title>
+    <summary type="html">Guy and Mac have a lively discussion on deadly weapons</summary>
+    <updated>2012-05-18T09:53:07.382Z</updated>
+    <link href="http://pmlsc.channel4.com/pmlsd/green-wing/video/series-1/episode-6/shoot-to-kill.atom" rel="self" type="application/atom+xml" />
+    <link href="http://www.channel4.com/programmes/green-wing/video/series-1/episode-6/shoot-to-kill" rel="alternate" type="text/html" />
+    <link href="http://pmlsc.channel4.com/pmlsd/green-wing/episode-guide/series-1/episode-6.atom" rel="related" type="application/atom+xml" title="Episode Guide" />
+    <media:group>
+      <media:player url="http://www.channel4.com/programmes/green-wing/video/series-1/episode-6/shoot-to-kill" />
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/green-wing/series-1/episode-6/shoot-to-kill/green-wing-s1e6-shoot-to-kill_200x113.jpg" height="113" width="200" />
+      <media:rating>adult</media:rating>
+      <media:copyright url="http://cache.channel4.com/terms_and_conditions.html">Terms and Conditions</media:copyright>
+      <media:restriction relationship="allow" type="country">uk,ie</media:restriction>
+      <media:rights status="official" />
+    </media:group>
+    <dcterms:available>start=2007-11-28T00:00:00.000Z; end=3000-01-01T00:00:00.000Z; scheme=W3C-DTF</dcterms:available>
+    <dc:relation.AgeRating>16</dc:relation.AgeRating>
+    <dc:relation.Guidance>WARNING This clip features adult themes</dc:relation.Guidance>
+    <dc:relation.Duration>1:05</dc:relation.Duration>
+    <dc:relation.SeriesNumber>1</dc:relation.SeriesNumber>
+    <dc:relation.EpisodeNumber>6</dc:relation.EpisodeNumber>
+  </entry>
+  <entry xmlns:dcterms="http://purl.org/dc/terms">
+    <id>tag:pmlsc.channel4.com,2009:clip/TCGS_CLIP_0000002441</id>
+    <title type="text">Party Animal</title>
+    <summary type="html">Guy launches a party charm offensive. Emphasis on offensive.</summary>
+    <updated>2012-05-18T09:53:07.384Z</updated>
+    <link href="http://pmlsc.channel4.com/pmlsd/green-wing/video/series-1/episode-5/party-animal.atom" rel="self" type="application/atom+xml" />
+    <link href="http://www.channel4.com/programmes/green-wing/video/series-1/episode-5/party-animal" rel="alternate" type="text/html" />
+    <link href="http://pmlsc.channel4.com/pmlsd/green-wing/episode-guide/series-1/episode-5.atom" rel="related" type="application/atom+xml" title="Episode Guide" />
+    <media:group>
+      <media:player url="http://www.channel4.com/programmes/green-wing/video/series-1/episode-5/party-animal" />
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/green-wing/series-1/episode-5/party-animal/green-wing-s1e5-party-animal_200x113.jpg" height="113" width="200" />
+      <media:rating>adult</media:rating>
+      <media:copyright url="http://cache.channel4.com/terms_and_conditions.html">Terms and Conditions</media:copyright>
+      <media:restriction relationship="allow" type="country">uk,ie</media:restriction>
+      <media:rights status="official" />
+    </media:group>
+    <dcterms:available>start=2007-11-28T00:00:00.000Z; end=3000-01-01T00:00:00.000Z; scheme=W3C-DTF</dcterms:available>
+    <dc:relation.AgeRating>16</dc:relation.AgeRating>
+    <dc:relation.Guidance>WARNING This clip features adult themes</dc:relation.Guidance>
+    <dc:relation.Duration>1:11</dc:relation.Duration>
+    <dc:relation.SeriesNumber>1</dc:relation.SeriesNumber>
+    <dc:relation.EpisodeNumber>5</dc:relation.EpisodeNumber>
+  </entry>
+  <entry xmlns:dcterms="http://purl.org/dc/terms">
+    <id>tag:pmlsc.channel4.com,2009:clip/TCGS_CLIP_0000002442</id>
+    <title type="text">Bunny Boiler</title>
+    <summary type="html">Sue attempts to introduce Mac to her 'little pink rabbit'</summary>
+    <updated>2012-05-18T09:53:07.385Z</updated>
+    <link href="http://pmlsc.channel4.com/pmlsd/green-wing/video/series-1/episode-5/bunny-boiler.atom" rel="self" type="application/atom+xml" />
+    <link href="http://www.channel4.com/programmes/green-wing/video/series-1/episode-5/bunny-boiler" rel="alternate" type="text/html" />
+    <link href="http://pmlsc.channel4.com/pmlsd/green-wing/episode-guide/series-1/episode-5.atom" rel="related" type="application/atom+xml" title="Episode Guide" />
+    <media:group>
+      <media:player url="http://www.channel4.com/programmes/green-wing/video/series-1/episode-5/bunny-boiler" />
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/green-wing/series-1/episode-5/bunny-boiler/green-wing-s1e5-bunny-boiler_200x113.jpg" height="113" width="200" />
+      <media:rating>adult</media:rating>
+      <media:copyright url="http://cache.channel4.com/terms_and_conditions.html">Terms and Conditions</media:copyright>
+      <media:restriction relationship="allow" type="country">uk,ie</media:restriction>
+      <media:rights status="official" />
+    </media:group>
+    <dcterms:available>start=2007-11-28T00:00:00.000Z; end=3000-01-01T00:00:00.000Z; scheme=W3C-DTF</dcterms:available>
+    <dc:relation.AgeRating>16</dc:relation.AgeRating>
+    <dc:relation.Guidance>WARNING This clip features adult themes</dc:relation.Guidance>
+    <dc:relation.Duration>1:35</dc:relation.Duration>
+    <dc:relation.SeriesNumber>1</dc:relation.SeriesNumber>
+    <dc:relation.EpisodeNumber>5</dc:relation.EpisodeNumber>
+  </entry>
+  <entry xmlns:dcterms="http://purl.org/dc/terms">
+    <id>tag:pmlsc.channel4.com,2009:clip/TCGS_CLIP_0000002435</id>
+    <title type="text">Rantzen's Love Bitch</title>
+    <summary type="html">What would you be prepared to do for a luxury penthouse flat?</summary>
+    <updated>2012-05-18T09:53:07.387Z</updated>
+    <link href="http://pmlsc.channel4.com/pmlsd/green-wing/video/series-1/episode-4/rantzens-love-bitch.atom" rel="self" type="application/atom+xml" />
+    <link href="http://www.channel4.com/programmes/green-wing/video/series-1/episode-4/rantzens-love-bitch" rel="alternate" type="text/html" />
+    <link href="http://pmlsc.channel4.com/pmlsd/green-wing/episode-guide/series-1/episode-4.atom" rel="related" type="application/atom+xml" title="Episode Guide" />
+    <media:group>
+      <media:player url="http://www.channel4.com/programmes/green-wing/video/series-1/episode-4/rantzens-love-bitch" />
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/green-wing/series-1/episode-4/rantzens-love-bitch/green-wing-s1e4-rantzens-love-bitch_200x113.jpg" height="113" width="200" />
+      <media:rating>adult</media:rating>
+      <media:copyright url="http://cache.channel4.com/terms_and_conditions.html">Terms and Conditions</media:copyright>
+      <media:restriction relationship="allow" type="country">uk,ie</media:restriction>
+      <media:rights status="official" />
+    </media:group>
+    <dcterms:available>start=2007-11-28T00:00:00.000Z; end=3000-01-01T00:00:00.000Z; scheme=W3C-DTF</dcterms:available>
+    <dc:relation.AgeRating>16</dc:relation.AgeRating>
+    <dc:relation.Guidance>WARNING This clip contains strong language</dc:relation.Guidance>
+    <dc:relation.Duration>1:02</dc:relation.Duration>
+    <dc:relation.SeriesNumber>1</dc:relation.SeriesNumber>
+    <dc:relation.EpisodeNumber>4</dc:relation.EpisodeNumber>
+  </entry>
+  <entry xmlns:dcterms="http://purl.org/dc/terms">
+    <id>tag:pmlsc.channel4.com,2009:clip/TCGS_CLIP_0000002436</id>
+    <title type="text">Crisp Fivers</title>
+    <summary type="html">Boyce and Martin find an alternative use for an X-ray machine</summary>
+    <updated>2012-05-18T09:53:07.388Z</updated>
+    <link href="http://pmlsc.channel4.com/pmlsd/green-wing/video/series-1/episode-4/crisp-fivers.atom" rel="self" type="application/atom+xml" />
+    <link href="http://www.channel4.com/programmes/green-wing/video/series-1/episode-4/crisp-fivers" rel="alternate" type="text/html" />
+    <link href="http://pmlsc.channel4.com/pmlsd/green-wing/episode-guide/series-1/episode-4.atom" rel="related" type="application/atom+xml" title="Episode Guide" />
+    <media:group>
+      <media:player url="http://www.channel4.com/programmes/green-wing/video/series-1/episode-4/crisp-fivers" />
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/green-wing/series-1/episode-4/crisp-fivers/green-wing-s1e4-crisp-fivers_200x113.jpg" height="113" width="200" />
+      <media:rating>nonadult</media:rating>
+      <media:copyright url="http://cache.channel4.com/terms_and_conditions.html">Terms and Conditions</media:copyright>
+      <media:restriction relationship="allow" type="country">uk,ie</media:restriction>
+      <media:rights status="official" />
+    </media:group>
+    <dcterms:available>start=2007-11-28T00:00:00.000Z; end=3000-01-01T00:00:00.000Z; scheme=W3C-DTF</dcterms:available>
+    <dc:relation.AgeRating>0</dc:relation.AgeRating>
+    <dc:relation.Duration>1:56</dc:relation.Duration>
+    <dc:relation.SeriesNumber>1</dc:relation.SeriesNumber>
+    <dc:relation.EpisodeNumber>4</dc:relation.EpisodeNumber>
+  </entry>
+  <entry xmlns:dcterms="http://purl.org/dc/terms">
+    <id>tag:pmlsc.channel4.com,2009:clip/TCGS_CLIP_0000002432</id>
+    <title type="text">Take a Seat</title>
+    <summary type="html">The staff play musical chairs outside Joanna's office</summary>
+    <updated>2012-05-18T09:53:07.388Z</updated>
+    <link href="http://pmlsc.channel4.com/pmlsd/green-wing/video/series-1/episode-3/take-a-seat.atom" rel="self" type="application/atom+xml" />
+    <link href="http://www.channel4.com/programmes/green-wing/video/series-1/episode-3/take-a-seat" rel="alternate" type="text/html" />
+    <link href="http://pmlsc.channel4.com/pmlsd/green-wing/episode-guide/series-1/episode-3.atom" rel="related" type="application/atom+xml" title="Episode Guide" />
+    <media:group>
+      <media:player url="http://www.channel4.com/programmes/green-wing/video/series-1/episode-3/take-a-seat" />
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/green-wing/series-1/episode-3/take-a-seat/green-wing-s1e3-take-a-seat_200x113.jpg" height="113" width="200" />
+      <media:rating>nonadult</media:rating>
+      <media:copyright url="http://cache.channel4.com/terms_and_conditions.html">Terms and Conditions</media:copyright>
+      <media:restriction relationship="allow" type="country">uk,ie</media:restriction>
+      <media:rights status="official" />
+    </media:group>
+    <dcterms:available>start=2007-11-28T00:00:00.000Z; end=3000-01-01T00:00:00.000Z; scheme=W3C-DTF</dcterms:available>
+    <dc:relation.AgeRating>0</dc:relation.AgeRating>
+    <dc:relation.Duration>0:48</dc:relation.Duration>
+    <dc:relation.SeriesNumber>1</dc:relation.SeriesNumber>
+    <dc:relation.EpisodeNumber>3</dc:relation.EpisodeNumber>
+  </entry>
+  <entry xmlns:dcterms="http://purl.org/dc/terms">
+    <id>tag:pmlsc.channel4.com,2009:clip/TCGS_CLIP_0000002433</id>
+    <title type="text">Sharp Response</title>
+    <summary type="html">Never wind someone up when they're holding a scalpel...</summary>
+    <updated>2012-05-18T09:53:07.389Z</updated>
+    <link href="http://pmlsc.channel4.com/pmlsd/green-wing/video/series-1/episode-3/sharp-response.atom" rel="self" type="application/atom+xml" />
+    <link href="http://www.channel4.com/programmes/green-wing/video/series-1/episode-3/sharp-response" rel="alternate" type="text/html" />
+    <link href="http://pmlsc.channel4.com/pmlsd/green-wing/episode-guide/series-1/episode-3.atom" rel="related" type="application/atom+xml" title="Episode Guide" />
+    <media:group>
+      <media:player url="http://www.channel4.com/programmes/green-wing/video/series-1/episode-3/sharp-response" />
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/green-wing/series-1/episode-3/sharp-response/green-wing-s1e3-sharp-response_200x113.jpg" height="113" width="200" />
+      <media:rating>nonadult</media:rating>
+      <media:copyright url="http://cache.channel4.com/terms_and_conditions.html">Terms and Conditions</media:copyright>
+      <media:restriction relationship="allow" type="country">uk,ie</media:restriction>
+      <media:rights status="official" />
+    </media:group>
+    <dcterms:available>start=2007-11-28T00:00:00.000Z; end=3000-01-01T00:00:00.000Z; scheme=W3C-DTF</dcterms:available>
+    <dc:relation.AgeRating>0</dc:relation.AgeRating>
+    <dc:relation.Duration>1:10</dc:relation.Duration>
+    <dc:relation.SeriesNumber>1</dc:relation.SeriesNumber>
+    <dc:relation.EpisodeNumber>3</dc:relation.EpisodeNumber>
+  </entry>
+  <entry xmlns:dcterms="http://purl.org/dc/terms">
+    <id>tag:pmlsc.channel4.com,2009:clip/TCGS_CLIP_0000002434</id>
+    <title type="text">Riverdance</title>
+    <summary type="html">Dr Alan Stratham demonstrates his unique musical talent...</summary>
+    <updated>2012-05-18T09:53:07.389Z</updated>
+    <link href="http://pmlsc.channel4.com/pmlsd/green-wing/video/series-1/episode-3/riverdance.atom" rel="self" type="application/atom+xml" />
+    <link href="http://www.channel4.com/programmes/green-wing/video/series-1/episode-3/riverdance" rel="alternate" type="text/html" />
+    <link href="http://pmlsc.channel4.com/pmlsd/green-wing/episode-guide/series-1/episode-3.atom" rel="related" type="application/atom+xml" title="Episode Guide" />
+    <media:group>
+      <media:player url="http://www.channel4.com/programmes/green-wing/video/series-1/episode-3/riverdance" />
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/green-wing/series-1/episode-3/riverdance/green-wing-s1e3-riverdance_200x113.jpg" height="113" width="200" />
+      <media:rating>nonadult</media:rating>
+      <media:copyright url="http://cache.channel4.com/terms_and_conditions.html">Terms and Conditions</media:copyright>
+      <media:restriction relationship="allow" type="country">uk,ie</media:restriction>
+      <media:rights status="official" />
+    </media:group>
+    <dcterms:available>start=2007-11-28T00:00:00.000Z; end=3000-01-01T00:00:00.000Z; scheme=W3C-DTF</dcterms:available>
+    <dc:relation.AgeRating>0</dc:relation.AgeRating>
+    <dc:relation.Duration>1:01</dc:relation.Duration>
+    <dc:relation.SeriesNumber>1</dc:relation.SeriesNumber>
+    <dc:relation.EpisodeNumber>3</dc:relation.EpisodeNumber>
+  </entry>
+  <entry xmlns:dcterms="http://purl.org/dc/terms">
+    <id>tag:pmlsc.channel4.com,2009:clip/TCGS_CLIP_0000002430</id>
+    <title type="text">Dear Cleaners</title>
+    <summary type="html">Will the cleaners take Martin's note as some sort of sexual advance?</summary>
+    <updated>2012-05-18T09:53:07.390Z</updated>
+    <link href="http://pmlsc.channel4.com/pmlsd/green-wing/video/series-1/episode-2/dear-cleaners.atom" rel="self" type="application/atom+xml" />
+    <link href="http://www.channel4.com/programmes/green-wing/video/series-1/episode-2/dear-cleaners" rel="alternate" type="text/html" />
+    <link href="http://pmlsc.channel4.com/pmlsd/green-wing/episode-guide/series-1/episode-2.atom" rel="related" type="application/atom+xml" title="Episode Guide" />
+    <media:group>
+      <media:player url="http://www.channel4.com/programmes/green-wing/video/series-1/episode-2/dear-cleaners" />
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/green-wing/series-1/episode-2/dear-cleaners/green-wing-s1e2-dear-cleaners_200x113.jpg" height="113" width="200" />
+      <media:rating>adult</media:rating>
+      <media:copyright url="http://cache.channel4.com/terms_and_conditions.html">Terms and Conditions</media:copyright>
+      <media:restriction relationship="allow" type="country">uk,ie</media:restriction>
+      <media:rights status="official" />
+    </media:group>
+    <dcterms:available>start=2007-11-28T00:00:00.000Z; end=3000-01-01T00:00:00.000Z; scheme=W3C-DTF</dcterms:available>
+    <dc:relation.AgeRating>16</dc:relation.AgeRating>
+    <dc:relation.Guidance>WARNING This clip features adult themes</dc:relation.Guidance>
+    <dc:relation.Duration>0:56</dc:relation.Duration>
+    <dc:relation.SeriesNumber>1</dc:relation.SeriesNumber>
+    <dc:relation.EpisodeNumber>2</dc:relation.EpisodeNumber>
+  </entry>
+</feed>

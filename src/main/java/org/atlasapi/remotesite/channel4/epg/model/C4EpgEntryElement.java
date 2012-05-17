@@ -6,7 +6,6 @@ import nu.xom.Element;
 import nu.xom.Elements;
 import nu.xom.Node;
 
-import org.atlasapi.remotesite.channel4.C4RelatedEntry;
 import org.joda.time.DateTime;
 import org.joda.time.Duration;
 
@@ -75,15 +74,6 @@ public class C4EpgEntryElement extends Element {
 
     public String summary() {
         return getAtomElementValue("summary");
-    }
-    
-    public C4RelatedEntry relatedEntry() {
-        Elements elements = getChildElements("relation.RelatedEntryId",  DC_NS);
-        if (elements.size() == 0) {
-            return null;
-        }
-        Element element = elements.get(0);
-        return new C4RelatedEntry(element.getAttributeValue("feedId"), element.getValue());
     }
 
     public List<TypedLink> links() {

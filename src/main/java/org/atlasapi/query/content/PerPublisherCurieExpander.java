@@ -5,7 +5,6 @@ import java.util.regex.Pattern;
 
 import org.atlasapi.remotesite.bbc.BbcIplayerHightlightsAdapter;
 import org.atlasapi.remotesite.bbc.BbcUriCanonicaliser;
-import org.atlasapi.remotesite.channel4.C4HighlightsAdapter;
 import org.atlasapi.remotesite.itv.ItvMercuryBrandAdapter;
 import org.atlasapi.remotesite.youtube.YoutubeUriCanonicaliser;
 
@@ -48,10 +47,6 @@ public class PerPublisherCurieExpander implements CurieExpander {
 				if (uri.hasValue()) {
 					return uri.requireValue();
 				}
-				uri = C4HighlightsAdapter.expand(curie);
-				if (uri.hasValue()) {
-					return uri.requireValue();
-				}
 				String withoutPrefix = curie.substring(curie.indexOf(":") + 1);
 				if (withoutPrefix.contains(separator)) {
 					String[] components = withoutPrefix.split(separator);
@@ -83,10 +78,6 @@ public class PerPublisherCurieExpander implements CurieExpander {
 			public String compact(String url) {
 				
 				Maybe<String> curie = compactC4Uri(url);
-				if (curie.hasValue()) {
-					return curie.requireValue();
-				}
-				curie = C4HighlightsAdapter.compact(url);
 				if (curie.hasValue()) {
 					return curie.requireValue();
 				}
