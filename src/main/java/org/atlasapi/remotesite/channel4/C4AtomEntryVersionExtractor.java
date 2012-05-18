@@ -13,21 +13,27 @@ import org.atlasapi.media.entity.Restriction;
 import org.atlasapi.media.entity.Version;
 import org.atlasapi.remotesite.ContentExtractor;
 import org.jdom.Element;
+import org.joda.time.DateTime;
 import org.joda.time.Duration;
 
 import com.metabroadcast.common.intl.Countries;
 import com.metabroadcast.common.intl.Country;
+import com.metabroadcast.common.time.Clock;
 import com.sun.syndication.feed.atom.Entry;
 
 public class C4AtomEntryVersionExtractor implements ContentExtractor<Entry, Version> {
     
-    public static final String DC_AGE_RATING = "dc:relation.AgeRating";
-    public static final String DC_GUIDANCE = "dc:relation.Guidance";
-    public static final String DC_START_TIME = "dc:relation.TXStartTime";
-    public static final String DC_TX_CHANNEL = "dc:relation.TXChannel";
+    private static final String DC_AGE_RATING = "dc:relation.AgeRating";
+    private static final String DC_GUIDANCE = "dc:relation.Guidance";
     private static final Pattern CLIP_ID_PATTERN = Pattern.compile("tag:www\\.channel4\\.com,\\d+:clip\\/(.+)");
     private static final String EMBED_CODE = "<object id='flashObj' width='480' height='290' classid='clsid:D27CDB6E-AE6D-11cf-96B8-444553540000' codebase='http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,47,0'><param name='movie' value='http://c.brightcove.com/services/viewer/federated_f9/86700592001?isVid=1&amp;isUI=1&amp;publisherID=1213940598' /><param name='bgcolor' value='#000000' /><param name='flashVars' value='videoId=%VIDEOID%&amp;playerID=86700592001&amp;domain=embed&amp;' /><param name='base' value='http://admin.brightcove.com' /><param name='seamlesstabbing' value='false' /><param name='allowFullScreen' value='true' /><param name='swLiveConnect' value='true' /><param name='allowScriptAccess' value='always' /><embed src='http://c.brightcove.com/services/viewer/federated_f9/86700592001?isVid=1&amp;isUI=1&amp;publisherID=1213940598' bgcolor='#000000' flashVars='videoId=%VIDEOID%&amp;playerID=86700592001&amp;domain=embed&amp;' base='http://admin.brightcove.com' name='flashObj' width='480' height='290' seamlesstabbing='false' type='application/x-shockwave-flash' allowFullScreen='true' swLiveConnect='true' allowScriptAccess='always' pluginspage='http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash'></embed></object>";
+    
+    private final Clock clock;
 
+    public C4AtomEntryVersionExtractor(Clock clock) {
+        this.clock = clock;
+    }
+    
     @Override
     public Version extract(Entry entry) {
         Element mediaGroup = C4AtomApi.mediaGroup(entry);
@@ -48,7 +54,10 @@ public class C4AtomEntryVersionExtractor implements ContentExtractor<Entry, Vers
     }
     
     private Version version(String uri, String locationId, Map<String, String> lookup, Set<Country> availableCountries) {
+        DateTime lastUpdated = clock.now();
+
         Version version = new Version();
+        version.setLastUpdated(lastUpdated);
         Duration duration = C4AtomApi.durationFrom(lookup);
         
         if (duration != null) {
@@ -58,14 +67,24 @@ public class C4AtomEntryVersionExtractor implements ContentExtractor<Entry, Vers
         Integer ageRating = lookup.get(DC_AGE_RATING) != null ? Integer.parseInt(lookup.get(DC_AGE_RATING)) : null;
         String guidance = lookup.get(DC_GUIDANCE);
 
+        Restriction restriction = null;
         if (ageRating != null && ageRating > 0 && guidance != null) {
-            version.setRestriction(Restriction.from(ageRating, guidance));
+            restriction = Restriction.from(ageRating, guidance);
         } else {
-            version.setRestriction(Restriction.from(guidance));
+            restriction = Restriction.from(guidance);
+        }
+        if (restriction != null) {
+            restriction.setLastUpdated(lastUpdated);
+            version.setRestriction(restriction);
         }
         
         Encoding encoding = new Encoding();
         Location location = C4AtomApi.locationFrom(uri, locationId, lookup, availableCountries, null);
+        location.setLastUpdated(lastUpdated);
+        if (location.getPolicy() != null) {
+            location.getPolicy().setLastUpdated(lastUpdated);
+        }
+        
         encoding.addAvailableAt(location);
         
         Matcher matcher = CLIP_ID_PATTERN.matcher(locationId);
