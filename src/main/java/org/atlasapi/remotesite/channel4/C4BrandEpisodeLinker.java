@@ -21,9 +21,9 @@ public class C4BrandEpisodeLinker {
 
         for (SeriesAndEpisodes seriesAndEpisodes : episodeGuideContent) {
             for (Episode episode : seriesAndEpisodes.getEpisodes()) {
-                Version version = episodeVersion(episode);
                 for (String alias : episode.getAliases()) {
                     for (Episode broadcastEpisode : indexedEpg.get(alias)) {
+                        Version version = episodeVersion(episode);
                         Broadcast broadcast = getOnlyBroadcast(broadcastEpisode);
                         addOrUpdateBroadcastInVersion(version, broadcast);
                     }
