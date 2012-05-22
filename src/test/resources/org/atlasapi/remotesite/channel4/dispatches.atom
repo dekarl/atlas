@@ -1,39 +1,58 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<feed xmlns="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xmlns:dc="http://purl.org/dc/elements/1.1/" xml:base="http://www.channel4.com">
-  <id>tag:www.channel4.com,2009:/programmes/dispatches</id>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xmlns:dc="http://purl.org/dc/elements/1.1/" xml:base="http://pmlsc.channel4.com">
+  <id>tag:pmlsc.channel4.com,2009:/programmes/dispatches</id>
   <title type="text">Dispatches</title>
   <subtitle type="html">Dispatches is Channel 4's award winning investigative current affairs programme</subtitle>
   <updated>2011-03-21T15:02:42.651Z</updated>
   <author>
     <name>Channel 4 Television</name>
   </author>
-  <logo imageSource="own">http://www.channel4.com/assets/programmes/images/dispatches/53d84f5a-3e5c-421a-951a-305feaf83c95_200x113.jpg</logo>
+  <logo imageSource="own">http://cache.channel4.com/assets/programmes/images/dispatches/269fad0c-5d29-4e75-aea4-6154974447ef_200x113.jpg</logo>
   <link href="http://www.channel4.com/programmes/dispatches" rel="alternate" type="text/html" />
-  <link href="http://www.channel4.com/pmlsd/dispatches.atom" rel="self" type="application/atom+xml" />
-  <link href="http://www.channel4.com/pmlsd/dispatches/episode-guide.atom" rel="related" type="application/atom+xml" title="Episode Guide" />
-  <link href="http://www.channel4.com/pmlsd/dispatches/4od.atom" rel="related" type="application/atom+xml" title="4oD" />
-  <link href="http://www.channel4.com/pmlsd/dispatches/video.atom" rel="related" type="application/atom+xml" title="Clips" />
-  <category term="http://www.channel4.com/pmlsd/tags/news-current-affairs-and-politics.atom" scheme="tag:www.channel4.com,2010:/category/primary" label="News, Current Affairs and Politics" />
+  <link href="http://pmlsc.channel4.com/pmlsd/dispatches.atom" rel="self" type="application/atom+xml" />
+  <link href="http://pmlsc.channel4.com/pmlsd/dispatches/episode-guide.atom" rel="related" type="application/atom+xml" title="Episode Guide" />
+  <link href="http://pmlsc.channel4.com/pmlsd/dispatches/4od.atom" rel="related" type="application/atom+xml" title="4oD" />
+  <link href="http://pmlsc.channel4.com/pmlsd/dispatches/video.atom" rel="related" type="application/atom+xml" title="Clips" />
+  <category term="http://pmlsc.channel4.com/pmlsd/tags/news-current-affairs-and-politics.atom" scheme="tag:www.channel4.com,2010:/category/primary" label="News, Current Affairs and Politics" />
   <dc:relation.BrandFlattened>true</dc:relation.BrandFlattened>
   <dc:relation.presentationBrand>C4</dc:relation.presentationBrand>
+  <dc:relation.platformClientVersion>1.0</dc:relation.platformClientVersion>
+  <generator version="1.27.2">PMLSD</generator>
   <entry>
-    <id>tag:www.channel4.com,2009:/programmes/dispatches/episode-guide/series-105/episode-1</id>
-    <title type="text">Britain's Sex Gangs</title>
-    <summary type="html">Research suggests that thousands of children are potentially being sexually exploited by street grooming gangs. This may only be the tip of the iceberg, as experts believe many crimes of this nature go unreported. 
+    <id>tag:pmlsc.channel4.com,2009:/programmes/dispatches/episode-guide/series-110/episode-1</id>
+    <title type="text">Beating the Recession - Cash vs Cards</title>
+    <summary type="html">Personal finance expert Harry Wallop investigates whether cutting up our credit cards and paying for everything in cash could leave us with more money in our pockets. 
 
-Journalist Tazeen Ahmad investigates street grooming and hears from community leaders who say enough is enough and demand action on the issue. She meets victims of grooming and their parents, whose lives have been torn apart. 
+Exclusive research for Channel 4 reveals how families are now realising the value of a 'return to cash', drawing out more from cash machines than at any time in the last five years. 
 
-She hears how girls as young as 12 have been targeted by these gangs and so terrorised and brainwashed that they keep their ordeal secret for years. 
+But that's not what the banks and credit card companies want us to do - so is the move towards a cashless society more about the banks' profits than the convenience of financially-stretched consumers?
 
-In a particularly shocking encounter she talks to two young men who explain in detail how grooming by gangs is perpetrated, why virgins are more highly prized and how the commerce of this type of brutal sexual exploitation unfolds.</summary>
-    <updated>2011-11-07T18:22:14.656Z</updated>
-    <link href="http://www.channel4.com/programmes/dispatches/episode-guide/series-105/episode-1" rel="alternate" type="text/html" />
-    <link href="http://www.channel4.com/programmes/dispatches/4od#3256728" rel="related" type="text/html" title="4oD" />
-    <link href="http://www.channel4.com/pmlsd/dispatches/episode-guide/series-105/episode-1.atom" rel="self" type="application/atom+xml" />
+Join the conversation about the programme on Twitter by using #CashVCards.</summary>
+    <updated>2012-05-18T12:21:56.512Z</updated>
+    <link href="http://www.channel4.com/programmes/dispatches/episode-guide/series-110/episode-1" rel="alternate" type="text/html" />
+    <link href="http://pmlsc.channel4.com/pmlsd/dispatches/episode-guide/series-110/episode-1.atom" rel="self" type="application/atom+xml" />
     <media:content>
-      <media:thumbnail url="http://www.channel4.com/assets/programmes/images/dispatches/series-105/episode-1/e502d652-e476-4db3-ba81-fd6ba8768c6f_200x113.jpg" height="113" width="200" imageSource="own" />
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/dispatches/series-110/episode-1/93444c2e-ddfb-4f93-adcd-c30df10555da_200x113.jpg" height="113" width="200" imageSource="own" />
     </media:content>
-    <dc:date.Next>2011-11-18T03:10:00.000Z</dc:date.Next>
+    <dc:date.Next>2012-05-21T19:00:00.000Z</dc:date.Next>
     <dc:relation.NextChannel>C4</dc:relation.NextChannel>
+  </entry>
+  <entry>
+    <id>tag:pmlsc.channel4.com,2009:/programmes/dispatches/episode-guide/series-109/episode-1</id>
+    <title type="text">Watching the Detectives</title>
+    <summary type="html">How safe are your secrets? Channel 4 Dispatches reveals how easy it is to buy our most personal and confidential information. 
+
+In a year-long undercover investigation, private detectives sell us access to health and criminal records, mobile phone bills and bank accounts. 
+
+The programme discovers the extent of the black market in personal data and reveals how supposedly secure databases are open to exploitation.</summary>
+    <updated>2012-05-14T15:52:04.261Z</updated>
+    <link href="http://www.channel4.com/programmes/dispatches/episode-guide/series-109/episode-1" rel="alternate" type="text/html" />
+    <link href="http://www.channel4.com/programmes/dispatches/4od#3346306" rel="related" type="text/html" title="4oD" />
+    <link href="http://pmlsc.channel4.com/pmlsd/dispatches/episode-guide/series-109/episode-1.atom" rel="self" type="application/atom+xml" />
+    <media:content>
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/dispatches/series-109/episode-1/509e9600-1762-4fd3-891d-6e58d0efe3de_200x113.jpg" height="113" width="200" imageSource="own" />
+    </media:content>
+    <dc:date.Last>2012-05-14T19:00:00.000Z</dc:date.Last>
+    <dc:relation.LastChannel>C4</dc:relation.LastChannel>
   </entry>
 </feed>

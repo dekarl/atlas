@@ -73,7 +73,6 @@ public class C4BrandBasicDetailsExtractorTest extends TestCase {
 		assertThat(brand.getImage(), is("http://www.channel4.com/assets/programmes/images/ramsays-kitchen-nightmares/ramsays-kitchen-nightmares_625x352.jpg"));
 		assertThat(brand.getGenres(), hasItems(
 		        "http://www.channel4.com/programmes/tags/food",
-		        "http://www.channel4.com/programmes/tags/lifestyle",
 		        AtlasGenre.LIFESTYLE.getUri()
 		));
 	}

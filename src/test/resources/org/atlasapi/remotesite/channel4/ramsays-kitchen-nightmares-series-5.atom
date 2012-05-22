@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xmlns:dc="http://purl.org/dc/elements/1.1/" xml:base="http://pmlsc.channel4.com">
+  <id>tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/episode-guide/series-5</id>
+  <title type="text">Series 5 - Ramsay's Kitchen Nightmares</title>
+  <subtitle type="html">Gordon Ramsay serves out tough love to ailing eateries.</subtitle>
+  <updated>2012-04-27T12:21:37.716Z</updated>
+  <author>
+    <name>Channel 4 Television</name>
+  </author>
+  <logo imageSource="own">http://cache.channel4.com/assets/programmes/images/ramsays-kitchen-nightmares/series-5/ab8e7e6d-5dde-40b5-b369-f9b8e38bcab5_200x113.jpg</logo>
+  <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/episode-guide/series-5" rel="alternate" type="text/html" />
+  <link href="http://pmlsc.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide.atom" rel="up" type="application/atom+xml" />
+  <link href="http://pmlsc.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide/series-5.atom" rel="self" type="application/atom+xml" />
+  <dc:relation.platformClientVersion>1.0</dc:relation.platformClientVersion>
+  <generator version="1.27.2">PMLSD</generator>
+  <entry>
+    <id>tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/episode-guide/series-5/episode-1</id>
+    <title type="text">Ramsay's Kitchen Nightmares</title>
+    <summary type="html">Gordon revisits the Glass House Restaurant in Ambleside where some unexpected departures have taken place. So who is in charge of the kitchen now and how are they faring?</summary>
+    <updated>2012-04-27T12:21:06.671Z</updated>
+    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/episode-guide/series-5/episode-1" rel="alternate" type="text/html" />
+    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#2920400" rel="alternate" type="text/html" title="4oD" />
+    <link href="http://pmlsc.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide/series-5/episode-1.atom" rel="self" type="application/atom+xml" />
+    <media:content>
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/ramsays-kitchen-nightmares/series-5/ab8e7e6d-5dde-40b5-b369-f9b8e38bcab5_200x113.jpg" height="113" width="200" imageSource="fallback" />
+    </media:content>
+    <dc:relation.SeriesNumber>5</dc:relation.SeriesNumber>
+    <dc:relation.EpisodeNumber>1</dc:relation.EpisodeNumber>
+    <dc:relation.programmeId>38984/001</dc:relation.programmeId>
+  </entry>
+  <entry>
+    <id>tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/episode-guide/series-5/episode-2</id>
+    <title type="text">Ramsay's Kitchen Nightmares</title>
+    <summary type="html">Ramsay revisits the Walnut Tree Inn, set in beautiful Welsh countryside. Last time it was struggling to survive and Gordon gave the owner, Francesco, his best advice, but did he take it?</summary>
+    <updated>2012-04-27T12:21:06.724Z</updated>
+    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/episode-guide/series-5/episode-2" rel="alternate" type="text/html" />
+    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#2920399" rel="alternate" type="text/html" title="4oD" />
+    <link href="http://pmlsc.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide/series-5/episode-2.atom" rel="self" type="application/atom+xml" />
+    <media:content>
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/ramsays-kitchen-nightmares/series-5/ab8e7e6d-5dde-40b5-b369-f9b8e38bcab5_200x113.jpg" height="113" width="200" imageSource="fallback" />
+    </media:content>
+    <dc:relation.SeriesNumber>5</dc:relation.SeriesNumber>
+    <dc:relation.EpisodeNumber>2</dc:relation.EpisodeNumber>
+    <dc:relation.programmeId>38984/002</dc:relation.programmeId>
+  </entry>
+  <entry>
+    <id>tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/episode-guide/series-5/episode-3</id>
+    <title type="text">Ramsay's Kitchen Nightmares</title>
+    <summary type="html">Gordon revisits Moore Place to see if his fast-track guide to restaurant success helped Nick and Richard transform their failing ex-Berni Inn.</summary>
+    <updated>2012-04-27T12:21:06.796Z</updated>
+    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/episode-guide/series-5/episode-3" rel="alternate" type="text/html" />
+    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#2920398" rel="alternate" type="text/html" title="4oD" />
+    <link href="http://pmlsc.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide/series-5/episode-3.atom" rel="self" type="application/atom+xml" />
+    <media:content>
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/ramsays-kitchen-nightmares/series-5/ab8e7e6d-5dde-40b5-b369-f9b8e38bcab5_200x113.jpg" height="113" width="200" imageSource="fallback" />
+    </media:content>
+    <dc:relation.SeriesNumber>5</dc:relation.SeriesNumber>
+    <dc:relation.EpisodeNumber>3</dc:relation.EpisodeNumber>
+    <dc:relation.programmeId>38984/003</dc:relation.programmeId>
+  </entry>
+  <entry>
+    <id>tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/episode-guide/series-5/episode-4</id>
+    <title type="text">Ramsay's Kitchen Nightmares</title>
+    <summary type="html">Gordon revisits Bonapartes in Silsden to see if his potent recipe of passion, perfectionism and inspirational leadership continues.</summary>
+    <updated>2012-04-27T12:21:06.593Z</updated>
+    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/episode-guide/series-5/episode-4" rel="alternate" type="text/html" />
+    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#2920397" rel="alternate" type="text/html" title="4oD" />
+    <link href="http://pmlsc.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide/series-5/episode-4.atom" rel="self" type="application/atom+xml" />
+    <media:content>
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/ramsays-kitchen-nightmares/series-5/ab8e7e6d-5dde-40b5-b369-f9b8e38bcab5_200x113.jpg" height="113" width="200" imageSource="fallback" />
+    </media:content>
+    <dc:relation.SeriesNumber>5</dc:relation.SeriesNumber>
+    <dc:relation.EpisodeNumber>4</dc:relation.EpisodeNumber>
+    <dc:relation.programmeId>38984/004</dc:relation.programmeId>
+  </entry>
+</feed>

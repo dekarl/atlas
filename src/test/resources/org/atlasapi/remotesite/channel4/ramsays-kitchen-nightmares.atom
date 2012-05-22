@@ -1,19 +1,20 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xmlns:dc="http://purl.org/dc/elements/1.1/" xml:base="http://www.channel4.com">
-  <id>tag:www.channel4.com,2009:/programmes/ramsays-kitchen-nightmares</id>
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xmlns:dc="http://purl.org/dc/elements/1.1/" xml:base="http://pmlsc.channel4.com">
+  <id>tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares</id>
   <title type="text">Ramsay's Kitchen Nightmares</title>
   <subtitle type="html">Gordon Ramsay attempts to transform struggling restaurants with his own menu of extremely frank and forthright advice. The heat is on - and this chef's not mincing any words...</subtitle>
-  <updated>2010-11-17T17:35:38.468Z</updated>
+  <updated>2011-08-22T17:06:06.740Z</updated>
   <author>
     <name>Channel 4 Television</name>
   </author>
-  <logo imageSource="own">http://www.channel4.com/assets/programmes/images/ramsays-kitchen-nightmares/ramsays-kitchen-nightmares_200x113.jpg</logo>
-  <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares" rel="alternate" type="text/html"/>
-  <link href="http://api.channel4.com/pmlsd/ramsays-kitchen-nightmares.atom?apikey=sxwmsq9k9mtkdh9ff6vxuyjs" rel="self" type="application/atom+xml"/>
-  <link href="http://api.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide.atom?apikey=sxwmsq9k9mtkdh9ff6vxuyjs" rel="related" type="application/atom+xml" title="Episode Guide"/>
-  <link href="http://api.channel4.com/pmlsd/ramsays-kitchen-nightmares/4od.atom?apikey=sxwmsq9k9mtkdh9ff6vxuyjs" rel="related" type="application/atom+xml" title="4oD"/>
-  <category term="http://www.channel4.com/pmlsd/tags/food.atom" scheme="tag:www.channel4.com,2010:/category/primary" label="Food"/>
-  <category term="http://www.channel4.com/pmlsd/tags/lifestyle.atom" scheme="tag:www.channel4.com,2010:/category/secondary" label="Lifestyle"/>
-  <dc:relation.presentationBrand>C4</dc:relation.presentationBrand>
+  <logo imageSource="own">http://cache.channel4.com/assets/programmes/images/ramsays-kitchen-nightmares/ramsays-kitchen-nightmares_200x113.jpg</logo>
+  <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares" rel="alternate" type="text/html" />
+  <link href="http://pmlsc.channel4.com/pmlsd/ramsays-kitchen-nightmares.atom" rel="self" type="application/atom+xml" />
+  <link href="http://pmlsc.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide.atom" rel="related" type="application/atom+xml" title="Episode Guide" />
+  <link href="http://pmlsc.channel4.com/pmlsd/ramsays-kitchen-nightmares/4od.atom" rel="related" type="application/atom+xml" title="4oD" />
+  <category term="http://pmlsc.channel4.com/pmlsd/tags/food.atom" scheme="tag:www.channel4.com,2010:/category/primary" label="Food" />
   <dc:relation.BrandFlattened>false</dc:relation.BrandFlattened>
+  <dc:relation.presentationBrand>C4</dc:relation.presentationBrand>
+  <dc:relation.platformClientVersion>1.0</dc:relation.platformClientVersion>
+  <generator version="1.27.2">PMLSD</generator>
 </feed>

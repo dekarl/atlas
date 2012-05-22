@@ -1,746 +1,894 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom" xml:base="http://www.channel4.com">
-  <id>tag:www.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/4od</id>
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms" xml:base="http://pmlsc.channel4.com">
+  <id>tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/4od</id>
   <title type="text">Ramsay's Kitchen Nightmares on 4oD</title>
-  <updated>2010-11-08T17:57:59.924Z</updated>
+  <updated>2012-05-19T07:48:32.895Z</updated>
   <author>
     <name>Channel 4 Television</name>
   </author>
-  <logo>http://www.channel4.com/assets/programmes/images/ramsays-kitchen-nightmares/ramsays-kitchen-nightmares_200x113.jpg</logo>
-  <link href="http://api.channel4.com/pmlsd/ramsays-kitchen-nightmares.atom?apikey=API_KEY" rel="up" type="application/atom+xml"/>
-  <link href="http://api.channel4.com/pmlsd/ramsays-kitchen-nightmares/4od.atom?apikey=API_KEY" rel="self" type="application/atom+xml"/>
-  <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od" rel="alternate" type="text/html"/>
-  <entry xmlns:media="http://search.yahoo.com/mrss/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms">
-    <id>tag:www.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/4od%232922045</id>
+  <logo imageSource="own">http://cache.channel4.com/assets/programmes/images/ramsays-kitchen-nightmares/ramsays-kitchen-nightmares_200x113.jpg</logo>
+  <link href="http://pmlsc.channel4.com/pmlsd/ramsays-kitchen-nightmares.atom" rel="up" type="application/atom+xml" />
+  <link href="http://pmlsc.channel4.com/pmlsd/ramsays-kitchen-nightmares/4od.atom" rel="self" type="application/atom+xml" />
+  <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od" rel="alternate" type="text/html" />
+  <dc:relation.platformClientVersion>1.0</dc:relation.platformClientVersion>
+  <dc:relation.BrandFlattened>false</dc:relation.BrandFlattened>
+  <dc:relation.presentationBrand>C4</dc:relation.presentationBrand>
+  <generator version="1.27.2">PMLSD</generator>
+  <entry>
+    <id>tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/4od%232922045</id>
     <title type="text">Ramsay's Kitchen Nightmares</title>
-    <updated>2010-11-03T05:57:50.175Z</updated>
-    <summary type="html">Gordon Ramsay visits Bonapartes in Silsden, West Yorkshire. The head chef Tim specialises in 'fine dining', but Ramsay discovers the true skills of the wannabe TV chef when he tastes his food and vomits in the gutter.</summary>
-    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#2922045" rel="alternate" type="text/html"/>
-    <link href="http://api.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide/series-1/episode-1.atom?apikey=API_KEY" rel="related" type="application/atom+xml"/>
+    <summary type="text">Gordon Ramsay visits Bonapartes in Silsden, West Yorkshire. The head chef Tim specialises in 'fine dining', but Ramsay discovers the true skills of the wannabe TV chef when he tastes his food and vomits in the gutter.</summary>
+    <updated>2011-12-06T15:55:21.005Z</updated>
+    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#2922045" rel="alternate" type="text/html" />
+    <link href="http://pmlsc.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide/series-1/episode-1.atom" rel="related" type="application/atom+xml" />
     <media:group>
-      <media:player url="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#2922045"/>
-      <media:thumbnail url="http://www.channel4.com/assets/programmes/images/ramsays-kitchen-nightmares/series-1/ramsays-kitchen-nightmares-s1-20090617160732_200x113.jpg" height="113" width="200"/>
-      <media:rating>nonadult</media:rating>
-      <media:copyright url="http://www.channel4.com/terms_and_conditions.html">Terms and Conditions</media:copyright>
-      <media:restriction relationship="allow" type="country">uk ie</media:restriction>
-      <media:rights status="official"/>
+      <media:player url="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#2922045" />
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/ramsays-kitchen-nightmares/series-1/ramsays-kitchen-nightmares-s1-20090617160732_200x113.jpg" height="113" width="200" imageSource="fallback" />
+      <media:rating>adult</media:rating>
+      <media:copyright url="http://cache.channel4.com/terms_and_conditions.html">Terms and Conditions</media:copyright>
+      <media:restriction relationship="allow" type="country">GG,GB,JE,IM,IE</media:restriction>
+      <media:rights status="official" />
     </media:group>
-    <dcterms:available>start=2009-07-01T22:00:00.000Z; end=2010-12-31T00:00:00.000Z; scheme=W3C-DTF</dcterms:available>
+    <dc:relation.BrandTitle>Ramsay's Kitchen Nightmares</dc:relation.BrandTitle>
+    <dcterms:available>start=2009-07-01T22:00:00.000Z; end=2012-12-31T00:00:00.000Z; scheme=W3C-DTF</dcterms:available>
     <dc:relation.SeriesNumber>1</dc:relation.SeriesNumber>
     <dc:relation.EpisodeNumber>1</dc:relation.EpisodeNumber>
+    <dc:relation.RelatedEntryId feedId="tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/episode-guide/series-1">tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/episode-guide/series-1/episode-1</dc:relation.RelatedEntryId>
     <dc:relation.AgeRating>16</dc:relation.AgeRating>
     <dc:relation.Guidance>Strong language throughout</dc:relation.Guidance>
     <dc:relation.Subtitles>true</dc:relation.Subtitles>
     <dc:relation.AudioDescription>false</dc:relation.AudioDescription>
     <dc:relation.Duration>48:55</dc:relation.Duration>
+    <dc:relation.LoginRequired>true</dc:relation.LoginRequired>
+    <dc:relation.requestType>ARCHIVE</dc:relation.requestType>
+    <dc:relation.programmeId>36423/001</dc:relation.programmeId>
   </entry>
-  <entry xmlns:media="http://search.yahoo.com/mrss/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms">
-    <id>tag:www.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/4od%232922046</id>
+  <entry>
+    <id>tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/4od%232922046</id>
     <title type="text">Ramsay's Kitchen Nightmares</title>
-    <updated>2010-11-03T05:57:50.175Z</updated>
-    <summary type="html">The venue is The Glass House in Ambleside, where Ramsay finds owner Neil Farrell close to tears as another Saturday night turns into a nightmare.</summary>
-    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#2922046" rel="alternate" type="text/html"/>
-    <link href="http://api.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide/series-1/episode-2.atom?apikey=API_KEY" rel="related" type="application/atom+xml"/>
+    <summary type="text">The venue is The Glass House in Ambleside, where Ramsay finds owner Neil Farrell close to tears as another Saturday night turns into a nightmare.</summary>
+    <updated>2011-12-06T15:55:21.116Z</updated>
+    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#2922046" rel="alternate" type="text/html" />
+    <link href="http://pmlsc.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide/series-1/episode-2.atom" rel="related" type="application/atom+xml" />
     <media:group>
-      <media:player url="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#2922046"/>
-      <media:thumbnail url="http://www.channel4.com/assets/programmes/images/ramsays-kitchen-nightmares/series-1/ramsays-kitchen-nightmares-s1-20090617160732_200x113.jpg" height="113" width="200"/>
-      <media:rating>nonadult</media:rating>
-      <media:copyright url="http://www.channel4.com/terms_and_conditions.html">Terms and Conditions</media:copyright>
-      <media:restriction relationship="allow" type="country">uk ie</media:restriction>
-      <media:rights status="official"/>
+      <media:player url="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#2922046" />
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/ramsays-kitchen-nightmares/series-1/ramsays-kitchen-nightmares-s1-20090617160732_200x113.jpg" height="113" width="200" imageSource="fallback" />
+      <media:rating>adult</media:rating>
+      <media:copyright url="http://cache.channel4.com/terms_and_conditions.html">Terms and Conditions</media:copyright>
+      <media:restriction relationship="allow" type="country">GG,GB,JE,IM,IE</media:restriction>
+      <media:rights status="official" />
     </media:group>
-    <dcterms:available>start=2009-07-01T22:00:00.000Z; end=2010-12-31T00:00:00.000Z; scheme=W3C-DTF</dcterms:available>
+    <dc:relation.BrandTitle>Ramsay's Kitchen Nightmares</dc:relation.BrandTitle>
+    <dcterms:available>start=2009-07-01T22:00:00.000Z; end=2012-12-31T00:00:00.000Z; scheme=W3C-DTF</dcterms:available>
     <dc:relation.SeriesNumber>1</dc:relation.SeriesNumber>
     <dc:relation.EpisodeNumber>2</dc:relation.EpisodeNumber>
+    <dc:relation.RelatedEntryId feedId="tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/episode-guide/series-1">tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/episode-guide/series-1/episode-2</dc:relation.RelatedEntryId>
     <dc:relation.AgeRating>16</dc:relation.AgeRating>
     <dc:relation.Guidance>Strong language throughout</dc:relation.Guidance>
     <dc:relation.Subtitles>true</dc:relation.Subtitles>
     <dc:relation.AudioDescription>false</dc:relation.AudioDescription>
     <dc:relation.Duration>48:55</dc:relation.Duration>
+    <dc:relation.LoginRequired>true</dc:relation.LoginRequired>
+    <dc:relation.requestType>ARCHIVE</dc:relation.requestType>
+    <dc:relation.programmeId>36423/002</dc:relation.programmeId>
   </entry>
-  <entry xmlns:media="http://search.yahoo.com/mrss/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms">
-    <id>tag:www.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/4od%232922044</id>
+  <entry>
+    <id>tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/4od%232922044</id>
     <title type="text">Ramsay's Kitchen Nightmares</title>
-    <updated>2010-11-03T05:57:50.175Z</updated>
-    <summary type="html">Gordon Ramsay meets Francesco Mattioli, the owner of The Walnut Tree Inn in South Wales, who needs his help.</summary>
-    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#2922044" rel="alternate" type="text/html"/>
-    <link href="http://api.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide/series-1/episode-3.atom?apikey=API_KEY" rel="related" type="application/atom+xml"/>
+    <summary type="text">Gordon Ramsay meets Francesco Mattioli, the owner of The Walnut Tree Inn in South Wales, who needs his help.</summary>
+    <updated>2011-12-06T15:55:21.054Z</updated>
+    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#2922044" rel="alternate" type="text/html" />
+    <link href="http://pmlsc.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide/series-1/episode-3.atom" rel="related" type="application/atom+xml" />
     <media:group>
-      <media:player url="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#2922044"/>
-      <media:thumbnail url="http://www.channel4.com/assets/programmes/images/ramsays-kitchen-nightmares/series-1/ramsays-kitchen-nightmares-s1-20090617160732_200x113.jpg" height="113" width="200"/>
-      <media:rating>nonadult</media:rating>
-      <media:copyright url="http://www.channel4.com/terms_and_conditions.html">Terms and Conditions</media:copyright>
-      <media:restriction relationship="allow" type="country">uk ie</media:restriction>
-      <media:rights status="official"/>
+      <media:player url="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#2922044" />
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/ramsays-kitchen-nightmares/series-1/ramsays-kitchen-nightmares-s1-20090617160732_200x113.jpg" height="113" width="200" imageSource="fallback" />
+      <media:rating>adult</media:rating>
+      <media:copyright url="http://cache.channel4.com/terms_and_conditions.html">Terms and Conditions</media:copyright>
+      <media:restriction relationship="allow" type="country">GG,GB,JE,IM,IE</media:restriction>
+      <media:rights status="official" />
     </media:group>
-    <dcterms:available>start=2009-07-01T22:00:00.000Z; end=2010-12-31T00:00:00.000Z; scheme=W3C-DTF</dcterms:available>
+    <dc:relation.BrandTitle>Ramsay's Kitchen Nightmares</dc:relation.BrandTitle>
+    <dcterms:available>start=2009-07-01T22:00:00.000Z; end=2012-12-31T00:00:00.000Z; scheme=W3C-DTF</dcterms:available>
     <dc:relation.SeriesNumber>1</dc:relation.SeriesNumber>
     <dc:relation.EpisodeNumber>3</dc:relation.EpisodeNumber>
-    <dc:relation.AgeRating>0</dc:relation.AgeRating>
+    <dc:relation.RelatedEntryId feedId="tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/episode-guide/series-1">tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/episode-guide/series-1/episode-3</dc:relation.RelatedEntryId>
+    <dc:relation.AgeRating>16</dc:relation.AgeRating>
     <dc:relation.Guidance>Strong language throughout</dc:relation.Guidance>
     <dc:relation.Subtitles>true</dc:relation.Subtitles>
     <dc:relation.AudioDescription>false</dc:relation.AudioDescription>
     <dc:relation.Duration>48:01</dc:relation.Duration>
+    <dc:relation.LoginRequired>true</dc:relation.LoginRequired>
+    <dc:relation.requestType>ARCHIVE</dc:relation.requestType>
+    <dc:relation.programmeId>36423/003</dc:relation.programmeId>
   </entry>
-  <entry xmlns:media="http://search.yahoo.com/mrss/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms">
-    <id>tag:www.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/4od%232922047</id>
+  <entry>
+    <id>tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/4od%232922047</id>
     <title type="text">Ramsay's Kitchen Nightmares</title>
-    <updated>2010-11-03T05:57:50.175Z</updated>
-    <summary type="html">Ramsay visits Moore Place in Esher where joint owners Nick Whitehouse and Richard Hodgson are trying to create a profitable business.</summary>
-    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#2922047" rel="alternate" type="text/html"/>
-    <link href="http://api.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide/series-1/episode-4.atom?apikey=API_KEY" rel="related" type="application/atom+xml"/>
+    <summary type="text">Ramsay visits Moore Place in Esher where joint owners Nick Whitehouse and Richard Hodgson are trying to create a profitable business.</summary>
+    <updated>2011-12-06T15:55:20.921Z</updated>
+    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#2922047" rel="alternate" type="text/html" />
+    <link href="http://pmlsc.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide/series-1/episode-4.atom" rel="related" type="application/atom+xml" />
     <media:group>
-      <media:player url="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#2922047"/>
-      <media:thumbnail url="http://www.channel4.com/assets/programmes/images/ramsays-kitchen-nightmares/series-1/ramsays-kitchen-nightmares-s1-20090617160732_200x113.jpg" height="113" width="200"/>
-      <media:rating>nonadult</media:rating>
-      <media:copyright url="http://www.channel4.com/terms_and_conditions.html">Terms and Conditions</media:copyright>
-      <media:restriction relationship="allow" type="country">uk ie</media:restriction>
-      <media:rights status="official"/>
+      <media:player url="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#2922047" />
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/ramsays-kitchen-nightmares/series-1/ramsays-kitchen-nightmares-s1-20090617160732_200x113.jpg" height="113" width="200" imageSource="fallback" />
+      <media:rating>adult</media:rating>
+      <media:copyright url="http://cache.channel4.com/terms_and_conditions.html">Terms and Conditions</media:copyright>
+      <media:restriction relationship="allow" type="country">GG,GB,JE,IM,IE</media:restriction>
+      <media:rights status="official" />
     </media:group>
-    <dcterms:available>start=2009-07-01T22:00:00.000Z; end=2010-12-31T00:00:00.000Z; scheme=W3C-DTF</dcterms:available>
+    <dc:relation.BrandTitle>Ramsay's Kitchen Nightmares</dc:relation.BrandTitle>
+    <dcterms:available>start=2009-07-01T22:00:00.000Z; end=2012-12-31T00:00:00.000Z; scheme=W3C-DTF</dcterms:available>
     <dc:relation.SeriesNumber>1</dc:relation.SeriesNumber>
     <dc:relation.EpisodeNumber>4</dc:relation.EpisodeNumber>
-    <dc:relation.AgeRating>0</dc:relation.AgeRating>
+    <dc:relation.RelatedEntryId feedId="tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/episode-guide/series-1">tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/episode-guide/series-1/episode-4</dc:relation.RelatedEntryId>
+    <dc:relation.AgeRating>16</dc:relation.AgeRating>
     <dc:relation.Guidance>Strong language throughout</dc:relation.Guidance>
     <dc:relation.Subtitles>true</dc:relation.Subtitles>
     <dc:relation.AudioDescription>false</dc:relation.AudioDescription>
     <dc:relation.Duration>48:45</dc:relation.Duration>
+    <dc:relation.LoginRequired>true</dc:relation.LoginRequired>
+    <dc:relation.requestType>ARCHIVE</dc:relation.requestType>
+    <dc:relation.programmeId>36423/004</dc:relation.programmeId>
   </entry>
-  <entry xmlns:media="http://search.yahoo.com/mrss/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms">
-    <id>tag:www.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/4od%233029938</id>
+  <entry>
+    <id>tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/4od%233029938</id>
     <title type="text">Ramsay's Kitchen Nightmares</title>
-    <updated>2010-11-03T05:57:50.175Z</updated>
-    <summary type="html">Multi Michelin-starred Gordon Ramsay travels to La Lanterna in Letchworth, Hertfordshire, an 'Italian' restaurant as authentic as its Hawaiian pizza that's losing £1,000 a week.</summary>
-    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#3029938" rel="alternate" type="text/html"/>
-    <link href="http://api.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide/series-2/episode-1.atom?apikey=API_KEY" rel="related" type="application/atom+xml"/>
+    <summary type="text">Multi Michelin-starred Gordon Ramsay travels to La Lanterna in Letchworth, Hertfordshire, an 'Italian' restaurant as authentic as its Hawaiian pizza that's losing £1,000 a week.</summary>
+    <updated>2011-12-16T11:40:35.773Z</updated>
+    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#3029938" rel="alternate" type="text/html" />
+    <link href="http://pmlsc.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide/series-2/episode-1.atom" rel="related" type="application/atom+xml" />
     <media:group>
-      <media:player url="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#3029938"/>
-      <media:thumbnail url="http://www.channel4.com/assets/programmes/images/ramsays-kitchen-nightmares/series-2/ramsays-kitchen-nightmares-s2-20090617160911_200x113.jpg" height="113" width="200"/>
-      <media:rating>nonadult</media:rating>
-      <media:copyright url="http://www.channel4.com/terms_and_conditions.html">Terms and Conditions</media:copyright>
-      <media:restriction relationship="allow" type="country">uk ie</media:restriction>
-      <media:rights status="official"/>
+      <media:player url="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#3029938" />
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/ramsays-kitchen-nightmares/series-2/ramsays-kitchen-nightmares-s2-20090617160911_200x113.jpg" height="113" width="200" imageSource="fallback" />
+      <media:rating>adult</media:rating>
+      <media:copyright url="http://cache.channel4.com/terms_and_conditions.html">Terms and Conditions</media:copyright>
+      <media:restriction relationship="allow" type="country">GG,GB,JE,IM,IE</media:restriction>
+      <media:rights status="official" />
     </media:group>
-    <dcterms:available>start=2010-02-15T00:00:00.000Z; end=2011-01-01T00:00:00.000Z; scheme=W3C-DTF</dcterms:available>
+    <dc:relation.BrandTitle>Ramsay's Kitchen Nightmares</dc:relation.BrandTitle>
+    <dcterms:available>start=2010-02-15T00:00:00.000Z; end=2012-12-31T00:00:00.000Z; scheme=W3C-DTF</dcterms:available>
     <dc:relation.SeriesNumber>2</dc:relation.SeriesNumber>
     <dc:relation.EpisodeNumber>1</dc:relation.EpisodeNumber>
-    <dc:relation.AgeRating>0</dc:relation.AgeRating>
+    <dc:relation.RelatedEntryId feedId="tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/episode-guide/series-2">tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/episode-guide/series-2/episode-1</dc:relation.RelatedEntryId>
+    <dc:relation.AgeRating>16</dc:relation.AgeRating>
     <dc:relation.Guidance>Strong language throughout</dc:relation.Guidance>
     <dc:date.TXDate>2009-06-10T23:05:00.000Z</dc:date.TXDate>
     <dc:relation.TXChannel>M4</dc:relation.TXChannel>
     <dc:relation.Subtitles>false</dc:relation.Subtitles>
     <dc:relation.AudioDescription>false</dc:relation.AudioDescription>
     <dc:relation.Duration>48:59</dc:relation.Duration>
+    <dc:relation.LoginRequired>true</dc:relation.LoginRequired>
+    <dc:relation.requestType>ARCHIVE</dc:relation.requestType>
+    <dc:relation.programmeId>38532/001</dc:relation.programmeId>
   </entry>
-  <entry xmlns:media="http://search.yahoo.com/mrss/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms">
-    <id>tag:www.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/4od%233029937</id>
+  <entry>
+    <id>tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/4od%233029937</id>
     <title type="text">Ramsay's Kitchen Nightmares</title>
-    <updated>2010-11-03T05:57:50.175Z</updated>
-    <summary type="html">This episode returns to 2005 where Gordon gets to grips with another Kitchen Nightmare. Can Gordon Ramsay turn around the fortunes of D-Place at Chelmsford in Essex, where the plastic food is dire and the manager loathes the chef?</summary>
-    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#3029937" rel="alternate" type="text/html"/>
-    <link href="http://api.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide/series-2/episode-2.atom?apikey=API_KEY" rel="related" type="application/atom+xml"/>
+    <summary type="text">This episode returns to 2005 where Gordon gets to grips with another Kitchen Nightmare. Can Gordon Ramsay turn around the fortunes of D-Place at Chelmsford in Essex, where the plastic food is dire and the manager loathes the chef?</summary>
+    <updated>2011-12-16T11:40:35.593Z</updated>
+    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#3029937" rel="alternate" type="text/html" />
+    <link href="http://pmlsc.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide/series-2/episode-2.atom" rel="related" type="application/atom+xml" />
     <media:group>
-      <media:player url="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#3029937"/>
-      <media:thumbnail url="http://www.channel4.com/assets/programmes/images/ramsays-kitchen-nightmares/series-2/ramsays-kitchen-nightmares-s2-20090617160911_200x113.jpg" height="113" width="200"/>
-      <media:rating>nonadult</media:rating>
-      <media:copyright url="http://www.channel4.com/terms_and_conditions.html">Terms and Conditions</media:copyright>
-      <media:restriction relationship="allow" type="country">uk ie</media:restriction>
-      <media:rights status="official"/>
+      <media:player url="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#3029937" />
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/ramsays-kitchen-nightmares/series-2/ramsays-kitchen-nightmares-s2-20090617160911_200x113.jpg" height="113" width="200" imageSource="fallback" />
+      <media:rating>adult</media:rating>
+      <media:copyright url="http://cache.channel4.com/terms_and_conditions.html">Terms and Conditions</media:copyright>
+      <media:restriction relationship="allow" type="country">GG,GB,JE,IM,IE</media:restriction>
+      <media:rights status="official" />
     </media:group>
-    <dcterms:available>start=2010-02-15T00:00:00.000Z; end=2011-01-01T00:00:00.000Z; scheme=W3C-DTF</dcterms:available>
+    <dc:relation.BrandTitle>Ramsay's Kitchen Nightmares</dc:relation.BrandTitle>
+    <dcterms:available>start=2010-02-15T00:00:00.000Z; end=2012-12-31T00:00:00.000Z; scheme=W3C-DTF</dcterms:available>
     <dc:relation.SeriesNumber>2</dc:relation.SeriesNumber>
     <dc:relation.EpisodeNumber>2</dc:relation.EpisodeNumber>
-    <dc:relation.AgeRating>0</dc:relation.AgeRating>
+    <dc:relation.RelatedEntryId feedId="tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/episode-guide/series-2">tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/episode-guide/series-2/episode-2</dc:relation.RelatedEntryId>
+    <dc:relation.AgeRating>16</dc:relation.AgeRating>
     <dc:relation.Guidance>Strong language throughout</dc:relation.Guidance>
-    <dc:date.TXDate>2009-04-29T22:05:00.000Z</dc:date.TXDate>
+    <dc:date.TXDate>2009-04-30T01:05:00.000Z</dc:date.TXDate>
     <dc:relation.TXChannel>M4</dc:relation.TXChannel>
     <dc:relation.Subtitles>true</dc:relation.Subtitles>
     <dc:relation.AudioDescription>false</dc:relation.AudioDescription>
     <dc:relation.Duration>48:45</dc:relation.Duration>
+    <dc:relation.LoginRequired>true</dc:relation.LoginRequired>
+    <dc:relation.requestType>ARCHIVE</dc:relation.requestType>
+    <dc:relation.programmeId>38532/002</dc:relation.programmeId>
   </entry>
-  <entry xmlns:media="http://search.yahoo.com/mrss/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms">
-    <id>tag:www.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/4od%233029932</id>
+  <entry>
+    <id>tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/4od%233029932</id>
     <title type="text">Ramsay's Kitchen Nightmares</title>
-    <updated>2010-11-03T05:57:50.175Z</updated>
-    <summary type="html">Gordon Ramsay turns his attention to Momma Cherri's Soul Food Shack, an intimate 40-seater a stone's throw from Brighton's sea front.</summary>
-    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#3029932" rel="alternate" type="text/html"/>
-    <link href="http://api.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide/series-2/episode-3.atom?apikey=API_KEY" rel="related" type="application/atom+xml"/>
+    <summary type="text">Gordon Ramsay turns his attention to Momma Cherri's Soul Food Shack, an intimate 40-seater a stone's throw from Brighton's sea front.</summary>
+    <updated>2011-12-16T11:40:35.388Z</updated>
+    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#3029932" rel="alternate" type="text/html" />
+    <link href="http://pmlsc.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide/series-2/episode-3.atom" rel="related" type="application/atom+xml" />
     <media:group>
-      <media:player url="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#3029932"/>
-      <media:thumbnail url="http://www.channel4.com/assets/programmes/images/ramsays-kitchen-nightmares/series-2/ramsays-kitchen-nightmares-s2-20090617160911_200x113.jpg" height="113" width="200"/>
-      <media:rating>nonadult</media:rating>
-      <media:copyright url="http://www.channel4.com/terms_and_conditions.html">Terms and Conditions</media:copyright>
-      <media:restriction relationship="allow" type="country">uk ie</media:restriction>
-      <media:rights status="official"/>
+      <media:player url="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#3029932" />
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/ramsays-kitchen-nightmares/series-2/ramsays-kitchen-nightmares-s2-20090617160911_200x113.jpg" height="113" width="200" imageSource="fallback" />
+      <media:rating>adult</media:rating>
+      <media:copyright url="http://cache.channel4.com/terms_and_conditions.html">Terms and Conditions</media:copyright>
+      <media:restriction relationship="allow" type="country">GG,GB,JE,IM,IE</media:restriction>
+      <media:rights status="official" />
     </media:group>
-    <dcterms:available>start=2010-02-15T00:00:00.000Z; end=2011-01-01T00:00:00.000Z; scheme=W3C-DTF</dcterms:available>
+    <dc:relation.BrandTitle>Ramsay's Kitchen Nightmares</dc:relation.BrandTitle>
+    <dcterms:available>start=2010-02-15T00:00:00.000Z; end=2012-12-31T00:00:00.000Z; scheme=W3C-DTF</dcterms:available>
     <dc:relation.SeriesNumber>2</dc:relation.SeriesNumber>
     <dc:relation.EpisodeNumber>3</dc:relation.EpisodeNumber>
-    <dc:relation.AgeRating>0</dc:relation.AgeRating>
+    <dc:relation.RelatedEntryId feedId="tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/episode-guide/series-2">tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/episode-guide/series-2/episode-3</dc:relation.RelatedEntryId>
+    <dc:relation.AgeRating>16</dc:relation.AgeRating>
     <dc:relation.Guidance>Strong language throughout</dc:relation.Guidance>
-    <dc:date.TXDate>2009-05-06T23:10:00.000Z</dc:date.TXDate>
+    <dc:date.TXDate>2009-06-24T23:05:00.000Z</dc:date.TXDate>
     <dc:relation.TXChannel>M4</dc:relation.TXChannel>
     <dc:relation.Subtitles>true</dc:relation.Subtitles>
     <dc:relation.AudioDescription>false</dc:relation.AudioDescription>
     <dc:relation.Duration>49:13</dc:relation.Duration>
+    <dc:relation.LoginRequired>true</dc:relation.LoginRequired>
+    <dc:relation.requestType>ARCHIVE</dc:relation.requestType>
+    <dc:relation.programmeId>38532/003</dc:relation.programmeId>
   </entry>
-  <entry xmlns:media="http://search.yahoo.com/mrss/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms">
-    <id>tag:www.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/4od%233029933</id>
+  <entry>
+    <id>tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/4od%233029933</id>
     <title type="text">Ramsay's Kitchen Nightmares</title>
-    <updated>2010-11-03T05:57:50.175Z</updated>
-    <summary type="html">The venue for this programme is La Riviera, a fine dining restaurant in Inverness. It boasts a top chef and wonderful staff, but the locals aren't biting and the restaurant is empty.</summary>
-    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#3029933" rel="alternate" type="text/html"/>
-    <link href="http://api.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide/series-2/episode-4.atom?apikey=API_KEY" rel="related" type="application/atom+xml"/>
+    <summary type="text">The venue for this programme is La Riviera, a fine dining restaurant in Inverness. It boasts a top chef and wonderful staff, but the locals aren't biting and the restaurant is empty.</summary>
+    <updated>2011-12-16T11:40:35.500Z</updated>
+    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#3029933" rel="alternate" type="text/html" />
+    <link href="http://pmlsc.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide/series-2/episode-4.atom" rel="related" type="application/atom+xml" />
     <media:group>
-      <media:player url="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#3029933"/>
-      <media:thumbnail url="http://www.channel4.com/assets/programmes/images/ramsays-kitchen-nightmares/series-2/ramsays-kitchen-nightmares-s2-20090617160911_200x113.jpg" height="113" width="200"/>
-      <media:rating>nonadult</media:rating>
-      <media:copyright url="http://www.channel4.com/terms_and_conditions.html">Terms and Conditions</media:copyright>
-      <media:restriction relationship="allow" type="country">uk ie</media:restriction>
-      <media:rights status="official"/>
+      <media:player url="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#3029933" />
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/ramsays-kitchen-nightmares/series-2/ramsays-kitchen-nightmares-s2-20090617160911_200x113.jpg" height="113" width="200" imageSource="fallback" />
+      <media:rating>adult</media:rating>
+      <media:copyright url="http://cache.channel4.com/terms_and_conditions.html">Terms and Conditions</media:copyright>
+      <media:restriction relationship="allow" type="country">GG,GB,JE,IM,IE</media:restriction>
+      <media:rights status="official" />
     </media:group>
-    <dcterms:available>start=2010-02-15T00:00:00.000Z; end=2011-01-01T00:00:00.000Z; scheme=W3C-DTF</dcterms:available>
+    <dc:relation.BrandTitle>Ramsay's Kitchen Nightmares</dc:relation.BrandTitle>
+    <dcterms:available>start=2010-02-15T00:00:00.000Z; end=2012-12-31T00:00:00.000Z; scheme=W3C-DTF</dcterms:available>
     <dc:relation.SeriesNumber>2</dc:relation.SeriesNumber>
     <dc:relation.EpisodeNumber>4</dc:relation.EpisodeNumber>
-    <dc:relation.AgeRating>0</dc:relation.AgeRating>
+    <dc:relation.RelatedEntryId feedId="tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/episode-guide/series-2">tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/episode-guide/series-2/episode-4</dc:relation.RelatedEntryId>
+    <dc:relation.AgeRating>16</dc:relation.AgeRating>
     <dc:relation.Guidance>Strong language throughout</dc:relation.Guidance>
     <dc:date.TXDate>2009-05-13T23:10:00.000Z</dc:date.TXDate>
     <dc:relation.TXChannel>M4</dc:relation.TXChannel>
     <dc:relation.Subtitles>true</dc:relation.Subtitles>
     <dc:relation.AudioDescription>false</dc:relation.AudioDescription>
     <dc:relation.Duration>48:15</dc:relation.Duration>
+    <dc:relation.LoginRequired>true</dc:relation.LoginRequired>
+    <dc:relation.requestType>ARCHIVE</dc:relation.requestType>
+    <dc:relation.programmeId>38532/004</dc:relation.programmeId>
   </entry>
-  <entry xmlns:media="http://search.yahoo.com/mrss/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms">
-    <id>tag:www.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/4od%233029936</id>
+  <entry>
+    <id>tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/4od%233029936</id>
     <title type="text">Ramsay's Kitchen Nightmares</title>
-    <updated>2010-11-03T05:57:50.175Z</updated>
-    <summary type="html">At the family-run Oscars in Nantwich, the menu's a mess, the punter's aren't returning and the chef has problems. Cue Gordon Ramsay.</summary>
-    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#3029936" rel="alternate" type="text/html"/>
-    <link href="http://api.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide/series-2/episode-5.atom?apikey=API_KEY" rel="related" type="application/atom+xml"/>
+    <summary type="text">At the family-run Oscars in Nantwich, the menu's a mess, the punter's aren't returning and the chef has problems. Cue Gordon Ramsay.</summary>
+    <updated>2011-12-16T11:40:05.009Z</updated>
+    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#3029936" rel="alternate" type="text/html" />
+    <link href="http://pmlsc.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide/series-2/episode-5.atom" rel="related" type="application/atom+xml" />
     <media:group>
-      <media:player url="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#3029936"/>
-      <media:thumbnail url="http://www.channel4.com/assets/programmes/images/ramsays-kitchen-nightmares/series-2/ramsays-kitchen-nightmares-s2-20090617160911_200x113.jpg" height="113" width="200"/>
-      <media:rating>nonadult</media:rating>
-      <media:copyright url="http://www.channel4.com/terms_and_conditions.html">Terms and Conditions</media:copyright>
-      <media:restriction relationship="allow" type="country">uk ie</media:restriction>
-      <media:rights status="official"/>
+      <media:player url="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#3029936" />
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/ramsays-kitchen-nightmares/series-2/ramsays-kitchen-nightmares-s2-20090617160911_200x113.jpg" height="113" width="200" imageSource="fallback" />
+      <media:rating>adult</media:rating>
+      <media:copyright url="http://cache.channel4.com/terms_and_conditions.html">Terms and Conditions</media:copyright>
+      <media:restriction relationship="allow" type="country">GG,GB,JE,IM,IE</media:restriction>
+      <media:rights status="official" />
     </media:group>
-    <dcterms:available>start=2010-02-15T00:00:00.000Z; end=2011-01-01T00:00:00.000Z; scheme=W3C-DTF</dcterms:available>
+    <dc:relation.BrandTitle>Ramsay's Kitchen Nightmares</dc:relation.BrandTitle>
+    <dcterms:available>start=2010-02-15T00:00:00.000Z; end=2012-12-31T00:00:00.000Z; scheme=W3C-DTF</dcterms:available>
     <dc:relation.SeriesNumber>2</dc:relation.SeriesNumber>
     <dc:relation.EpisodeNumber>5</dc:relation.EpisodeNumber>
-    <dc:relation.AgeRating>0</dc:relation.AgeRating>
+    <dc:relation.RelatedEntryId feedId="tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/episode-guide/series-2">tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/episode-guide/series-2/episode-5</dc:relation.RelatedEntryId>
+    <dc:relation.AgeRating>16</dc:relation.AgeRating>
     <dc:relation.Guidance>Strong language throughout</dc:relation.Guidance>
     <dc:date.TXDate>2009-05-20T23:05:00.000Z</dc:date.TXDate>
     <dc:relation.TXChannel>M4</dc:relation.TXChannel>
     <dc:relation.Subtitles>true</dc:relation.Subtitles>
     <dc:relation.AudioDescription>false</dc:relation.AudioDescription>
     <dc:relation.Duration>49:02</dc:relation.Duration>
+    <dc:relation.LoginRequired>true</dc:relation.LoginRequired>
+    <dc:relation.requestType>ARCHIVE</dc:relation.requestType>
+    <dc:relation.programmeId>38532/005</dc:relation.programmeId>
   </entry>
-  <entry xmlns:media="http://search.yahoo.com/mrss/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms">
-    <id>tag:www.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/4od%233029935</id>
+  <entry>
+    <id>tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/4od%233029935</id>
     <title type="text">Ramsay's Kitchen Nightmares</title>
-    <updated>2010-11-03T05:57:50.175Z</updated>
-    <summary type="html">The multi-Michelin-starred chef visits Sandgate in Kent, where husband-and-wife team Lois and Peter Hamilton-Slade own and run a small English seaside hotel.</summary>
-    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#3029935" rel="alternate" type="text/html"/>
-    <link href="http://api.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide/series-2/episode-6.atom?apikey=API_KEY" rel="related" type="application/atom+xml"/>
+    <summary type="text">The multi-Michelin-starred chef visits Sandgate in Kent, where husband-and-wife team Lois and Peter Hamilton-Slade own and run a small English seaside hotel.</summary>
+    <updated>2011-12-16T11:40:35.685Z</updated>
+    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#3029935" rel="alternate" type="text/html" />
+    <link href="http://pmlsc.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide/series-2/episode-6.atom" rel="related" type="application/atom+xml" />
     <media:group>
-      <media:player url="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#3029935"/>
-      <media:thumbnail url="http://www.channel4.com/assets/programmes/images/ramsays-kitchen-nightmares/series-2/ramsays-kitchen-nightmares-s2-20090617160911_200x113.jpg" height="113" width="200"/>
-      <media:rating>nonadult</media:rating>
-      <media:copyright url="http://www.channel4.com/terms_and_conditions.html">Terms and Conditions</media:copyright>
-      <media:restriction relationship="allow" type="country">uk ie</media:restriction>
-      <media:rights status="official"/>
+      <media:player url="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#3029935" />
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/ramsays-kitchen-nightmares/series-2/ramsays-kitchen-nightmares-s2-20090617160911_200x113.jpg" height="113" width="200" imageSource="fallback" />
+      <media:rating>adult</media:rating>
+      <media:copyright url="http://cache.channel4.com/terms_and_conditions.html">Terms and Conditions</media:copyright>
+      <media:restriction relationship="allow" type="country">GG,GB,JE,IM,IE</media:restriction>
+      <media:rights status="official" />
     </media:group>
-    <dcterms:available>start=2010-02-15T00:00:00.000Z; end=2011-01-01T00:00:00.000Z; scheme=W3C-DTF</dcterms:available>
+    <dc:relation.BrandTitle>Ramsay's Kitchen Nightmares</dc:relation.BrandTitle>
+    <dcterms:available>start=2010-02-15T00:00:00.000Z; end=2012-12-31T00:00:00.000Z; scheme=W3C-DTF</dcterms:available>
     <dc:relation.SeriesNumber>2</dc:relation.SeriesNumber>
     <dc:relation.EpisodeNumber>6</dc:relation.EpisodeNumber>
-    <dc:relation.AgeRating>0</dc:relation.AgeRating>
+    <dc:relation.RelatedEntryId feedId="tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/episode-guide/series-2">tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/episode-guide/series-2/episode-6</dc:relation.RelatedEntryId>
+    <dc:relation.AgeRating>16</dc:relation.AgeRating>
     <dc:relation.Guidance>Strong language throughout</dc:relation.Guidance>
     <dc:date.TXDate>2009-05-27T22:05:00.000Z</dc:date.TXDate>
     <dc:relation.TXChannel>M4</dc:relation.TXChannel>
     <dc:relation.Subtitles>true</dc:relation.Subtitles>
     <dc:relation.AudioDescription>false</dc:relation.AudioDescription>
     <dc:relation.Duration>49:03</dc:relation.Duration>
+    <dc:relation.LoginRequired>true</dc:relation.LoginRequired>
+    <dc:relation.requestType>ARCHIVE</dc:relation.requestType>
+    <dc:relation.programmeId>38532/006</dc:relation.programmeId>
   </entry>
-  <entry xmlns:media="http://search.yahoo.com/mrss/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms">
-    <id>tag:www.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/4od%233029934</id>
+  <entry>
+    <id>tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/4od%233029934</id>
     <title type="text">Ramsay's Kitchen Nightmares</title>
-    <updated>2010-11-03T05:57:50.175Z</updated>
-    <summary type="html">Gordon Ramsay gets stuck into the kitchens of Clubway 4; which is in trouble with a bizarre menu and demoralised staff.</summary>
-    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#3029934" rel="alternate" type="text/html"/>
-    <link href="http://api.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide/series-2/episode-7.atom?apikey=API_KEY" rel="related" type="application/atom+xml"/>
+    <summary type="text">Gordon Ramsay gets stuck into the kitchens of Clubway 4; which is in trouble with a bizarre menu and demoralised staff.</summary>
+    <updated>2011-12-16T11:40:35.839Z</updated>
+    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#3029934" rel="alternate" type="text/html" />
+    <link href="http://pmlsc.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide/series-2/episode-7.atom" rel="related" type="application/atom+xml" />
     <media:group>
-      <media:player url="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#3029934"/>
-      <media:thumbnail url="http://www.channel4.com/assets/programmes/images/ramsays-kitchen-nightmares/series-2/ramsays-kitchen-nightmares-s2-20090617160911_200x113.jpg" height="113" width="200"/>
-      <media:rating>nonadult</media:rating>
-      <media:copyright url="http://www.channel4.com/terms_and_conditions.html">Terms and Conditions</media:copyright>
-      <media:restriction relationship="allow" type="country">uk ie</media:restriction>
-      <media:rights status="official"/>
+      <media:player url="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#3029934" />
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/ramsays-kitchen-nightmares/series-2/ramsays-kitchen-nightmares-s2-20090617160911_200x113.jpg" height="113" width="200" imageSource="fallback" />
+      <media:rating>adult</media:rating>
+      <media:copyright url="http://cache.channel4.com/terms_and_conditions.html">Terms and Conditions</media:copyright>
+      <media:restriction relationship="allow" type="country">GG,GB,JE,IM,IE</media:restriction>
+      <media:rights status="official" />
     </media:group>
-    <dcterms:available>start=2010-02-15T00:00:00.000Z; end=2011-01-01T00:00:00.000Z; scheme=W3C-DTF</dcterms:available>
+    <dc:relation.BrandTitle>Ramsay's Kitchen Nightmares</dc:relation.BrandTitle>
+    <dcterms:available>start=2010-02-15T00:00:00.000Z; end=2012-12-31T00:00:00.000Z; scheme=W3C-DTF</dcterms:available>
     <dc:relation.SeriesNumber>2</dc:relation.SeriesNumber>
     <dc:relation.EpisodeNumber>7</dc:relation.EpisodeNumber>
-    <dc:relation.AgeRating>0</dc:relation.AgeRating>
+    <dc:relation.RelatedEntryId feedId="tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/episode-guide/series-2">tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/episode-guide/series-2/episode-7</dc:relation.RelatedEntryId>
+    <dc:relation.AgeRating>16</dc:relation.AgeRating>
     <dc:relation.Guidance>Strong language throughout</dc:relation.Guidance>
     <dc:date.TXDate>2009-06-03T23:05:00.000Z</dc:date.TXDate>
     <dc:relation.TXChannel>M4</dc:relation.TXChannel>
     <dc:relation.Subtitles>true</dc:relation.Subtitles>
     <dc:relation.AudioDescription>false</dc:relation.AudioDescription>
     <dc:relation.Duration>48:42</dc:relation.Duration>
+    <dc:relation.LoginRequired>true</dc:relation.LoginRequired>
+    <dc:relation.requestType>ARCHIVE</dc:relation.requestType>
+    <dc:relation.programmeId>38532/007</dc:relation.programmeId>
   </entry>
-  <entry xmlns:media="http://search.yahoo.com/mrss/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms">
-    <id>tag:www.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/4od%232921983</id>
+  <entry>
+    <id>tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/4od%232921983</id>
     <title type="text">Ramsay's Kitchen Nightmares</title>
-    <updated>2010-11-03T05:57:50.175Z</updated>
-    <summary type="html">Gordon heads for Spain, where Laurence's up-market restaurant amid the Costa del Sol's caffs is, simply, a shambles.</summary>
-    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#2921983" rel="alternate" type="text/html"/>
-    <link href="http://api.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide/series-3/episode-1.atom?apikey=API_KEY" rel="related" type="application/atom+xml"/>
+    <summary type="text">Gordon heads for Spain, where Laurence's up-market restaurant amid the Costa del Sol's caffs is, simply, a shambles.</summary>
+    <updated>2011-12-16T12:58:54.245Z</updated>
+    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#2921983" rel="alternate" type="text/html" />
+    <link href="http://pmlsc.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide/series-3/episode-1.atom" rel="related" type="application/atom+xml" />
     <media:group>
-      <media:player url="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#2921983"/>
-      <media:thumbnail url="http://www.channel4.com/assets/programmes/images/ramsays-kitchen-nightmares/series-3/ramsays-kitchen-nightmares-s3-20090617160853_200x113.jpg" height="113" width="200"/>
-      <media:rating>nonadult</media:rating>
-      <media:copyright url="http://www.channel4.com/terms_and_conditions.html">Terms and Conditions</media:copyright>
-      <media:restriction relationship="allow" type="country">uk ie</media:restriction>
-      <media:rights status="official"/>
+      <media:player url="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#2921983" />
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/ramsays-kitchen-nightmares/series-3/ramsays-kitchen-nightmares-s3-20090617160853_200x113.jpg" height="113" width="200" imageSource="fallback" />
+      <media:rating>adult</media:rating>
+      <media:copyright url="http://cache.channel4.com/terms_and_conditions.html">Terms and Conditions</media:copyright>
+      <media:restriction relationship="allow" type="country">GG,GB,JE,IM,IE</media:restriction>
+      <media:rights status="official" />
     </media:group>
-    <dcterms:available>start=2009-06-24T22:00:00.000Z; end=2010-12-31T00:00:00.000Z; scheme=W3C-DTF</dcterms:available>
+    <dc:relation.BrandTitle>Ramsay's Kitchen Nightmares</dc:relation.BrandTitle>
+    <dcterms:available>start=2009-12-01T00:00:00.000Z; end=2012-12-31T00:00:00.000Z; scheme=W3C-DTF</dcterms:available>
     <dc:relation.SeriesNumber>3</dc:relation.SeriesNumber>
     <dc:relation.EpisodeNumber>1</dc:relation.EpisodeNumber>
-    <dc:relation.AgeRating>0</dc:relation.AgeRating>
+    <dc:relation.RelatedEntryId feedId="tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/episode-guide/series-3">tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/episode-guide/series-3/episode-1</dc:relation.RelatedEntryId>
+    <dc:relation.AgeRating>16</dc:relation.AgeRating>
     <dc:relation.Guidance>Strong language throughout</dc:relation.Guidance>
     <dc:relation.Subtitles>true</dc:relation.Subtitles>
     <dc:relation.AudioDescription>false</dc:relation.AudioDescription>
     <dc:relation.Duration>49:09</dc:relation.Duration>
+    <dc:relation.LoginRequired>true</dc:relation.LoginRequired>
+    <dc:relation.requestType>ARCHIVE</dc:relation.requestType>
+    <dc:relation.programmeId>41337/001</dc:relation.programmeId>
   </entry>
-  <entry xmlns:media="http://search.yahoo.com/mrss/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms">
-    <id>tag:www.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/4od%232921984</id>
+  <entry>
+    <id>tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/4od%232921984</id>
     <title type="text">Ramsay's Kitchen Nightmares</title>
-    <updated>2010-11-03T05:57:50.175Z</updated>
-    <summary type="html">Gordon Ramsay takes on a pub for the first time; the Fenwick Arms, Lancashire. Can he persuade owner Brian to ditch his complex menu and cloying sauces for great, simple food?</summary>
-    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#2921984" rel="alternate" type="text/html"/>
-    <link href="http://api.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide/series-3/episode-2.atom?apikey=API_KEY" rel="related" type="application/atom+xml"/>
+    <summary type="text">Gordon Ramsay takes on a pub for the first time; the Fenwick Arms, Lancashire. Can he persuade owner Brian to ditch his complex menu and cloying sauces for great, simple food?</summary>
+    <updated>2011-12-16T12:58:54.091Z</updated>
+    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#2921984" rel="alternate" type="text/html" />
+    <link href="http://pmlsc.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide/series-3/episode-2.atom" rel="related" type="application/atom+xml" />
     <media:group>
-      <media:player url="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#2921984"/>
-      <media:thumbnail url="http://www.channel4.com/assets/programmes/images/ramsays-kitchen-nightmares/series-3/ramsays-kitchen-nightmares-s3-20090617160853_200x113.jpg" height="113" width="200"/>
-      <media:rating>nonadult</media:rating>
-      <media:copyright url="http://www.channel4.com/terms_and_conditions.html">Terms and Conditions</media:copyright>
-      <media:restriction relationship="allow" type="country">uk ie</media:restriction>
-      <media:rights status="official"/>
+      <media:player url="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#2921984" />
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/ramsays-kitchen-nightmares/series-3/ramsays-kitchen-nightmares-s3-20090617160853_200x113.jpg" height="113" width="200" imageSource="fallback" />
+      <media:rating>adult</media:rating>
+      <media:copyright url="http://cache.channel4.com/terms_and_conditions.html">Terms and Conditions</media:copyright>
+      <media:restriction relationship="allow" type="country">GG,GB,JE,IM,IE</media:restriction>
+      <media:rights status="official" />
     </media:group>
-    <dcterms:available>start=2009-06-24T22:00:00.000Z; end=2010-12-31T00:00:00.000Z; scheme=W3C-DTF</dcterms:available>
+    <dc:relation.BrandTitle>Ramsay's Kitchen Nightmares</dc:relation.BrandTitle>
+    <dcterms:available>start=2009-12-01T00:00:00.000Z; end=2012-12-31T00:00:00.000Z; scheme=W3C-DTF</dcterms:available>
     <dc:relation.SeriesNumber>3</dc:relation.SeriesNumber>
     <dc:relation.EpisodeNumber>2</dc:relation.EpisodeNumber>
-    <dc:relation.AgeRating>0</dc:relation.AgeRating>
+    <dc:relation.RelatedEntryId feedId="tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/episode-guide/series-3">tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/episode-guide/series-3/episode-2</dc:relation.RelatedEntryId>
+    <dc:relation.AgeRating>16</dc:relation.AgeRating>
     <dc:relation.Guidance>Strong language throughout</dc:relation.Guidance>
     <dc:relation.Subtitles>true</dc:relation.Subtitles>
     <dc:relation.AudioDescription>false</dc:relation.AudioDescription>
     <dc:relation.Duration>48:42</dc:relation.Duration>
+    <dc:relation.LoginRequired>true</dc:relation.LoginRequired>
+    <dc:relation.requestType>ARCHIVE</dc:relation.requestType>
+    <dc:relation.programmeId>41337/002</dc:relation.programmeId>
   </entry>
-  <entry xmlns:media="http://search.yahoo.com/mrss/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms">
-    <id>tag:www.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/4od%232921985</id>
+  <entry>
+    <id>tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/4od%232921985</id>
     <title type="text">Ramsay's Kitchen Nightmares</title>
-    <updated>2010-11-03T05:57:50.175Z</updated>
-    <summary type="html">Gordon Ramsay tackles the fading Rococo restaurant in King's Lynn, run by Nick, an ex-Michelin-starred chef who's resting on his laurels with an overpriced menu trapped in the 90s.</summary>
-    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#2921985" rel="alternate" type="text/html"/>
-    <link href="http://api.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide/series-3/episode-3.atom?apikey=API_KEY" rel="related" type="application/atom+xml"/>
+    <summary type="text">Gordon Ramsay tackles the fading Rococo restaurant in King's Lynn, run by Nick, an ex-Michelin-starred chef who's resting on his laurels with an overpriced menu trapped in the 90s.</summary>
+    <updated>2011-12-16T12:58:54.301Z</updated>
+    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#2921985" rel="alternate" type="text/html" />
+    <link href="http://pmlsc.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide/series-3/episode-3.atom" rel="related" type="application/atom+xml" />
     <media:group>
-      <media:player url="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#2921985"/>
-      <media:thumbnail url="http://www.channel4.com/assets/programmes/images/ramsays-kitchen-nightmares/series-3/ramsays-kitchen-nightmares-s3-20090617160853_200x113.jpg" height="113" width="200"/>
-      <media:rating>nonadult</media:rating>
-      <media:copyright url="http://www.channel4.com/terms_and_conditions.html">Terms and Conditions</media:copyright>
-      <media:restriction relationship="allow" type="country">uk ie</media:restriction>
-      <media:rights status="official"/>
+      <media:player url="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#2921985" />
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/ramsays-kitchen-nightmares/series-3/ramsays-kitchen-nightmares-s3-20090617160853_200x113.jpg" height="113" width="200" imageSource="fallback" />
+      <media:rating>adult</media:rating>
+      <media:copyright url="http://cache.channel4.com/terms_and_conditions.html">Terms and Conditions</media:copyright>
+      <media:restriction relationship="allow" type="country">GG,GB,JE,IM,IE</media:restriction>
+      <media:rights status="official" />
     </media:group>
-    <dcterms:available>start=2009-06-24T22:00:00.000Z; end=2010-12-31T00:00:00.000Z; scheme=W3C-DTF</dcterms:available>
+    <dc:relation.BrandTitle>Ramsay's Kitchen Nightmares</dc:relation.BrandTitle>
+    <dcterms:available>start=2009-12-01T00:00:00.000Z; end=2012-12-31T00:00:00.000Z; scheme=W3C-DTF</dcterms:available>
     <dc:relation.SeriesNumber>3</dc:relation.SeriesNumber>
     <dc:relation.EpisodeNumber>3</dc:relation.EpisodeNumber>
-    <dc:relation.AgeRating>0</dc:relation.AgeRating>
+    <dc:relation.RelatedEntryId feedId="tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/episode-guide/series-3">tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/episode-guide/series-3/episode-3</dc:relation.RelatedEntryId>
+    <dc:relation.AgeRating>16</dc:relation.AgeRating>
     <dc:relation.Guidance>Strong language throughout</dc:relation.Guidance>
     <dc:relation.Subtitles>true</dc:relation.Subtitles>
     <dc:relation.AudioDescription>false</dc:relation.AudioDescription>
     <dc:relation.Duration>47:39</dc:relation.Duration>
+    <dc:relation.LoginRequired>true</dc:relation.LoginRequired>
+    <dc:relation.requestType>ARCHIVE</dc:relation.requestType>
+    <dc:relation.programmeId>41337/003</dc:relation.programmeId>
   </entry>
-  <entry xmlns:media="http://search.yahoo.com/mrss/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms">
-    <id>tag:www.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/4od%232921986</id>
+  <entry>
+    <id>tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/4od%232921986</id>
     <title type="text">Ramsay's Kitchen Nightmares</title>
-    <updated>2010-11-03T05:57:50.175Z</updated>
-    <summary type="html">Gordon grapples with girl power when he takes on Morgan's, an intimate family-run restaurant in the heart of WAG territory near Liverpool.</summary>
-    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#2921986" rel="alternate" type="text/html"/>
-    <link href="http://api.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide/series-3/episode-4.atom?apikey=API_KEY" rel="related" type="application/atom+xml"/>
+    <summary type="text">Gordon grapples with girl power when he takes on Morgan's, an intimate family-run restaurant in the heart of WAG territory near Liverpool.</summary>
+    <updated>2011-12-16T12:58:54.343Z</updated>
+    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#2921986" rel="alternate" type="text/html" />
+    <link href="http://pmlsc.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide/series-3/episode-4.atom" rel="related" type="application/atom+xml" />
     <media:group>
-      <media:player url="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#2921986"/>
-      <media:thumbnail url="http://www.channel4.com/assets/programmes/images/ramsays-kitchen-nightmares/series-3/ramsays-kitchen-nightmares-s3-20090617160853_200x113.jpg" height="113" width="200"/>
-      <media:rating>nonadult</media:rating>
-      <media:copyright url="http://www.channel4.com/terms_and_conditions.html">Terms and Conditions</media:copyright>
-      <media:restriction relationship="allow" type="country">uk ie</media:restriction>
-      <media:rights status="official"/>
+      <media:player url="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#2921986" />
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/ramsays-kitchen-nightmares/series-3/ramsays-kitchen-nightmares-s3-20090617160853_200x113.jpg" height="113" width="200" imageSource="fallback" />
+      <media:rating>adult</media:rating>
+      <media:copyright url="http://cache.channel4.com/terms_and_conditions.html">Terms and Conditions</media:copyright>
+      <media:restriction relationship="allow" type="country">GG,GB,JE,IM,IE</media:restriction>
+      <media:rights status="official" />
     </media:group>
-    <dcterms:available>start=2009-06-24T22:00:00.000Z; end=2010-12-31T00:00:00.000Z; scheme=W3C-DTF</dcterms:available>
+    <dc:relation.BrandTitle>Ramsay's Kitchen Nightmares</dc:relation.BrandTitle>
+    <dcterms:available>start=2009-12-01T00:00:00.000Z; end=2012-12-31T00:00:00.000Z; scheme=W3C-DTF</dcterms:available>
     <dc:relation.SeriesNumber>3</dc:relation.SeriesNumber>
     <dc:relation.EpisodeNumber>4</dc:relation.EpisodeNumber>
-    <dc:relation.AgeRating>0</dc:relation.AgeRating>
+    <dc:relation.RelatedEntryId feedId="tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/episode-guide/series-3">tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/episode-guide/series-3/episode-4</dc:relation.RelatedEntryId>
+    <dc:relation.AgeRating>16</dc:relation.AgeRating>
     <dc:relation.Guidance>Strong language throughout</dc:relation.Guidance>
     <dc:relation.Subtitles>true</dc:relation.Subtitles>
     <dc:relation.AudioDescription>false</dc:relation.AudioDescription>
     <dc:relation.Duration>48:12</dc:relation.Duration>
+    <dc:relation.LoginRequired>true</dc:relation.LoginRequired>
+    <dc:relation.requestType>ARCHIVE</dc:relation.requestType>
+    <dc:relation.programmeId>41337/004</dc:relation.programmeId>
   </entry>
-  <entry xmlns:media="http://search.yahoo.com/mrss/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms">
-    <id>tag:www.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/4od%232921987</id>
+  <entry>
+    <id>tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/4od%232921987</id>
     <title type="text">Ramsay's Kitchen Nightmares</title>
-    <updated>2010-11-03T05:57:50.175Z</updated>
-    <summary type="html">Gordon returns to La Riviera - now renamed Abstract - a fine dining restaurant in Inverness, as they plan to expand. Top French chef Loic Lefebvre is still there and has been promoted.</summary>
-    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#2921987" rel="alternate" type="text/html"/>
-    <link href="http://api.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide/series-3/episode-11.atom?apikey=API_KEY" rel="related" type="application/atom+xml"/>
+    <summary type="text">Gordon returns to La Riviera - now renamed Abstract - a fine dining restaurant in Inverness, as they plan to expand. Top French chef Loic Lefebvre is still there and has been promoted.</summary>
+    <updated>2011-12-16T12:58:54.149Z</updated>
+    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#2921987" rel="alternate" type="text/html" />
+    <link href="http://pmlsc.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide/series-3/episode-11.atom" rel="related" type="application/atom+xml" />
     <media:group>
-      <media:player url="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#2921987"/>
-      <media:thumbnail url="http://www.channel4.com/assets/programmes/images/ramsays-kitchen-nightmares/series-3/ramsays-kitchen-nightmares-s3-20090617160853_200x113.jpg" height="113" width="200"/>
-      <media:rating>nonadult</media:rating>
-      <media:copyright url="http://www.channel4.com/terms_and_conditions.html">Terms and Conditions</media:copyright>
-      <media:restriction relationship="allow" type="country">uk ie</media:restriction>
-      <media:rights status="official"/>
+      <media:player url="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#2921987" />
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/ramsays-kitchen-nightmares/series-3/ramsays-kitchen-nightmares-s3-20090617160853_200x113.jpg" height="113" width="200" imageSource="fallback" />
+      <media:rating>adult</media:rating>
+      <media:copyright url="http://cache.channel4.com/terms_and_conditions.html">Terms and Conditions</media:copyright>
+      <media:restriction relationship="allow" type="country">GG,GB,JE,IM,IE</media:restriction>
+      <media:rights status="official" />
     </media:group>
-    <dcterms:available>start=2009-06-24T22:00:00.000Z; end=2010-12-31T00:00:00.000Z; scheme=W3C-DTF</dcterms:available>
+    <dc:relation.BrandTitle>Ramsay's Kitchen Nightmares</dc:relation.BrandTitle>
+    <dcterms:available>start=2009-12-01T00:00:00.000Z; end=2012-12-31T00:00:00.000Z; scheme=W3C-DTF</dcterms:available>
     <dc:relation.SeriesNumber>3</dc:relation.SeriesNumber>
     <dc:relation.EpisodeNumber>11</dc:relation.EpisodeNumber>
-    <dc:relation.AgeRating>0</dc:relation.AgeRating>
+    <dc:relation.RelatedEntryId feedId="tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/episode-guide/series-3">tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/episode-guide/series-3/episode-11</dc:relation.RelatedEntryId>
+    <dc:relation.AgeRating>16</dc:relation.AgeRating>
     <dc:relation.Guidance>Strong language throughout</dc:relation.Guidance>
     <dc:relation.Subtitles>true</dc:relation.Subtitles>
     <dc:relation.AudioDescription>false</dc:relation.AudioDescription>
     <dc:relation.Duration>48:06</dc:relation.Duration>
+    <dc:relation.LoginRequired>true</dc:relation.LoginRequired>
+    <dc:relation.requestType>ARCHIVE</dc:relation.requestType>
+    <dc:relation.programmeId>41337/011</dc:relation.programmeId>
   </entry>
-  <entry xmlns:media="http://search.yahoo.com/mrss/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms">
-    <id>tag:www.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/4od%232921988</id>
+  <entry>
+    <id>tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/4od%232921988</id>
     <title type="text">Ramsay's Kitchen Nightmares</title>
-    <updated>2010-11-03T05:57:50.175Z</updated>
-    <summary type="html">Gordon returns to Momma Cherri's Soul Food Shack in Brighton to see how its owner Charita Jones is coping with a bustling business along with plans to expand.</summary>
-    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#2921988" rel="alternate" type="text/html"/>
-    <link href="http://api.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide/series-3/episode-12.atom?apikey=API_KEY" rel="related" type="application/atom+xml"/>
+    <summary type="text">Gordon returns to Momma Cherri's Soul Food Shack in Brighton to see how its owner Charita Jones is coping with a bustling business along with plans to expand.</summary>
+    <updated>2011-12-16T12:58:54.201Z</updated>
+    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#2921988" rel="alternate" type="text/html" />
+    <link href="http://pmlsc.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide/series-3/episode-12.atom" rel="related" type="application/atom+xml" />
     <media:group>
-      <media:player url="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#2921988"/>
-      <media:thumbnail url="http://www.channel4.com/assets/programmes/images/ramsays-kitchen-nightmares/series-3/ramsays-kitchen-nightmares-s3-20090617160853_200x113.jpg" height="113" width="200"/>
-      <media:rating>nonadult</media:rating>
-      <media:copyright url="http://www.channel4.com/terms_and_conditions.html">Terms and Conditions</media:copyright>
-      <media:restriction relationship="allow" type="country">uk ie</media:restriction>
-      <media:rights status="official"/>
+      <media:player url="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#2921988" />
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/ramsays-kitchen-nightmares/series-3/ramsays-kitchen-nightmares-s3-20090617160853_200x113.jpg" height="113" width="200" imageSource="fallback" />
+      <media:rating>adult</media:rating>
+      <media:copyright url="http://cache.channel4.com/terms_and_conditions.html">Terms and Conditions</media:copyright>
+      <media:restriction relationship="allow" type="country">GG,GB,JE,IM,IE</media:restriction>
+      <media:rights status="official" />
     </media:group>
-    <dcterms:available>start=2009-06-24T22:00:00.000Z; end=2010-12-31T00:00:00.000Z; scheme=W3C-DTF</dcterms:available>
+    <dc:relation.BrandTitle>Ramsay's Kitchen Nightmares</dc:relation.BrandTitle>
+    <dcterms:available>start=2009-12-01T00:00:00.000Z; end=2012-12-31T00:00:00.000Z; scheme=W3C-DTF</dcterms:available>
     <dc:relation.SeriesNumber>3</dc:relation.SeriesNumber>
     <dc:relation.EpisodeNumber>12</dc:relation.EpisodeNumber>
-    <dc:relation.AgeRating>0</dc:relation.AgeRating>
+    <dc:relation.RelatedEntryId feedId="tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/episode-guide/series-3">tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/episode-guide/series-3/episode-12</dc:relation.RelatedEntryId>
+    <dc:relation.AgeRating>16</dc:relation.AgeRating>
     <dc:relation.Guidance>Strong language throughout</dc:relation.Guidance>
     <dc:relation.Subtitles>true</dc:relation.Subtitles>
     <dc:relation.AudioDescription>false</dc:relation.AudioDescription>
     <dc:relation.Duration>48:27</dc:relation.Duration>
+    <dc:relation.LoginRequired>true</dc:relation.LoginRequired>
+    <dc:relation.requestType>ARCHIVE</dc:relation.requestType>
+    <dc:relation.programmeId>41337/012</dc:relation.programmeId>
   </entry>
-  <entry xmlns:media="http://search.yahoo.com/mrss/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms">
-    <id>tag:www.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/4od%232921543</id>
+  <entry>
+    <id>tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/4od%233233559</id>
     <title type="text">Ramsay's Kitchen Nightmares</title>
-    <updated>2010-11-03T05:57:50.175Z</updated>
-    <summary type="html">Ruby Tates in Brighton is owned and run by ex-actor and failed Hollywood wannabe Allan Love. It's an oyster bar and seafood restaurant but Allan's never tasted the food because he hates fish. Can Gordon help?</summary>
-    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#2921543" rel="alternate" type="text/html"/>
-    <link href="http://api.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide/series-4/episode-1.atom?apikey=API_KEY" rel="related" type="application/atom+xml"/>
+    <summary type="text">Ruby Tates in Brighton is owned and run by ex-actor and failed Hollywood wannabe Allan Love. It's an oyster bar and seafood restaurant but Allan's never tasted the food because he hates fish. Can Gordon help?</summary>
+    <updated>2011-12-22T11:29:18.967Z</updated>
+    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#3233559" rel="alternate" type="text/html" />
+    <link href="http://pmlsc.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide/series-4/episode-1.atom" rel="related" type="application/atom+xml" />
     <media:group>
-      <media:player url="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#2921543"/>
-      <media:thumbnail url="http://www.channel4.com/assets/programmes/images/ramsays-kitchen-nightmares/series-4/ramsays-kitchen-nightmares-s4-20090617161032_200x113.jpg" height="113" width="200"/>
-      <media:rating>nonadult</media:rating>
-      <media:copyright url="http://www.channel4.com/terms_and_conditions.html">Terms and Conditions</media:copyright>
-      <media:restriction relationship="allow" type="country">uk ie</media:restriction>
-      <media:rights status="official"/>
+      <media:player url="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#3233559" />
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/ramsays-kitchen-nightmares/series-4/ramsays-kitchen-nightmares-s4-20090617161032_200x113.jpg" height="113" width="200" imageSource="fallback" />
+      <media:rating>adult</media:rating>
+      <media:copyright url="http://cache.channel4.com/terms_and_conditions.html">Terms and Conditions</media:copyright>
+      <media:restriction relationship="allow" type="country">GG,GB,JE,IM,IE</media:restriction>
+      <media:rights status="official" />
     </media:group>
-    <dcterms:available>start=2009-07-01T22:00:00.000Z; end=2010-11-29T00:00:00.000Z; scheme=W3C-DTF</dcterms:available>
+    <dc:relation.BrandTitle>Ramsay's Kitchen Nightmares</dc:relation.BrandTitle>
+    <dcterms:available>start=2011-09-14T22:00:00.000Z; end=2012-12-31T00:00:00.000Z; scheme=W3C-DTF</dcterms:available>
     <dc:relation.SeriesNumber>4</dc:relation.SeriesNumber>
     <dc:relation.EpisodeNumber>1</dc:relation.EpisodeNumber>
-    <dc:relation.AgeRating>0</dc:relation.AgeRating>
+    <dc:relation.RelatedEntryId feedId="tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/episode-guide/series-4">tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/episode-guide/series-4/episode-1</dc:relation.RelatedEntryId>
+    <dc:relation.AgeRating>16</dc:relation.AgeRating>
     <dc:relation.Guidance>Strong language throughout</dc:relation.Guidance>
-    <dc:date.TXDate>2009-03-11T23:40:00.000Z</dc:date.TXDate>
-    <dc:relation.TXChannel>M4</dc:relation.TXChannel>
+    <dc:date.TXDate>2007-10-30T00:00:00.000Z</dc:date.TXDate>
+    <dc:relation.TXChannel>C4</dc:relation.TXChannel>
     <dc:relation.Subtitles>true</dc:relation.Subtitles>
     <dc:relation.AudioDescription>false</dc:relation.AudioDescription>
-    <dc:relation.Duration>48:10</dc:relation.Duration>
+    <dc:relation.Duration>47:50</dc:relation.Duration>
+    <dc:relation.LoginRequired>true</dc:relation.LoginRequired>
+    <dc:relation.requestType>ARCHIVE</dc:relation.requestType>
+    <dc:relation.programmeId>43065/001</dc:relation.programmeId>
   </entry>
-  <entry xmlns:media="http://search.yahoo.com/mrss/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms">
-    <id>tag:www.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/4od%232921544</id>
+  <entry>
+    <id>tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/4od%233233560</id>
     <title type="text">Ramsay's Kitchen Nightmares</title>
-    <updated>2010-11-03T05:57:50.175Z</updated>
-    <summary type="html">Gordon takes on The Priory, a 100-seater carvery in Haywards Heath, Sussex. It's owned by ex-IT consultant Scott and located in a beautiful former convent, but is in desperate need of help.</summary>
-    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#2921544" rel="alternate" type="text/html"/>
-    <link href="http://api.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide/series-4/episode-2.atom?apikey=API_KEY" rel="related" type="application/atom+xml"/>
+    <summary type="text">Gordon takes on The Priory, a 100-seater carvery in Haywards Heath, Sussex. It's owned by ex-IT consultant Scott and located in a beautiful former convent, but is in desperate need of help.</summary>
+    <updated>2011-12-22T11:28:45.150Z</updated>
+    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#3233560" rel="alternate" type="text/html" />
+    <link href="http://pmlsc.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide/series-4/episode-2.atom" rel="related" type="application/atom+xml" />
     <media:group>
-      <media:player url="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#2921544"/>
-      <media:thumbnail url="http://www.channel4.com/assets/programmes/images/ramsays-kitchen-nightmares/series-4/ramsays-kitchen-nightmares-s4-20090617161032_200x113.jpg" height="113" width="200"/>
-      <media:rating>nonadult</media:rating>
-      <media:copyright url="http://www.channel4.com/terms_and_conditions.html">Terms and Conditions</media:copyright>
-      <media:restriction relationship="allow" type="country">uk ie</media:restriction>
-      <media:rights status="official"/>
+      <media:player url="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#3233560" />
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/ramsays-kitchen-nightmares/series-4/ramsays-kitchen-nightmares-s4-20090617161032_200x113.jpg" height="113" width="200" imageSource="fallback" />
+      <media:rating>adult</media:rating>
+      <media:copyright url="http://cache.channel4.com/terms_and_conditions.html">Terms and Conditions</media:copyright>
+      <media:restriction relationship="allow" type="country">GG,GB,JE,IM,IE</media:restriction>
+      <media:rights status="official" />
     </media:group>
-    <dcterms:available>start=2009-07-01T22:00:00.000Z; end=2010-11-29T00:00:00.000Z; scheme=W3C-DTF</dcterms:available>
+    <dc:relation.BrandTitle>Ramsay's Kitchen Nightmares</dc:relation.BrandTitle>
+    <dcterms:available>start=2011-09-14T22:00:00.000Z; end=2012-12-31T00:00:00.000Z; scheme=W3C-DTF</dcterms:available>
     <dc:relation.SeriesNumber>4</dc:relation.SeriesNumber>
     <dc:relation.EpisodeNumber>2</dc:relation.EpisodeNumber>
-    <dc:relation.AgeRating>0</dc:relation.AgeRating>
+    <dc:relation.RelatedEntryId feedId="tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/episode-guide/series-4">tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/episode-guide/series-4/episode-2</dc:relation.RelatedEntryId>
+    <dc:relation.AgeRating>16</dc:relation.AgeRating>
     <dc:relation.Guidance>Strong language throughout</dc:relation.Guidance>
-    <dc:date.TXDate>2009-03-18T23:35:00.000Z</dc:date.TXDate>
-    <dc:relation.TXChannel>M4</dc:relation.TXChannel>
-    <dc:relation.Subtitles>true</dc:relation.Subtitles>
+    <dc:date.TXDate>2007-11-27T00:00:00.000Z</dc:date.TXDate>
+    <dc:relation.TXChannel>C4</dc:relation.TXChannel>
+    <dc:relation.Subtitles>false</dc:relation.Subtitles>
     <dc:relation.AudioDescription>false</dc:relation.AudioDescription>
-    <dc:relation.Duration>48:14</dc:relation.Duration>
+    <dc:relation.Duration>48:03</dc:relation.Duration>
+    <dc:relation.LoginRequired>true</dc:relation.LoginRequired>
+    <dc:relation.requestType>ARCHIVE</dc:relation.requestType>
+    <dc:relation.programmeId>43065/002</dc:relation.programmeId>
   </entry>
-  <entry xmlns:media="http://search.yahoo.com/mrss/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms">
-    <id>tag:www.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/4od%232921545</id>
+  <entry>
+    <id>tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/4od%233233561</id>
     <title type="text">Ramsay's Kitchen Nightmares</title>
-    <updated>2010-11-03T05:57:50.175Z</updated>
-    <summary type="html">The venue for this programme is The Curry Lounge in Nottingham, the city with more restaurants per square mile than any other in Britain. Enter Gordon, relishing the prospect of tackling an Indian restaurant for the first time.</summary>
-    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#2921545" rel="alternate" type="text/html"/>
-    <link href="http://api.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide/series-4/episode-3.atom?apikey=API_KEY" rel="related" type="application/atom+xml"/>
+    <summary type="text">The venue for this programme is The Curry Lounge in Nottingham, the city with more restaurants per square mile than any other in Britain. Enter Gordon, relishing the prospect of tackling an Indian restaurant for the first time.</summary>
+    <updated>2011-12-22T11:29:15.804Z</updated>
+    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#3233561" rel="alternate" type="text/html" />
+    <link href="http://pmlsc.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide/series-4/episode-3.atom" rel="related" type="application/atom+xml" />
     <media:group>
-      <media:player url="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#2921545"/>
-      <media:thumbnail url="http://www.channel4.com/assets/programmes/images/ramsays-kitchen-nightmares/series-4/ramsays-kitchen-nightmares-s4-20090617161032_200x113.jpg" height="113" width="200"/>
-      <media:rating>nonadult</media:rating>
-      <media:copyright url="http://www.channel4.com/terms_and_conditions.html">Terms and Conditions</media:copyright>
-      <media:restriction relationship="allow" type="country">uk ie</media:restriction>
-      <media:rights status="official"/>
+      <media:player url="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#3233561" />
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/ramsays-kitchen-nightmares/series-4/ramsays-kitchen-nightmares-s4-20090617161032_200x113.jpg" height="113" width="200" imageSource="fallback" />
+      <media:rating>adult</media:rating>
+      <media:copyright url="http://cache.channel4.com/terms_and_conditions.html">Terms and Conditions</media:copyright>
+      <media:restriction relationship="allow" type="country">GG,GB,JE,IM,IE</media:restriction>
+      <media:rights status="official" />
     </media:group>
-    <dcterms:available>start=2009-07-01T22:00:00.000Z; end=2010-11-29T00:00:00.000Z; scheme=W3C-DTF</dcterms:available>
+    <dc:relation.BrandTitle>Ramsay's Kitchen Nightmares</dc:relation.BrandTitle>
+    <dcterms:available>start=2011-09-14T22:00:00.000Z; end=2012-12-31T00:00:00.000Z; scheme=W3C-DTF</dcterms:available>
     <dc:relation.SeriesNumber>4</dc:relation.SeriesNumber>
     <dc:relation.EpisodeNumber>3</dc:relation.EpisodeNumber>
-    <dc:relation.AgeRating>0</dc:relation.AgeRating>
+    <dc:relation.RelatedEntryId feedId="tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/episode-guide/series-4">tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/episode-guide/series-4/episode-3</dc:relation.RelatedEntryId>
+    <dc:relation.AgeRating>16</dc:relation.AgeRating>
     <dc:relation.Guidance>Strong language throughout</dc:relation.Guidance>
-    <dc:date.TXDate>2009-03-25T23:40:00.000Z</dc:date.TXDate>
-    <dc:relation.TXChannel>M4</dc:relation.TXChannel>
-    <dc:relation.Subtitles>true</dc:relation.Subtitles>
+    <dc:date.TXDate>2007-12-11T00:00:00.000Z</dc:date.TXDate>
+    <dc:relation.TXChannel>C4</dc:relation.TXChannel>
+    <dc:relation.Subtitles>false</dc:relation.Subtitles>
     <dc:relation.AudioDescription>false</dc:relation.AudioDescription>
-    <dc:relation.Duration>47:52</dc:relation.Duration>
+    <dc:relation.Duration>47:42</dc:relation.Duration>
+    <dc:relation.LoginRequired>true</dc:relation.LoginRequired>
+    <dc:relation.requestType>ARCHIVE</dc:relation.requestType>
+    <dc:relation.programmeId>43065/003</dc:relation.programmeId>
   </entry>
-  <entry xmlns:media="http://search.yahoo.com/mrss/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms">
-    <id>tag:www.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/4od%232921546</id>
+  <entry>
+    <id>tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/4od%233233562</id>
     <title type="text">Ramsay's Kitchen Nightmares</title>
-    <updated>2010-11-03T05:57:50.175Z</updated>
-    <summary type="html">Piccolo Teatro is a bijou vegetarian restaurant in Paris run by feisty Scot Rachel and her friend Stephanie, who are in need of a miracle to turn things around.</summary>
-    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#2921546" rel="alternate" type="text/html"/>
-    <link href="http://api.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide/series-4/episode-4.atom?apikey=API_KEY" rel="related" type="application/atom+xml"/>
+    <summary type="text">Piccolo Teatro is a bijou vegetarian restaurant in Paris run by feisty Scot Rachel and her friend Stephanie, who are in need of a miracle to turn things around.</summary>
+    <updated>2011-12-22T11:29:15.889Z</updated>
+    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#3233562" rel="alternate" type="text/html" />
+    <link href="http://pmlsc.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide/series-4/episode-4.atom" rel="related" type="application/atom+xml" />
     <media:group>
-      <media:player url="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#2921546"/>
-      <media:thumbnail url="http://www.channel4.com/assets/programmes/images/ramsays-kitchen-nightmares/series-4/ramsays-kitchen-nightmares-s4-20090617161032_200x113.jpg" height="113" width="200"/>
-      <media:rating>nonadult</media:rating>
-      <media:copyright url="http://www.channel4.com/terms_and_conditions.html">Terms and Conditions</media:copyright>
-      <media:restriction relationship="allow" type="country">uk ie</media:restriction>
-      <media:rights status="official"/>
+      <media:player url="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#3233562" />
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/ramsays-kitchen-nightmares/series-4/ramsays-kitchen-nightmares-s4-20090617161032_200x113.jpg" height="113" width="200" imageSource="fallback" />
+      <media:rating>adult</media:rating>
+      <media:copyright url="http://cache.channel4.com/terms_and_conditions.html">Terms and Conditions</media:copyright>
+      <media:restriction relationship="allow" type="country">GG,GB,JE,IM,IE</media:restriction>
+      <media:rights status="official" />
     </media:group>
-    <dcterms:available>start=2009-07-01T22:00:00.000Z; end=2010-11-29T00:00:00.000Z; scheme=W3C-DTF</dcterms:available>
+    <dc:relation.BrandTitle>Ramsay's Kitchen Nightmares</dc:relation.BrandTitle>
+    <dcterms:available>start=2011-09-14T22:00:00.000Z; end=2012-12-31T00:00:00.000Z; scheme=W3C-DTF</dcterms:available>
     <dc:relation.SeriesNumber>4</dc:relation.SeriesNumber>
     <dc:relation.EpisodeNumber>4</dc:relation.EpisodeNumber>
-    <dc:relation.AgeRating>0</dc:relation.AgeRating>
+    <dc:relation.RelatedEntryId feedId="tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/episode-guide/series-4">tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/episode-guide/series-4/episode-4</dc:relation.RelatedEntryId>
+    <dc:relation.AgeRating>16</dc:relation.AgeRating>
     <dc:relation.Guidance>Strong language throughout</dc:relation.Guidance>
-    <dc:date.TXDate>2008-11-20T21:00:00.000Z</dc:date.TXDate>
-    <dc:relation.TXChannel>M4</dc:relation.TXChannel>
-    <dc:relation.Subtitles>true</dc:relation.Subtitles>
+    <dc:date.TXDate>2007-11-06T00:00:00.000Z</dc:date.TXDate>
+    <dc:relation.TXChannel>C4</dc:relation.TXChannel>
+    <dc:relation.Subtitles>false</dc:relation.Subtitles>
     <dc:relation.AudioDescription>false</dc:relation.AudioDescription>
-    <dc:relation.Duration>48:16</dc:relation.Duration>
+    <dc:relation.Duration>47:49</dc:relation.Duration>
+    <dc:relation.LoginRequired>true</dc:relation.LoginRequired>
+    <dc:relation.requestType>ARCHIVE</dc:relation.requestType>
+    <dc:relation.programmeId>43065/004</dc:relation.programmeId>
   </entry>
-  <entry xmlns:media="http://search.yahoo.com/mrss/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms">
-    <id>tag:www.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/4od%232921547</id>
+  <entry>
+    <id>tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/4od%233233563</id>
     <title type="text">Ramsay's Kitchen Nightmares</title>
-    <updated>2010-11-03T05:57:50.175Z</updated>
-    <summary type="html">Gordon Ramsay is back in Spain to see how Laurence is faring at La Parra de Burriana, an ex-pat restaurant in Nerja on the Costa del Sol.</summary>
-    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#2921547" rel="alternate" type="text/html"/>
-    <link href="http://api.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide/series-4/episode-5.atom?apikey=API_KEY" rel="related" type="application/atom+xml"/>
+    <summary type="text">Gordon Ramsay is back in Spain to see how Laurence is faring at La Parra de Burriana, an ex-pat restaurant in Nerja on the Costa del Sol.</summary>
+    <updated>2011-12-22T11:29:15.457Z</updated>
+    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#3233563" rel="alternate" type="text/html" />
+    <link href="http://pmlsc.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide/series-4/episode-5.atom" rel="related" type="application/atom+xml" />
     <media:group>
-      <media:player url="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#2921547"/>
-      <media:thumbnail url="http://www.channel4.com/assets/programmes/images/ramsays-kitchen-nightmares/series-4/ramsays-kitchen-nightmares-s4-20090617161032_200x113.jpg" height="113" width="200"/>
-      <media:rating>nonadult</media:rating>
-      <media:copyright url="http://www.channel4.com/terms_and_conditions.html">Terms and Conditions</media:copyright>
-      <media:restriction relationship="allow" type="country">uk ie</media:restriction>
-      <media:rights status="official"/>
+      <media:player url="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#3233563" />
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/ramsays-kitchen-nightmares/series-4/ramsays-kitchen-nightmares-s4-20090617161032_200x113.jpg" height="113" width="200" imageSource="fallback" />
+      <media:rating>adult</media:rating>
+      <media:copyright url="http://cache.channel4.com/terms_and_conditions.html">Terms and Conditions</media:copyright>
+      <media:restriction relationship="allow" type="country">GG,GB,JE,IM,IE</media:restriction>
+      <media:rights status="official" />
     </media:group>
-    <dcterms:available>start=2009-07-01T22:00:00.000Z; end=2010-11-29T00:00:00.000Z; scheme=W3C-DTF</dcterms:available>
+    <dc:relation.BrandTitle>Ramsay's Kitchen Nightmares</dc:relation.BrandTitle>
+    <dcterms:available>start=2011-09-14T22:00:00.000Z; end=2012-12-31T00:00:00.000Z; scheme=W3C-DTF</dcterms:available>
     <dc:relation.SeriesNumber>4</dc:relation.SeriesNumber>
     <dc:relation.EpisodeNumber>5</dc:relation.EpisodeNumber>
-    <dc:relation.AgeRating>0</dc:relation.AgeRating>
+    <dc:relation.RelatedEntryId feedId="tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/episode-guide/series-4">tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/episode-guide/series-4/episode-5</dc:relation.RelatedEntryId>
+    <dc:relation.AgeRating>16</dc:relation.AgeRating>
     <dc:relation.Guidance>Strong language throughout</dc:relation.Guidance>
-    <dc:date.TXDate>2008-11-27T21:00:00.000Z</dc:date.TXDate>
-    <dc:relation.TXChannel>M4</dc:relation.TXChannel>
-    <dc:relation.Subtitles>true</dc:relation.Subtitles>
+    <dc:date.TXDate>2007-11-20T00:00:00.000Z</dc:date.TXDate>
+    <dc:relation.TXChannel>C4</dc:relation.TXChannel>
+    <dc:relation.Subtitles>false</dc:relation.Subtitles>
     <dc:relation.AudioDescription>false</dc:relation.AudioDescription>
-    <dc:relation.Duration>48:01</dc:relation.Duration>
+    <dc:relation.Duration>47:43</dc:relation.Duration>
+    <dc:relation.LoginRequired>true</dc:relation.LoginRequired>
+    <dc:relation.requestType>ARCHIVE</dc:relation.requestType>
+    <dc:relation.programmeId>43065/005</dc:relation.programmeId>
   </entry>
-  <entry xmlns:media="http://search.yahoo.com/mrss/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms">
-    <id>tag:www.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/4od%232921548</id>
+  <entry>
+    <id>tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/4od%233233565</id>
     <title type="text">Ramsay's Kitchen Nightmares</title>
-    <updated>2010-11-03T05:57:50.175Z</updated>
-    <summary type="html">Gordon Ramsay is back to see how Brian and Elaine are faring at the Fenwick Arms in rural Lancashire.</summary>
-    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#2921548" rel="alternate" type="text/html"/>
-    <link href="http://api.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide/series-4/episode-6.atom?apikey=API_KEY" rel="related" type="application/atom+xml"/>
+    <summary type="text">Gordon Ramsay is back to see how Brian and Elaine are faring at the Fenwick Arms in rural Lancashire.</summary>
+    <updated>2011-12-22T11:29:15.623Z</updated>
+    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#3233565" rel="alternate" type="text/html" />
+    <link href="http://pmlsc.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide/series-4/episode-6.atom" rel="related" type="application/atom+xml" />
     <media:group>
-      <media:player url="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#2921548"/>
-      <media:thumbnail url="http://www.channel4.com/assets/programmes/images/ramsays-kitchen-nightmares/series-4/ramsays-kitchen-nightmares-s4-20090617161032_200x113.jpg" height="113" width="200"/>
-      <media:rating>nonadult</media:rating>
-      <media:copyright url="http://www.channel4.com/terms_and_conditions.html">Terms and Conditions</media:copyright>
-      <media:restriction relationship="allow" type="country">uk ie</media:restriction>
-      <media:rights status="official"/>
+      <media:player url="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#3233565" />
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/ramsays-kitchen-nightmares/series-4/ramsays-kitchen-nightmares-s4-20090617161032_200x113.jpg" height="113" width="200" imageSource="fallback" />
+      <media:rating>adult</media:rating>
+      <media:copyright url="http://cache.channel4.com/terms_and_conditions.html">Terms and Conditions</media:copyright>
+      <media:restriction relationship="allow" type="country">GG,GB,JE,IM,IE</media:restriction>
+      <media:rights status="official" />
     </media:group>
-    <dcterms:available>start=2009-07-01T22:00:00.000Z; end=2010-11-29T00:00:00.000Z; scheme=W3C-DTF</dcterms:available>
+    <dc:relation.BrandTitle>Ramsay's Kitchen Nightmares</dc:relation.BrandTitle>
+    <dcterms:available>start=2011-09-14T22:00:00.000Z; end=2012-12-31T00:00:00.000Z; scheme=W3C-DTF</dcterms:available>
     <dc:relation.SeriesNumber>4</dc:relation.SeriesNumber>
     <dc:relation.EpisodeNumber>6</dc:relation.EpisodeNumber>
-    <dc:relation.AgeRating>0</dc:relation.AgeRating>
+    <dc:relation.RelatedEntryId feedId="tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/episode-guide/series-4">tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/episode-guide/series-4/episode-6</dc:relation.RelatedEntryId>
+    <dc:relation.AgeRating>16</dc:relation.AgeRating>
     <dc:relation.Guidance>Strong language throughout</dc:relation.Guidance>
     <dc:date.TXDate>2009-04-08T21:00:00.000Z</dc:date.TXDate>
     <dc:relation.TXChannel>M4</dc:relation.TXChannel>
-    <dc:relation.Subtitles>true</dc:relation.Subtitles>
+    <dc:relation.Subtitles>false</dc:relation.Subtitles>
     <dc:relation.AudioDescription>false</dc:relation.AudioDescription>
-    <dc:relation.Duration>48:08</dc:relation.Duration>
+    <dc:relation.Duration>47:44</dc:relation.Duration>
+    <dc:relation.LoginRequired>true</dc:relation.LoginRequired>
+    <dc:relation.requestType>ARCHIVE</dc:relation.requestType>
+    <dc:relation.programmeId>43065/006</dc:relation.programmeId>
   </entry>
-  <entry xmlns:media="http://search.yahoo.com/mrss/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms">
-    <id>tag:www.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/4od%232921549</id>
+  <entry>
+    <id>tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/4od%233233564</id>
     <title type="text">Ramsay's Kitchen Nightmares</title>
-    <updated>2010-11-03T05:57:50.175Z</updated>
-    <summary type="html">The venue for the final programme is The Granary in rural Hampshire, which at 200 covers, is the biggest challenge Gordon's ever taken on.</summary>
-    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#2921549" rel="alternate" type="text/html"/>
-    <link href="http://api.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide/series-4/episode-7.atom?apikey=API_KEY" rel="related" type="application/atom+xml"/>
+    <summary type="text">The venue for the final programme is The Granary in rural Hampshire, which at 200 covers, is the biggest challenge Gordon's ever taken on.</summary>
+    <updated>2011-12-22T11:29:15.542Z</updated>
+    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#3233564" rel="alternate" type="text/html" />
+    <link href="http://pmlsc.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide/series-4/episode-7.atom" rel="related" type="application/atom+xml" />
     <media:group>
-      <media:player url="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#2921549"/>
-      <media:thumbnail url="http://www.channel4.com/assets/programmes/images/ramsays-kitchen-nightmares/series-4/ramsays-kitchen-nightmares-s4-20090617161032_200x113.jpg" height="113" width="200"/>
-      <media:rating>nonadult</media:rating>
-      <media:copyright url="http://www.channel4.com/terms_and_conditions.html">Terms and Conditions</media:copyright>
-      <media:restriction relationship="allow" type="country">uk ie</media:restriction>
-      <media:rights status="official"/>
+      <media:player url="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#3233564" />
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/ramsays-kitchen-nightmares/series-4/ramsays-kitchen-nightmares-s4-20090617161032_200x113.jpg" height="113" width="200" imageSource="fallback" />
+      <media:rating>adult</media:rating>
+      <media:copyright url="http://cache.channel4.com/terms_and_conditions.html">Terms and Conditions</media:copyright>
+      <media:restriction relationship="allow" type="country">GG,GB,JE,IM,IE</media:restriction>
+      <media:rights status="official" />
     </media:group>
-    <dcterms:available>start=2009-07-01T22:00:00.000Z; end=2010-11-29T00:00:00.000Z; scheme=W3C-DTF</dcterms:available>
+    <dc:relation.BrandTitle>Ramsay's Kitchen Nightmares</dc:relation.BrandTitle>
+    <dcterms:available>start=2011-09-14T22:00:00.000Z; end=2012-12-31T00:00:00.000Z; scheme=W3C-DTF</dcterms:available>
     <dc:relation.SeriesNumber>4</dc:relation.SeriesNumber>
     <dc:relation.EpisodeNumber>7</dc:relation.EpisodeNumber>
-    <dc:relation.AgeRating>0</dc:relation.AgeRating>
+    <dc:relation.RelatedEntryId feedId="tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/episode-guide/series-4">tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/episode-guide/series-4/episode-7</dc:relation.RelatedEntryId>
+    <dc:relation.AgeRating>16</dc:relation.AgeRating>
     <dc:relation.Guidance>Strong language throughout</dc:relation.Guidance>
-    <dc:date.TXDate>2008-12-11T21:00:00.000Z</dc:date.TXDate>
-    <dc:relation.TXChannel>M4</dc:relation.TXChannel>
-    <dc:relation.Subtitles>true</dc:relation.Subtitles>
+    <dc:date.TXDate>2007-12-18T00:00:00.000Z</dc:date.TXDate>
+    <dc:relation.TXChannel>C4</dc:relation.TXChannel>
+    <dc:relation.Subtitles>false</dc:relation.Subtitles>
     <dc:relation.AudioDescription>false</dc:relation.AudioDescription>
-    <dc:relation.Duration>48:16</dc:relation.Duration>
+    <dc:relation.Duration>48:10</dc:relation.Duration>
+    <dc:relation.LoginRequired>true</dc:relation.LoginRequired>
+    <dc:relation.requestType>ARCHIVE</dc:relation.requestType>
+    <dc:relation.programmeId>43065/007</dc:relation.programmeId>
   </entry>
-  <entry xmlns:media="http://search.yahoo.com/mrss/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms">
-    <id>tag:www.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/4od%232921550</id>
+  <entry>
+    <id>tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/4od%233233582</id>
     <title type="text">Ramsay's Kitchen Nightmares</title>
-    <updated>2010-11-03T05:57:50.175Z</updated>
-    <summary type="html">Gordon visits the Fish &amp; Anchor, a restaurant and bar near Lampeter in rural West Wales, owned and run by ex-boxer Mike and his wife Caron.</summary>
-    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#2921550" rel="alternate" type="text/html"/>
-    <link href="http://api.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide/series-4/episode-8.atom?apikey=API_KEY" rel="related" type="application/atom+xml"/>
+    <summary type="text">Gordon visits the Fish &amp; Anchor, a restaurant and bar near Lampeter in rural West Wales, owned and run by ex-boxer Mike and his wife Caron.</summary>
+    <updated>2011-12-22T11:29:15.708Z</updated>
+    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#3233582" rel="alternate" type="text/html" />
+    <link href="http://pmlsc.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide/series-4/episode-8.atom" rel="related" type="application/atom+xml" />
     <media:group>
-      <media:player url="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#2921550"/>
-      <media:thumbnail url="http://www.channel4.com/assets/programmes/images/ramsays-kitchen-nightmares/series-4/ramsays-kitchen-nightmares-s4-20090617161032_200x113.jpg" height="113" width="200"/>
-      <media:rating>nonadult</media:rating>
-      <media:copyright url="http://www.channel4.com/terms_and_conditions.html">Terms and Conditions</media:copyright>
-      <media:restriction relationship="allow" type="country">uk ie</media:restriction>
-      <media:rights status="official"/>
+      <media:player url="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#3233582" />
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/ramsays-kitchen-nightmares/series-4/ramsays-kitchen-nightmares-s4-20090617161032_200x113.jpg" height="113" width="200" imageSource="fallback" />
+      <media:rating>adult</media:rating>
+      <media:copyright url="http://cache.channel4.com/terms_and_conditions.html">Terms and Conditions</media:copyright>
+      <media:restriction relationship="allow" type="country">GG,GB,JE,IM,IE</media:restriction>
+      <media:rights status="official" />
     </media:group>
-    <dcterms:available>start=2009-07-01T22:00:00.000Z; end=2010-11-29T00:00:00.000Z; scheme=W3C-DTF</dcterms:available>
+    <dc:relation.BrandTitle>Ramsay's Kitchen Nightmares</dc:relation.BrandTitle>
+    <dcterms:available>start=2011-09-14T22:00:00.000Z; end=2012-12-31T00:00:00.000Z; scheme=W3C-DTF</dcterms:available>
     <dc:relation.SeriesNumber>4</dc:relation.SeriesNumber>
     <dc:relation.EpisodeNumber>8</dc:relation.EpisodeNumber>
-    <dc:relation.AgeRating>0</dc:relation.AgeRating>
+    <dc:relation.RelatedEntryId feedId="tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/episode-guide/series-4">tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/episode-guide/series-4/episode-8</dc:relation.RelatedEntryId>
+    <dc:relation.AgeRating>16</dc:relation.AgeRating>
     <dc:relation.Guidance>Strong language throughout</dc:relation.Guidance>
-    <dc:date.TXDate>2008-12-18T22:00:00.000Z</dc:date.TXDate>
-    <dc:relation.TXChannel>M4</dc:relation.TXChannel>
+    <dc:date.TXDate>2007-12-04T00:00:00.000Z</dc:date.TXDate>
+    <dc:relation.TXChannel>C4</dc:relation.TXChannel>
     <dc:relation.Subtitles>true</dc:relation.Subtitles>
     <dc:relation.AudioDescription>false</dc:relation.AudioDescription>
     <dc:relation.Duration>48:17</dc:relation.Duration>
+    <dc:relation.LoginRequired>true</dc:relation.LoginRequired>
+    <dc:relation.requestType>ARCHIVE</dc:relation.requestType>
+    <dc:relation.programmeId>43065/008</dc:relation.programmeId>
   </entry>
-  <entry xmlns:media="http://search.yahoo.com/mrss/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms">
-    <id>tag:www.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/4od%232920400</id>
+  <entry>
+    <id>tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/4od%232920400</id>
     <title type="text">Ramsay's Kitchen Nightmares</title>
-    <updated>2010-11-03T05:57:50.175Z</updated>
-    <summary type="html">Gordon revisits the Glass House Restaurant in Ambleside where some unexpected departures have taken place. So who is in charge of the kitchen now and how are they faring?</summary>
-    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#2920400" rel="alternate" type="text/html"/>
-    <link href="http://api.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide/series-2005/episode-1.atom?apikey=API_KEY" rel="related" type="application/atom+xml"/>
+    <summary type="text">Gordon revisits the Glass House Restaurant in Ambleside where some unexpected departures have taken place. So who is in charge of the kitchen now and how are they faring?</summary>
+    <updated>2011-12-16T12:01:02.478Z</updated>
+    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#2920400" rel="alternate" type="text/html" />
+    <link href="http://pmlsc.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide/series-5/episode-1.atom" rel="related" type="application/atom+xml" />
     <media:group>
-      <media:player url="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#2920400"/>
-      <media:thumbnail url="http://www.channel4.com/assets/programmes/images/ramsays-kitchen-nightmares/ramsays-kitchen-nightmares_200x113.jpg" height="113" width="200"/>
-      <media:rating>nonadult</media:rating>
-      <media:copyright url="http://www.channel4.com/terms_and_conditions.html">Terms and Conditions</media:copyright>
-      <media:restriction relationship="allow" type="country">uk ie</media:restriction>
-      <media:rights status="official"/>
+      <media:player url="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#2920400" />
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/ramsays-kitchen-nightmares/series-5/ab8e7e6d-5dde-40b5-b369-f9b8e38bcab5_200x113.jpg" height="113" width="200" imageSource="fallback" />
+      <media:rating>adult</media:rating>
+      <media:copyright url="http://cache.channel4.com/terms_and_conditions.html">Terms and Conditions</media:copyright>
+      <media:restriction relationship="allow" type="country">GG,GB,JE,IM,IE</media:restriction>
+      <media:rights status="official" />
     </media:group>
-    <dcterms:available>start=2009-05-31T22:00:00.000Z; end=2010-12-31T00:00:00.000Z; scheme=W3C-DTF</dcterms:available>
-    <dc:relation.SeriesNumber>2005</dc:relation.SeriesNumber>
+    <dc:relation.BrandTitle>Ramsay's Kitchen Nightmares</dc:relation.BrandTitle>
+    <dcterms:available>start=2009-12-01T00:00:00.000Z; end=2012-12-31T00:00:00.000Z; scheme=W3C-DTF</dcterms:available>
+    <dc:relation.SeriesNumber>5</dc:relation.SeriesNumber>
     <dc:relation.EpisodeNumber>1</dc:relation.EpisodeNumber>
-    <dc:relation.AgeRating>0</dc:relation.AgeRating>
+    <dc:relation.RelatedEntryId feedId="tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/episode-guide/series-5">tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/episode-guide/series-5/episode-1</dc:relation.RelatedEntryId>
+    <dc:relation.AgeRating>16</dc:relation.AgeRating>
     <dc:relation.Guidance>Strong language from the start</dc:relation.Guidance>
     <dc:date.TXDate>2009-07-29T23:10:00.000Z</dc:date.TXDate>
     <dc:relation.TXChannel>M4</dc:relation.TXChannel>
     <dc:relation.Subtitles>false</dc:relation.Subtitles>
     <dc:relation.AudioDescription>false</dc:relation.AudioDescription>
     <dc:relation.Duration>49:29</dc:relation.Duration>
+    <dc:relation.LoginRequired>true</dc:relation.LoginRequired>
+    <dc:relation.requestType>ARCHIVE</dc:relation.requestType>
+    <dc:relation.programmeId>38984/001</dc:relation.programmeId>
   </entry>
-  <entry xmlns:media="http://search.yahoo.com/mrss/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms">
-    <id>tag:www.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/4od%232920399</id>
+  <entry>
+    <id>tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/4od%232920399</id>
     <title type="text">Ramsay's Kitchen Nightmares</title>
-    <updated>2010-11-03T05:57:50.175Z</updated>
-    <summary type="html">Ramsay revisits the Walnut Tree Inn, set in beautiful Welsh countryside. Last time it was struggling to survive and Gordon gave the owner, Francesco, his best advice, but did he take it?</summary>
-    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#2920399" rel="alternate" type="text/html"/>
-    <link href="http://api.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide/series-2005/episode-2.atom?apikey=API_KEY" rel="related" type="application/atom+xml"/>
+    <summary type="text">Ramsay revisits the Walnut Tree Inn, set in beautiful Welsh countryside. Last time it was struggling to survive and Gordon gave the owner, Francesco, his best advice, but did he take it?</summary>
+    <updated>2011-12-16T12:01:02.416Z</updated>
+    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#2920399" rel="alternate" type="text/html" />
+    <link href="http://pmlsc.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide/series-5/episode-2.atom" rel="related" type="application/atom+xml" />
     <media:group>
-      <media:player url="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#2920399"/>
-      <media:thumbnail url="http://www.channel4.com/assets/programmes/images/ramsays-kitchen-nightmares/ramsays-kitchen-nightmares_200x113.jpg" height="113" width="200"/>
-      <media:rating>nonadult</media:rating>
-      <media:copyright url="http://www.channel4.com/terms_and_conditions.html">Terms and Conditions</media:copyright>
-      <media:restriction relationship="allow" type="country">uk ie</media:restriction>
-      <media:rights status="official"/>
+      <media:player url="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#2920399" />
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/ramsays-kitchen-nightmares/series-5/ab8e7e6d-5dde-40b5-b369-f9b8e38bcab5_200x113.jpg" height="113" width="200" imageSource="fallback" />
+      <media:rating>adult</media:rating>
+      <media:copyright url="http://cache.channel4.com/terms_and_conditions.html">Terms and Conditions</media:copyright>
+      <media:restriction relationship="allow" type="country">GG,GB,JE,IM,IE</media:restriction>
+      <media:rights status="official" />
     </media:group>
-    <dcterms:available>start=2009-05-31T22:00:00.000Z; end=2010-12-31T00:00:00.000Z; scheme=W3C-DTF</dcterms:available>
-    <dc:relation.SeriesNumber>2005</dc:relation.SeriesNumber>
+    <dc:relation.BrandTitle>Ramsay's Kitchen Nightmares</dc:relation.BrandTitle>
+    <dcterms:available>start=2009-12-01T00:00:00.000Z; end=2012-12-31T00:00:00.000Z; scheme=W3C-DTF</dcterms:available>
+    <dc:relation.SeriesNumber>5</dc:relation.SeriesNumber>
     <dc:relation.EpisodeNumber>2</dc:relation.EpisodeNumber>
-    <dc:relation.AgeRating>0</dc:relation.AgeRating>
+    <dc:relation.RelatedEntryId feedId="tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/episode-guide/series-5">tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/episode-guide/series-5/episode-2</dc:relation.RelatedEntryId>
+    <dc:relation.AgeRating>16</dc:relation.AgeRating>
     <dc:relation.Guidance>Strong language</dc:relation.Guidance>
     <dc:date.TXDate>2009-08-05T23:10:00.000Z</dc:date.TXDate>
     <dc:relation.TXChannel>M4</dc:relation.TXChannel>
     <dc:relation.Subtitles>true</dc:relation.Subtitles>
     <dc:relation.AudioDescription>false</dc:relation.AudioDescription>
     <dc:relation.Duration>49:05</dc:relation.Duration>
+    <dc:relation.LoginRequired>true</dc:relation.LoginRequired>
+    <dc:relation.requestType>ARCHIVE</dc:relation.requestType>
+    <dc:relation.programmeId>38984/002</dc:relation.programmeId>
   </entry>
-  <entry xmlns:media="http://search.yahoo.com/mrss/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms">
-    <id>tag:www.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/4od%232920398</id>
+  <entry>
+    <id>tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/4od%232920398</id>
     <title type="text">Ramsay's Kitchen Nightmares</title>
-    <updated>2010-11-03T05:57:50.175Z</updated>
-    <summary type="html">Gordon revisits Moore Place to see if his fast-track guide to restaurant success helped Nick and Richard transform their failing ex-Berni Inn.</summary>
-    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#2920398" rel="alternate" type="text/html"/>
-    <link href="http://api.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide/series-2005/episode-3.atom?apikey=API_KEY" rel="related" type="application/atom+xml"/>
+    <summary type="text">Gordon revisits Moore Place to see if his fast-track guide to restaurant success helped Nick and Richard transform their failing ex-Berni Inn.</summary>
+    <updated>2011-12-16T12:01:02.264Z</updated>
+    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#2920398" rel="alternate" type="text/html" />
+    <link href="http://pmlsc.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide/series-5/episode-3.atom" rel="related" type="application/atom+xml" />
     <media:group>
-      <media:player url="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#2920398"/>
-      <media:thumbnail url="http://www.channel4.com/assets/programmes/images/ramsays-kitchen-nightmares/ramsays-kitchen-nightmares_200x113.jpg" height="113" width="200"/>
-      <media:rating>nonadult</media:rating>
-      <media:copyright url="http://www.channel4.com/terms_and_conditions.html">Terms and Conditions</media:copyright>
-      <media:restriction relationship="allow" type="country">uk ie</media:restriction>
-      <media:rights status="official"/>
+      <media:player url="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#2920398" />
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/ramsays-kitchen-nightmares/series-5/ab8e7e6d-5dde-40b5-b369-f9b8e38bcab5_200x113.jpg" height="113" width="200" imageSource="fallback" />
+      <media:rating>adult</media:rating>
+      <media:copyright url="http://cache.channel4.com/terms_and_conditions.html">Terms and Conditions</media:copyright>
+      <media:restriction relationship="allow" type="country">GG,GB,JE,IM,IE</media:restriction>
+      <media:rights status="official" />
     </media:group>
-    <dcterms:available>start=2009-05-31T22:00:00.000Z; end=2010-12-31T00:00:00.000Z; scheme=W3C-DTF</dcterms:available>
-    <dc:relation.SeriesNumber>2005</dc:relation.SeriesNumber>
+    <dc:relation.BrandTitle>Ramsay's Kitchen Nightmares</dc:relation.BrandTitle>
+    <dcterms:available>start=2009-12-01T00:00:00.000Z; end=2012-12-31T00:00:00.000Z; scheme=W3C-DTF</dcterms:available>
+    <dc:relation.SeriesNumber>5</dc:relation.SeriesNumber>
     <dc:relation.EpisodeNumber>3</dc:relation.EpisodeNumber>
-    <dc:relation.AgeRating>0</dc:relation.AgeRating>
+    <dc:relation.RelatedEntryId feedId="tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/episode-guide/series-5">tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/episode-guide/series-5/episode-3</dc:relation.RelatedEntryId>
+    <dc:relation.AgeRating>16</dc:relation.AgeRating>
     <dc:relation.Guidance>Strong language throughout</dc:relation.Guidance>
     <dc:date.TXDate>2009-08-12T23:10:00.000Z</dc:date.TXDate>
     <dc:relation.TXChannel>M4</dc:relation.TXChannel>
     <dc:relation.Subtitles>true</dc:relation.Subtitles>
     <dc:relation.AudioDescription>false</dc:relation.AudioDescription>
     <dc:relation.Duration>49:26</dc:relation.Duration>
+    <dc:relation.LoginRequired>true</dc:relation.LoginRequired>
+    <dc:relation.requestType>ARCHIVE</dc:relation.requestType>
+    <dc:relation.programmeId>38984/003</dc:relation.programmeId>
   </entry>
-  <entry xmlns:media="http://search.yahoo.com/mrss/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms">
-    <id>tag:www.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/4od%232920397</id>
+  <entry>
+    <id>tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/4od%232920397</id>
     <title type="text">Ramsay's Kitchen Nightmares</title>
-    <updated>2010-11-03T05:57:50.175Z</updated>
-    <summary type="html">Gordon revisits Bonapartes in Silsden to see if his potent recipe of passion, perfectionism and inspirational leadership continues.</summary>
-    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#2920397" rel="alternate" type="text/html"/>
-    <link href="http://api.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide/series-2005/episode-4.atom?apikey=API_KEY" rel="related" type="application/atom+xml"/>
+    <summary type="text">Gordon revisits Bonapartes in Silsden to see if his potent recipe of passion, perfectionism and inspirational leadership continues.</summary>
+    <updated>2011-12-16T12:01:02.337Z</updated>
+    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#2920397" rel="alternate" type="text/html" />
+    <link href="http://pmlsc.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide/series-5/episode-4.atom" rel="related" type="application/atom+xml" />
     <media:group>
-      <media:player url="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#2920397"/>
-      <media:thumbnail url="http://www.channel4.com/assets/programmes/images/ramsays-kitchen-nightmares/ramsays-kitchen-nightmares_200x113.jpg" height="113" width="200"/>
-      <media:rating>nonadult</media:rating>
-      <media:copyright url="http://www.channel4.com/terms_and_conditions.html">Terms and Conditions</media:copyright>
-      <media:restriction relationship="allow" type="country">uk ie</media:restriction>
-      <media:rights status="official"/>
+      <media:player url="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#2920397" />
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/ramsays-kitchen-nightmares/series-5/ab8e7e6d-5dde-40b5-b369-f9b8e38bcab5_200x113.jpg" height="113" width="200" imageSource="fallback" />
+      <media:rating>adult</media:rating>
+      <media:copyright url="http://cache.channel4.com/terms_and_conditions.html">Terms and Conditions</media:copyright>
+      <media:restriction relationship="allow" type="country">GG,GB,JE,IM,IE</media:restriction>
+      <media:rights status="official" />
     </media:group>
-    <dcterms:available>start=2009-05-31T22:00:00.000Z; end=2010-12-31T00:00:00.000Z; scheme=W3C-DTF</dcterms:available>
-    <dc:relation.SeriesNumber>2005</dc:relation.SeriesNumber>
+    <dc:relation.BrandTitle>Ramsay's Kitchen Nightmares</dc:relation.BrandTitle>
+    <dcterms:available>start=2009-12-01T00:00:00.000Z; end=2012-12-31T00:00:00.000Z; scheme=W3C-DTF</dcterms:available>
+    <dc:relation.SeriesNumber>5</dc:relation.SeriesNumber>
     <dc:relation.EpisodeNumber>4</dc:relation.EpisodeNumber>
-    <dc:relation.AgeRating>0</dc:relation.AgeRating>
+    <dc:relation.RelatedEntryId feedId="tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/episode-guide/series-5">tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/episode-guide/series-5/episode-4</dc:relation.RelatedEntryId>
+    <dc:relation.AgeRating>16</dc:relation.AgeRating>
     <dc:relation.Guidance>Very strong language from the start and throughout</dc:relation.Guidance>
     <dc:relation.Subtitles>false</dc:relation.Subtitles>
     <dc:relation.AudioDescription>false</dc:relation.AudioDescription>
     <dc:relation.Duration>49:23</dc:relation.Duration>
+    <dc:relation.LoginRequired>true</dc:relation.LoginRequired>
+    <dc:relation.requestType>ARCHIVE</dc:relation.requestType>
+    <dc:relation.programmeId>38984/004</dc:relation.programmeId>
   </entry>
-
 </feed>

@@ -1,95 +1,120 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xmlns:dc="http://purl.org/dc/elements/1.1/" xml:base="http://www.channel4.com">
-  <id>tag:www.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/episode-guide/series-3</id>
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xmlns:dc="http://purl.org/dc/elements/1.1/" xml:base="http://pmlsc.channel4.com">
+  <id>tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/episode-guide/series-3</id>
   <title type="text">Series 3 - Ramsay's Kitchen Nightmares</title>
   <subtitle type="html">Multi Michelin-starred chef Gordon Ramsay is sharpening his knives - and his tongue - for another assault on some of the country's scariest restaurant kitchens, in the third series of the BAFTA-winning and Emmy-nominated Ramsay's Kitchen Nightmares.</subtitle>
-  <updated>2010-08-09T16:49:33.651Z</updated>
+  <updated>2011-08-22T17:06:10.955Z</updated>
   <author>
     <name>Channel 4 Television</name>
   </author>
-  <logo>http://www.channel4.com/assets/programmes/images/ramsays-kitchen-nightmares/series-3/ramsays-kitchen-nightmares-s3-20090617160853_200x113.jpg</logo>
-  <link href="http://api.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide.atom?apikey=API_KEY" rel="up" type="application/atom+xml"/>
-  <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/episode-guide/series-3" rel="alternate" type="text/html"/>
-  <link href="http://api.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide/series-3.atom?apikey=API_KEY" rel="self" type="application/atom+xml"/>
+  <logo imageSource="own">http://cache.channel4.com/assets/programmes/images/ramsays-kitchen-nightmares/series-3/ramsays-kitchen-nightmares-s3-20090617160853_200x113.jpg</logo>
+  <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/episode-guide/series-3" rel="alternate" type="text/html" />
+  <link href="http://pmlsc.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide.atom" rel="up" type="application/atom+xml" />
+  <link href="http://pmlsc.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide/series-3.atom" rel="self" type="application/atom+xml" />
+  <dc:relation.platformClientVersion>1.0</dc:relation.platformClientVersion>
+  <generator version="1.27.2">PMLSD</generator>
   <entry>
-    <id>tag:www.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/episode-guide/series-3/episode-1</id>
-    <title type="text">Ramsay's Kitchen: Nightmares</title>
+    <id>tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/episode-guide/series-3/episode-1</id>
+    <title type="text">Ramsay's Kitchen Nightmares</title>
     <summary type="html">Gordon heads for Spain, where Laurence's up-market restaurant amid the Costa del Sol's caffs is, simply, a shambles.</summary>
-    <updated>2010-08-09T16:49:33.652Z</updated>
-    <link href="http://api.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide/series-3/episode-1.atom?apikey=API_KEY" rel="self" type="application/atom+xml"/>
-    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/episode-guide/series-3/episode-1" rel="alternate" type="text/html"/>
-    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#2921983" rel="alternate" type="text/html" title="4oD"/>
-    <!-- test getting episode thumbnail -->
+    <updated>2011-08-22T17:06:11.229Z</updated>
+    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/episode-guide/series-3/episode-1" rel="alternate" type="text/html" />
+    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#2921983" rel="alternate" type="text/html" title="4oD" />
+    <link href="http://pmlsc.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide/series-3/episode-1.atom" rel="self" type="application/atom+xml" />
     <media:content>
-        <media:thumbnail url="http://www.channel4.com/assets/programmes/images/shameless/series-7/episode-8/c842994a-5c06-493e-9d1f-5b6a03188848_145x82.jpg" height="82" width="145"/>
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/ramsays-kitchen-nightmares/series-3/ramsays-kitchen-nightmares-s3-20090617160853_200x113.jpg" height="113" width="200" imageSource="fallback" />
     </media:content>
     <dc:relation.SeriesNumber>3</dc:relation.SeriesNumber>
     <dc:relation.EpisodeNumber>1</dc:relation.EpisodeNumber>
+    <dc:relation.programmeId>41337/001</dc:relation.programmeId>
   </entry>
   <entry>
-    <id>tag:www.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/episode-guide/series-3/episode-2</id>
+    <id>tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/episode-guide/series-3/episode-2</id>
     <title type="text">Ramsay's Kitchen Nightmares</title>
     <summary type="html">Gordon Ramsay takes on a pub for the first time; the Fenwick Arms, Lancashire. Can he persuade owner Brian to ditch his complex menu and cloying sauces for great, simple food?</summary>
-    <updated>2010-08-09T16:49:33.653Z</updated>
-    <link href="http://api.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide/series-3/episode-2.atom?apikey=API_KEY" rel="self" type="application/atom+xml"/>
-    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/episode-guide/series-3/episode-2" rel="alternate" type="text/html"/>
-    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#2921984" rel="alternate" type="text/html" title="4oD"/>
+    <updated>2011-08-22T17:06:43.144Z</updated>
+    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/episode-guide/series-3/episode-2" rel="alternate" type="text/html" />
+    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#2921984" rel="alternate" type="text/html" title="4oD" />
+    <link href="http://pmlsc.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide/series-3/episode-2.atom" rel="self" type="application/atom+xml" />
+    <media:content>
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/ramsays-kitchen-nightmares/series-3/ramsays-kitchen-nightmares-s3-20090617160853_200x113.jpg" height="113" width="200" imageSource="fallback" />
+    </media:content>
     <dc:relation.SeriesNumber>3</dc:relation.SeriesNumber>
     <dc:relation.EpisodeNumber>2</dc:relation.EpisodeNumber>
+    <dc:relation.programmeId>41337/002</dc:relation.programmeId>
   </entry>
   <entry>
-    <id>tag:www.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/episode-guide/series-3/episode-3</id>
+    <id>tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/episode-guide/series-3/episode-3</id>
     <title type="text">Ramsay's Kitchen Nightmares</title>
     <summary type="html">Gordon Ramsay tackles the fading Rococo restaurant in King's Lynn, run by Nick, an ex-Michelin-starred chef who's resting on his laurels with an overpriced menu trapped in the 90s.</summary>
-    <updated>2010-08-09T16:49:33.653Z</updated>
-    <link href="http://api.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide/series-3/episode-3.atom?apikey=API_KEY" rel="self" type="application/atom+xml"/>
-    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/episode-guide/series-3/episode-3" rel="alternate" type="text/html"/>
-    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#2921985" rel="alternate" type="text/html" title="4oD"/>
+    <updated>2011-08-22T17:06:43.067Z</updated>
+    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/episode-guide/series-3/episode-3" rel="alternate" type="text/html" />
+    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#2921985" rel="alternate" type="text/html" title="4oD" />
+    <link href="http://pmlsc.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide/series-3/episode-3.atom" rel="self" type="application/atom+xml" />
+    <media:content>
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/ramsays-kitchen-nightmares/series-3/ramsays-kitchen-nightmares-s3-20090617160853_200x113.jpg" height="113" width="200" imageSource="fallback" />
+    </media:content>
     <dc:relation.SeriesNumber>3</dc:relation.SeriesNumber>
     <dc:relation.EpisodeNumber>3</dc:relation.EpisodeNumber>
+    <dc:relation.programmeId>41337/003</dc:relation.programmeId>
   </entry>
   <entry>
-    <id>tag:www.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/episode-guide/series-3/episode-4</id>
+    <id>tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/episode-guide/series-3/episode-4</id>
     <title type="text">Ramsay's Kitchen Nightmares</title>
     <summary type="html">Gordon grapples with girl power when he takes on Morgan's, an intimate family-run restaurant in the heart of WAG territory near Liverpool.</summary>
-    <updated>2010-08-09T16:49:33.654Z</updated>
-    <link href="http://api.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide/series-3/episode-4.atom?apikey=API_KEY" rel="self" type="application/atom+xml"/>
-    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/episode-guide/series-3/episode-4" rel="alternate" type="text/html"/>
-    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#2921986" rel="alternate" type="text/html" title="4oD"/>
+    <updated>2011-08-22T17:06:42.989Z</updated>
+    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/episode-guide/series-3/episode-4" rel="alternate" type="text/html" />
+    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#2921986" rel="alternate" type="text/html" title="4oD" />
+    <link href="http://pmlsc.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide/series-3/episode-4.atom" rel="self" type="application/atom+xml" />
+    <media:content>
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/ramsays-kitchen-nightmares/series-3/ramsays-kitchen-nightmares-s3-20090617160853_200x113.jpg" height="113" width="200" imageSource="fallback" />
+    </media:content>
     <dc:relation.SeriesNumber>3</dc:relation.SeriesNumber>
     <dc:relation.EpisodeNumber>4</dc:relation.EpisodeNumber>
+    <dc:relation.programmeId>41337/004</dc:relation.programmeId>
   </entry>
   <entry>
-    <id>tag:www.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/episode-guide/series-3/episode-5</id>
+    <id>tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/episode-guide/series-3/episode-5</id>
     <title type="text">Ramsay'S Kitchen Nightmares</title>
     <summary type="html">Tonight, Gordon Ramsay takes on a pub for the first time, the Fenwick Arms, Lancs. Can he persuade owner Brian to ditch his complex menu and cloying sauces for great, simple food?</summary>
-    <updated>2010-08-09T16:49:33.655Z</updated>
-    <link href="http://api.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide/series-3/episode-5.atom?apikey=API_KEY" rel="self" type="application/atom+xml"/>
-    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/episode-guide/series-3/episode-5" rel="alternate" type="text/html"/>
+    <updated>2011-08-22T17:06:42.901Z</updated>
+    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/episode-guide/series-3/episode-5" rel="alternate" type="text/html" />
+    <link href="http://pmlsc.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide/series-3/episode-5.atom" rel="self" type="application/atom+xml" />
+    <media:content>
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/ramsays-kitchen-nightmares/series-3/ramsays-kitchen-nightmares-s3-20090617160853_200x113.jpg" height="113" width="200" imageSource="fallback" />
+    </media:content>
     <dc:relation.SeriesNumber>3</dc:relation.SeriesNumber>
     <dc:relation.EpisodeNumber>5</dc:relation.EpisodeNumber>
+    <dc:relation.programmeId>41337/005</dc:relation.programmeId>
   </entry>
   <entry>
-    <id>tag:www.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/episode-guide/series-3/episode-11</id>
+    <id>tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/episode-guide/series-3/episode-11</id>
     <title type="text">Ramsay's Kitchen Nightmares</title>
     <summary type="html">Gordon returns to La Riviera - now renamed Abstract - a fine dining restaurant in Inverness, as they plan to expand. Top French chef Loic Lefebvre is still there and has been promoted.</summary>
-    <updated>2010-08-09T16:49:33.655Z</updated>
-    <link href="http://api.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide/series-3/episode-11.atom?apikey=API_KEY" rel="self" type="application/atom+xml"/>
-    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/episode-guide/series-3/episode-11" rel="alternate" type="text/html"/>
-    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#2921987" rel="alternate" type="text/html" title="4oD"/>
+    <updated>2011-08-22T17:06:11.157Z</updated>
+    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/episode-guide/series-3/episode-11" rel="alternate" type="text/html" />
+    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#2921987" rel="alternate" type="text/html" title="4oD" />
+    <link href="http://pmlsc.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide/series-3/episode-11.atom" rel="self" type="application/atom+xml" />
+    <media:content>
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/ramsays-kitchen-nightmares/series-3/ramsays-kitchen-nightmares-s3-20090617160853_200x113.jpg" height="113" width="200" imageSource="fallback" />
+    </media:content>
     <dc:relation.SeriesNumber>3</dc:relation.SeriesNumber>
     <dc:relation.EpisodeNumber>11</dc:relation.EpisodeNumber>
+    <dc:relation.programmeId>41337/011</dc:relation.programmeId>
   </entry>
   <entry>
-    <id>tag:www.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/episode-guide/series-3/episode-12</id>
+    <id>tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/episode-guide/series-3/episode-12</id>
     <title type="text">Ramsay's Kitchen Nightmares</title>
     <summary type="html">Gordon returns to Momma Cherri's Soul Food Shack in Brighton to see how its owner Charita Jones is coping with a bustling business along with plans to expand.</summary>
-    <updated>2010-08-09T16:49:33.655Z</updated>
-    <link href="http://api.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide/series-3/episode-12.atom?apikey=API_KEY" rel="self" type="application/atom+xml"/>
-    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/episode-guide/series-3/episode-12" rel="alternate" type="text/html"/>
-    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#2921988" rel="alternate" type="text/html" title="4oD"/>
+    <updated>2011-08-22T17:06:11.088Z</updated>
+    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/episode-guide/series-3/episode-12" rel="alternate" type="text/html" />
+    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#2921988" rel="alternate" type="text/html" title="4oD" />
+    <link href="http://pmlsc.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide/series-3/episode-12.atom" rel="self" type="application/atom+xml" />
+    <media:content>
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/ramsays-kitchen-nightmares/series-3/ramsays-kitchen-nightmares-s3-20090617160853_200x113.jpg" height="113" width="200" imageSource="fallback" />
+    </media:content>
     <dc:relation.SeriesNumber>3</dc:relation.SeriesNumber>
     <dc:relation.EpisodeNumber>12</dc:relation.EpisodeNumber>
+    <dc:relation.programmeId>41337/012</dc:relation.programmeId>
   </entry>
-
 </feed>

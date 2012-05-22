@@ -1,0 +1,191 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms" xml:base="http://pmlsc.channel4.com">
+  <id>tag:xbox.pmlsc.channel4.com,2009:/programmes/jamie-does/4od</id>
+  <title type="text">Jamie Does... on 4oD</title>
+  <updated>2012-05-22T07:12:27.467Z</updated>
+  <author>
+    <name>Channel 4 Television</name>
+  </author>
+  <logo imageSource="own">http://cache.channel4.com/assets/programmes/images/jamie-does/9fb153ff-9998-4b20-acc0-84faa38e84f6_200x113.jpg</logo>
+  <link href="https://xbox.channel4.com/pmlsd/jamie-does.atom?platform=xbox" rel="up" type="application/atom+xml" />
+  <link href="https://xbox.channel4.com/pmlsd/jamie-does/4od.atom?platform=xbox" rel="self" type="application/atom+xml" />
+  <link href="https://xbox.channel4.com/pmlsd/jamie-does/4od/recommendations.atom?platform=xbox" rel="related" type="application/atom+xml" title="recommendations" />
+  <dc:relation.platformClientVersion>1.0</dc:relation.platformClientVersion>
+  <dc:relation.BrandFlattened>false</dc:relation.BrandFlattened>
+  <dc:relation.presentationBrand>C4</dc:relation.presentationBrand>
+  <generator version="1.29.1">PMLSD</generator>
+  <entry>
+    <id>tag:xbox.pmlsc.channel4.com,2009:/programmes/jamie-does/4od%233262607</id>
+    <title type="text">Jamie Does Marrakech</title>
+    <summary type="text">Jamie Oliver hits the road for a culinary expedition across Europe and into North Africa. In the first programme he's in Marrakesh dodging snake charmers and cooking tagine.</summary>
+    <updated>2011-11-28T12:46:00.200Z</updated>
+    <link href="https://xbox.channel4.com/pmlsd/jamie-does/episode-guide/series-1/episode-1.atom?platform=xbox" rel="related" type="application/atom+xml" />
+    <media:group>
+      <media:player url="https://ais.channel4.com/asset/3262607" />
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/jamie-does/series-1/episode-1/b58d87f7-9bb9-4d62-8d97-af696eb2d813_200x113.jpg" height="113" width="200" imageSource="own" altText="Jamie Oliver" />
+      <media:rating>nonadult</media:rating>
+      <media:copyright url="http://cache.channel4.com/terms_and_conditions.html">Terms and Conditions</media:copyright>
+      <media:restriction relationship="allow" type="country">GG,GB,JE,IM,IE</media:restriction>
+      <media:rights status="official" />
+    </media:group>
+    <dc:relation.BrandTitle>Jamie Does...</dc:relation.BrandTitle>
+    <dcterms:available>start=2011-11-07T00:00:00.000Z; end=2015-04-13T22:00:00.000Z; scheme=W3C-DTF</dcterms:available>
+    <dc:relation.SeriesNumber>1</dc:relation.SeriesNumber>
+    <dc:relation.EpisodeNumber>1</dc:relation.EpisodeNumber>
+    <dc:relation.RelatedEntryId feedId="tag:xbox.pmlsc.channel4.com,2009:/programmes/jamie-does/episode-guide/series-1">tag:xbox.pmlsc.channel4.com,2009:/programmes/jamie-does/episode-guide/series-1/episode-1</dc:relation.RelatedEntryId>
+    <dc:relation.AgeRating>0</dc:relation.AgeRating>
+    <dc:date.TXDate>2010-04-13T23:00:00.000Z</dc:date.TXDate>
+    <dc:relation.TXChannel>C4</dc:relation.TXChannel>
+    <dc:relation.Subtitles>false</dc:relation.Subtitles>
+    <dc:relation.AudioDescription>false</dc:relation.AudioDescription>
+    <dc:relation.Duration>48:33</dc:relation.Duration>
+    <dc:relation.LoginRequired>false</dc:relation.LoginRequired>
+    <dc:relation.requestType>ARCHIVE</dc:relation.requestType>
+    <dc:relation.programmeId>48367/001</dc:relation.programmeId>
+  </entry>
+  <entry>
+    <id>tag:xbox.pmlsc.channel4.com,2009:/programmes/jamie-does/4od%233262606</id>
+    <title type="text">Jamie Does Andalucia</title>
+    <summary type="text">Jamie travels to Andalucia, where he trains with some young bullfighters, makes paella for a whole village, and cooks rabbit stew with some hunters.</summary>
+    <updated>2011-11-25T16:02:42.582Z</updated>
+    <link href="https://xbox.channel4.com/pmlsd/jamie-does/episode-guide/series-1/episode-2.atom?platform=xbox" rel="related" type="application/atom+xml" />
+    <media:group>
+      <media:player url="https://ais.channel4.com/asset/3262606" />
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/jamie-does/series-1/episode-2/80e016f0-3ded-4ef8-a171-7c33337cdd7f_200x113.jpg" height="113" width="200" imageSource="own" altText="Jamie and some ham" />
+      <media:rating>nonadult</media:rating>
+      <media:copyright url="http://cache.channel4.com/terms_and_conditions.html">Terms and Conditions</media:copyright>
+      <media:restriction relationship="allow" type="country">GG,GB,JE,IM,IE</media:restriction>
+      <media:rights status="official" />
+    </media:group>
+    <dc:relation.BrandTitle>Jamie Does...</dc:relation.BrandTitle>
+    <dcterms:available>start=2011-11-07T00:00:00.000Z; end=2015-04-13T22:00:00.000Z; scheme=W3C-DTF</dcterms:available>
+    <dc:relation.SeriesNumber>1</dc:relation.SeriesNumber>
+    <dc:relation.EpisodeNumber>2</dc:relation.EpisodeNumber>
+    <dc:relation.RelatedEntryId feedId="tag:xbox.pmlsc.channel4.com,2009:/programmes/jamie-does/episode-guide/series-1">tag:xbox.pmlsc.channel4.com,2009:/programmes/jamie-does/episode-guide/series-1/episode-2</dc:relation.RelatedEntryId>
+    <dc:relation.AgeRating>0</dc:relation.AgeRating>
+    <dc:date.TXDate>2010-04-20T23:00:00.000Z</dc:date.TXDate>
+    <dc:relation.TXChannel>C4</dc:relation.TXChannel>
+    <dc:relation.Subtitles>false</dc:relation.Subtitles>
+    <dc:relation.AudioDescription>false</dc:relation.AudioDescription>
+    <dc:relation.Duration>48:36</dc:relation.Duration>
+    <dc:relation.LoginRequired>false</dc:relation.LoginRequired>
+    <dc:relation.requestType>ARCHIVE</dc:relation.requestType>
+    <dc:relation.programmeId>48367/002</dc:relation.programmeId>
+  </entry>
+  <entry>
+    <id>tag:xbox.pmlsc.channel4.com,2009:/programmes/jamie-does/4od%233262605</id>
+    <title type="text">Jamie Does Stockholm</title>
+    <summary type="text">Jamie is in Stockholm where he samples reindeer heart, a fermented herring that smells like a stink bomb, and picks wild mushrooms and blueberries. He also makes pike perch, and beetroot.</summary>
+    <updated>2011-11-25T16:04:44.378Z</updated>
+    <link href="https://xbox.channel4.com/pmlsd/jamie-does/episode-guide/series-1/episode-3.atom?platform=xbox" rel="related" type="application/atom+xml" />
+    <media:group>
+      <media:player url="https://ais.channel4.com/asset/3262605" />
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/jamie-does/series-1/episode-3/e5f6a6dd-704f-4d00-b7c2-24a2335bff18_200x113.jpg" height="113" width="200" imageSource="own" altText="Jamie Does... Stockholm" />
+      <media:rating>nonadult</media:rating>
+      <media:copyright url="http://cache.channel4.com/terms_and_conditions.html">Terms and Conditions</media:copyright>
+      <media:restriction relationship="allow" type="country">GG,GB,JE,IM,IE</media:restriction>
+      <media:rights status="official" />
+    </media:group>
+    <dc:relation.BrandTitle>Jamie Does...</dc:relation.BrandTitle>
+    <dcterms:available>start=2011-11-07T00:00:00.000Z; end=2015-04-13T22:00:00.000Z; scheme=W3C-DTF</dcterms:available>
+    <dc:relation.SeriesNumber>1</dc:relation.SeriesNumber>
+    <dc:relation.EpisodeNumber>3</dc:relation.EpisodeNumber>
+    <dc:relation.RelatedEntryId feedId="tag:xbox.pmlsc.channel4.com,2009:/programmes/jamie-does/episode-guide/series-1">tag:xbox.pmlsc.channel4.com,2009:/programmes/jamie-does/episode-guide/series-1/episode-3</dc:relation.RelatedEntryId>
+    <dc:relation.AgeRating>0</dc:relation.AgeRating>
+    <dc:date.TXDate>2010-04-27T23:00:00.000Z</dc:date.TXDate>
+    <dc:relation.TXChannel>C4</dc:relation.TXChannel>
+    <dc:relation.Subtitles>false</dc:relation.Subtitles>
+    <dc:relation.AudioDescription>false</dc:relation.AudioDescription>
+    <dc:relation.Duration>48:18</dc:relation.Duration>
+    <dc:relation.LoginRequired>false</dc:relation.LoginRequired>
+    <dc:relation.requestType>ARCHIVE</dc:relation.requestType>
+    <dc:relation.programmeId>48367/003</dc:relation.programmeId>
+  </entry>
+  <entry>
+    <id>tag:xbox.pmlsc.channel4.com,2009:/programmes/jamie-does/4od%233262604</id>
+    <title type="text">Jamie Does Venice</title>
+    <summary type="text">Jamie is in Venice, getting away from the tourist traps and cooking up some spaghetti vongole, an amazing risotto, and a perfect Venetian tiramisu.</summary>
+    <updated>2011-11-25T16:06:15.430Z</updated>
+    <link href="https://xbox.channel4.com/pmlsd/jamie-does/episode-guide/series-1/episode-4.atom?platform=xbox" rel="related" type="application/atom+xml" />
+    <media:group>
+      <media:player url="https://ais.channel4.com/asset/3262604" />
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/jamie-does/series-1/episode-4/4c7a7bfe-9ead-471e-97ff-4565678c2a83_200x113.jpg" height="113" width="200" imageSource="own" altText="Jamie Does... Venice" />
+      <media:rating>nonadult</media:rating>
+      <media:copyright url="http://cache.channel4.com/terms_and_conditions.html">Terms and Conditions</media:copyright>
+      <media:restriction relationship="allow" type="country">GG,GB,JE,IM,IE</media:restriction>
+      <media:rights status="official" />
+    </media:group>
+    <dc:relation.BrandTitle>Jamie Does...</dc:relation.BrandTitle>
+    <dcterms:available>start=2011-11-07T00:00:00.000Z; end=2015-04-13T22:00:00.000Z; scheme=W3C-DTF</dcterms:available>
+    <dc:relation.SeriesNumber>1</dc:relation.SeriesNumber>
+    <dc:relation.EpisodeNumber>4</dc:relation.EpisodeNumber>
+    <dc:relation.RelatedEntryId feedId="tag:xbox.pmlsc.channel4.com,2009:/programmes/jamie-does/episode-guide/series-1">tag:xbox.pmlsc.channel4.com,2009:/programmes/jamie-does/episode-guide/series-1/episode-4</dc:relation.RelatedEntryId>
+    <dc:relation.AgeRating>0</dc:relation.AgeRating>
+    <dc:date.TXDate>2010-05-04T23:00:00.000Z</dc:date.TXDate>
+    <dc:relation.TXChannel>C4</dc:relation.TXChannel>
+    <dc:relation.Subtitles>false</dc:relation.Subtitles>
+    <dc:relation.AudioDescription>false</dc:relation.AudioDescription>
+    <dc:relation.Duration>48:22</dc:relation.Duration>
+    <dc:relation.LoginRequired>false</dc:relation.LoginRequired>
+    <dc:relation.requestType>ARCHIVE</dc:relation.requestType>
+    <dc:relation.programmeId>48367/004</dc:relation.programmeId>
+  </entry>
+  <entry>
+    <id>tag:xbox.pmlsc.channel4.com,2009:/programmes/jamie-does/4od%233262608</id>
+    <title type="text">Jamie Does The French Pyrenees</title>
+    <summary type="text">Jamie goes truffle-hunting and wild boar hunting in the French Pyrenees. He also prepares a classic tarte tatin, Roquefort salad, an old school confit of duck, and a country-style terrine.</summary>
+    <updated>2011-11-28T12:46:00.274Z</updated>
+    <link href="https://xbox.channel4.com/pmlsd/jamie-does/episode-guide/series-1/episode-5.atom?platform=xbox" rel="related" type="application/atom+xml" />
+    <media:group>
+      <media:player url="https://ais.channel4.com/asset/3262608" />
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/jamie-does/series-1/episode-5/bd1aa6ec-7dbc-4dc8-973b-5018e29abbad_200x113.jpg" height="113" width="200" imageSource="own" altText="Jamie Does... The French Pyrenees" />
+      <media:rating>nonadult</media:rating>
+      <media:copyright url="http://cache.channel4.com/terms_and_conditions.html">Terms and Conditions</media:copyright>
+      <media:restriction relationship="allow" type="country">GG,GB,JE,IM,IE</media:restriction>
+      <media:rights status="official" />
+    </media:group>
+    <dc:relation.BrandTitle>Jamie Does...</dc:relation.BrandTitle>
+    <dcterms:available>start=2011-11-07T00:00:00.000Z; end=2015-04-13T22:00:00.000Z; scheme=W3C-DTF</dcterms:available>
+    <dc:relation.SeriesNumber>1</dc:relation.SeriesNumber>
+    <dc:relation.EpisodeNumber>5</dc:relation.EpisodeNumber>
+    <dc:relation.RelatedEntryId feedId="tag:xbox.pmlsc.channel4.com,2009:/programmes/jamie-does/episode-guide/series-1">tag:xbox.pmlsc.channel4.com,2009:/programmes/jamie-does/episode-guide/series-1/episode-5</dc:relation.RelatedEntryId>
+    <dc:relation.AgeRating>0</dc:relation.AgeRating>
+    <dc:date.TXDate>2010-05-11T23:00:00.000Z</dc:date.TXDate>
+    <dc:relation.TXChannel>C4</dc:relation.TXChannel>
+    <dc:relation.Subtitles>false</dc:relation.Subtitles>
+    <dc:relation.AudioDescription>false</dc:relation.AudioDescription>
+    <dc:relation.Duration>48:06</dc:relation.Duration>
+    <dc:relation.LoginRequired>false</dc:relation.LoginRequired>
+    <dc:relation.requestType>ARCHIVE</dc:relation.requestType>
+    <dc:relation.programmeId>48367/005</dc:relation.programmeId>
+  </entry>
+  <entry>
+    <id>tag:xbox.pmlsc.channel4.com,2009:/programmes/jamie-does/4od%233262609</id>
+    <title type="text">Jamie Does Athens</title>
+    <summary type="text">Jamie cooks kebabs by the Acropolis, joins friends for meze and Greek dancing, milks a goat with a priest, prepares a perfect Greek salad, and cooks tuna straight from the sea.</summary>
+    <updated>2011-11-25T16:08:16.895Z</updated>
+    <link href="https://xbox.channel4.com/pmlsd/jamie-does/episode-guide/series-1/episode-6.atom?platform=xbox" rel="related" type="application/atom+xml" />
+    <media:group>
+      <media:player url="https://ais.channel4.com/asset/3262609" />
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/jamie-does/series-1/episode-6/a641176f-686f-4fcb-81c7-a40bf01aa98f_200x113.jpg" height="113" width="200" imageSource="own" altText="Jamies Does... Athens" />
+      <media:rating>nonadult</media:rating>
+      <media:copyright url="http://cache.channel4.com/terms_and_conditions.html">Terms and Conditions</media:copyright>
+      <media:restriction relationship="allow" type="country">GG,GB,JE,IM,IE</media:restriction>
+      <media:rights status="official" />
+    </media:group>
+    <dc:relation.BrandTitle>Jamie Does...</dc:relation.BrandTitle>
+    <dcterms:available>start=2011-11-07T00:00:00.000Z; end=2015-04-13T22:00:00.000Z; scheme=W3C-DTF</dcterms:available>
+    <dc:relation.SeriesNumber>1</dc:relation.SeriesNumber>
+    <dc:relation.EpisodeNumber>6</dc:relation.EpisodeNumber>
+    <dc:relation.RelatedEntryId feedId="tag:xbox.pmlsc.channel4.com,2009:/programmes/jamie-does/episode-guide/series-1">tag:xbox.pmlsc.channel4.com,2009:/programmes/jamie-does/episode-guide/series-1/episode-6</dc:relation.RelatedEntryId>
+    <dc:relation.AgeRating>0</dc:relation.AgeRating>
+    <dc:date.TXDate>2010-05-18T23:00:00.000Z</dc:date.TXDate>
+    <dc:relation.TXChannel>C4</dc:relation.TXChannel>
+    <dc:relation.Subtitles>false</dc:relation.Subtitles>
+    <dc:relation.AudioDescription>false</dc:relation.AudioDescription>
+    <dc:relation.Duration>47:48</dc:relation.Duration>
+    <dc:relation.LoginRequired>false</dc:relation.LoginRequired>
+    <dc:relation.requestType>ARCHIVE</dc:relation.requestType>
+    <dc:relation.programmeId>48367/006</dc:relation.programmeId>
+  </entry>
+</feed>

@@ -18,11 +18,13 @@ import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
+import java.util.Map;
 
 import org.apache.commons.io.IOUtils;
 
 import com.google.common.base.Charsets;
 import com.google.common.io.Resources;
+import com.google.inject.internal.ImmutableMap;
 import com.metabroadcast.common.http.HttpException;
 import com.metabroadcast.common.http.HttpResponse;
 import com.metabroadcast.common.http.HttpResponsePrologue;
@@ -33,37 +35,47 @@ import com.metabroadcast.common.http.SimpleHttpRequest;
 
 public class FixedResponseHttpClient implements SimpleHttpClient {
 
-	private final String respondsTo;
-	private final String data;
+    private final Map<String, String> requestURIToResponse;
+    private final Map<String, Integer> errorResponseURIs;
 
 	public FixedResponseHttpClient(String respondsTo, String data) {
-		this.respondsTo = respondsTo;
-		this.data = data;
+		this(ImmutableMap.of(respondsTo, data));
+	}
+	
+	public FixedResponseHttpClient(Map<String, String> requestURIToResponse) {
+	    this(requestURIToResponse, ImmutableMap.<String, Integer>of());
+	}
+	
+	public FixedResponseHttpClient(Map<String, String> requestURIToResponse, Map<String, Integer> errorResponseURIs) {
+	    this.errorResponseURIs = ImmutableMap.copyOf(errorResponseURIs);
+        this.requestURIToResponse = ImmutableMap.copyOf(requestURIToResponse);
 	}
 	
 	@Override
 	public HttpResponse get(String url) throws HttpException {
-		if (respondsTo.equals(url)) {
-			return HttpResponse.sucessfulResponse(data);
-		}
-		throw new HttpStatusCodeException(404, "Not found");
+
+	    return HttpResponse.sucessfulResponse(getContentsOf(url));
 	}
 	
     @Override
 	public <T> T get(SimpleHttpRequest<T> request) throws HttpException, Exception {
-	    if (respondsTo.equals(request.getUrl())) {
-	        ByteArrayInputStream in = new ByteArrayInputStream(data.getBytes(Charsets.UTF_8));
+        if(errorResponseURIs.containsKey(request.getUrl())) {
+            throw new HttpStatusCodeException(new HttpResponsePrologue(errorResponseURIs.get(request.getUrl())), "Error");
+        }
+        
+	    if (requestURIToResponse.containsKey(request.getUrl())) {
+	        ByteArrayInputStream in = new ByteArrayInputStream(requestURIToResponse.get(request.getUrl()).getBytes(Charsets.UTF_8));
             return request.getTransformer().transform(new HttpResponsePrologue(200), in);
 	    }
-	    throw new HttpStatusCodeException(404, "Not found");
+	    throw new HttpStatusCodeException(new HttpResponsePrologue(404), "Not found");
     }
     
 	@Override
 	public String getContentsOf(String url) throws HttpException {
-		if (respondsTo.equals(url)) {
-			return data;
+		if (requestURIToResponse.containsKey(url)) {
+			return requestURIToResponse.get(url);
 		}
-		throw new HttpStatusCodeException(404, "Not found");
+		throw new HttpStatusCodeException(new HttpResponsePrologue(404), "Not found");
 	}
 
 	@Override

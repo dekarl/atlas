@@ -1,103 +1,136 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xmlns:dc="http://purl.org/dc/elements/1.1/" xml:base="http://www.channel4.com">
-  <id>tag:www.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/episode-guide/series-4</id>
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xmlns:dc="http://purl.org/dc/elements/1.1/" xml:base="http://pmlsc.channel4.com">
+  <id>tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/episode-guide/series-4</id>
   <title type="text">Series 4 - Ramsay's Kitchen Nightmares</title>
   <subtitle type="html">Multi Michelin-starred chef Gordon Ramsay is back with his trademark mix of tough talking and inspirational leadership for another foray into some of the country's scariest kitchens in the fourth series of the BAFTA and International Emmy award-winning series.</subtitle>
-  <updated>2010-08-10T11:15:48.848Z</updated>
+  <updated>2011-08-22T17:06:43.379Z</updated>
   <author>
     <name>Channel 4 Television</name>
   </author>
-  <logo>http://www.channel4.com/assets/programmes/images/ramsays-kitchen-nightmares/series-4/ramsays-kitchen-nightmares-s4-20090617161032_200x113.jpg</logo>
-  <link href="http://api.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide.atom?apikey=API_KEY" rel="up" type="application/atom+xml"/>
-  <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/episode-guide/series-4" rel="alternate" type="text/html"/>
-  <link href="http://api.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide/series-4.atom?apikey=API_KEY" rel="self" type="application/atom+xml"/>
+  <logo imageSource="own">http://cache.channel4.com/assets/programmes/images/ramsays-kitchen-nightmares/series-4/ramsays-kitchen-nightmares-s4-20090617161032_200x113.jpg</logo>
+  <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/episode-guide/series-4" rel="alternate" type="text/html" />
+  <link href="http://pmlsc.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide.atom" rel="up" type="application/atom+xml" />
+  <link href="http://pmlsc.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide/series-4.atom" rel="self" type="application/atom+xml" />
+  <dc:relation.platformClientVersion>1.0</dc:relation.platformClientVersion>
+  <generator version="1.27.2">PMLSD</generator>
   <entry>
-    <id>tag:www.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/episode-guide/series-4/episode-1</id>
+    <id>tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/episode-guide/series-4/episode-1</id>
     <title type="text">Ramsay's Kitchen Nightmares</title>
     <summary type="html">Ruby Tates in Brighton is owned and run by ex-actor and failed Hollywood wannabe Allan Love. It's an oyster bar and seafood restaurant but Allan's never tasted the food because he hates fish. Can Gordon help?</summary>
-    <updated>2010-08-10T11:15:48.848Z</updated>
-    <link href="http://api.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide/series-4/episode-1.atom?apikey=API_KEY" rel="self" type="application/atom+xml"/>
-    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/episode-guide/series-4/episode-1" rel="alternate" type="text/html"/>
-    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#2921543" rel="alternate" type="text/html" title="4oD"/>
+    <updated>2011-09-15T12:48:43.744Z</updated>
+    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/episode-guide/series-4/episode-1" rel="alternate" type="text/html" />
+    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#3233559" rel="alternate" type="text/html" title="4oD" />
+    <link href="http://pmlsc.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide/series-4/episode-1.atom" rel="self" type="application/atom+xml" />
+    <media:content>
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/ramsays-kitchen-nightmares/series-4/ramsays-kitchen-nightmares-s4-20090617161032_200x113.jpg" height="113" width="200" imageSource="fallback" />
+    </media:content>
     <dc:relation.SeriesNumber>4</dc:relation.SeriesNumber>
     <dc:relation.EpisodeNumber>1</dc:relation.EpisodeNumber>
+    <dc:relation.programmeId>43065/001</dc:relation.programmeId>
   </entry>
   <entry>
-    <id>tag:www.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/episode-guide/series-4/episode-2</id>
+    <id>tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/episode-guide/series-4/episode-2</id>
     <title type="text">Ramsay's Kitchen Nightmares</title>
     <summary type="html">Gordon takes on The Priory, a 100-seater carvery in Haywards Heath, Sussex. It's owned by ex-IT consultant Scott and located in a beautiful former convent, but is in desperate need of help.</summary>
-    <updated>2010-08-10T11:15:48.849Z</updated>
-    <link href="http://api.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide/series-4/episode-2.atom?apikey=API_KEY" rel="self" type="application/atom+xml"/>
-    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/episode-guide/series-4/episode-2" rel="alternate" type="text/html"/>
-    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#2921544" rel="alternate" type="text/html" title="4oD"/>
+    <updated>2011-09-15T12:49:37.131Z</updated>
+    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/episode-guide/series-4/episode-2" rel="alternate" type="text/html" />
+    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#3233560" rel="alternate" type="text/html" title="4oD" />
+    <link href="http://pmlsc.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide/series-4/episode-2.atom" rel="self" type="application/atom+xml" />
+    <media:content>
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/ramsays-kitchen-nightmares/series-4/ramsays-kitchen-nightmares-s4-20090617161032_200x113.jpg" height="113" width="200" imageSource="fallback" />
+    </media:content>
     <dc:relation.SeriesNumber>4</dc:relation.SeriesNumber>
     <dc:relation.EpisodeNumber>2</dc:relation.EpisodeNumber>
+    <dc:relation.programmeId>43065/002</dc:relation.programmeId>
   </entry>
   <entry>
-    <id>tag:www.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/episode-guide/series-4/episode-3</id>
+    <id>tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/episode-guide/series-4/episode-3</id>
     <title type="text">Ramsay's Kitchen Nightmares</title>
     <summary type="html">The venue for this programme is The Curry Lounge in Nottingham, the city with more restaurants per square mile than any other in Britain. Enter Gordon, relishing the prospect of tackling an Indian restaurant for the first time.</summary>
-    <updated>2010-08-10T11:15:48.850Z</updated>
-    <link href="http://api.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide/series-4/episode-3.atom?apikey=API_KEY" rel="self" type="application/atom+xml"/>
-    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/episode-guide/series-4/episode-3" rel="alternate" type="text/html"/>
-    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#2921545" rel="alternate" type="text/html" title="4oD"/>
+    <updated>2011-09-15T12:50:40.459Z</updated>
+    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/episode-guide/series-4/episode-3" rel="alternate" type="text/html" />
+    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#3233561" rel="alternate" type="text/html" title="4oD" />
+    <link href="http://pmlsc.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide/series-4/episode-3.atom" rel="self" type="application/atom+xml" />
+    <media:content>
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/ramsays-kitchen-nightmares/series-4/ramsays-kitchen-nightmares-s4-20090617161032_200x113.jpg" height="113" width="200" imageSource="fallback" />
+    </media:content>
     <dc:relation.SeriesNumber>4</dc:relation.SeriesNumber>
     <dc:relation.EpisodeNumber>3</dc:relation.EpisodeNumber>
+    <dc:relation.programmeId>43065/003</dc:relation.programmeId>
   </entry>
   <entry>
-    <id>tag:www.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/episode-guide/series-4/episode-4</id>
+    <id>tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/episode-guide/series-4/episode-4</id>
     <title type="text">Ramsay's Kitchen Nightmares</title>
     <summary type="html">Piccolo Teatro is a bijou vegetarian restaurant in Paris run by feisty Scot Rachel and her friend Stephanie, who are in need of a miracle to turn things around.</summary>
-    <updated>2010-08-10T11:15:48.850Z</updated>
-    <link href="http://api.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide/series-4/episode-4.atom?apikey=API_KEY" rel="self" type="application/atom+xml"/>
-    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/episode-guide/series-4/episode-4" rel="alternate" type="text/html"/>
-    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#2921546" rel="alternate" type="text/html" title="4oD"/>
+    <updated>2011-09-15T12:54:47.588Z</updated>
+    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/episode-guide/series-4/episode-4" rel="alternate" type="text/html" />
+    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#3233562" rel="alternate" type="text/html" title="4oD" />
+    <link href="http://pmlsc.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide/series-4/episode-4.atom" rel="self" type="application/atom+xml" />
+    <media:content>
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/ramsays-kitchen-nightmares/series-4/ramsays-kitchen-nightmares-s4-20090617161032_200x113.jpg" height="113" width="200" imageSource="fallback" />
+    </media:content>
     <dc:relation.SeriesNumber>4</dc:relation.SeriesNumber>
     <dc:relation.EpisodeNumber>4</dc:relation.EpisodeNumber>
+    <dc:relation.programmeId>43065/004</dc:relation.programmeId>
   </entry>
   <entry>
-    <id>tag:www.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/episode-guide/series-4/episode-5</id>
+    <id>tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/episode-guide/series-4/episode-5</id>
     <title type="text">Ramsay's Kitchen Nightmares</title>
     <summary type="html">Gordon Ramsay is back in Spain to see how Laurence is faring at La Parra de Burriana, an ex-pat restaurant in Nerja on the Costa del Sol.</summary>
-    <updated>2010-08-10T11:15:48.851Z</updated>
-    <link href="http://api.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide/series-4/episode-5.atom?apikey=API_KEY" rel="self" type="application/atom+xml"/>
-    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/episode-guide/series-4/episode-5" rel="alternate" type="text/html"/>
-    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#2921547" rel="alternate" type="text/html" title="4oD"/>
+    <updated>2011-09-15T12:57:23.553Z</updated>
+    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/episode-guide/series-4/episode-5" rel="alternate" type="text/html" />
+    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#3233563" rel="alternate" type="text/html" title="4oD" />
+    <link href="http://pmlsc.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide/series-4/episode-5.atom" rel="self" type="application/atom+xml" />
+    <media:content>
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/ramsays-kitchen-nightmares/series-4/ramsays-kitchen-nightmares-s4-20090617161032_200x113.jpg" height="113" width="200" imageSource="fallback" />
+    </media:content>
     <dc:relation.SeriesNumber>4</dc:relation.SeriesNumber>
     <dc:relation.EpisodeNumber>5</dc:relation.EpisodeNumber>
+    <dc:relation.programmeId>43065/005</dc:relation.programmeId>
   </entry>
   <entry>
-    <id>tag:www.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/episode-guide/series-4/episode-6</id>
+    <id>tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/episode-guide/series-4/episode-6</id>
     <title type="text">Ramsay's Kitchen Nightmares</title>
     <summary type="html">Gordon Ramsay is back to see how Brian and Elaine are faring at the Fenwick Arms in rural Lancashire.</summary>
-    <updated>2010-08-10T11:15:48.851Z</updated>
-    <link href="http://api.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide/series-4/episode-6.atom?apikey=API_KEY" rel="self" type="application/atom+xml"/>
-    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/episode-guide/series-4/episode-6" rel="alternate" type="text/html"/>
-    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#2921548" rel="alternate" type="text/html" title="4oD"/>
+    <updated>2011-08-22T17:06:43.681Z</updated>
+    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/episode-guide/series-4/episode-6" rel="alternate" type="text/html" />
+    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#3233565" rel="alternate" type="text/html" title="4oD" />
+    <link href="http://pmlsc.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide/series-4/episode-6.atom" rel="self" type="application/atom+xml" />
+    <media:content>
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/ramsays-kitchen-nightmares/series-4/ramsays-kitchen-nightmares-s4-20090617161032_200x113.jpg" height="113" width="200" imageSource="fallback" />
+    </media:content>
     <dc:relation.SeriesNumber>4</dc:relation.SeriesNumber>
     <dc:relation.EpisodeNumber>6</dc:relation.EpisodeNumber>
+    <dc:relation.programmeId>43065/006</dc:relation.programmeId>
   </entry>
   <entry>
-    <id>tag:www.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/episode-guide/series-4/episode-7</id>
+    <id>tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/episode-guide/series-4/episode-7</id>
     <title type="text">Ramsay's Kitchen Nightmares</title>
     <summary type="html">The venue for the final programme is The Granary in rural Hampshire, which at 200 covers, is the biggest challenge Gordon's ever taken on.</summary>
-    <updated>2010-08-10T11:15:48.852Z</updated>
-    <link href="http://api.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide/series-4/episode-7.atom?apikey=API_KEY" rel="self" type="application/atom+xml"/>
-    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/episode-guide/series-4/episode-7" rel="alternate" type="text/html"/>
-    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#2921549" rel="alternate" type="text/html" title="4oD"/>
+    <updated>2011-09-15T13:05:12.793Z</updated>
+    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/episode-guide/series-4/episode-7" rel="alternate" type="text/html" />
+    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#3233564" rel="alternate" type="text/html" title="4oD" />
+    <link href="http://pmlsc.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide/series-4/episode-7.atom" rel="self" type="application/atom+xml" />
+    <media:content>
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/ramsays-kitchen-nightmares/series-4/ramsays-kitchen-nightmares-s4-20090617161032_200x113.jpg" height="113" width="200" imageSource="fallback" />
+    </media:content>
     <dc:relation.SeriesNumber>4</dc:relation.SeriesNumber>
     <dc:relation.EpisodeNumber>7</dc:relation.EpisodeNumber>
+    <dc:relation.programmeId>43065/007</dc:relation.programmeId>
   </entry>
   <entry>
-    <id>tag:www.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/episode-guide/series-4/episode-8</id>
+    <id>tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/episode-guide/series-4/episode-8</id>
     <title type="text">Ramsay's Kitchen Nightmares</title>
     <summary type="html">Gordon visits the Fish &amp; Anchor, a restaurant and bar near Lampeter in rural West Wales, owned and run by ex-boxer Mike and his wife Caron.</summary>
-    <updated>2010-08-10T11:15:48.852Z</updated>
-    <link href="http://api.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide/series-4/episode-8.atom?apikey=API_KEY" rel="self" type="application/atom+xml"/>
-    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/episode-guide/series-4/episode-8" rel="alternate" type="text/html"/>
-    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#2921550" rel="alternate" type="text/html" title="4oD"/>
+    <updated>2011-09-15T13:05:45.013Z</updated>
+    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/episode-guide/series-4/episode-8" rel="alternate" type="text/html" />
+    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#3233582" rel="alternate" type="text/html" title="4oD" />
+    <link href="http://pmlsc.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide/series-4/episode-8.atom" rel="self" type="application/atom+xml" />
+    <media:content>
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/ramsays-kitchen-nightmares/series-4/ramsays-kitchen-nightmares-s4-20090617161032_200x113.jpg" height="113" width="200" imageSource="fallback" />
+    </media:content>
     <dc:relation.SeriesNumber>4</dc:relation.SeriesNumber>
     <dc:relation.EpisodeNumber>8</dc:relation.EpisodeNumber>
+    <dc:relation.programmeId>43065/008</dc:relation.programmeId>
   </entry>
-
 </feed>

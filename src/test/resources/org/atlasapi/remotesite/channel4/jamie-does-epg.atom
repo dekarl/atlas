@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <id>tag:pmlsc.channel4.com,2009:/programmes/jamie-does/epg</id>
+  <title type="text">Jamie Does... EPG</title>
+  <subtitle type="html">Jamie Oliver hits the road again for a culinary expedition through the world's cultures and cuisines</subtitle>
+  <updated>2012-05-22T07:46:03.920Z</updated>
+  <author>
+    <name>Channel 4 Television</name>
+  </author>
+  <link href="http://pmlsc.channel4.com/pmlsd/jamie-does.atom" rel="up" type="application/atom+xml" title="Brand Atom Feed" />
+  <link href="http://pmlsc.channel4.com/pmlsd/jamie-does/epg.atom" rel="self" type="application/atom+xml" />
+  <logo imageSource="default">http://cache.channel4.com/static/programmes/images/c4-atom-logo.gif</logo>
+  <dc:relation.platformClientVersion>1.0</dc:relation.platformClientVersion>
+  <generator version="1.29.1">PMLSD</generator>
+  <entry>
+    <id>tag:pmlsc.channel4.com,2009:slot/26466818</id>
+    <title type="text">Jamie Does... Athens</title>
+    <summary type="html">Jamie cooks kebabs by the Acropolis, joins friends for meze and Greek dancing, milks a goat with a priest, prepares a perfect Greek salad, and cooks tuna straight from the sea.</summary>
+    <updated>2012-05-22T07:46:03.923Z</updated>
+    <dc:relation.SeriesNumber>1</dc:relation.SeriesNumber>
+    <dc:relation.EpisodeNumber>6</dc:relation.EpisodeNumber>
+    <dc:relation.TXChannel>M4</dc:relation.TXChannel>
+    <dc:relation.TXStartTime>Sunday 27 May 2012 09:00 PM</dc:relation.TXStartTime>
+    <dc:relation.Duration>60:00</dc:relation.Duration>
+    <dc:relation.Repeat>true</dc:relation.Repeat>
+    <dc:relation.Subtitles>true</dc:relation.Subtitles>
+    <link href="http://pmlsc.channel4.com/pmlsd/jamie-does.atom" rel="up" type="application/atom+xml" title="Up" />
+    <link href="http://www.channel4.com/programmes/jamie-does/episode-guide/series-1/episode-6" rel="EpisodeUrl" type="text/html" title="Episode Url" />
+  </entry>
+  <entry>
+    <id>tag:pmlsc.channel4.com,2009:slot/26466822</id>
+    <title type="text">Jamie Does... Athens</title>
+    <summary type="html">Jamie cooks kebabs by the Acropolis, joins friends for meze and Greek dancing, milks a goat with a priest, prepares a perfect Greek salad, and cooks tuna straight from the sea.</summary>
+    <updated>2012-05-22T07:46:03.930Z</updated>
+    <dc:relation.SeriesNumber>1</dc:relation.SeriesNumber>
+    <dc:relation.EpisodeNumber>6</dc:relation.EpisodeNumber>
+    <dc:relation.TXChannel>M4</dc:relation.TXChannel>
+    <dc:relation.TXStartTime>Monday 28 May 2012 12:15 AM</dc:relation.TXStartTime>
+    <dc:relation.Duration>65:00</dc:relation.Duration>
+    <dc:relation.Repeat>true</dc:relation.Repeat>
+    <dc:relation.Subtitles>true</dc:relation.Subtitles>
+    <link href="http://pmlsc.channel4.com/pmlsd/jamie-does.atom" rel="up" type="application/atom+xml" title="Up" />
+    <link href="http://www.channel4.com/programmes/jamie-does/episode-guide/series-1/episode-6" rel="EpisodeUrl" type="text/html" title="Episode Url" />
+  </entry>
+</feed>

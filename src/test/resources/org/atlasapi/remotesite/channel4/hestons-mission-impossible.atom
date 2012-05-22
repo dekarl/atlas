@@ -1,126 +1,47 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:fh="http://purl.org/syndication/history/1.0">
-  <id>tag:www.channel4.com,2009:/programmes/hestons-mission-impossible/video</id>
-  <title type="text">Heston's Mission Impossible Clips</title>
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xmlns:dc="http://purl.org/dc/elements/1.1/" xml:base="http://pmlsc.channel4.com">
+  <id>tag:pmlsc.channel4.com,2009:/programmes/hestons-mission-impossible</id>
+  <title type="text">Heston's Mission Impossible</title>
   <subtitle type="html">Heston Blumenthal uses his maverick culinary genius to dramatically re-invent food production at British Airways, the NHS, the Royal Navy and Cineworld Cinemas</subtitle>
-  <updated>2011-03-25T11:50:54.803Z</updated>
+  <updated>2011-10-17T15:01:10.255Z</updated>
   <author>
     <name>Channel 4 Television</name>
   </author>
-  <logo imageSource="own">http://www.channel4.com/assets/programmes/images/hestons-michelin-impossible/3c6123c2-c5f1-4b87-8d34-a12a17810313_200x113.jpg</logo>
-  <link href="http://www.channel4.com/programmes/hestons-mission-impossible/video" rel="alternate" type="text/html"/>
-  <link href="http://api.channel4.com/programmes/hestons-mission-impossible/video.atom?apikey=ved4dvbqadf53t5vm7ts8q86" rel="self" type="application/atom+xml"/>
-  <link href="http://api.channel4.com/programmes/hestons-mission-impossible.atom?apikey=ved4dvbqadf53t5vm7ts8q86" rel="up" type="application/atom+xml"/>
-  <fh:complete/>
-  <dc:relation.Sharable>false</dc:relation.Sharable>
-  <entry xmlns:dcterms="http://purl.org/dc/terms">
-    <id>tag:www.channel4.com,2009:clip/CGS_CLIP_48333/004/001</id>
-    <title type="text">S1-Ep4: Brain Food</title>
-    <updated>2011-03-25T11:50:54.810Z</updated>
-    <summary type="html">In his last mission of the series Heston is on board a nuclear-powered Royal Navy submarine, HMS Turbulent, to shake up the sailors' food using the revolutionary sous vide method.</summary>
-    <link href="http://api.channel4.com/programmes/hestons-mission-impossible/video/series-1/episode-4/s1-ep4-brain-food.atom?apikey=ved4dvbqadf53t5vm7ts8q86" rel="self" type="application/atom+xml"/>
-    <link href="http://www.channel4.com/programmes/hestons-mission-impossible/video/series-1/episode-4/s1-ep4-brain-food" rel="alternate" type="text/html"/>
-    <link href="http://api.channel4.com/programmes/hestons-mission-impossible/episode-guide/series-1/episode-4.atom?apikey=ved4dvbqadf53t5vm7ts8q86" rel="related" type="application/atom+xml" title="Episode Guide"/>
-    <media:group>
-      <media:player url="http://www.channel4.com/programmes/hestons-mission-impossible/video/series-1/episode-4/s1-ep4-brain-food"/>
-      <media:thumbnail url="http://www.channel4.com/assets/programmes/images/hestons-mission-impossible/series-1/episode-4/s1-ep4-brain-food/c3df4fb0-2425-4532-9d61-e23b11ab3db8_200x113.jpg" height="113" width="200"/>
-      <media:rating>nonadult</media:rating>
-      <media:copyright url="http://www.channel4.com/terms_and_conditions.html">Terms and Conditions</media:copyright>
-      <media:restriction relationship="allow" type="country">uk,ie</media:restriction>
-      <media:rights status="official"/>
-    </media:group>
-    <dcterms:available>start=2010-03-25T00:00:00.000Z; end=2014-03-08T00:00:00.000Z; scheme=W3C-DTF</dcterms:available>
-    <dc:relation.AgeRating>0</dc:relation.AgeRating>
-    <dc:relation.Duration>2:32</dc:relation.Duration>
+  <logo imageSource="own">http://cache.channel4.com/assets/programmes/images/hestons-michelin-impossible/3c6123c2-c5f1-4b87-8d34-a12a17810313_200x113.jpg</logo>
+  <link href="http://www.channel4.com/programmes/hestons-mission-impossible" rel="alternate" type="text/html" />
+  <link href="http://pmlsc.channel4.com/pmlsd/hestons-mission-impossible.atom" rel="self" type="application/atom+xml" />
+  <link href="http://pmlsc.channel4.com/pmlsd/hestons-mission-impossible/episode-guide.atom" rel="related" type="application/atom+xml" title="Episode Guide" />
+  <link href="http://pmlsc.channel4.com/pmlsd/hestons-mission-impossible/4od.atom" rel="related" type="application/atom+xml" title="4oD" />
+  <link href="http://pmlsc.channel4.com/pmlsd/hestons-mission-impossible/video.atom" rel="related" type="application/atom+xml" title="Clips" />
+  <category term="http://pmlsc.channel4.com/pmlsd/tags/food.atom" scheme="tag:www.channel4.com,2010:/category/primary" label="Food" />
+  <dc:relation.BrandFlattened>false</dc:relation.BrandFlattened>
+  <dc:relation.presentationBrand>C4</dc:relation.presentationBrand>
+  <dc:relation.platformClientVersion>1.0</dc:relation.platformClientVersion>
+  <generator version="1.27.2">PMLSD</generator>
+  <entry>
+    <id>tag:pmlsc.channel4.com,2009:/programmes/hestons-mission-impossible/episode-guide/series-1/episode-4</id>
+    <title type="text">Royal Navy</title>
+    <summary type="html">Heston boards the nuclear-powered Royal Navy sub, HMS Turbulent, to shake up the sailors' food. 
+
+It's not long before Heston realises he's got a big job on his hands: the men are out on patrol for 90 days at a time, and they're eating three stodgy meals a day.  And with so little opportunity for exercise on board, it' not a healthy diet - especially when the submariners' jobs require very high levels of concentration.
+
+But how is Heston going to change it?  Heston researches the effects of food on the brain. He develops recipes with brain enhancing ingredients - blueberries, mackerel and dark chocolate - but his first food roll-out goes down like a heavy submarine.  
+
+For his second attempt Heston replaces the traditional Friday fish and chips, using the cod tongues and cheeks to create 'tongue and cheek' scampi. But the Captain's not impressed.  
+
+Heston and his team have a big rethink and come up with a radical new idea - a cooking and storage technique, sous vide, that they use in Heston's restaurants to create the finest meals.
+
+But it would mean a total revolution in the way the navy prepares its food.  Will Heston be able to persuade the Captain of HMS Turbulent that this is the way forward?</summary>
+    <updated>2011-10-17T15:04:30.148Z</updated>
+    <link href="http://www.channel4.com/programmes/hestons-mission-impossible/episode-guide/series-1/episode-4" rel="alternate" type="text/html" />
+    <link href="http://www.channel4.com/programmes/hestons-mission-impossible/4od#3177220" rel="related" type="text/html" title="4oD" />
+    <link href="http://pmlsc.channel4.com/pmlsd/hestons-mission-impossible/episode-guide/series-1/episode-4.atom" rel="self" type="application/atom+xml" />
+    <media:content>
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/hestons-mission-impossible/series-1/episode-4/0838a9a4-57ea-44a9-a814-ed4c338202d2_200x113.jpg" height="113" width="200" imageSource="own" />
+    </media:content>
     <dc:relation.SeriesNumber>1</dc:relation.SeriesNumber>
     <dc:relation.EpisodeNumber>4</dc:relation.EpisodeNumber>
-  </entry>
-  <entry xmlns:dcterms="http://purl.org/dc/terms">
-    <id>tag:www.channel4.com,2009:clip/CGS_CLIP_48333/003/001</id>
-    <title type="text">S1-Ep3: There's Something in the Air</title>
-    <updated>2011-03-25T11:50:54.813Z</updated>
-    <summary type="html">Heston Blumenthal joins forces with British Airways to revolutionise airline food</summary>
-    <link href="http://api.channel4.com/programmes/hestons-mission-impossible/video/series-1/episode-3/s1-ep3-theres-something-in-the-air.atom?apikey=ved4dvbqadf53t5vm7ts8q86" rel="self" type="application/atom+xml"/>
-    <link href="http://www.channel4.com/programmes/hestons-mission-impossible/video/series-1/episode-3/s1-ep3-theres-something-in-the-air" rel="alternate" type="text/html"/>
-    <link href="http://api.channel4.com/programmes/hestons-mission-impossible/episode-guide/series-1/episode-3.atom?apikey=ved4dvbqadf53t5vm7ts8q86" rel="related" type="application/atom+xml" title="Episode Guide"/>
-    <media:group>
-      <media:player url="http://www.channel4.com/programmes/hestons-mission-impossible/video/series-1/episode-3/s1-ep3-theres-something-in-the-air"/>
-      <media:thumbnail url="http://www.channel4.com/assets/programmes/images/hestons-mission-impossible/series-1/episode-3/s1-ep3-theres-something-in-the-air/99ca6b74-5827-4124-bb4b-da6c3037b3cd_200x113.jpg" height="113" width="200"/>
-      <media:rating>nonadult</media:rating>
-      <media:copyright url="http://www.channel4.com/terms_and_conditions.html">Terms and Conditions</media:copyright>
-      <media:restriction relationship="allow" type="country">uk,ie</media:restriction>
-      <media:rights status="official"/>
-    </media:group>
-    <dcterms:available>start=2010-03-25T00:00:00.000Z; end=2014-03-01T00:00:00.000Z; scheme=W3C-DTF</dcterms:available>
-    <dc:relation.AgeRating>0</dc:relation.AgeRating>
-    <dc:relation.Duration>1:50</dc:relation.Duration>
-    <dc:relation.SeriesNumber>1</dc:relation.SeriesNumber>
-    <dc:relation.EpisodeNumber>3</dc:relation.EpisodeNumber>
-  </entry>
-  <entry xmlns:dcterms="http://purl.org/dc/terms">
-    <id>tag:www.channel4.com,2009:clip/CGS_CLIP_48333/002/001</id>
-    <title type="text">S1-Ep2: Behind the Counter</title>
-    <updated>2011-03-25T11:50:54.814Z</updated>
-    <summary type="html">Heston gets behind the counter in Cineworld and finds it's not as easy as it looks</summary>
-    <link href="http://api.channel4.com/programmes/hestons-mission-impossible/video/series-1/episode-2/s1-ep2-behind-the-counter.atom?apikey=ved4dvbqadf53t5vm7ts8q86" rel="self" type="application/atom+xml"/>
-    <link href="http://www.channel4.com/programmes/hestons-mission-impossible/video/series-1/episode-2/s1-ep2-behind-the-counter" rel="alternate" type="text/html"/>
-    <link href="http://api.channel4.com/programmes/hestons-mission-impossible/episode-guide/series-1/episode-2.atom?apikey=ved4dvbqadf53t5vm7ts8q86" rel="related" type="application/atom+xml" title="Episode Guide"/>
-    <media:group>
-      <media:player url="http://www.channel4.com/programmes/hestons-mission-impossible/video/series-1/episode-2/s1-ep2-behind-the-counter"/>
-      <media:thumbnail url="http://www.channel4.com/assets/programmes/images/hestons-mission-impossible/series-1/episode-2/s1-ep2-behind-the-counter/5076c58b-4096-4e3b-b996-39be8fef3b30_200x113.jpg" height="113" width="200"/>
-      <media:rating>nonadult</media:rating>
-      <media:copyright url="http://www.channel4.com/terms_and_conditions.html">Terms and Conditions</media:copyright>
-      <media:restriction relationship="allow" type="country">uk,ie</media:restriction>
-      <media:rights status="official"/>
-    </media:group>
-    <dcterms:available>start=2010-03-25T00:00:00.000Z; end=2014-03-07T00:00:00.000Z; scheme=W3C-DTF</dcterms:available>
-    <dc:relation.AgeRating>0</dc:relation.AgeRating>
-    <dc:relation.Duration>1:44</dc:relation.Duration>
-    <dc:relation.SeriesNumber>1</dc:relation.SeriesNumber>
-    <dc:relation.EpisodeNumber>2</dc:relation.EpisodeNumber>
-  </entry>
-  <entry xmlns:dcterms="http://purl.org/dc/terms">
-    <id>tag:www.channel4.com,2009:clip/CGS_CLIP_48333/001/001</id>
-    <title type="text">S1-Ep1: Snot Shake</title>
-    <updated>2011-03-25T11:50:54.814Z</updated>
-    <summary type="html">Heston's ideas include a snot shake, stuffed eyballs and vomit soup</summary>
-    <link href="http://api.channel4.com/programmes/hestons-mission-impossible/video/series-1/episode-1/s1-ep1-snot-shake.atom?apikey=ved4dvbqadf53t5vm7ts8q86" rel="self" type="application/atom+xml"/>
-    <link href="http://www.channel4.com/programmes/hestons-mission-impossible/video/series-1/episode-1/s1-ep1-snot-shake" rel="alternate" type="text/html"/>
-    <link href="http://api.channel4.com/programmes/hestons-mission-impossible/episode-guide/series-1/episode-1.atom?apikey=ved4dvbqadf53t5vm7ts8q86" rel="related" type="application/atom+xml" title="Episode Guide"/>
-    <media:group>
-      <media:player url="http://www.channel4.com/programmes/hestons-mission-impossible/video/series-1/episode-1/s1-ep1-snot-shake"/>
-      <media:thumbnail url="http://www.channel4.com/assets/programmes/images/hestons-mission-impossible/series-1/episode-1/snot-shake/cef1d53c-f439-4da7-ad55-d0c597fd76c4_200x113.jpg" height="113" width="200"/>
-      <media:rating>nonadult</media:rating>
-      <media:copyright url="http://www.channel4.com/terms_and_conditions.html">Terms and Conditions</media:copyright>
-      <media:restriction relationship="allow" type="country">uk,ie</media:restriction>
-      <media:rights status="official"/>
-    </media:group>
-    <dcterms:available>start=2010-03-25T00:00:00.000Z; end=2014-02-22T00:00:00.000Z; scheme=W3C-DTF</dcterms:available>
-    <dc:relation.AgeRating>0</dc:relation.AgeRating>
-    <dc:relation.Duration>1:43</dc:relation.Duration>
-    <dc:relation.SeriesNumber>1</dc:relation.SeriesNumber>
-    <dc:relation.EpisodeNumber>1</dc:relation.EpisodeNumber>
-  </entry>
-  <entry xmlns:dcterms="http://purl.org/dc/terms">
-    <id>tag:www.channel4.com,2009:clip/CGS_CLIP_48333/001/002</id>
-    <title type="text">S1-Ep1: Worms and Eyeballs</title>
-    <updated>2011-03-25T11:50:54.815Z</updated>
-    <summary type="html">It's crunch time for Heston as the first trial is rolled out with the kids on the wards</summary>
-    <link href="http://api.channel4.com/programmes/hestons-mission-impossible/video/series-1/episode-1/s1-ep1-worms-and-eyeballs.atom?apikey=ved4dvbqadf53t5vm7ts8q86" rel="self" type="application/atom+xml"/>
-    <link href="http://www.channel4.com/programmes/hestons-mission-impossible/video/series-1/episode-1/s1-ep1-worms-and-eyeballs" rel="alternate" type="text/html"/>
-    <link href="http://api.channel4.com/programmes/hestons-mission-impossible/episode-guide/series-1/episode-1.atom?apikey=ved4dvbqadf53t5vm7ts8q86" rel="related" type="application/atom+xml" title="Episode Guide"/>
-    <media:group>
-      <media:player url="http://www.channel4.com/programmes/hestons-mission-impossible/video/series-1/episode-1/s1-ep1-worms-and-eyeballs"/>
-      <media:thumbnail url="http://www.channel4.com/assets/programmes/images/hestons-mission-impossible/series-1/episode-1/worms-and-eyeballs/9d184b8d-2302-450c-8e6b-abbbc5d4b3ae_200x113.jpg" height="113" width="200"/>
-      <media:rating>nonadult</media:rating>
-      <media:copyright url="http://www.channel4.com/terms_and_conditions.html">Terms and Conditions</media:copyright>
-      <media:restriction relationship="allow" type="country">uk,ie</media:restriction>
-      <media:rights status="official"/>
-    </media:group>
-    <dcterms:available>start=2010-03-25T00:00:00.000Z; end=2014-02-22T00:00:00.000Z; scheme=W3C-DTF</dcterms:available>
-    <dc:relation.AgeRating>0</dc:relation.AgeRating>
-    <dc:relation.Duration>1:45</dc:relation.Duration>
-    <dc:relation.SeriesNumber>1</dc:relation.SeriesNumber>
-    <dc:relation.EpisodeNumber>1</dc:relation.EpisodeNumber>
+    <dc:date.Last>2011-03-15T21:00:00.000Z</dc:date.Last>
+    <dc:relation.LastChannel>C4</dc:relation.LastChannel>
   </entry>
 </feed>

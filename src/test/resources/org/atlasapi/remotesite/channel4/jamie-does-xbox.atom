@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xmlns:dc="http://purl.org/dc/elements/1.1/" xml:base="http://pmlsc.channel4.com">
+  <id>tag:xbox.pmlsc.channel4.com,2009:/programmes/jamie-does</id>
+  <title type="text">Jamie Does...</title>
+  <subtitle type="html">Jamie Oliver hits the road for a culinary expedition across Europe and into North Africa.</subtitle>
+  <updated>2011-11-24T12:10:22.656Z</updated>
+  <author>
+    <name>Channel 4 Television</name>
+  </author>
+  <logo imageSource="own">http://cache.channel4.com/assets/programmes/images/jamie-does/9fb153ff-9998-4b20-acc0-84faa38e84f6_200x113.jpg</logo>
+  <link href="https://xbox.channel4.com/pmlsd/jamie-does.atom?platform=xbox" rel="self" type="application/atom+xml" />
+  <link href="https://xbox.channel4.com/pmlsd/jamie-does/episode-guide.atom?platform=xbox" rel="related" type="application/atom+xml" title="Episode Guide" />
+  <link href="https://xbox.channel4.com/pmlsd/jamie-does/4od.atom?platform=xbox" rel="related" type="application/atom+xml" title="4oD" />
+  <link href="https://xbox.channel4.com/pmlsd/jamie-does/4od/recommendations.atom?platform=xbox" rel="related" type="application/atom+xml" title="recommendations" />
+  <category term="https://xbox.channel4.com/pmlsd/tags/food.atom?platform=xbox" scheme="tag:xbox.channel4.com,2010:/category/primary" label="Food" />
+  <dc:relation.BrandFlattened>false</dc:relation.BrandFlattened>
+  <dc:relation.presentationBrand>C4</dc:relation.presentationBrand>
+  <dc:relation.platformClientVersion>1.0</dc:relation.platformClientVersion>
+  <generator version="1.29.1">PMLSD</generator>
+  <entry>
+    <id>tag:xbox.pmlsc.channel4.com,2009:/programmes/jamie-does/episode-guide/series-1/episode-6</id>
+    <title type="text">Jamie Does Athens</title>
+    <summary type="html">Jamie cooks kebabs by the Acropolis, joins friends for meze and Greek dancing, milks a goat with a priest, prepares a perfect Greek salad, and cooks tuna straight from the sea.</summary>
+    <updated>2011-11-24T12:11:23.272Z</updated>
+    <link href="http://www.channel4.com/programmes/jamie-does/4od/asset/3262609" rel="related" type="text/html" title="4oD" />
+    <link href="https://xbox.channel4.com/pmlsd/jamie-does/episode-guide/series-1/episode-6.atom?platform=xbox" rel="self" type="application/atom+xml" />
+    <media:content>
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/jamie-does/series-1/episode-6/a641176f-686f-4fcb-81c7-a40bf01aa98f_200x113.jpg" height="113" width="200" imageSource="own" altText="Jamies Does... Athens" />
+    </media:content>
+    <dc:relation.SeriesNumber>1</dc:relation.SeriesNumber>
+    <dc:relation.EpisodeNumber>6</dc:relation.EpisodeNumber>
+    <dc:date.Next>2012-05-27T20:00:00.000Z</dc:date.Next>
+    <dc:relation.NextChannel>M4</dc:relation.NextChannel>
+  </entry>
+</feed>

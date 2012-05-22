@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xmlns:dc="http://purl.org/dc/elements/1.1/" xml:base="http://pmlsc.channel4.com">
+  <id>tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/episode-guide/series-1</id>
+  <title type="text">Series 1 - Ramsay's Kitchen Nightmares</title>
+  <subtitle type="html">The UK's most inimitable chef, multi Michelin-starred Gordon Ramsay, is as well-known for his explosive personality as his spectacular food. In this series, he attempts to transform the fortunes of struggling restaurants with his own menu of no-holds-barred advice.</subtitle>
+  <updated>2011-08-22T17:06:09.007Z</updated>
+  <author>
+    <name>Channel 4 Television</name>
+  </author>
+  <logo imageSource="own">http://cache.channel4.com/assets/programmes/images/ramsays-kitchen-nightmares/series-1/ramsays-kitchen-nightmares-s1-20090617160732_200x113.jpg</logo>
+  <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/episode-guide/series-1" rel="alternate" type="text/html" />
+  <link href="http://pmlsc.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide.atom" rel="up" type="application/atom+xml" />
+  <link href="http://pmlsc.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide/series-1.atom" rel="self" type="application/atom+xml" />
+  <dc:relation.platformClientVersion>1.0</dc:relation.platformClientVersion>
+  <generator version="1.27.2">PMLSD</generator>
+  <entry>
+    <id>tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/episode-guide/series-1/episode-1</id>
+    <title type="text">Ramsay's Kitchen Nightmares</title>
+    <summary type="html">Gordon Ramsay visits Bonapartes in Silsden, West Yorkshire. The head chef Tim specialises in 'fine dining', but Ramsay discovers the true skills of the wannabe TV chef when he tastes his food and vomits in the gutter.</summary>
+    <updated>2011-08-22T17:06:09.330Z</updated>
+    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/episode-guide/series-1/episode-1" rel="alternate" type="text/html" />
+    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#2922045" rel="alternate" type="text/html" title="4oD" />
+    <link href="http://pmlsc.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide/series-1/episode-1.atom" rel="self" type="application/atom+xml" />
+    <media:content>
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/ramsays-kitchen-nightmares/series-1/ramsays-kitchen-nightmares-s1-20090617160732_200x113.jpg" height="113" width="200" imageSource="fallback" />
+    </media:content>
+    <dc:relation.SeriesNumber>1</dc:relation.SeriesNumber>
+    <dc:relation.EpisodeNumber>1</dc:relation.EpisodeNumber>
+    <dc:relation.programmeId>36423/001</dc:relation.programmeId>
+  </entry>
+  <entry>
+    <id>tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/episode-guide/series-1/episode-2</id>
+    <title type="text">Ramsay's Kitchen Nightmares</title>
+    <summary type="html">The venue is The Glass House in Ambleside, where Ramsay finds owner Neil Farrell close to tears as another Saturday night turns into a nightmare.</summary>
+    <updated>2011-08-22T17:06:09.394Z</updated>
+    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/episode-guide/series-1/episode-2" rel="alternate" type="text/html" />
+    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#2922046" rel="alternate" type="text/html" title="4oD" />
+    <link href="http://pmlsc.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide/series-1/episode-2.atom" rel="self" type="application/atom+xml" />
+    <media:content>
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/ramsays-kitchen-nightmares/series-1/ramsays-kitchen-nightmares-s1-20090617160732_200x113.jpg" height="113" width="200" imageSource="fallback" />
+    </media:content>
+    <dc:relation.SeriesNumber>1</dc:relation.SeriesNumber>
+    <dc:relation.EpisodeNumber>2</dc:relation.EpisodeNumber>
+    <dc:relation.programmeId>36423/002</dc:relation.programmeId>
+  </entry>
+  <entry>
+    <id>tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/episode-guide/series-1/episode-3</id>
+    <title type="text">Ramsay's Kitchen Nightmares</title>
+    <summary type="html">Gordon Ramsay meets Francesco Mattioli, the owner of The Walnut Tree Inn in South Wales, who needs his help.</summary>
+    <updated>2011-08-22T17:06:09.476Z</updated>
+    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/episode-guide/series-1/episode-3" rel="alternate" type="text/html" />
+    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#2922044" rel="alternate" type="text/html" title="4oD" />
+    <link href="http://pmlsc.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide/series-1/episode-3.atom" rel="self" type="application/atom+xml" />
+    <media:content>
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/ramsays-kitchen-nightmares/series-1/ramsays-kitchen-nightmares-s1-20090617160732_200x113.jpg" height="113" width="200" imageSource="fallback" />
+    </media:content>
+    <dc:relation.SeriesNumber>1</dc:relation.SeriesNumber>
+    <dc:relation.EpisodeNumber>3</dc:relation.EpisodeNumber>
+    <dc:relation.programmeId>36423/003</dc:relation.programmeId>
+  </entry>
+  <entry>
+    <id>tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/episode-guide/series-1/episode-4</id>
+    <title type="text">Ramsay's Kitchen Nightmares</title>
+    <summary type="html">Ramsay visits Moore Place in Esher where joint owners Nick Whitehouse and Richard Hodgson are trying to create a profitable business.</summary>
+    <updated>2011-08-22T17:06:09.225Z</updated>
+    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/episode-guide/series-1/episode-4" rel="alternate" type="text/html" />
+    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#2922047" rel="alternate" type="text/html" title="4oD" />
+    <link href="http://pmlsc.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide/series-1/episode-4.atom" rel="self" type="application/atom+xml" />
+    <media:content>
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/ramsays-kitchen-nightmares/series-1/ramsays-kitchen-nightmares-s1-20090617160732_200x113.jpg" height="113" width="200" imageSource="fallback" />
+    </media:content>
+    <dc:relation.SeriesNumber>1</dc:relation.SeriesNumber>
+    <dc:relation.EpisodeNumber>4</dc:relation.EpisodeNumber>
+    <dc:relation.programmeId>36423/004</dc:relation.programmeId>
+  </entry>
+</feed>

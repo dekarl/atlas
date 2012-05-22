@@ -1,0 +1,135 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xmlns:dc="http://purl.org/dc/elements/1.1/" xml:base="http://pmlsc.channel4.com">
+  <id>tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/episode-guide/series-2</id>
+  <title type="text">Series 2 - Ramsay's Kitchen Nightmares</title>
+  <subtitle type="html">The second series of the BAFTA award-winning Ramsay's Kitchen Nightmares. You're a restaurant owner in crisis. The wolves may be at the door, but the punters aren't. Enter Gordon Ramsay with his potent recipe of passion, perfectionism and inspirational leadership.</subtitle>
+  <updated>2011-08-22T17:06:09.568Z</updated>
+  <author>
+    <name>Channel 4 Television</name>
+  </author>
+  <logo imageSource="own">http://cache.channel4.com/assets/programmes/images/ramsays-kitchen-nightmares/series-2/ramsays-kitchen-nightmares-s2-20090617160911_200x113.jpg</logo>
+  <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/episode-guide/series-2" rel="alternate" type="text/html" />
+  <link href="http://pmlsc.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide.atom" rel="up" type="application/atom+xml" />
+  <link href="http://pmlsc.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide/series-2.atom" rel="self" type="application/atom+xml" />
+  <dc:relation.platformClientVersion>1.0</dc:relation.platformClientVersion>
+  <generator version="1.27.2">PMLSD</generator>
+  <entry>
+    <id>tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/episode-guide/series-2/episode-1</id>
+    <title type="text">Ramsay's Kitchen Nightmares</title>
+    <summary type="html">Multi Michelin-starred Gordon Ramsay travels to La Lanterna in Letchworth, Hertfordshire, an 'Italian' restaurant as authentic as its Hawaiian pizza that's losing £1,000 a week.</summary>
+    <updated>2011-08-22T17:06:10.005Z</updated>
+    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/episode-guide/series-2/episode-1" rel="alternate" type="text/html" />
+    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#3029938" rel="alternate" type="text/html" title="4oD" />
+    <link href="http://pmlsc.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide/series-2/episode-1.atom" rel="self" type="application/atom+xml" />
+    <media:content>
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/ramsays-kitchen-nightmares/series-2/ramsays-kitchen-nightmares-s2-20090617160911_200x113.jpg" height="113" width="200" imageSource="fallback" />
+    </media:content>
+    <dc:relation.SeriesNumber>2</dc:relation.SeriesNumber>
+    <dc:relation.EpisodeNumber>1</dc:relation.EpisodeNumber>
+    <dc:relation.programmeId>38532/001</dc:relation.programmeId>
+  </entry>
+  <entry>
+    <id>tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/episode-guide/series-2/episode-2</id>
+    <title type="text">Ramsay's Kitchen Nightmares</title>
+    <summary type="html">This episode returns to 2005 where Gordon gets to grips with another Kitchen Nightmare. Can Gordon Ramsay turn around the fortunes of D-Place at Chelmsford in Essex, where the plastic food is dire and the manager loathes the chef?</summary>
+    <updated>2011-08-22T17:06:10.256Z</updated>
+    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/episode-guide/series-2/episode-2" rel="alternate" type="text/html" />
+    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#3029937" rel="alternate" type="text/html" title="4oD" />
+    <link href="http://pmlsc.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide/series-2/episode-2.atom" rel="self" type="application/atom+xml" />
+    <media:content>
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/ramsays-kitchen-nightmares/series-2/ramsays-kitchen-nightmares-s2-20090617160911_200x113.jpg" height="113" width="200" imageSource="fallback" />
+    </media:content>
+    <dc:relation.SeriesNumber>2</dc:relation.SeriesNumber>
+    <dc:relation.EpisodeNumber>2</dc:relation.EpisodeNumber>
+    <dc:relation.programmeId>38532/002</dc:relation.programmeId>
+  </entry>
+  <entry>
+    <id>tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/episode-guide/series-2/episode-3</id>
+    <title type="text">Ramsay's Kitchen Nightmares</title>
+    <summary type="html">Gordon Ramsay turns his attention to Momma Cherri's Soul Food Shack, an intimate 40-seater a stone's throw from Brighton's sea front.</summary>
+    <updated>2011-08-22T17:06:10.162Z</updated>
+    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/episode-guide/series-2/episode-3" rel="alternate" type="text/html" />
+    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#3029932" rel="alternate" type="text/html" title="4oD" />
+    <link href="http://pmlsc.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide/series-2/episode-3.atom" rel="self" type="application/atom+xml" />
+    <media:content>
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/ramsays-kitchen-nightmares/series-2/ramsays-kitchen-nightmares-s2-20090617160911_200x113.jpg" height="113" width="200" imageSource="fallback" />
+    </media:content>
+    <dc:relation.SeriesNumber>2</dc:relation.SeriesNumber>
+    <dc:relation.EpisodeNumber>3</dc:relation.EpisodeNumber>
+    <dc:relation.programmeId>38532/003</dc:relation.programmeId>
+  </entry>
+  <entry>
+    <id>tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/episode-guide/series-2/episode-4</id>
+    <title type="text">Ramsay's Kitchen Nightmares</title>
+    <summary type="html">The venue for this programme is La Riviera, a fine dining restaurant in Inverness. It boasts a top chef and wonderful staff, but the locals aren't biting and the restaurant is empty.</summary>
+    <updated>2011-08-22T17:06:10.078Z</updated>
+    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/episode-guide/series-2/episode-4" rel="alternate" type="text/html" />
+    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#3029933" rel="alternate" type="text/html" title="4oD" />
+    <link href="http://pmlsc.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide/series-2/episode-4.atom" rel="self" type="application/atom+xml" />
+    <media:content>
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/ramsays-kitchen-nightmares/series-2/ramsays-kitchen-nightmares-s2-20090617160911_200x113.jpg" height="113" width="200" imageSource="fallback" />
+    </media:content>
+    <dc:relation.SeriesNumber>2</dc:relation.SeriesNumber>
+    <dc:relation.EpisodeNumber>4</dc:relation.EpisodeNumber>
+    <dc:relation.programmeId>38532/004</dc:relation.programmeId>
+  </entry>
+  <entry>
+    <id>tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/episode-guide/series-2/episode-5</id>
+    <title type="text">Ramsay's Kitchen Nightmares</title>
+    <summary type="html">At the family-run Oscars in Nantwich, the menu's a mess, the punter's aren't returning and the chef has problems. Cue Gordon Ramsay.</summary>
+    <updated>2011-08-22T17:06:10.363Z</updated>
+    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/episode-guide/series-2/episode-5" rel="alternate" type="text/html" />
+    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#3029936" rel="alternate" type="text/html" title="4oD" />
+    <link href="http://pmlsc.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide/series-2/episode-5.atom" rel="self" type="application/atom+xml" />
+    <media:content>
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/ramsays-kitchen-nightmares/series-2/ramsays-kitchen-nightmares-s2-20090617160911_200x113.jpg" height="113" width="200" imageSource="fallback" />
+    </media:content>
+    <dc:relation.SeriesNumber>2</dc:relation.SeriesNumber>
+    <dc:relation.EpisodeNumber>5</dc:relation.EpisodeNumber>
+    <dc:relation.programmeId>38532/005</dc:relation.programmeId>
+  </entry>
+  <entry>
+    <id>tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/episode-guide/series-2/episode-6</id>
+    <title type="text">Ramsay's Kitchen Nightmares</title>
+    <summary type="html">The multi-Michelin-starred chef visits Sandgate in Kent, where husband-and-wife team Lois and Peter Hamilton-Slade own and run a small English seaside hotel.</summary>
+    <updated>2011-08-22T17:06:09.912Z</updated>
+    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/episode-guide/series-2/episode-6" rel="alternate" type="text/html" />
+    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#3029935" rel="alternate" type="text/html" title="4oD" />
+    <link href="http://pmlsc.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide/series-2/episode-6.atom" rel="self" type="application/atom+xml" />
+    <media:content>
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/ramsays-kitchen-nightmares/series-2/ramsays-kitchen-nightmares-s2-20090617160911_200x113.jpg" height="113" width="200" imageSource="fallback" />
+    </media:content>
+    <dc:relation.SeriesNumber>2</dc:relation.SeriesNumber>
+    <dc:relation.EpisodeNumber>6</dc:relation.EpisodeNumber>
+    <dc:relation.programmeId>38532/006</dc:relation.programmeId>
+  </entry>
+  <entry>
+    <id>tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/episode-guide/series-2/episode-7</id>
+    <title type="text">Ramsay's Kitchen Nightmares</title>
+    <summary type="html">Gordon Ramsay gets stuck into the kitchens of Clubway 4; which is in trouble with a bizarre menu and demoralised staff.</summary>
+    <updated>2011-08-22T17:06:09.748Z</updated>
+    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/episode-guide/series-2/episode-7" rel="alternate" type="text/html" />
+    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#3029934" rel="alternate" type="text/html" title="4oD" />
+    <link href="http://pmlsc.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide/series-2/episode-7.atom" rel="self" type="application/atom+xml" />
+    <media:content>
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/ramsays-kitchen-nightmares/series-2/ramsays-kitchen-nightmares-s2-20090617160911_200x113.jpg" height="113" width="200" imageSource="fallback" />
+    </media:content>
+    <dc:relation.SeriesNumber>2</dc:relation.SeriesNumber>
+    <dc:relation.EpisodeNumber>7</dc:relation.EpisodeNumber>
+    <dc:relation.programmeId>38532/007</dc:relation.programmeId>
+  </entry>
+  <entry>
+    <id>tag:pmlsc.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/episode-guide/series-2/episode-8</id>
+    <title type="text">Ramsay's Kitchen Nightmares</title>
+    <summary type="html">Gordon heads for La Gondola in Derby. Its glory days are long gone, the place feels stuck in the past, so Gordon tries to shake them into the 21st century.</summary>
+    <updated>2011-08-22T17:06:09.668Z</updated>
+    <link href="http://www.channel4.com/programmes/ramsays-kitchen-nightmares/episode-guide/series-2/episode-8" rel="alternate" type="text/html" />
+    <link href="http://pmlsc.channel4.com/pmlsd/ramsays-kitchen-nightmares/episode-guide/series-2/episode-8.atom" rel="self" type="application/atom+xml" />
+    <media:content>
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/ramsays-kitchen-nightmares/series-2/ramsays-kitchen-nightmares-s2-20090617160911_200x113.jpg" height="113" width="200" imageSource="fallback" />
+    </media:content>
+    <dc:relation.SeriesNumber>2</dc:relation.SeriesNumber>
+    <dc:relation.EpisodeNumber>8</dc:relation.EpisodeNumber>
+    <dc:relation.programmeId>38532/008</dc:relation.programmeId>
+  </entry>
+</feed>

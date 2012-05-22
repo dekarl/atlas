@@ -1,0 +1,93 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xmlns:dc="http://purl.org/dc/elements/1.1/" xml:base="http://pmlsc.channel4.com">
+  <id>tag:xbox.pmlsc.channel4.com,2009:/programmes/jamie-does/episode-guide/series-1</id>
+  <title type="text">Series 1 - Jamie Does...</title>
+  <subtitle type="html">Travelling across Europe and into North Africa, Jamie heads off the tourist track to experience local cultures through their food, searching out fantastic ingredients, meeting extraordinary people, and preparing his own versions of delicious recipes along the way.</subtitle>
+  <updated>2011-11-24T12:10:52.921Z</updated>
+  <author>
+    <name>Channel 4 Television</name>
+  </author>
+  <logo imageSource="own">http://cache.channel4.com/assets/programmes/images/jamie-does/series-1/f01753c0-8663-488b-9aac-2ae218dc73dc_200x113.jpg</logo>
+  <link href="https://xbox.channel4.com/pmlsd/jamie-does/episode-guide.atom?platform=xbox" rel="up" type="application/atom+xml" />
+  <link href="https://xbox.channel4.com/pmlsd/jamie-does/episode-guide/series-1.atom?platform=xbox" rel="self" type="application/atom+xml" />
+  <dc:relation.platformClientVersion>1.0</dc:relation.platformClientVersion>
+  <generator version="1.27.2">PMLSD</generator>
+  <entry>
+    <id>tag:xbox.pmlsc.channel4.com,2009:/programmes/jamie-does/episode-guide/series-1/episode-1</id>
+    <title type="text">Jamie Does Marrakech</title>
+    <summary type="html">Jamie Oliver hits the road for a culinary expedition across Europe and into North Africa. In the first programme he's in Marrakesh dodging snake charmers and cooking tagine.</summary>
+    <updated>2011-11-24T12:16:04.808Z</updated>
+    <link href="https://xbox.channel4.com/pmlsd/jamie-does/episode-guide/series-1/episode-1.atom?platform=xbox" rel="self" type="application/atom+xml" />
+    <media:content>
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/jamie-does/series-1/episode-1/b58d87f7-9bb9-4d62-8d97-af696eb2d813_200x113.jpg" height="113" width="200" imageSource="own" />
+    </media:content>
+    <dc:relation.SeriesNumber>1</dc:relation.SeriesNumber>
+    <dc:relation.EpisodeNumber>1</dc:relation.EpisodeNumber>
+    <dc:relation.programmeId>48367/001</dc:relation.programmeId>
+  </entry>
+  <entry>
+    <id>tag:xbox.pmlsc.channel4.com,2009:/programmes/jamie-does/episode-guide/series-1/episode-2</id>
+    <title type="text">Jamie Does Andalucia</title>
+    <summary type="html">Jamie travels to Andalucia, where he trains with some young bullfighters, makes paella for a whole village, and cooks rabbit stew with some hunters.</summary>
+    <updated>2011-11-24T12:20:39.417Z</updated>
+    <link href="https://xbox.channel4.com/pmlsd/jamie-does/episode-guide/series-1/episode-2.atom?platform=xbox" rel="self" type="application/atom+xml" />
+    <media:content>
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/jamie-does/series-1/episode-2/80e016f0-3ded-4ef8-a171-7c33337cdd7f_200x113.jpg" height="113" width="200" imageSource="own" />
+    </media:content>
+    <dc:relation.SeriesNumber>1</dc:relation.SeriesNumber>
+    <dc:relation.EpisodeNumber>2</dc:relation.EpisodeNumber>
+    <dc:relation.programmeId>48367/002</dc:relation.programmeId>
+  </entry>
+  <entry>
+    <id>tag:xbox.pmlsc.channel4.com,2009:/programmes/jamie-does/episode-guide/series-1/episode-3</id>
+    <title type="text">Jamie Does Stockholm</title>
+    <summary type="html">Jamie is in Stockholm where he samples reindeer heart, a fermented herring that smells like a stink bomb, and picks wild mushrooms and blueberries. He also makes pike perch, and beetroot.</summary>
+    <updated>2011-11-24T12:21:39.718Z</updated>
+    <link href="https://xbox.channel4.com/pmlsd/jamie-does/episode-guide/series-1/episode-3.atom?platform=xbox" rel="self" type="application/atom+xml" />
+    <media:content>
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/jamie-does/series-1/episode-3/e5f6a6dd-704f-4d00-b7c2-24a2335bff18_200x113.jpg" height="113" width="200" imageSource="own" />
+    </media:content>
+    <dc:relation.SeriesNumber>1</dc:relation.SeriesNumber>
+    <dc:relation.EpisodeNumber>3</dc:relation.EpisodeNumber>
+    <dc:relation.programmeId>48367/003</dc:relation.programmeId>
+  </entry>
+  <entry>
+    <id>tag:xbox.pmlsc.channel4.com,2009:/programmes/jamie-does/episode-guide/series-1/episode-4</id>
+    <title type="text">Jamie Does Venice</title>
+    <summary type="html">Jamie is in Venice, getting away from the tourist traps and cooking up some spaghetti vongole, an amazing risotto, and a perfect Venetian tiramisu.</summary>
+    <updated>2011-11-24T12:19:08.571Z</updated>
+    <link href="https://xbox.channel4.com/pmlsd/jamie-does/episode-guide/series-1/episode-4.atom?platform=xbox" rel="self" type="application/atom+xml" />
+    <media:content>
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/jamie-does/series-1/episode-4/4c7a7bfe-9ead-471e-97ff-4565678c2a83_200x113.jpg" height="113" width="200" imageSource="own" />
+    </media:content>
+    <dc:relation.SeriesNumber>1</dc:relation.SeriesNumber>
+    <dc:relation.EpisodeNumber>4</dc:relation.EpisodeNumber>
+    <dc:relation.programmeId>48367/004</dc:relation.programmeId>
+  </entry>
+  <entry>
+    <id>tag:xbox.pmlsc.channel4.com,2009:/programmes/jamie-does/episode-guide/series-1/episode-5</id>
+    <title type="text">Jamie Does The French Pyrenees</title>
+    <summary type="html">Jamie goes truffle-hunting and wild boar hunting in the French Pyrenees. He also prepares a classic tarte tatin, Roquefort salad, an old school confit of duck, and a country-style terrine.</summary>
+    <updated>2011-11-24T12:17:05.330Z</updated>
+    <link href="https://xbox.channel4.com/pmlsd/jamie-does/episode-guide/series-1/episode-5.atom?platform=xbox" rel="self" type="application/atom+xml" />
+    <media:content>
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/jamie-does/series-1/episode-5/bd1aa6ec-7dbc-4dc8-973b-5018e29abbad_200x113.jpg" height="113" width="200" imageSource="own" />
+    </media:content>
+    <dc:relation.SeriesNumber>1</dc:relation.SeriesNumber>
+    <dc:relation.EpisodeNumber>5</dc:relation.EpisodeNumber>
+    <dc:relation.programmeId>48367/005</dc:relation.programmeId>
+  </entry>
+  <entry>
+    <id>tag:xbox.pmlsc.channel4.com,2009:/programmes/jamie-does/episode-guide/series-1/episode-6</id>
+    <title type="text">Jamie Does Athens</title>
+    <summary type="html">Jamie cooks kebabs by the Acropolis, joins friends for meze and Greek dancing, milks a goat with a priest, prepares a perfect Greek salad, and cooks tuna straight from the sea.</summary>
+    <updated>2011-11-24T12:11:23.272Z</updated>
+    <link href="https://xbox.channel4.com/pmlsd/jamie-does/episode-guide/series-1/episode-6.atom?platform=xbox" rel="self" type="application/atom+xml" />
+    <media:content>
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/jamie-does/series-1/episode-6/a641176f-686f-4fcb-81c7-a40bf01aa98f_200x113.jpg" height="113" width="200" imageSource="own" />
+    </media:content>
+    <dc:relation.SeriesNumber>1</dc:relation.SeriesNumber>
+    <dc:relation.EpisodeNumber>6</dc:relation.EpisodeNumber>
+    <dc:relation.programmeId>48367/006</dc:relation.programmeId>
+  </entry>
+</feed>

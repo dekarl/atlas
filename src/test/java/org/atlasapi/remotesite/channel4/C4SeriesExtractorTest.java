@@ -11,12 +11,12 @@ import junit.framework.TestCase;
 
 import org.atlasapi.media.entity.Episode;
 import org.atlasapi.media.entity.Series;
-import org.atlasapi.persistence.logging.NullAdapterLog;
 import org.joda.time.DateTime;
 
 import com.google.common.collect.ImmutableSet;
 import com.google.common.io.Resources;
 import com.metabroadcast.common.time.DateTimeZones;
+import com.metabroadcast.common.time.SystemClock;
 
 public class C4SeriesExtractorTest extends TestCase {
 
@@ -24,7 +24,7 @@ public class C4SeriesExtractorTest extends TestCase {
 	
 	public void testParsingASeries() throws Exception {
 		
-		SeriesAndEpisodes seriesAndEpisodes = new C4SeriesExtractor(null, null, new NullAdapterLog()).extract(seriesFeed.build());
+		SeriesAndEpisodes seriesAndEpisodes = new C4SeriesAndEpisodesExtractor(new SystemClock()).extract(seriesFeed.build());
 		Series series = seriesAndEpisodes.getSeries();
 		
 		assertThat(series.getCanonicalUri(), is("http://www.channel4.com/programmes/ramsays-kitchen-nightmares/episode-guide/series-3"));
@@ -41,9 +41,9 @@ public class C4SeriesExtractorTest extends TestCase {
 		
 		Episode firstEpisode = episodes.get(0);
 		
-		assertThat(firstEpisode.getCanonicalUri(), is("http://www.channel4.com/programmes/ramsays-kitchen-nightmares/episode-guide/series-3/episode-1"));
+		assertThat(firstEpisode.getCanonicalUri(), is("http://www.channel4.com/programmes/41337/001"));
 		assertThat(firstEpisode.getCurie(), is("c4:ramsays-kitchen-nightmares-series-3-episode-1"));
-		assertThat(firstEpisode.getThumbnail(), is("http://www.channel4.com/assets/programmes/images/shameless/series-7/episode-8/c842994a-5c06-493e-9d1f-5b6a03188848_200x113.jpg"));
+		assertThat(firstEpisode.getThumbnail(), is("http://www.channel4.com/assets/programmes/images/ramsays-kitchen-nightmares/series-3/ramsays-kitchen-nightmares-s3-20090617160853_200x113.jpg"));
 		assertThat(firstEpisode.getImage(), is("http://www.channel4.com/assets/programmes/images/shameless/series-7/episode-8/c842994a-5c06-493e-9d1f-5b6a03188848_625x352.jpg"));
 
 		assertThat(series.getSeriesNumber(), is(3));

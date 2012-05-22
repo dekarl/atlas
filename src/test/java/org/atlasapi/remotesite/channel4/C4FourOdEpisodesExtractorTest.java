@@ -4,6 +4,8 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.startsWith;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.Collections;
 import java.util.List;
 import java.util.Set;
@@ -16,31 +18,50 @@ import org.atlasapi.media.entity.Encoding;
 import org.atlasapi.media.entity.Episode;
 import org.atlasapi.media.entity.Location;
 import org.atlasapi.media.entity.Policy;
+import org.atlasapi.media.entity.Policy.Platform;
 import org.atlasapi.media.entity.Publisher;
 import org.atlasapi.media.entity.Restriction;
 import org.atlasapi.media.entity.Version;
-import org.atlasapi.persistence.logging.NullAdapterLog;
+import org.atlasapi.remotesite.FixedResponseHttpClient;
 import org.joda.time.DateTime;
 
+import com.google.common.base.Charsets;
+import com.google.common.base.Optional;
+import com.google.common.base.Throwables;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Sets;
+import com.google.common.io.Files;
 import com.google.common.io.Resources;
+import com.google.inject.internal.ImmutableMap;
+import com.metabroadcast.common.http.SimpleHttpClient;
 import com.metabroadcast.common.intl.Countries;
 import com.metabroadcast.common.intl.Country;
 import com.metabroadcast.common.time.DateTimeZones;
+import com.metabroadcast.common.time.SystemClock;
 
 public class C4FourOdEpisodesExtractorTest extends TestCase {
 
-	private final AtomFeedBuilder fourOdFeed = new AtomFeedBuilder(Resources.getResource(getClass(), "ramsays-kitchen-nightmares-4od.atom"));
-	
+    private String fileContentsFromResource(String resourceName)  {
+        try {
+            return Files.toString(new File(Resources.getResource(getClass(), resourceName).getFile()), Charsets.UTF_8);
+        } catch (IOException e) {
+            Throwables.propagate(e);
+        }
+        return null;
+    }
+    
+    private final SimpleHttpClient httpClient = new FixedResponseHttpClient(
+            ImmutableMap.<String, String>of("https://pmlsc.channel4.com/pmlsd/ramsays-kitchen-nightmares/4od.atom", fileContentsFromResource("ramsays-kitchen-nightmares-4od.atom")));
+    private final C4AtomApiClient atomApiClient = new C4AtomApiClient(httpClient, "https://pmlsc.channel4.com/pmlsd/", Optional.<String>absent());
+
 	public void testExtractingEpisodes() throws Exception {
 		
-		List<Episode> episodes = new C4EpisodesExtractor(null, new NullAdapterLog()).includeOnDemands().extract(fourOdFeed.build());
+		List<Episode> episodes = new C4OdEpisodesAdapter(atomApiClient, Optional.<Platform>absent(), new SystemClock()).fetch("http://www.channel4.com/programmes/ramsays-kitchen-nightmares");
 
 		Episode firstEpisode = (Episode) Iterables.get(episodes, 0);
 		
-		assertThat(firstEpisode.getCanonicalUri(), is("http://www.channel4.com/programmes/ramsays-kitchen-nightmares/episode-guide/series-1/episode-1"));
+		assertThat(firstEpisode.getCanonicalUri(), is("http://www.channel4.com/programmes/36423/001"));
 		assertThat(firstEpisode.getAliases(), is((Set<String>) ImmutableSet.of("http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#2922045")));
 		
 		assertThat(firstEpisode.getCurie(), is("c4:ramsays-kitchen-nightmares-series-1-episode-1"));
@@ -51,7 +72,6 @@ public class C4FourOdEpisodesExtractorTest extends TestCase {
 		assertThat(firstEpisode.getDescription(), startsWith("Gordon Ramsay visits Bonapartes in Silsden, West Yorkshire."));
 		assertThat(firstEpisode.getThumbnail(), is("http://www.channel4.com/assets/programmes/images/ramsays-kitchen-nightmares/series-1/ramsays-kitchen-nightmares-s1-20090617160732_200x113.jpg"));
 		assertThat(firstEpisode.getImage(), is("http://www.channel4.com/assets/programmes/images/ramsays-kitchen-nightmares/series-1/ramsays-kitchen-nightmares-s1-20090617160732_625x352.jpg"));
-		assertThat(firstEpisode.getLastUpdated(), is(new DateTime("2010-11-08T17:57:59.924Z", DateTimeZones.UTC)));
 		
 		Version firstEpisodeVersion = Iterables.get(firstEpisode.getVersions(), 0);
 		assertThat(firstEpisodeVersion.getDuration(), is((48 * 60) + 55));
