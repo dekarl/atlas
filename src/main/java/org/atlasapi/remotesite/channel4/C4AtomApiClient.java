@@ -56,8 +56,8 @@ public class C4AtomApiClient {
         return get(optionallyAppendPlatform(baseUri));
     }
     
-    private Optional<String> brandName(String canonicalBrandUri) {
-        return linkExtractor.brandNameFrom(canonicalBrandUri);
+    private String brandName(String canonicalBrandUri) {
+        return linkExtractor.brandNameFrom(canonicalBrandUri).get();
     }
     
     private Optional<Feed> get(String uri) {
