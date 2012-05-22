@@ -21,6 +21,7 @@ import org.atlasapi.media.entity.Item;
 import org.atlasapi.media.entity.Location;
 import org.atlasapi.media.entity.Restriction;
 import org.atlasapi.media.entity.Series;
+import org.atlasapi.media.entity.Policy.Platform;
 import org.atlasapi.media.entity.Version;
 import org.atlasapi.persistence.content.ContentResolver;
 import org.atlasapi.persistence.content.ContentWriter;
@@ -50,11 +51,11 @@ public class C4AtomBackedBrandUpdater implements C4BrandUpdater {
 
 	private boolean canUpdateDescriptions = true;
 	
-	public C4AtomBackedBrandUpdater(C4AtomApiClient feedClient, ContentResolver contentResolver, ContentWriter contentWriter, ChannelResolver channelResolver) {
+	public C4AtomBackedBrandUpdater(C4AtomApiClient feedClient, Optional<Platform> platform, ContentResolver contentResolver, ContentWriter contentWriter, ChannelResolver channelResolver) {
 		this.feedClient = feedClient;
 		this.resolver = new C4AtomContentResolver(contentResolver);
 		this.writer = contentWriter;
-		this.extractor = new C4BrandExtractor(feedClient, channelResolver);
+		this.extractor = new C4BrandExtractor(feedClient, platform, channelResolver);
 	}
 	
 	@Override

@@ -71,6 +71,7 @@ public abstract class BaseC4EpisodeExtractor {
     }
 
     protected Element getMedia(Entry source) {
+        // TODO: This needs writing?
         return null;
     }
 

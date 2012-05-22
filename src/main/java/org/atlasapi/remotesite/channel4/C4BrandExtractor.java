@@ -6,8 +6,10 @@ import org.atlasapi.media.channel.ChannelResolver;
 import org.atlasapi.media.entity.Brand;
 import org.atlasapi.media.entity.Clip;
 import org.atlasapi.media.entity.Episode;
+import org.atlasapi.media.entity.Policy.Platform;
 import org.atlasapi.remotesite.ContentExtractor;
 
+import com.google.common.base.Optional;
 import com.metabroadcast.common.time.SystemClock;
 import com.sun.syndication.feed.atom.Feed;
 
@@ -23,11 +25,11 @@ public class C4BrandExtractor implements ContentExtractor<Feed, BrandSeriesAndEp
     private final C4BrandEpisodeLinker epgLinker = new C4BrandEpisodeLinker();
     private final C4ClipLinker clipLinker = new C4ClipLinker();
     
-    public C4BrandExtractor(C4AtomApiClient feedClient, ChannelResolver channelResolver) {
+    public C4BrandExtractor(C4AtomApiClient feedClient, Optional<Platform> platform, ChannelResolver channelResolver) {
         SystemClock clock = new SystemClock();
         this.basicDetailsExtractor = new C4BrandBasicDetailsExtractor(channelResolver, clock);
         this.episodeGuideAdapter = new C4EpisodeGuideAdapter(feedClient, clock);
-        this.fourOditemAdapter = new C4OdEpisodesAdapter(feedClient, clock);
+        this.fourOditemAdapter = new C4OdEpisodesAdapter(feedClient, platform, clock);
         this.brandEpgAdatper = new C4BrandEpgAdapter(feedClient, clock);
         this.clipAdapter = new C4BrandClipAdapter(feedClient, clock);
     }

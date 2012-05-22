@@ -9,6 +9,7 @@ import org.atlasapi.media.TransportSubType;
 import org.atlasapi.media.TransportType;
 import org.atlasapi.media.entity.Encoding;
 import org.atlasapi.media.entity.Location;
+import org.atlasapi.media.entity.Policy.Platform;
 import org.atlasapi.media.entity.Restriction;
 import org.atlasapi.media.entity.Version;
 import org.atlasapi.remotesite.ContentExtractor;
@@ -16,6 +17,7 @@ import org.jdom.Element;
 import org.joda.time.DateTime;
 import org.joda.time.Duration;
 
+import com.google.common.base.Optional;
 import com.metabroadcast.common.intl.Countries;
 import com.metabroadcast.common.intl.Country;
 import com.metabroadcast.common.time.Clock;
@@ -29,9 +31,11 @@ public class C4AtomEntryVersionExtractor implements ContentExtractor<Entry, Vers
     private static final String EMBED_CODE = "<object id='flashObj' width='480' height='290' classid='clsid:D27CDB6E-AE6D-11cf-96B8-444553540000' codebase='http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,47,0'><param name='movie' value='http://c.brightcove.com/services/viewer/federated_f9/86700592001?isVid=1&amp;isUI=1&amp;publisherID=1213940598' /><param name='bgcolor' value='#000000' /><param name='flashVars' value='videoId=%VIDEOID%&amp;playerID=86700592001&amp;domain=embed&amp;' /><param name='base' value='http://admin.brightcove.com' /><param name='seamlesstabbing' value='false' /><param name='allowFullScreen' value='true' /><param name='swLiveConnect' value='true' /><param name='allowScriptAccess' value='always' /><embed src='http://c.brightcove.com/services/viewer/federated_f9/86700592001?isVid=1&amp;isUI=1&amp;publisherID=1213940598' bgcolor='#000000' flashVars='videoId=%VIDEOID%&amp;playerID=86700592001&amp;domain=embed&amp;' base='http://admin.brightcove.com' name='flashObj' width='480' height='290' seamlesstabbing='false' type='application/x-shockwave-flash' allowFullScreen='true' swLiveConnect='true' allowScriptAccess='always' pluginspage='http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash'></embed></object>";
     
     private final Clock clock;
+    private final Optional<Platform> platform;
 
-    public C4AtomEntryVersionExtractor(Clock clock) {
+    public C4AtomEntryVersionExtractor(Optional<Platform> platform, Clock clock) {
         this.clock = clock;
+        this.platform = platform;
     }
     
     @Override
@@ -79,7 +83,7 @@ public class C4AtomEntryVersionExtractor implements ContentExtractor<Entry, Vers
         }
         
         Encoding encoding = new Encoding();
-        Location location = C4AtomApi.locationFrom(uri, locationId, lookup, availableCountries, null);
+        Location location = C4AtomApi.locationFrom(uri, locationId, lookup, availableCountries, platform);
         location.setLastUpdated(lastUpdated);
         if (location.getPolicy() != null) {
             location.getPolicy().setLastUpdated(lastUpdated);

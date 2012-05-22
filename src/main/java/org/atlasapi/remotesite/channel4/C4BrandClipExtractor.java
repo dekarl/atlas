@@ -2,17 +2,20 @@ package org.atlasapi.remotesite.channel4;
 
 import org.atlasapi.media.entity.Clip;
 import org.atlasapi.media.entity.MediaType;
+import org.atlasapi.media.entity.Policy.Platform;
 import org.atlasapi.media.entity.Publisher;
 import org.atlasapi.media.entity.Specialization;
 import org.atlasapi.remotesite.ContentExtractor;
 import org.jdom.Element;
 
+import com.google.common.base.Optional;
 import com.metabroadcast.common.time.Clock;
 import com.sun.syndication.feed.atom.Entry;
 
 public class C4BrandClipExtractor extends BaseC4EpisodeExtractor implements ContentExtractor<Entry, Clip> {
 
-    private final C4AtomEntryVersionExtractor versionExtractor = new C4AtomEntryVersionExtractor();
+    // TODO: Do we have platform-specific clips?
+    private final C4AtomEntryVersionExtractor versionExtractor = new C4AtomEntryVersionExtractor(Optional.<Platform>absent());
 
     public C4BrandClipExtractor(Clock clock) {
         super(clock);

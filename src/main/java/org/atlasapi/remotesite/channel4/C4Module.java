@@ -90,7 +90,7 @@ public class C4Module {
 	protected C4AtomBackedBrandUpdater c4BrandFetcher(Optional<Platform> platform) {
 	    Optional<String> platformParam = platform.isPresent() ? Optional.of(platform.get().toString()) : Optional.<String>absent();
 	    C4AtomApiClient client = new C4AtomApiClient(httpsClient(), ATOZ_BASE, platformParam);
-		return new C4AtomBackedBrandUpdater(client, contentResolver, lastUpdatedSettingContentWriter(), channelResolver);
+		return new C4AtomBackedBrandUpdater(client, platform, contentResolver, lastUpdatedSettingContentWriter(), channelResolver);
 	}
 	
     @Bean protected LastUpdatedSettingContentWriter lastUpdatedSettingContentWriter() {

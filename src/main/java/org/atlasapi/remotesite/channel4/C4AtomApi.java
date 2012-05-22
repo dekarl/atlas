@@ -18,6 +18,7 @@ import org.jdom.Namespace;
 import org.joda.time.DateTime;
 import org.joda.time.Duration;
 
+import com.google.common.base.Optional;
 import com.google.common.base.Preconditions;
 import com.google.common.base.Splitter;
 import com.google.common.base.Strings;
@@ -294,7 +295,7 @@ public class C4AtomApi {
 		return channelMap;
 	}
 	
-	public static Location locationFrom(String uri, String locationId, Map<String, String> lookup, Set<Country> availableCountries, Platform platform) {
+	public static Location locationFrom(String uri, String locationId, Map<String, String> lookup, Set<Country> availableCountries, Optional<Platform> platform) {
 		Location location = new Location();
 		location.setUri(uri);
 		
@@ -322,8 +323,8 @@ public class C4AtomApi {
 				policy.setAvailableCountries(availableCountries);
 			}
 			
-			if(platform != null) {
-				policy.setPlatform(platform);
+			if(platform.isPresent()) {
+				policy.setPlatform(platform.get());
 			}
 			
 			location.setPolicy(policy);

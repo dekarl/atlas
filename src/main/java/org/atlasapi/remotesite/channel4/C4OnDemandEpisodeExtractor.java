@@ -5,21 +5,24 @@ import java.util.Map;
 import org.atlasapi.media.entity.Encoding;
 import org.atlasapi.media.entity.Episode;
 import org.atlasapi.media.entity.Location;
+import org.atlasapi.media.entity.Policy.Platform;
 import org.atlasapi.media.entity.Version;
 import org.atlasapi.remotesite.ContentExtractor;
 import org.jdom.Element;
 import org.joda.time.DateTime;
 
+import com.google.common.base.Optional;
 import com.metabroadcast.common.time.Clock;
 import com.sun.syndication.feed.atom.Entry;
 
 final class C4OnDemandEpisodeExtractor extends BaseC4EpisodeExtractor implements
         ContentExtractor<Entry, Episode> {
 
-    private final C4AtomEntryVersionExtractor versionExtractor = new C4AtomEntryVersionExtractor();
+    private final C4AtomEntryVersionExtractor versionExtractor;
 
-    public C4OnDemandEpisodeExtractor(Clock clock) {
+    public C4OnDemandEpisodeExtractor(Optional<Platform> platform, Clock clock) {
         super(clock);
+        versionExtractor = new C4AtomEntryVersionExtractor(platform);
     }
 
     @Override
