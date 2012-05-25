@@ -32,6 +32,7 @@ import com.google.common.base.Function;
 import com.google.common.base.Objects;
 import com.google.common.base.Optional;
 import com.google.common.base.Preconditions;
+import com.google.common.base.Predicate;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Maps;
@@ -48,14 +49,17 @@ public class C4AtomBackedBrandUpdater implements C4BrandUpdater {
 	private final C4AtomContentResolver resolver;
 	private final ContentWriter writer;
 	private final C4BrandExtractor extractor;
+	private final Optional<Platform> platform;
+	private final boolean canUpdateDescriptions;
 
-	private boolean canUpdateDescriptions = true;
 	
 	public C4AtomBackedBrandUpdater(C4AtomApiClient feedClient, Optional<Platform> platform, ContentResolver contentResolver, ContentWriter contentWriter, ChannelResolver channelResolver) {
 		this.feedClient = feedClient;
+        this.platform = platform;
 		this.resolver = new C4AtomContentResolver(contentResolver);
 		this.writer = contentWriter;
 		this.extractor = new C4BrandExtractor(feedClient, platform, channelResolver);
+		this.canUpdateDescriptions = !platform.isPresent();
 	}
 	
 	@Override
@@ -72,12 +76,13 @@ public class C4AtomBackedBrandUpdater implements C4BrandUpdater {
 			
 			if (source.isPresent()) {
 			    BrandSeriesAndEpisodes brandHierarchy = extractor.extract(source.get());
-			    
-			    writer.createOrUpdate(resolveAndUpdate(brandHierarchy.getBrand()));
+			    Brand brand = resolveAndUpdate(brandHierarchy.getBrand());
+			    writer.createOrUpdate(brand);
 			    
 			    for (SeriesAndEpisodes seriesAndEpisodes : brandHierarchy.getSeriesAndEpisodes()) {
 			        writer.createOrUpdate(resolveAndUpdate(seriesAndEpisodes.getSeries()));
 			        for (Episode episode : seriesAndEpisodes.getEpisodes()) {
+			            episode.setContainer(brand);
 			            writer.createOrUpdate(resolveAndUpdate(episode));
 			        }
 			    }
@@ -158,14 +163,23 @@ public class C4AtomBackedBrandUpdater implements C4BrandUpdater {
 
     private <T extends Item> T updateItem(T existingClip, T fetchedClip) {
         existingClip = updateContent(existingClip, fetchedClip);
-        
-        Version existingVersion = Iterables.getOnlyElement(existingClip.getVersions());
-        Version fetchedVersion = Iterables.getOnlyElement(fetchedClip.getVersions());
-        existingClip.setVersions(Sets.newHashSet(updateVersion(existingVersion, fetchedVersion)));
+        Set<Version> versions = Sets.newHashSet();
+        Version existingVersion = Iterables.getOnlyElement(existingClip.getVersions(), null);
+        Version fetchedVersion = Iterables.getOnlyElement(fetchedClip.getVersions(), null);
+        if(existingVersion != null || fetchedVersion != null) {
+            versions.add(updateVersion(existingVersion, fetchedVersion));
+        }
+        existingClip.setVersions(versions);
         return existingClip;
     }
 
     private Version updateVersion(Version existing, Version fetched) {
+        if(existing == null) {
+            return fetched;
+        }
+        if(existing != null && fetched == null) {
+            throw new IllegalStateException("Expecting a version in the fetched item but did not get one.");
+        }
         if (!Objects.equal(existing.getDuration(), fetched.getDuration())) {
             existing.setDuration(Duration.standardSeconds(fetched.getDuration()));
             copyLastUpdated(fetched, existing);
@@ -195,9 +209,14 @@ public class C4AtomBackedBrandUpdater implements C4BrandUpdater {
         }
         existing.setBroadcasts(broadcasts);
         
-        Encoding existingEncoding = Iterables.getOnlyElement(existing.getManifestedAs());
-        Encoding fetchedEncoding = Iterables.getOnlyElement(fetched.getManifestedAs());
-        existing.setManifestedAs(Sets.newHashSet(updateEncoding(existingEncoding, fetchedEncoding)));
+        Encoding existingEncoding = Iterables.getOnlyElement(existing.getManifestedAs(), null);
+        Encoding fetchedEncoding = Iterables.getOnlyElement(fetched.getManifestedAs(), null);
+        if(existingEncoding != null || fetchedEncoding != null) {
+            existing.setManifestedAs(Sets.newHashSet(updateEncoding(existingEncoding, fetchedEncoding)));
+        }
+        else {
+            existing.setManifestedAs(Sets.<Encoding>newHashSet());
+        }
         return existing;
     }
 
@@ -212,7 +231,14 @@ public class C4AtomBackedBrandUpdater implements C4BrandUpdater {
     }
 
     private Encoding updateEncoding(Encoding existingEncoding, Encoding fetchedEncoding) {
-        Set<Location> mergedLocations = Sets.newHashSet();
+        if(existingEncoding == null) {
+            return fetchedEncoding;
+        }
+        if(fetchedEncoding == null) {
+            return existingEncoding;
+        }
+        
+        Set<Location> mergedLocations = Sets.newHashSet(findExistingLocationsForOtherPlatforms(existingEncoding.getAvailableAt()));
         for (Location fetchedLocation : fetchedEncoding.getAvailableAt()) {
             Location existingEquivalent = findExistingLocation(fetchedLocation, existingEncoding.getAvailableAt());
             if (existingEquivalent != null) {
@@ -225,6 +251,23 @@ public class C4AtomBackedBrandUpdater implements C4BrandUpdater {
         existingEncoding.setAvailableAt(mergedLocations);
         
         return existingEncoding;
+    }
+
+    private Iterable<Location> findExistingLocationsForOtherPlatforms(
+            Set<Location> availableAt) {
+        return Iterables.filter(availableAt, new Predicate<Location>() {
+
+            @Override
+            public boolean apply(Location input) {
+                if(platform.isPresent()) {
+                    return input.getPolicy() == null || !platform.get().equals(input.getPolicy().getPlatform());
+                }
+                else {
+                    return input.getPolicy() != null && input.getPolicy().getPlatform() != null; 
+                }
+            }
+            
+        });
     }
 
     private Location updateLocation(Location existing, Location fetched) {
@@ -255,7 +298,9 @@ public class C4AtomBackedBrandUpdater implements C4BrandUpdater {
     }
 
     private boolean equivalentRestrictions(Restriction existing, Restriction fetched) {
-        return Objects.equal(existing.isRestricted(), fetched.isRestricted())
+        return existing != null
+            && fetched != null
+            && Objects.equal(existing.isRestricted(), fetched.isRestricted())
             && Objects.equal(existing.getMessage(), fetched.getMessage())
             && Objects.equal(existing.getMinimumAge(), fetched.getMinimumAge());
     }
