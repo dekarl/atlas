@@ -27,7 +27,7 @@ public class C4AtoZFeedIteratorTest {
     @Test
     public void testIteratesOverAtoZFeeds() throws HttpException, Exception {
         
-        String base = "base";
+        String base = "base/";
         Optional<String> platform = Optional.absent();
         C4AtoZFeedIterator iterator = new C4AtoZFeedIterator(client, base, platform);
         
@@ -47,7 +47,7 @@ public class C4AtoZFeedIteratorTest {
     @Test
     public void testIteratesOverAtoZFeedsWithPlatformPresent() throws HttpException, Exception {
         
-        String base = "base";
+        String base = "base/";
         Optional<String> platform = Optional.of("ps3");
         C4AtoZFeedIterator iterator = new C4AtoZFeedIterator(client, base, platform);
         

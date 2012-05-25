@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xmlns:dc="http://purl.org/dc/elements/1.1/" xml:base="http://pmlsc.channel4.com">
+  <id>tag:pmlsc.channel4.com,2009:/programmes/dispatches/episode-guide/series-1</id>
+  <title type="text">Britain's Challenging Children</title>
+  <subtitle type="html">With primary schools across the country being stretched by the violent and disruptive behaviour of a small minority, Dispatches reveals the results of an extensive, in-depth survey of teachers to identify the impact on their ability to teach, and documents the efforts of five schools which are tackling the problem head on.</subtitle>
+  <updated>2011-03-21T15:03:14.353Z</updated>
+  <author>
+    <name>Channel 4 Television</name>
+  </author>
+  <logo imageSource="own">http://cache.channel4.com/assets/programmes/images/dispatches/series-1/dispatches-s1_200x113.jpg</logo>
+  <link href="http://www.channel4.com/programmes/dispatches/episode-guide/series-1" rel="alternate" type="text/html" />
+  <link href="http://pmlsc.channel4.com/pmlsd/dispatches/episode-guide.atom" rel="up" type="application/atom+xml" />
+  <link href="http://pmlsc.channel4.com/pmlsd/dispatches/episode-guide/series-1.atom" rel="self" type="application/atom+xml" />
+  <dc:relation.platformClientVersion>1.0</dc:relation.platformClientVersion>
+  <generator version="1.29.1">PMLSD</generator>
+  <entry>
+    <id>tag:pmlsc.channel4.com,2009:/programmes/dispatches/episode-guide/series-1/episode-1</id>
+    <title type="text">Britain's Challenging Children</title>
+    <summary type="html">With primary schools across the country being stretched by the violent and disruptive behaviour of a small minority, Dispatches reveals the results of an extensive, in-depth survey of teachers to identify the impact on their ability to teach, and documents the efforts of five schools which are tackling the problem head on. 
+
+The survey, the largest if its kind ever undertaken and supported by the teaching union NASUWT, reveals the extent of deteriorating standards of behaviour in classrooms across the UK. With millions of teaching hours being lost; it's the majority of well-behaved kids that are paying the price.  
+
+But while the crises in classrooms appear to be escalating for many schools, Britain's Challenging Children follows the efforts of five primaries trying innovative methods to regain a calm teaching environment. Filmed as observational documentary, in Glasgow, Wigan and Luton, Dispatches explore what works by focussing on their most challenging pupils. 
+
+Through early intervention methods such as parental outreach, target-setting for badly behaved children and 'nurture groups', these schools go beyond punitive measures, to address why children are acting out - helping the individual child to get back on track, and the rest of the class to get on with their work.</summary>
+    <updated>2011-03-21T15:03:14.513Z</updated>
+    <link href="http://www.channel4.com/programmes/dispatches/episode-guide/series-1/episode-1" rel="alternate" type="text/html" />
+    <link href="http://pmlsc.channel4.com/pmlsd/dispatches/episode-guide/series-1/episode-1.atom" rel="self" type="application/atom+xml" />
+    <media:content>
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/dispatches/series-1/episode-1/dispatches-s1e1_200x113.jpg" height="113" width="200" imageSource="own" altText="Young school boy in a classroom" />
+    </media:content>
+    <dc:relation.SeriesNumber>1</dc:relation.SeriesNumber>
+    <dc:relation.EpisodeNumber>1</dc:relation.EpisodeNumber>
+    <dc:relation.programmeId>44792/001</dc:relation.programmeId>
+  </entry>
+</feed>

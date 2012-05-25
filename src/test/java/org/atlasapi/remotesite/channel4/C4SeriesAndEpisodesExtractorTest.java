@@ -18,7 +18,7 @@ import com.google.common.io.Resources;
 import com.metabroadcast.common.time.DateTimeZones;
 import com.metabroadcast.common.time.SystemClock;
 
-public class C4SeriesExtractorTest extends TestCase {
+public class C4SeriesAndEpisodesExtractorTest extends TestCase {
 
 	private final AtomFeedBuilder seriesFeed = new AtomFeedBuilder(Resources.getResource(getClass(), "ramsays-kitchen-nightmares-series-3.atom"));
 	
@@ -42,13 +42,11 @@ public class C4SeriesExtractorTest extends TestCase {
 		Episode firstEpisode = episodes.get(0);
 		
 		assertThat(firstEpisode.getCanonicalUri(), is("http://www.channel4.com/programmes/41337/001"));
-		assertThat(firstEpisode.getCurie(), is("c4:ramsays-kitchen-nightmares-series-3-episode-1"));
+		assertThat(firstEpisode.getCurie(), is("c4:41337-001"));
 		assertThat(firstEpisode.getThumbnail(), is("http://www.channel4.com/assets/programmes/images/ramsays-kitchen-nightmares/series-3/ramsays-kitchen-nightmares-s3-20090617160853_200x113.jpg"));
-		assertThat(firstEpisode.getImage(), is("http://www.channel4.com/assets/programmes/images/shameless/series-7/episode-8/c842994a-5c06-493e-9d1f-5b6a03188848_625x352.jpg"));
+		assertThat(firstEpisode.getImage(), is("http://www.channel4.com/assets/programmes/images/ramsays-kitchen-nightmares/series-3/ramsays-kitchen-nightmares-s3-20090617160853_625x352.jpg"));
 
 		assertThat(series.getSeriesNumber(), is(3));
-
-		assertThat(series.getLastUpdated(), is(new DateTime("2010-08-09T16:49:33.651Z", DateTimeZones.UTC)));
 		
 		assertThat(firstEpisode.getSeriesNumber(), is(3));
 		assertThat(firstEpisode.getEpisodeNumber(), is(1));
@@ -57,6 +55,6 @@ public class C4SeriesExtractorTest extends TestCase {
 		assertThat(firstEpisode.getVersions(), is((Set) ImmutableSet.of()));
 
 		// The outer adapter will notice that this is the same as the brand title (ignoring punctuation and spacing) and will replace it with the series and episode number
-		assertThat(firstEpisode.getTitle(), is("Ramsay's Kitchen: Nightmares"));
+		assertThat(firstEpisode.getTitle(), is("Ramsay's Kitchen Nightmares"));
 	}
 }

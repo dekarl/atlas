@@ -24,7 +24,7 @@ import com.sun.syndication.feed.atom.Feed;
 @RunWith(MockitoJUnitRunner.class)
 public class C4AtoZAtomContentUpdateTaskTest extends TestCase {
 
-    String apiBase = "http://pmlsc.channel4.com/pmlsd";
+    String apiBase = "http://pmlsc.channel4.com/pmlsd/";
 	String uri = "http://www.channel4.com/programmes/atoz/a";
 	
 	private C4BrandUpdater brandAdapter = mock(C4BrandUpdater.class);

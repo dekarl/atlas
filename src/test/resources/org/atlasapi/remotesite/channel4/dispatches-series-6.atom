@@ -1,0 +1,117 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xmlns:dc="http://purl.org/dc/elements/1.1/" xml:base="http://pmlsc.channel4.com">
+  <id>tag:pmlsc.channel4.com,2009:/programmes/dispatches/episode-guide/series-6</id>
+  <title type="text">Unseen Gaza</title>
+  <subtitle type="html">In this Dispatches special, Jon Snow examines the difficulties that news organisations around the world have faced in reporting the conflict in Gaza.</subtitle>
+  <updated>2011-03-21T14:48:59.825Z</updated>
+  <author>
+    <name>Channel 4 Television</name>
+  </author>
+  <logo imageSource="own">http://cache.channel4.com/assets/programmes/images/unseen-gaza/series-1/unseen-gaza-s1_200x113.jpg</logo>
+  <link href="http://www.channel4.com/programmes/dispatches/episode-guide/series-6" rel="alternate" type="text/html" />
+  <link href="http://pmlsc.channel4.com/pmlsd/dispatches/episode-guide.atom" rel="up" type="application/atom+xml" />
+  <link href="http://pmlsc.channel4.com/pmlsd/dispatches/episode-guide/series-6.atom" rel="self" type="application/atom+xml" />
+  <dc:relation.platformClientVersion>1.0</dc:relation.platformClientVersion>
+  <generator version="1.29.1">PMLSD</generator>
+  <entry>
+    <id>tag:pmlsc.channel4.com,2009:/programmes/dispatches/episode-guide/series-6/episode-1</id>
+    <title type="text">Congo's Forgotten Children</title>
+    <summary type="html">Deborah Davies examines how the children of Congo are being affected by the latest fighting that is tearing their country apart. An entire generation has been scarred by a seemingly endless conflict - in the last 12 years at least three million children have died as a result of fighting and the hunger and disease that war creates.
+
+The long-running conflict is largely ignored by the rest of the world, but last November Congo briefly hit the headlines as rebel troops seized control of a large area of Eastern Congo. The Dispatches team were the only journalists to reach the town of Kanyabayonga. Children describe how they ran and hid in dense forest to avoid the fighting. In the panic many were separated from their parents. They spent up to three weeks with little food, no clean water and no shelter - and as a result many became ill and died.</summary>
+    <updated>2011-03-21T14:48:59.893Z</updated>
+    <link href="http://www.channel4.com/programmes/dispatches/episode-guide/series-6/episode-1" rel="alternate" type="text/html" />
+    <link href="http://www.channel4.com/programmes/dispatches/4od#2925166" rel="alternate" type="text/html" title="4oD" />
+    <link href="http://pmlsc.channel4.com/pmlsd/dispatches/episode-guide/series-6/episode-1.atom" rel="self" type="application/atom+xml" />
+    <media:content>
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/dispatches/series-6/episode-1/dispatches-s6e1-20090304151359_200x113.jpg" height="113" width="200" imageSource="own" altText="A child in the Congo" />
+    </media:content>
+    <dc:relation.SeriesNumber>6</dc:relation.SeriesNumber>
+    <dc:relation.EpisodeNumber>1</dc:relation.EpisodeNumber>
+    <dc:relation.programmeId>47560/001</dc:relation.programmeId>
+  </entry>
+  <entry>
+    <id>tag:pmlsc.channel4.com,2009:/programmes/dispatches/episode-guide/series-6/episode-3</id>
+    <title type="text">Unseen Gaza</title>
+    <summary type="html">Is what has been presented on our screens and in our papers a true reflection of events on the ground in Gaza? And how do these reports differ to those aired in other countries? 
+
+With reporters unable to enter Gaza, attempted media manipulation from both sides and strict regulations governing what images that can be shown on British TV, Jon Snow asks a range of journalists from at home and abroad about the challenges of getting the full story. 
+
+Featuring images that haven't before been aired on mainstream television, Jon also examines the difference between the coverage at home and that in the US, Europe and the Middle East. He compares the coverage available on terrestrial channels with satellite TV and the internet and investigates the extent to which some British Muslims are by-passing the mainstream British media and looking elsewhere for their information. 
+
+To what extent does the choice of news outlet affect opinion of the conflict?</summary>
+    <updated>2011-03-21T14:48:59.947Z</updated>
+    <link href="http://www.channel4.com/programmes/dispatches/episode-guide/series-6/episode-3" rel="alternate" type="text/html" />
+    <link href="http://www.channel4.com/programmes/dispatches/4od#2926706" rel="alternate" type="text/html" title="4oD" />
+    <link href="http://pmlsc.channel4.com/pmlsd/dispatches/episode-guide/series-6/episode-3.atom" rel="self" type="application/atom+xml" />
+    <media:content>
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/unseen-gaza/series-1/episode-3/unseen-gaza-s1e3_200x113.jpg" height="113" width="200" imageSource="own" altText="Jon Snow" />
+    </media:content>
+    <dc:relation.SeriesNumber>6</dc:relation.SeriesNumber>
+    <dc:relation.EpisodeNumber>3</dc:relation.EpisodeNumber>
+    <dc:relation.programmeId>47560/003</dc:relation.programmeId>
+  </entry>
+  <entry>
+    <id>tag:pmlsc.channel4.com,2009:/programmes/dispatches/episode-guide/series-6/episode-4</id>
+    <title type="text">Afghanistan - Mission Impossible?</title>
+    <summary type="html">As war in Afghanistan persists and British soldiers continue to lose their lives fighting an insurgency that many commentators say they can't defeat, reporter Stephen Grey investigates whether our military is engaged in an impossible mission.
+
+In an unprecedented series of interviews, senior military commanders - including Air Chief Marshal Sir Jock Stirrup, chief of the defence staff, and General Sir Richard Dannatt, chief of the general staff - reveal what they think of the successes, failures and lessons learned during Britain's three-year intervention into Helmand province.</summary>
+    <updated>2011-03-21T14:49:31.050Z</updated>
+    <link href="http://www.channel4.com/programmes/dispatches/episode-guide/series-6/episode-4" rel="alternate" type="text/html" />
+    <link href="http://www.channel4.com/programmes/dispatches/4od#2925167" rel="alternate" type="text/html" title="4oD" />
+    <link href="http://pmlsc.channel4.com/pmlsd/dispatches/episode-guide/series-6/episode-4.atom" rel="self" type="application/atom+xml" />
+    <media:content>
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/dispatches/series-6/episode-4/dispatches-s6e4-20090414174421_200x113.jpg" height="113" width="200" imageSource="own" altText="Air Chief Marshal Sir Jock Stirrup" />
+    </media:content>
+    <dc:relation.SeriesNumber>6</dc:relation.SeriesNumber>
+    <dc:relation.EpisodeNumber>4</dc:relation.EpisodeNumber>
+    <dc:relation.programmeId>47560/004</dc:relation.programmeId>
+  </entry>
+  <entry>
+    <id>tag:pmlsc.channel4.com,2009:/programmes/dispatches/episode-guide/series-6/episode-5</id>
+    <title type="text">What's in Your Breakfast?</title>
+    <summary type="html">It is the most important meal of the day, but all too often, breakfast in the UK is far from healthy.  
+
+In this edition of Dispatches, reporter Jane Moore reveals how nutritious the nation's breakfasts really are and the marketing techniques employed by this lucrative industry.  Manufacturers are using health claims to sell their breakfast cereals, drinks and bars.
+
+Dispatches investigates the evidence provided to support these claims and asks if some of the healthy-sounding cereals and pro-biotic yoghurts are all they are cracked up to be. 
+
+Moore uncovers what is actually in your breakfast food.  Do you really know just how much sugar and salt are in children's cereals, particularly those marketed as 'healthy'?  
+
+Moore finds that the unwillingness of retailers and manufacturers to adopt the traffic light systems recommended by food standards authorities is confusing things further. Even if you want to eat the right thing, it is not always easy to tell what that is. 
+
+She also tests the regulators' rules on 'healthy' branding by baking a cake that could still make many of the health claims made by cereals. 
+
+Moore examines the recent shifts in cereal marketing which enable manufacturers to stay ahead of the regulators. With advertising of sugary children's foods banned during kids TV programming, Moore discovers that their marketing has moved to prime-time TV and the internet.</summary>
+    <updated>2011-03-21T14:49:00.081Z</updated>
+    <link href="http://www.channel4.com/programmes/dispatches/episode-guide/series-6/episode-5" rel="alternate" type="text/html" />
+    <link href="http://pmlsc.channel4.com/pmlsd/dispatches/episode-guide/series-6/episode-5.atom" rel="self" type="application/atom+xml" />
+    <link href="http://pmlsc.channel4.com/pmlsd/dispatches/video/series-6/episode-5.atom" rel="related" type="application/atom+xml" title="Clips" />
+    <media:content>
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/dispatches/series-6/episode-5/b7faf507-37b1-4338-9a33-803566c31fd7_200x113.jpg" height="113" width="200" imageSource="own" altText="Jane Moore" />
+    </media:content>
+    <dc:relation.SeriesNumber>6</dc:relation.SeriesNumber>
+    <dc:relation.EpisodeNumber>5</dc:relation.EpisodeNumber>
+    <dc:relation.programmeId>47560/005</dc:relation.programmeId>
+  </entry>
+  <entry>
+    <id>tag:pmlsc.channel4.com,2009:/programmes/dispatches/episode-guide/series-6/episode-6</id>
+    <title type="text">Lords, Billionaires and the Russian Connection</title>
+    <summary type="html">Dispatches investigates the elusive Russian oligarchs who have been trying to buy up our football teams, newspapers and car companies. 
+
+Reporter Antony Barnett examines the relationship between Russia's richest men and Britain's political elite. He discovers that members of the House of Lords are a prized attraction in Moscow.
+
+&lt;b>Who Knows Who&lt;/b> (Channel4.com) maps the relationships between the Russian oligarchs and the British peers and business contacts. Click on the left-hand links of the individuals to see how the rich and powerful are linked.</summary>
+    <updated>2011-03-21T14:49:00.190Z</updated>
+    <link href="http://www.channel4.com/programmes/dispatches/episode-guide/series-6/episode-6" rel="alternate" type="text/html" />
+    <link href="http://pmlsc.channel4.com/pmlsd/dispatches/episode-guide/series-6/episode-6.atom" rel="self" type="application/atom+xml" />
+    <link href="http://pmlsc.channel4.com/pmlsd/dispatches/video/series-6/episode-6.atom" rel="related" type="application/atom+xml" title="Clips" />
+    <media:content>
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/dispatches/series-6/episode-6/1e9071b6-93b6-48df-9c2c-956c455ee118_200x113.jpg" height="113" width="200" imageSource="own" altText="Antony Barnett" />
+    </media:content>
+    <dc:relation.SeriesNumber>6</dc:relation.SeriesNumber>
+    <dc:relation.EpisodeNumber>6</dc:relation.EpisodeNumber>
+    <dc:relation.programmeId>47560/006</dc:relation.programmeId>
+  </entry>
+</feed>

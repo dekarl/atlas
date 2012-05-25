@@ -1,0 +1,1082 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms" xml:base="http://pmlsc.channel4.com">
+  <id>tag:pmlsc.channel4.com,2009:/programmes/dispatches/4od</id>
+  <title type="text">Dispatches on 4oD</title>
+  <updated>2012-05-22T10:47:26.400Z</updated>
+  <author>
+    <name>Channel 4 Television</name>
+  </author>
+  <logo imageSource="own">http://cache.channel4.com/assets/programmes/images/dispatches/269fad0c-5d29-4e75-aea4-6154974447ef_200x113.jpg</logo>
+  <link href="http://pmlsc.channel4.com/pmlsd/dispatches.atom" rel="up" type="application/atom+xml" />
+  <link href="http://pmlsc.channel4.com/pmlsd/dispatches/4od.atom" rel="self" type="application/atom+xml" />
+  <link href="http://www.channel4.com/programmes/dispatches/4od" rel="alternate" type="text/html" />
+  <link href="http://pmlsc.channel4.com/pmlsd/dispatches/4od/recommendations.atom" rel="related" type="application/atom+xml" title="recommendations" />
+  <dc:relation.platformClientVersion>1.0</dc:relation.platformClientVersion>
+  <dc:relation.BrandFlattened>true</dc:relation.BrandFlattened>
+  <dc:relation.presentationBrand>C4</dc:relation.presentationBrand>
+  <generator version="1.29.1">PMLSD</generator>
+  <entry>
+    <id>tag:pmlsc.channel4.com,2009:/programmes/dispatches/4od%232925166</id>
+    <title type="text">Congo's Forgotten Children</title>
+    <summary type="text">Deborah Davies examines how the children of Congo are being affected by the latest fighting that is tearing their country apart. An entire generation has been scarred by a seemingly endless conflict - in the last 12 years at least three million children have died as a result of fighting and the hunger and disease that war creates.
+
+The long-running conflict is largely ignored by the rest of the world, but last November Congo briefly hit the headlines as rebel troops seized control of a large area of Eastern Congo. The Dispatches team were the only journalists to reach the town of Kanyabayonga. Children describe how they ran and hid in dense forest to avoid the fighting. In the panic many were separated from their parents. They spent up to three weeks with little food, no clean water and no shelter - and as a result many became ill and died.</summary>
+    <updated>2012-03-15T15:49:21.355Z</updated>
+    <link href="http://www.channel4.com/programmes/dispatches/4od#2925166" rel="alternate" type="text/html" />
+    <link href="http://pmlsc.channel4.com/pmlsd/dispatches/episode-guide/series-6/episode-1.atom" rel="related" type="application/atom+xml" />
+    <media:group>
+      <media:player url="http://www.channel4.com/programmes/dispatches/4od#2925166" />
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/dispatches/series-6/episode-1/dispatches-s6e1-20090304151359_200x113.jpg" height="113" width="200" imageSource="own" altText="A child in the Congo" />
+      <media:rating>nonadult</media:rating>
+      <media:copyright url="http://cache.channel4.com/terms_and_conditions.html">Terms and Conditions</media:copyright>
+      <media:restriction relationship="allow" type="country">GG,GB,JE,IM,IE</media:restriction>
+      <media:rights status="official" />
+    </media:group>
+    <dc:relation.BrandTitle>Dispatches</dc:relation.BrandTitle>
+    <dcterms:available>start=2009-05-31T22:00:00.000Z; end=2012-11-29T00:00:00.000Z; scheme=W3C-DTF</dcterms:available>
+    <dc:relation.RelatedEntryId feedId="tag:pmlsc.channel4.com,2009:/programmes/dispatches/episode-guide/series-6">tag:pmlsc.channel4.com,2009:/programmes/dispatches/episode-guide/series-6/episode-1</dc:relation.RelatedEntryId>
+    <dc:relation.AgeRating>0</dc:relation.AgeRating>
+    <dc:relation.Guidance>Frank descriptions of violence and surgical scenes that some viewers may find distressing</dc:relation.Guidance>
+    <dc:date.TXDate>2009-02-06T02:20:00.000Z</dc:date.TXDate>
+    <dc:relation.TXChannel>C4</dc:relation.TXChannel>
+    <dc:relation.Subtitles>false</dc:relation.Subtitles>
+    <dc:relation.AudioDescription>false</dc:relation.AudioDescription>
+    <dc:relation.Duration>48:22</dc:relation.Duration>
+    <dc:relation.LoginRequired>true</dc:relation.LoginRequired>
+    <dc:relation.requestType>ARCHIVE</dc:relation.requestType>
+    <dc:relation.programmeId>47560/001</dc:relation.programmeId>
+  </entry>
+  <entry>
+    <id>tag:pmlsc.channel4.com,2009:/programmes/dispatches/4od%232926706</id>
+    <title type="text">Unseen Gaza</title>
+    <summary type="text">Is what has been presented on our screens and in our papers a true reflection of events on the ground in Gaza? And how do these reports differ to those aired in other countries? 
+
+With reporters unable to enter Gaza, attempted media manipulation from both sides and strict regulations governing what images that can be shown on British TV, Jon Snow asks a range of journalists from at home and abroad about the challenges of getting the full story. 
+
+Featuring images that haven't before been aired on mainstream television, Jon also examines the difference between the coverage at home and that in the US, Europe and the Middle East. He compares the coverage available on terrestrial channels with satellite TV and the internet and investigates the extent to which some British Muslims are by-passing the mainstream British media and looking elsewhere for their information. 
+
+To what extent does the choice of news outlet affect opinion of the conflict?</summary>
+    <updated>2012-03-15T15:49:21.168Z</updated>
+    <link href="http://www.channel4.com/programmes/dispatches/4od#2926706" rel="alternate" type="text/html" />
+    <link href="http://pmlsc.channel4.com/pmlsd/dispatches/episode-guide/series-6/episode-3.atom" rel="related" type="application/atom+xml" />
+    <media:group>
+      <media:player url="http://www.channel4.com/programmes/dispatches/4od#2926706" />
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/unseen-gaza/series-1/episode-3/unseen-gaza-s1e3_200x113.jpg" height="113" width="200" imageSource="own" altText="Jon Snow" />
+      <media:rating>adult</media:rating>
+      <media:copyright url="http://cache.channel4.com/terms_and_conditions.html">Terms and Conditions</media:copyright>
+      <media:restriction relationship="allow" type="country">GG,GB,JE,IM,IE</media:restriction>
+      <media:rights status="official" />
+    </media:group>
+    <dc:relation.BrandTitle>Dispatches</dc:relation.BrandTitle>
+    <dcterms:available>start=2009-05-31T22:00:00.000Z; end=2012-11-29T00:00:00.000Z; scheme=W3C-DTF</dcterms:available>
+    <dc:relation.RelatedEntryId feedId="tag:pmlsc.channel4.com,2009:/programmes/dispatches/episode-guide/series-6">tag:pmlsc.channel4.com,2009:/programmes/dispatches/episode-guide/series-6/episode-3</dc:relation.RelatedEntryId>
+    <dc:relation.AgeRating>16</dc:relation.AgeRating>
+    <dc:relation.Guidance>Contains disturbing images of the victims of the violent conflict, including children who have been killed</dc:relation.Guidance>
+    <dc:date.TXDate>2009-01-22T23:05:00.000Z</dc:date.TXDate>
+    <dc:relation.TXChannel>C4</dc:relation.TXChannel>
+    <dc:relation.Subtitles>false</dc:relation.Subtitles>
+    <dc:relation.AudioDescription>false</dc:relation.AudioDescription>
+    <dc:relation.Duration>48:18</dc:relation.Duration>
+    <dc:relation.LoginRequired>true</dc:relation.LoginRequired>
+    <dc:relation.requestType>ARCHIVE</dc:relation.requestType>
+    <dc:relation.programmeId>47560/003</dc:relation.programmeId>
+  </entry>
+  <entry>
+    <id>tag:pmlsc.channel4.com,2009:/programmes/dispatches/4od%232925167</id>
+    <title type="text">Afghanistan - Mission Impossible?</title>
+    <summary type="text">As war in Afghanistan persists and British soldiers continue to lose their lives fighting an insurgency that many commentators say they can't defeat, reporter Stephen Grey investigates whether our military is engaged in an impossible mission.
+
+In an unprecedented series of interviews, senior military commanders - including Air Chief Marshal Sir Jock Stirrup, chief of the defence staff, and General Sir Richard Dannatt, chief of the general staff - reveal what they think of the successes, failures and lessons learned during Britain's three-year intervention into Helmand province.</summary>
+    <updated>2012-03-15T15:49:21.480Z</updated>
+    <link href="http://www.channel4.com/programmes/dispatches/4od#2925167" rel="alternate" type="text/html" />
+    <link href="http://pmlsc.channel4.com/pmlsd/dispatches/episode-guide/series-6/episode-4.atom" rel="related" type="application/atom+xml" />
+    <media:group>
+      <media:player url="http://www.channel4.com/programmes/dispatches/4od#2925167" />
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/dispatches/series-6/episode-4/dispatches-s6e4-20090414174421_200x113.jpg" height="113" width="200" imageSource="own" altText="Air Chief Marshal Sir Jock Stirrup" />
+      <media:rating>nonadult</media:rating>
+      <media:copyright url="http://cache.channel4.com/terms_and_conditions.html">Terms and Conditions</media:copyright>
+      <media:restriction relationship="allow" type="country">GG,GB,JE,IM,IE</media:restriction>
+      <media:rights status="official" />
+    </media:group>
+    <dc:relation.BrandTitle>Dispatches</dc:relation.BrandTitle>
+    <dcterms:available>start=2009-05-31T22:00:00.000Z; end=2012-11-29T00:00:00.000Z; scheme=W3C-DTF</dcterms:available>
+    <dc:relation.RelatedEntryId feedId="tag:pmlsc.channel4.com,2009:/programmes/dispatches/episode-guide/series-6">tag:pmlsc.channel4.com,2009:/programmes/dispatches/episode-guide/series-6/episode-4</dc:relation.RelatedEntryId>
+    <dc:relation.AgeRating>0</dc:relation.AgeRating>
+    <dc:relation.Guidance>Includes frank descriptions of violence and scenes of an operation that some viewers may find distressing</dc:relation.Guidance>
+    <dc:date.TXDate>2009-04-06T19:00:00.000Z</dc:date.TXDate>
+    <dc:relation.TXChannel>C4</dc:relation.TXChannel>
+    <dc:relation.Subtitles>false</dc:relation.Subtitles>
+    <dc:relation.AudioDescription>false</dc:relation.AudioDescription>
+    <dc:relation.Duration>48:12</dc:relation.Duration>
+    <dc:relation.LoginRequired>true</dc:relation.LoginRequired>
+    <dc:relation.requestType>ARCHIVE</dc:relation.requestType>
+    <dc:relation.programmeId>47560/004</dc:relation.programmeId>
+  </entry>
+  <entry>
+    <id>tag:pmlsc.channel4.com,2009:/programmes/dispatches/4od%233090892</id>
+    <title type="text">Pakistan's Taliban Generation</title>
+    <summary type="text">Award-winning Pakistani journalist Sharmeen Obaid-Chinoy investigates how the war on terror is creating a generation of child terrorists in her homeland - children prepared to kill both inside and outside Pakistan.
+
+Sharmeen investigates how the Taliban are recruiting increasingly younger fighters to their campaign. She meets a 14-year-old boy in her home city of Karachi who is desperate to become a suicide bomber.  She then follows the elite unit of the anti-terror police squad - who warn that the Taliban are hiding out in the city's sprawling slums and recruiting children from small madrassas in deprived neighbourhoods. 
+
+Sharmeen also interviews a Taliban commander responsible for child recruitment, who reveals that children as young as five are now being used by the Taliban.
+
+(This film won the International Emmy; Sept 2010).</summary>
+    <updated>2012-03-13T15:38:50.363Z</updated>
+    <link href="http://www.channel4.com/programmes/dispatches/4od#3090892" rel="alternate" type="text/html" />
+    <link href="http://pmlsc.channel4.com/pmlsd/dispatches/episode-guide/series-9/episode-1.atom" rel="related" type="application/atom+xml" />
+    <media:group>
+      <media:player url="http://www.channel4.com/programmes/dispatches/4od#3090892" />
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/dispatches/series-9/episode-1/dispatches-s9e1-20090309110528_200x113.jpg" height="113" width="200" imageSource="own" altText="A young boy who wishes to join the Taliban" />
+      <media:rating>nonadult</media:rating>
+      <media:copyright url="http://cache.channel4.com/terms_and_conditions.html">Terms and Conditions</media:copyright>
+      <media:restriction relationship="allow" type="country">GG,GB,JE,IM,IE</media:restriction>
+      <media:rights status="official" />
+    </media:group>
+    <dc:relation.BrandTitle>Dispatches</dc:relation.BrandTitle>
+    <dcterms:available>start=2010-06-29T22:00:00.000Z; end=2013-06-27T22:00:00.000Z; scheme=W3C-DTF</dcterms:available>
+    <dc:relation.RelatedEntryId feedId="tag:pmlsc.channel4.com,2009:/programmes/dispatches/episode-guide/series-9">tag:pmlsc.channel4.com,2009:/programmes/dispatches/episode-guide/series-9/episode-1</dc:relation.RelatedEntryId>
+    <dc:relation.AgeRating>0</dc:relation.AgeRating>
+    <dc:relation.Guidance>Contains images of terrorist atrocities</dc:relation.Guidance>
+    <dc:date.TXDate>2009-03-16T00:00:00.000Z</dc:date.TXDate>
+    <dc:relation.TXChannel>C4</dc:relation.TXChannel>
+    <dc:relation.Subtitles>false</dc:relation.Subtitles>
+    <dc:relation.AudioDescription>false</dc:relation.AudioDescription>
+    <dc:relation.Duration>47:54</dc:relation.Duration>
+    <dc:relation.LoginRequired>true</dc:relation.LoginRequired>
+    <dc:relation.requestType>ARCHIVE</dc:relation.requestType>
+    <dc:relation.programmeId>47170/001</dc:relation.programmeId>
+  </entry>
+  <entry>
+    <id>tag:pmlsc.channel4.com,2009:/programmes/dispatches/4od%232921464</id>
+    <title type="text">China's Stolen Children</title>
+    <summary type="text">More than a decade after producing The Dying Rooms - a powerful film about the neglect of abandoned babies in Chinese orphanages - the same award-winning team returns to a very different China, where the infamous One Child Policy has created the horrific side-effect of a boom in stolen children.
+
+It is estimated that 70,000 children are kidnapped in China every year and traded on the black market. This special Dispatches programme features extraordinary access to those directly involved, including devastated parents desperately searching for their stolen son, a man who brokers the deals and has sold his own offspring, and prospective parents grappling with giving up their soon-to-be-born daughter.
+
+Beautiful, haunting and deeply tragic, this film takes us into the heart of modern China - a place where girl babies are being sold for as little as £200, detectives specialise in finding kidnapped children and child traffickers buy and sell human lives. The film provides an intimate portrait of the crisis that this stringent government policy has created among China's poorest people.</summary>
+    <updated>2012-05-11T12:49:40.633Z</updated>
+    <link href="http://www.channel4.com/programmes/dispatches/4od#2921464" rel="alternate" type="text/html" />
+    <link href="http://pmlsc.channel4.com/pmlsd/dispatches/episode-guide/series-22/episode-1.atom" rel="related" type="application/atom+xml" />
+    <media:group>
+      <media:player url="http://www.channel4.com/programmes/dispatches/4od#2921464" />
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/dispatches/series-22/episode-1/dispatches-s22e1-20090610162918_200x113.jpg" height="113" width="200" imageSource="own" altText="Playing cards with missing children on them" />
+      <media:rating>nonadult</media:rating>
+      <media:copyright url="http://cache.channel4.com/terms_and_conditions.html">Terms and Conditions</media:copyright>
+      <media:restriction relationship="allow" type="country">GG,GB,JE,IM,IE</media:restriction>
+      <media:rights status="official" />
+    </media:group>
+    <dc:relation.BrandTitle>Dispatches</dc:relation.BrandTitle>
+    <dcterms:available>start=2009-06-26T22:00:00.000Z; end=2014-02-02T00:00:00.000Z; scheme=W3C-DTF</dcterms:available>
+    <dc:relation.RelatedEntryId feedId="tag:pmlsc.channel4.com,2009:/programmes/dispatches/episode-guide/series-22">tag:pmlsc.channel4.com,2009:/programmes/dispatches/episode-guide/series-22/episode-1</dc:relation.RelatedEntryId>
+    <dc:relation.AgeRating>0</dc:relation.AgeRating>
+    <dc:relation.Guidance>Contains harrowing images</dc:relation.Guidance>
+    <dc:date.TXDate>2007-10-07T23:00:00.000Z</dc:date.TXDate>
+    <dc:relation.TXChannel>C4</dc:relation.TXChannel>
+    <dc:relation.Subtitles>true</dc:relation.Subtitles>
+    <dc:relation.AudioDescription>false</dc:relation.AudioDescription>
+    <dc:relation.Duration>86:07</dc:relation.Duration>
+    <dc:relation.LoginRequired>true</dc:relation.LoginRequired>
+    <dc:relation.requestType>ARCHIVE</dc:relation.requestType>
+    <dc:relation.programmeId>40294/001</dc:relation.programmeId>
+  </entry>
+  <entry>
+    <id>tag:pmlsc.channel4.com,2009:/programmes/dispatches/4od%232933745</id>
+    <title type="text">Beneath the Veil</title>
+    <summary type="text">Beneath the Veil follows freelance journalist Saira Shah as she travels covertly through her father's homeland of Afghanistan. Visiting major towns and small villages, Shah's journey reveals how the fundamentalist Taliban regime affects the lives of ordinary people. 
+
+This award-winning film, filmed in late 2000 and early 2001, is a devastating portrait of a country savaged by war and religious extremism, where journalists are no longer welcome, and where the rest of the world seems as distant as another planet.</summary>
+    <updated>2010-11-03T05:57:50.175Z</updated>
+    <link href="http://www.channel4.com/programmes/dispatches/4od#2933745" rel="alternate" type="text/html" />
+    <link href="http://pmlsc.channel4.com/pmlsd/dispatches/episode-guide/series-27/episode-1.atom" rel="related" type="application/atom+xml" />
+    <media:group>
+      <media:player url="http://www.channel4.com/programmes/dispatches/4od#2933745" />
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/dispatches/series-27/episode-1/dispatches-s27e1-20090619152601_200x113.jpg" height="113" width="200" imageSource="own" altText="Saira Shah in Afghanistan" />
+      <media:rating>adult</media:rating>
+      <media:copyright url="http://cache.channel4.com/terms_and_conditions.html">Terms and Conditions</media:copyright>
+      <media:restriction relationship="allow" type="country">gb,im,je,gg,ie</media:restriction>
+      <media:rights status="official" />
+    </media:group>
+    <dc:relation.BrandTitle>Dispatches</dc:relation.BrandTitle>
+    <dcterms:available>start=2009-08-23T22:00:00.000Z; end=2012-10-19T22:00:00.000Z; scheme=W3C-DTF</dcterms:available>
+    <dc:relation.RelatedEntryId feedId="tag:pmlsc.channel4.com,2009:/programmes/dispatches/episode-guide/series-27">tag:pmlsc.channel4.com,2009:/programmes/dispatches/episode-guide/series-27/episode-1</dc:relation.RelatedEntryId>
+    <dc:relation.AgeRating>16</dc:relation.AgeRating>
+    <dc:relation.Guidance>Contains footage of executions and attrocities which some viewers may find disturbing</dc:relation.Guidance>
+    <dc:date.TXDate>2001-07-25T23:00:00.000Z</dc:date.TXDate>
+    <dc:relation.TXChannel>C4</dc:relation.TXChannel>
+    <dc:relation.Subtitles>false</dc:relation.Subtitles>
+    <dc:relation.AudioDescription>false</dc:relation.AudioDescription>
+    <dc:relation.Duration>49:26</dc:relation.Duration>
+    <dc:relation.LoginRequired>true</dc:relation.LoginRequired>
+    <dc:relation.requestType>ARCHIVE</dc:relation.requestType>
+    <dc:relation.programmeId>31771/001</dc:relation.programmeId>
+  </entry>
+  <entry>
+    <id>tag:pmlsc.channel4.com,2009:/programmes/dispatches/4od%232972589</id>
+    <title type="text">Terror in Mumbai</title>
+    <summary type="text">The untold story of 2008's terrorist attack, in the words of its victims and the gunmen. The programme contains graphic images and descriptions of the atrocity which may upset some viewers. Produced and directed by award-winning filmmaker Dan Reed, Terror in Mumbai tells the story of what happened when 10 gunmen held one of the world's busiest cities hostage; killing and wounding hundreds of people while holding India's crack security forces at bay. 
+
+Featuring footage of the attacks and interviews with senior police officers and hostages, including the testimony from Kasab - the sole surviving gunman, Dispatches reveals what happened, hour by hour, from the perspective of the security forces, the terrorists, their masterminds and the victims.
+
+Award: Bafta; current affairs. 2010</summary>
+    <updated>2010-11-03T05:57:50.175Z</updated>
+    <link href="http://www.channel4.com/programmes/dispatches/4od#2972589" rel="alternate" type="text/html" />
+    <link href="http://pmlsc.channel4.com/pmlsd/dispatches/episode-guide/series-30/episode-1.atom" rel="related" type="application/atom+xml" />
+    <media:group>
+      <media:player url="http://www.channel4.com/programmes/dispatches/4od#2972589" />
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/dispatches/series-30/episode-1/dispatches-s30e1-20090623115042_200x113.jpg" height="113" width="200" imageSource="own" altText="An armed terrorist in Mumbai" />
+      <media:rating>adult</media:rating>
+      <media:copyright url="http://cache.channel4.com/terms_and_conditions.html">Terms and Conditions</media:copyright>
+      <media:restriction relationship="allow" type="country">GB,GG,IE,IM,JE</media:restriction>
+      <media:rights status="official" />
+    </media:group>
+    <dc:relation.BrandTitle>Dispatches</dc:relation.BrandTitle>
+    <dcterms:available>start=2009-09-24T22:00:00.000Z; end=2012-06-25T09:25:00.000Z; scheme=W3C-DTF</dcterms:available>
+    <dc:relation.RelatedEntryId feedId="tag:pmlsc.channel4.com,2009:/programmes/dispatches/episode-guide/series-30">tag:pmlsc.channel4.com,2009:/programmes/dispatches/episode-guide/series-30/episode-1</dc:relation.RelatedEntryId>
+    <dc:relation.AgeRating>16</dc:relation.AgeRating>
+    <dc:relation.Guidance>Contains graphic images and descriptions of the atrocity which may upset some viewers</dc:relation.Guidance>
+    <dc:date.TXDate>2009-06-29T23:00:00.000Z</dc:date.TXDate>
+    <dc:relation.TXChannel>C4</dc:relation.TXChannel>
+    <dc:relation.Subtitles>true</dc:relation.Subtitles>
+    <dc:relation.AudioDescription>false</dc:relation.AudioDescription>
+    <dc:relation.Duration>48:12</dc:relation.Duration>
+    <dc:relation.LoginRequired>true</dc:relation.LoginRequired>
+    <dc:relation.requestType>ARCHIVE</dc:relation.requestType>
+    <dc:relation.programmeId>47806/001</dc:relation.programmeId>
+  </entry>
+  <entry>
+    <id>tag:pmlsc.channel4.com,2009:/programmes/dispatches/4od%232933702</id>
+    <title type="text">The War Against Street Weapons</title>
+    <summary type="text">Last year, as chair of Channel 4's Street Weapons Commission, Cherie Booth QC said that the use of guns and knives among young people had become so widespread that she feared for the safety of her own children. Since then, the police and government have taken steps to deal with the problem. But are they doing enough?
+
+To answer that question, Cherie joins police patrols on Britain's toughest streets, talks to young offenders behind bars, and visits a pioneering scheme combating Glasgow's violent gang culture. 
+
+The Street Weapons Commission Report - published in 2008 - set out a series of practical recommendations about what could be done to tackle the problem of street weapons in the UK. But one year on, the problem hasn't gone away and Cherie feels passionately that more must be done.</summary>
+    <updated>2010-11-03T05:57:50.175Z</updated>
+    <link href="http://www.channel4.com/programmes/dispatches/4od#2933702" rel="alternate" type="text/html" />
+    <link href="http://pmlsc.channel4.com/pmlsd/dispatches/episode-guide/series-34/episode-1.atom" rel="related" type="application/atom+xml" />
+    <media:group>
+      <media:player url="http://www.channel4.com/programmes/dispatches/4od#2933702" />
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/dispatches/series-34/episode-1/1b19724c-296d-4fa9-9a0c-b0f2adea3ae8_200x113.jpg" height="113" width="200" imageSource="own" altText="Cherie Booth QC" />
+      <media:rating>nonadult</media:rating>
+      <media:copyright url="http://cache.channel4.com/terms_and_conditions.html">Terms and Conditions</media:copyright>
+      <media:restriction relationship="allow" type="country">gb,im,je,gg,ie</media:restriction>
+      <media:rights status="official" />
+    </media:group>
+    <dc:relation.BrandTitle>Dispatches</dc:relation.BrandTitle>
+    <dcterms:available>start=2009-09-02T22:00:00.000Z; end=2012-08-02T22:00:00.000Z; scheme=W3C-DTF</dcterms:available>
+    <dc:relation.RelatedEntryId feedId="tag:pmlsc.channel4.com,2009:/programmes/dispatches/episode-guide/series-34">tag:pmlsc.channel4.com,2009:/programmes/dispatches/episode-guide/series-34/episode-1</dc:relation.RelatedEntryId>
+    <dc:relation.AgeRating>0</dc:relation.AgeRating>
+    <dc:relation.Guidance>Contains graphic images of stab wounds which some viewers may find disturbing</dc:relation.Guidance>
+    <dc:date.TXDate>2009-08-03T19:00:00.000Z</dc:date.TXDate>
+    <dc:relation.TXChannel>C4</dc:relation.TXChannel>
+    <dc:relation.Subtitles>true</dc:relation.Subtitles>
+    <dc:relation.AudioDescription>false</dc:relation.AudioDescription>
+    <dc:relation.Duration>47:39</dc:relation.Duration>
+    <dc:relation.LoginRequired>true</dc:relation.LoginRequired>
+    <dc:relation.complianceText>If you're concerned about any of the issues raised in this Dispatches please visit the C4 website</dc:relation.complianceText>
+    <dc:relation.complianceLink>/dispatches</dc:relation.complianceLink>
+    <dc:relation.complianceLinkText>Click here</dc:relation.complianceLinkText>
+    <dc:relation.requestType>ARCHIVE</dc:relation.requestType>
+    <dc:relation.programmeId>47831/001</dc:relation.programmeId>
+  </entry>
+  <entry>
+    <id>tag:pmlsc.channel4.com,2009:/programmes/dispatches/4od%233012007</id>
+    <title type="text">Gordon Brown's Missing Billions</title>
+    <summary type="text">In an edition from 2005, economist Andrew Dilnot looks at where Gordon Brown's policies have gone wrong, and examines the consequences for all of us. Brown's misjudgements, Dilnot warns, are something we will all ultimately have to pay for.</summary>
+    <updated>2011-12-16T12:57:22.370Z</updated>
+    <link href="http://www.channel4.com/programmes/dispatches/4od#3012007" rel="alternate" type="text/html" />
+    <link href="http://pmlsc.channel4.com/pmlsd/dispatches/episode-guide/series-45/episode-1.atom" rel="related" type="application/atom+xml" />
+    <media:group>
+      <media:player url="http://www.channel4.com/programmes/dispatches/4od#3012007" />
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/dispatches/series-45/episode-1/630b76a0-a8b0-4df6-acf0-e94a2b60d97f_200x113.jpg" height="113" width="200" imageSource="own" altText="Gordon Brown" />
+      <media:rating>nonadult</media:rating>
+      <media:copyright url="http://cache.channel4.com/terms_and_conditions.html">Terms and Conditions</media:copyright>
+      <media:restriction relationship="allow" type="country">GG,GB,JE,IM,IE</media:restriction>
+      <media:rights status="official" />
+    </media:group>
+    <dc:relation.BrandTitle>Dispatches</dc:relation.BrandTitle>
+    <dcterms:available>start=2009-11-23T00:00:00.000Z; end=2012-12-31T00:00:00.000Z; scheme=W3C-DTF</dcterms:available>
+    <dc:relation.RelatedEntryId feedId="tag:pmlsc.channel4.com,2009:/programmes/dispatches/episode-guide/series-45">tag:pmlsc.channel4.com,2009:/programmes/dispatches/episode-guide/series-45/episode-1</dc:relation.RelatedEntryId>
+    <dc:relation.AgeRating>0</dc:relation.AgeRating>
+    <dc:relation.Subtitles>false</dc:relation.Subtitles>
+    <dc:relation.AudioDescription>false</dc:relation.AudioDescription>
+    <dc:relation.Duration>49:15</dc:relation.Duration>
+    <dc:relation.LoginRequired>true</dc:relation.LoginRequired>
+    <dc:relation.requestType>ARCHIVE</dc:relation.requestType>
+    <dc:relation.programmeId>40506/001</dc:relation.programmeId>
+  </entry>
+  <entry>
+    <id>tag:pmlsc.channel4.com,2009:/programmes/dispatches/4od%233049095</id>
+    <title type="text">The Slumdog Children of Mumbai</title>
+    <summary type="text">Dispatches reveals the brutal reality of life on the streets and in the slums of Mumbai, following the daily struggles of four young children to survive.  
+
+A few weeks after running away from his abusive stepmother, 11-year-old Salam is living rough outside the main train station. Befriended by a gang of begging boys, run by 20-year-old Asif, Salam speaks fondly of his new 'brother'. But it soon appears that there is a much darker side to being in Asif's gang.  
+
+Deepa (pictured) is lucky to be alive after rats attacked her when she was just three months old. Now aged seven, she runs barefoot through the hectic Mumbai traffic to sell flowers to help support her family, doing shifts of up to 20 hours at a time. She lives with her grandmother and brothers in a slum with no electricity or sanitation, next to an open rubbish dump. They survive on less than £1 day since her alcoholic father died two years earlier and her mother abandoned them.  
+
+Twins Hussain and Hussan, aged 11, live in a shanty town, balanced precariously on a 10-foot-wide water pipe. Five days a week they collect scrap metal and plastic bottles to sell so they can earn money to eat. They also fish utensils out of the canal that runs alongside their back door to sell, despite the risk of cholera and infection. They say they like where they live; 'We are emperors of the night!' jokes Hussan. But they don't want to think about their futures.  
+
+Dispatches provides a deeply moving portrait of the lives of India's real slumdogs, blighted by substance abuse, hardship and heartache, yet proof of the infinite resilience of children, and forced to reach adulthood long before they should.</summary>
+    <updated>2010-11-03T05:57:50.175Z</updated>
+    <link href="http://www.channel4.com/programmes/dispatches/4od#3049095" rel="alternate" type="text/html" />
+    <link href="http://pmlsc.channel4.com/pmlsd/dispatches/episode-guide/series-46/episode-1.atom" rel="related" type="application/atom+xml" />
+    <media:group>
+      <media:player url="http://www.channel4.com/programmes/dispatches/4od#3049095" />
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/dispatches/series-46/episode-1/4349179a-e868-45de-81c0-3604582f8fd1_200x113.jpg" height="113" width="200" imageSource="own" altText="Deepa" />
+      <media:rating>nonadult</media:rating>
+      <media:copyright url="http://cache.channel4.com/terms_and_conditions.html">Terms and Conditions</media:copyright>
+      <media:restriction relationship="allow" type="country">GB,GG,IE,IM,JE</media:restriction>
+      <media:rights status="official" />
+    </media:group>
+    <dc:relation.BrandTitle>Dispatches</dc:relation.BrandTitle>
+    <dcterms:available>start=2010-02-21T00:00:00.000Z; end=2013-01-13T00:00:00.000Z; scheme=W3C-DTF</dcterms:available>
+    <dc:relation.RelatedEntryId feedId="tag:pmlsc.channel4.com,2009:/programmes/dispatches/episode-guide/series-46">tag:pmlsc.channel4.com,2009:/programmes/dispatches/episode-guide/series-46/episode-1</dc:relation.RelatedEntryId>
+    <dc:relation.AgeRating>0</dc:relation.AgeRating>
+    <dc:date.TXDate>2010-01-21T00:00:00.000Z</dc:date.TXDate>
+    <dc:relation.TXChannel>C4</dc:relation.TXChannel>
+    <dc:relation.Subtitles>true</dc:relation.Subtitles>
+    <dc:relation.AudioDescription>false</dc:relation.AudioDescription>
+    <dc:relation.Duration>47:53</dc:relation.Duration>
+    <dc:relation.LoginRequired>true</dc:relation.LoginRequired>
+    <dc:relation.complianceText>To find out how you can help the children in Mumbai please visit the Channel 4 website</dc:relation.complianceText>
+    <dc:relation.complianceLink>/dispatches</dc:relation.complianceLink>
+    <dc:relation.complianceLinkText>Click here</dc:relation.complianceLinkText>
+    <dc:relation.requestType>ARCHIVE</dc:relation.requestType>
+    <dc:relation.programmeId>48502/001</dc:relation.programmeId>
+  </entry>
+  <entry>
+    <id>tag:pmlsc.channel4.com,2009:/programmes/dispatches/4od%233111511</id>
+    <title type="text">Afghanistan: Behind Enemy Lines</title>
+    <summary type="text">While most new troops stationed in Afghanistan head to the volatile south of the country, a new frontline, operating almost under the radar of NATO, is encircling the north of the country. 
+
+The insurgents are aiming to take over the countryside surrounding the towns and cities and to block the main supply route, the Kunduz-Baghlan road, which services coalition troops across much of Afghanistan since the traditional route through Pakistan became too treacherous. 
+
+Dispatches goes inside the enemy camp in northern Afghanistan as award-winning Afghan reporter Najibullah Quraishi is granted access to an army of extreme Islamic combatants. 
+
+Quraishi spent almost two weeks with the Central Group of fighters, known to be among the most dangerous and fanatical factions involved in the war, with Chechens, Arabs and other foreign fighters in their ranks and with close links to Al Qaeda and Osama bin Laden. He captures their leisure time, training and planning and accompanies them on an operation targeting the Afghan army.</summary>
+    <updated>2010-11-03T05:57:50.175Z</updated>
+    <link href="http://www.channel4.com/programmes/dispatches/4od#3111511" rel="alternate" type="text/html" />
+    <link href="http://pmlsc.channel4.com/pmlsd/dispatches/episode-guide/series-50/episode-1.atom" rel="related" type="application/atom+xml" />
+    <media:group>
+      <media:player url="http://www.channel4.com/programmes/dispatches/4od#3111511" />
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/dispatches/series-50/episode-1/450dc171-4471-4363-bdb8-bea7a61276ea_200x113.jpg" height="113" width="200" imageSource="own" altText="Afghanistan: Behind Enemy Lines" />
+      <media:rating>nonadult</media:rating>
+      <media:copyright url="http://cache.channel4.com/terms_and_conditions.html">Terms and Conditions</media:copyright>
+      <media:restriction relationship="allow" type="country">GB,GG,IE,IM,JE</media:restriction>
+      <media:rights status="official" />
+    </media:group>
+    <dc:relation.BrandTitle>Dispatches</dc:relation.BrandTitle>
+    <dcterms:available>start=2010-08-05T22:00:00.000Z; end=2013-02-01T00:00:00.000Z; scheme=W3C-DTF</dcterms:available>
+    <dc:relation.RelatedEntryId feedId="tag:pmlsc.channel4.com,2009:/programmes/dispatches/episode-guide/series-50">tag:pmlsc.channel4.com,2009:/programmes/dispatches/episode-guide/series-50/episode-1</dc:relation.RelatedEntryId>
+    <dc:relation.AgeRating>0</dc:relation.AgeRating>
+    <dc:relation.Guidance>Contains images of war and dead bodies which some viewers may find upsetting</dc:relation.Guidance>
+    <dc:date.TXDate>2010-02-01T00:00:00.000Z</dc:date.TXDate>
+    <dc:relation.TXChannel>C4</dc:relation.TXChannel>
+    <dc:relation.Subtitles>false</dc:relation.Subtitles>
+    <dc:relation.AudioDescription>false</dc:relation.AudioDescription>
+    <dc:relation.Duration>49:02</dc:relation.Duration>
+    <dc:relation.LoginRequired>true</dc:relation.LoginRequired>
+    <dc:relation.requestType>ARCHIVE</dc:relation.requestType>
+    <dc:relation.programmeId>49063/001</dc:relation.programmeId>
+  </entry>
+  <entry>
+    <id>tag:pmlsc.channel4.com,2009:/programmes/dispatches/4od%233057300</id>
+    <title type="text">Kids Don't Count (Part 1 of 2)</title>
+    <summary type="text">In 2009 more than one in five children left primary school having failed to grasp the basic maths skills required by the national curriculum. In a two-part special, Dispatches asks why and how are we failing Britain's children when it comes to maths.  
+
+Dispatches follows a class of final-year pupils at Barton Hill Primary School in Bristol as their staff adopt a radical approach to teaching, in a bid to improve the maths ability of these children before they head off to secondary school. 
+
+The problem couldn't be more urgent. Research shows that failing to grasp the fundamentals of maths at primary school leaves only a one in ten chance of catching up by the age of 16. 
+
+Dispatches hears from leading lights in the worlds of business and academia - including the CEO of Sainsbury's, Justin King, and George Davies, formerly of Next and Asda - about the impact on the economy and on adult life of leaving school without basic maths skills.  
+
+In a provocative nationwide exercise, Dispatches examines the standard of primary maths teaching in this country by testing the teachers. No tricks; just 27 questions that a bright 11-year-old would be able to answer. The shocking results are revealed in the programme.
+
+&lt;b>You can play a shortened version of the maths test by clicking the 'maths quiz' link in the left-hand column of this page.&lt;/b></summary>
+    <updated>2010-11-03T05:57:50.175Z</updated>
+    <link href="http://www.channel4.com/programmes/dispatches/4od#3057300" rel="alternate" type="text/html" />
+    <link href="http://pmlsc.channel4.com/pmlsd/dispatches/episode-guide/series-53/episode-1.atom" rel="related" type="application/atom+xml" />
+    <media:group>
+      <media:player url="http://www.channel4.com/programmes/dispatches/4od#3057300" />
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/dispatches/series-53/episode-1/88b4bdba-b055-4496-b6fa-addcbfd4e7dc_200x113.jpg" height="113" width="200" imageSource="own" altText="Kids Don't Count" />
+      <media:rating>nonadult</media:rating>
+      <media:copyright url="http://cache.channel4.com/terms_and_conditions.html">Terms and Conditions</media:copyright>
+      <media:restriction relationship="allow" type="country">GB,GG,IE,IM,JE</media:restriction>
+      <media:rights status="official" />
+    </media:group>
+    <dc:relation.BrandTitle>Dispatches</dc:relation.BrandTitle>
+    <dcterms:available>start=2010-03-26T00:00:00.000Z; end=2013-02-21T00:00:00.000Z; scheme=W3C-DTF</dcterms:available>
+    <dc:relation.RelatedEntryId feedId="tag:pmlsc.channel4.com,2009:/programmes/dispatches/episode-guide/series-53">tag:pmlsc.channel4.com,2009:/programmes/dispatches/episode-guide/series-53/episode-1</dc:relation.RelatedEntryId>
+    <dc:relation.AgeRating>0</dc:relation.AgeRating>
+    <dc:date.TXDate>2010-02-15T00:00:00.000Z</dc:date.TXDate>
+    <dc:relation.TXChannel>C4</dc:relation.TXChannel>
+    <dc:relation.Subtitles>true</dc:relation.Subtitles>
+    <dc:relation.AudioDescription>false</dc:relation.AudioDescription>
+    <dc:relation.Duration>48:13</dc:relation.Duration>
+    <dc:relation.LoginRequired>true</dc:relation.LoginRequired>
+    <dc:relation.requestType>ARCHIVE</dc:relation.requestType>
+    <dc:relation.programmeId>45605/001</dc:relation.programmeId>
+  </entry>
+  <entry>
+    <id>tag:pmlsc.channel4.com,2009:/programmes/dispatches/4od%233057301</id>
+    <title type="text">Kids Don't Count (Part 2 of 2)</title>
+    <summary type="text">In the second half of this two-part special, maths specialist Richard Dunne returns to Barton Hill Primary School, with Countdown's Rachel Riley, to help the pupils with their mental arithmetic.
+
+Kids Don't Count asks why and how we are failing Britain's children when it comes to maths. The programmes follow a class of final-year primary school pupils in Bristol as their staff adopt a radical approach to teaching, in a bid to improve the maths ability of these children before they head off to secondary school. 
+
+In the first programme, the Head drafted in maths specialist Richard Dunne. Children who had previously struggled with maths thrived under his programme, which taught them how to understand abstract concepts and relate sums to the real world, and gave them lots of opportunities to repeat the basics so they could be memorised. 
+
+But as their SATs approached, under pressure to improve results, the Head temporarily set aside Dunne's methods.
+
+In this second programme, the SATs are over but many of the children have lost enthusiasm for the subject and still do not have a grasp of the basic building blocks for maths. 
+
+Dunne returns to Barton Hill to help the children with their mental arithmetic, joined by Countdown presenter Rachel Riley, who visits the school to help encourage the children to tackle their maths demons. 
+
+Sitting in on a maths lesson, Riley is shocked that many of the children struggle to do sums in their heads and do not know their times tables. In a bid to inspire the children in a subject she feels passionate about, she organises a 'children versus adults' Countdown competition at the school.
+
+&lt;b>You can play the maths quiz online by clicking on the link in the left hand side of this page.&lt;/b></summary>
+    <updated>2010-11-03T05:57:50.175Z</updated>
+    <link href="http://www.channel4.com/programmes/dispatches/4od#3057301" rel="alternate" type="text/html" />
+    <link href="http://pmlsc.channel4.com/pmlsd/dispatches/episode-guide/series-53/episode-2.atom" rel="related" type="application/atom+xml" />
+    <media:group>
+      <media:player url="http://www.channel4.com/programmes/dispatches/4od#3057301" />
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/dispatches/series-53/episode-2/7c41583c-c717-4da7-8ad5-e201c08ea517_200x113.jpg" height="113" width="200" imageSource="own" altText="Rachel Riley" />
+      <media:rating>nonadult</media:rating>
+      <media:copyright url="http://cache.channel4.com/terms_and_conditions.html">Terms and Conditions</media:copyright>
+      <media:restriction relationship="allow" type="country">GB,GG,IE,IM,JE</media:restriction>
+      <media:rights status="official" />
+    </media:group>
+    <dc:relation.BrandTitle>Dispatches</dc:relation.BrandTitle>
+    <dcterms:available>start=2010-03-26T00:00:00.000Z; end=2013-02-21T00:00:00.000Z; scheme=W3C-DTF</dcterms:available>
+    <dc:relation.RelatedEntryId feedId="tag:pmlsc.channel4.com,2009:/programmes/dispatches/episode-guide/series-53">tag:pmlsc.channel4.com,2009:/programmes/dispatches/episode-guide/series-53/episode-2</dc:relation.RelatedEntryId>
+    <dc:relation.AgeRating>0</dc:relation.AgeRating>
+    <dc:date.TXDate>2010-02-22T00:00:00.000Z</dc:date.TXDate>
+    <dc:relation.TXChannel>C4</dc:relation.TXChannel>
+    <dc:relation.Subtitles>true</dc:relation.Subtitles>
+    <dc:relation.AudioDescription>false</dc:relation.AudioDescription>
+    <dc:relation.Duration>47:49</dc:relation.Duration>
+    <dc:relation.LoginRequired>true</dc:relation.LoginRequired>
+    <dc:relation.requestType>ARCHIVE</dc:relation.requestType>
+    <dc:relation.programmeId>45605/002</dc:relation.programmeId>
+  </entry>
+  <entry>
+    <id>tag:pmlsc.channel4.com,2009:/programmes/dispatches/4od%233082230</id>
+    <title type="text">The Lost Girls of South Africa</title>
+    <summary type="text">In South Africa a child is raped every three minutes and AIDS continues to spread with epidemic ferocity.  
+
+Dispatches follows four girls aged 11 to 13 as they struggle to come to terms with the crimes committed against them and fight the social stigma that comes with the abuse.
+
+From the multi-BAFTA-winning True Vision team, this is an intimate and deeply moving portrayal of the tragic impact of child abuse in a post-apartheid South Africa still coming to terms with its difficult and violent past.</summary>
+    <updated>2010-11-03T05:57:50.175Z</updated>
+    <link href="http://www.channel4.com/programmes/dispatches/4od#3082230" rel="alternate" type="text/html" />
+    <link href="http://pmlsc.channel4.com/pmlsd/dispatches/episode-guide/series-61/episode-1.atom" rel="related" type="application/atom+xml" />
+    <media:group>
+      <media:player url="http://www.channel4.com/programmes/dispatches/4od#3082230" />
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/dispatches/series-61/episode-1/2d281da7-ce67-46f0-9c2c-ad97aecc9bdd_200x113.jpg" height="113" width="200" imageSource="own" altText="The Lost Girls of South Africa" />
+      <media:rating>adult</media:rating>
+      <media:copyright url="http://cache.channel4.com/terms_and_conditions.html">Terms and Conditions</media:copyright>
+      <media:restriction relationship="allow" type="country">GB,GG,IE,IM,JE</media:restriction>
+      <media:rights status="official" />
+    </media:group>
+    <dc:relation.BrandTitle>Dispatches</dc:relation.BrandTitle>
+    <dcterms:available>start=2010-06-22T22:00:00.000Z; end=2013-05-17T22:00:00.000Z; scheme=W3C-DTF</dcterms:available>
+    <dc:relation.RelatedEntryId feedId="tag:pmlsc.channel4.com,2009:/programmes/dispatches/episode-guide/series-61">tag:pmlsc.channel4.com,2009:/programmes/dispatches/episode-guide/series-61/episode-1</dc:relation.RelatedEntryId>
+    <dc:relation.AgeRating>16</dc:relation.AgeRating>
+    <dc:relation.Guidance>Contains scenes some may find distressing</dc:relation.Guidance>
+    <dc:date.TXDate>2010-05-22T23:00:00.000Z</dc:date.TXDate>
+    <dc:relation.TXChannel>C4</dc:relation.TXChannel>
+    <dc:relation.Subtitles>true</dc:relation.Subtitles>
+    <dc:relation.AudioDescription>false</dc:relation.AudioDescription>
+    <dc:relation.Duration>76:26</dc:relation.Duration>
+    <dc:relation.LoginRequired>true</dc:relation.LoginRequired>
+    <dc:relation.requestType>ARCHIVE</dc:relation.requestType>
+    <dc:relation.programmeId>48297/001</dc:relation.programmeId>
+  </entry>
+  <entry>
+    <id>tag:pmlsc.channel4.com,2009:/programmes/dispatches/4od%233105953</id>
+    <title type="text">How to Save £100 Billion - Live</title>
+    <summary type="text">Filmed live on the eve of the emergency budget announcement, Dispatches sets out controversial cuts that could save Britain £100 billion. Krishnan Guru-Murthy presents a team of experts who believe their radical proposals could get Britain's budget back in shape; but can the nation stomach such swingeing cuts or tax increases? 
+
+Ideas such as: placing VAT on food and children's clothing, slashing benefits for the middle classes; cutting defence spending and merging our three armed forces; reducing the pay of public service workers and closing down final salary pension schemes. 
+
+Could Britain make changes to that most scared of institutions, the NHS, and charge those on higher incomes for GP visits, or roll out a system of health insurance? 
+
+A studio of 800 people vote for or against these cuts: cuts which would potentially mean that cherished frontline services would be protected.
+
+&lt;b>Online, you can track your suggestions for savings and see which are the most popular.  If you are following the debate on twitter, use #chopornot. (Click the Chop or Not link to the left of this paragraph to find out more).&lt;/b></summary>
+    <updated>2010-11-03T05:57:50.175Z</updated>
+    <link href="http://www.channel4.com/programmes/dispatches/4od#3105953" rel="alternate" type="text/html" />
+    <link href="http://pmlsc.channel4.com/pmlsd/dispatches/episode-guide/series-64/episode-1.atom" rel="related" type="application/atom+xml" />
+    <media:group>
+      <media:player url="http://www.channel4.com/programmes/dispatches/4od#3105953" />
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/dispatches/series-64/episode-1/65233e8c-6b31-498a-8ddc-9c091b2c9178_200x113.jpg" height="113" width="200" imageSource="own" altText="krish_413x232" />
+      <media:rating>nonadult</media:rating>
+      <media:copyright url="http://cache.channel4.com/terms_and_conditions.html">Terms and Conditions</media:copyright>
+      <media:restriction relationship="allow" type="country">GB,GG,IE,IM,JE</media:restriction>
+      <media:rights status="official" />
+    </media:group>
+    <dc:relation.BrandTitle>Dispatches</dc:relation.BrandTitle>
+    <dcterms:available>start=2010-07-21T22:00:00.000Z; end=2013-06-21T22:00:00.000Z; scheme=W3C-DTF</dcterms:available>
+    <dc:relation.RelatedEntryId feedId="tag:pmlsc.channel4.com,2009:/programmes/dispatches/episode-guide/series-64">tag:pmlsc.channel4.com,2009:/programmes/dispatches/episode-guide/series-64/episode-1</dc:relation.RelatedEntryId>
+    <dc:relation.AgeRating>0</dc:relation.AgeRating>
+    <dc:date.TXDate>2010-06-20T23:00:00.000Z</dc:date.TXDate>
+    <dc:relation.TXChannel>C4</dc:relation.TXChannel>
+    <dc:relation.Subtitles>true</dc:relation.Subtitles>
+    <dc:relation.AudioDescription>false</dc:relation.AudioDescription>
+    <dc:relation.Duration>49:08</dc:relation.Duration>
+    <dc:relation.LoginRequired>true</dc:relation.LoginRequired>
+    <dc:relation.requestType>ARCHIVE</dc:relation.requestType>
+    <dc:relation.programmeId>50344/001</dc:relation.programmeId>
+  </entry>
+  <entry>
+    <id>tag:pmlsc.channel4.com,2009:/programmes/dispatches/4od%233128450</id>
+    <title type="text">Africa's Last Taboo</title>
+    <summary type="text">Gay people in Africa are facing increased persecution in a continent where two thirds of countries retain laws against homosexuals. 
+
+Award-winning filmmaker Sorious Samura investigates for Dispatches what it is like to be a gay person in Africa, discovering shocking levels of prejudice and hate, driven by governments, religious organisations and communities. 
+
+Samura looks at the impact extreme homophobia is having on gay people's lives, tracking down the victims of a recent mob attack in Kenya, speaking to gay men who have spent time in prison for their sexuality and meeting African homosexuals who are often forced into secret lives. 
+
+He discovers that AIDS is spreading at an alarming rate among gay men in Africa who are not being given vital sex education and health care by governments that are opposed to homosexuality. As a result, many gay men are dying needlessly. 
+
+Samura goes in search of what is driving homophobia in Africa, finding Muslims and Christians working closely together to target homosexuals and visiting American pastors helping to spread anti-gay sentiment. 
+
+Dispatches shows that homosexuality is not an African freedom, revealing a major, but little reported, human rights issue, in a continent where millions of gay people live in constant fear of rejection by their communities, of physical and verbal abuse, and even imprisonment.</summary>
+    <updated>2010-11-03T05:57:50.175Z</updated>
+    <link href="http://www.channel4.com/programmes/dispatches/4od#3128450" rel="alternate" type="text/html" />
+    <link href="http://pmlsc.channel4.com/pmlsd/dispatches/episode-guide/series-65/episode-1.atom" rel="related" type="application/atom+xml" />
+    <media:group>
+      <media:player url="http://www.channel4.com/programmes/dispatches/4od#3128450" />
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/dispatches/series-65/episode-1/81dc85ad-2045-49a8-9a21-247d601e673d_200x113.jpg" height="113" width="200" imageSource="own" altText="Sorious Samura in Africa" />
+      <media:rating>nonadult</media:rating>
+      <media:copyright url="http://cache.channel4.com/terms_and_conditions.html">Terms and Conditions</media:copyright>
+      <media:restriction relationship="allow" type="country">GB,GG,IE,IM,JE</media:restriction>
+      <media:rights status="official" />
+    </media:group>
+    <dc:relation.BrandTitle>Dispatches</dc:relation.BrandTitle>
+    <dcterms:available>start=2010-10-10T22:00:00.000Z; end=2013-07-10T22:00:00.000Z; scheme=W3C-DTF</dcterms:available>
+    <dc:relation.RelatedEntryId feedId="tag:pmlsc.channel4.com,2009:/programmes/dispatches/episode-guide/series-65">tag:pmlsc.channel4.com,2009:/programmes/dispatches/episode-guide/series-65/episode-1</dc:relation.RelatedEntryId>
+    <dc:relation.AgeRating>0</dc:relation.AgeRating>
+    <dc:date.TXDate>2010-07-11T23:00:00.000Z</dc:date.TXDate>
+    <dc:relation.TXChannel>C4</dc:relation.TXChannel>
+    <dc:relation.Subtitles>true</dc:relation.Subtitles>
+    <dc:relation.AudioDescription>false</dc:relation.AudioDescription>
+    <dc:relation.Duration>49:23</dc:relation.Duration>
+    <dc:relation.LoginRequired>true</dc:relation.LoginRequired>
+    <dc:relation.complianceText>For more information, please visit the website at channel4.com/dispatches</dc:relation.complianceText>
+    <dc:relation.requestType>ARCHIVE</dc:relation.requestType>
+    <dc:relation.programmeId>50032/001</dc:relation.programmeId>
+  </entry>
+  <entry>
+    <id>tag:pmlsc.channel4.com,2009:/programmes/dispatches/4od%233129534</id>
+    <title type="text">Britain's Secret Slaves</title>
+    <summary type="text">Over 15,000 domestic workers leave their families to come to Britain every year. Charities claim that many are not only badly treated but that they are living as slaves. 
+
+This report investigates the plight of overseas domestic workers brought to the UK, and enslaved behind closed doors by rich and powerful employers in the upper levels of British society. 
+
+Dispatches goes undercover as some of the employers accused of modern-day slavery are confronted on camera about how they have treated their workers. 
+
+Many workers make the sacrifice to leave their country for the UK in order to better provide for their families back home. But lobby groups and charities communicate that a worrying proportion of domestic workers have their passports taken away from them, are kept locked up and subjected to sexual, physical and psychological abuse. 
+
+Many are paid less than £50 a week for 20 hour days and some wages are withheld completely. 
+
+Even children face similar horrendous conditions; the filmmakers meet young people who were trafficked over to the UK as children and endured years of violence and forced labour. 
+
+The programme also investigates claims that foreign diplomats are among the worst offenders in this flourishing form of modern slavery.</summary>
+    <updated>2010-11-03T05:57:50.175Z</updated>
+    <link href="http://www.channel4.com/programmes/dispatches/4od#3129534" rel="alternate" type="text/html" />
+    <link href="http://pmlsc.channel4.com/pmlsd/dispatches/episode-guide/series-69/episode-1.atom" rel="related" type="application/atom+xml" />
+    <media:group>
+      <media:player url="http://www.channel4.com/programmes/dispatches/4od#3129534" />
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/dispatches/series-69/episode-1/6fe0a020-18f3-41ee-be4a-928e4e573a7c_200x113.jpg" height="113" width="200" imageSource="own" altText="Britain's Secret Slaves" />
+      <media:rating>nonadult</media:rating>
+      <media:copyright url="http://cache.channel4.com/terms_and_conditions.html">Terms and Conditions</media:copyright>
+      <media:restriction relationship="allow" type="country">GB,GG,IE,IM,JE</media:restriction>
+      <media:rights status="official" />
+    </media:group>
+    <dc:relation.BrandTitle>Dispatches</dc:relation.BrandTitle>
+    <dcterms:available>start=2010-10-03T22:00:00.000Z; end=2013-08-28T22:00:00.000Z; scheme=W3C-DTF</dcterms:available>
+    <dc:relation.RelatedEntryId feedId="tag:pmlsc.channel4.com,2009:/programmes/dispatches/episode-guide/series-69">tag:pmlsc.channel4.com,2009:/programmes/dispatches/episode-guide/series-69/episode-1</dc:relation.RelatedEntryId>
+    <dc:relation.AgeRating>0</dc:relation.AgeRating>
+    <dc:relation.Guidance>Contains images that may distress some viewers</dc:relation.Guidance>
+    <dc:date.TXDate>2010-08-30T18:30:00.000Z</dc:date.TXDate>
+    <dc:relation.TXChannel>C4</dc:relation.TXChannel>
+    <dc:relation.Subtitles>true</dc:relation.Subtitles>
+    <dc:relation.AudioDescription>false</dc:relation.AudioDescription>
+    <dc:relation.Duration>47:56</dc:relation.Duration>
+    <dc:relation.LoginRequired>true</dc:relation.LoginRequired>
+    <dc:relation.requestType>ARCHIVE</dc:relation.requestType>
+    <dc:relation.programmeId>50576/001</dc:relation.programmeId>
+  </entry>
+  <entry>
+    <id>tag:pmlsc.channel4.com,2009:/programmes/dispatches/4od%233142827</id>
+    <title type="text">Bravo's Deadly Mission</title>
+    <summary type="text">In February 2010, US Marines launched the biggest operation since the start of the war in Afghanistan: Operation Mushtaraq. Bravo's Deadly Mission covers hour-by-hour the entire operation to liberate the strategically vital town of Marjah in February and contains some of the most intense fighting footage ever caught on camera.
+
+Filmed under extremely dangerous circumstances and in the toughest conditions imaginable, this Dispatches special is an extraordinary human story and an unflinching portrayal of war at first hand.
+
+Operation Mushtaraq was massive news all over the world when it happened. But only one journalist was with the Marines inside Marjah. Ben Anderson spent two months with Bravo Company 1/6 Marines, eating, sleeping, running and sweating alongside them every step of the way. 
+
+The access he achieved and the 50 hours of battle footage he obtained is intimate and unprecedented and forms the basis of this extraordinary film. The result is unlike any other war documentary: personal, intense, incredibly close-up and dangerous. 
+
+Bravo Company was the first and only platoon dropped into the centre of Marjah. These young Marines found themselves in a maze of IEDs, bunkers, trenches and ambushes, set by very well-trained fighters. 
+
+The film features strong characters such as Captain Sparks, a Special Forces veteran of Falluja, Haditha and Afghanistan who's charged with seeing the young Marines in his charge through to the bitter end of the operation. Thoughtful and insightful, Sparks knows this is the most dangerous mission of his life. He knows they will lose men. He knows he takes responsibility when that happens. 
+
+Made by a BAFTA and Grierson award-winning team, the film returns to Marjah four months after the original invasion to find  IEDs again being laid just 2km from the Marines' base, Taliban fighters, including snipers, still active and mobile, and a local population that is far from won over. 
+
+Bravo's Deadly Mission is a breathtaking film that shows just how dangerous and difficult the situation in southern Afghanistan has become, and how hard it will be to turn around.</summary>
+    <updated>2010-11-23T09:59:38.364Z</updated>
+    <link href="http://www.channel4.com/programmes/dispatches/4od#3142827" rel="alternate" type="text/html" />
+    <link href="http://pmlsc.channel4.com/pmlsd/dispatches/episode-guide/series-71/episode-1.atom" rel="related" type="application/atom+xml" />
+    <media:group>
+      <media:player url="http://www.channel4.com/programmes/dispatches/4od#3142827" />
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/dispatches/series-71/episode-1/6bb9509a-b6a0-4c5c-aad4-e288b2b7059c_200x113.jpg" height="113" width="200" imageSource="own" altText="Bravo Company in Afghanistan" />
+      <media:rating>adult</media:rating>
+      <media:copyright url="http://cache.channel4.com/terms_and_conditions.html">Terms and Conditions</media:copyright>
+      <media:restriction relationship="allow" type="country">GB,GG,IE,IM,JE</media:restriction>
+      <media:rights status="official" />
+    </media:group>
+    <dc:relation.BrandTitle>Dispatches</dc:relation.BrandTitle>
+    <dcterms:available>start=2010-11-19T00:00:00.000Z; end=2013-10-06T22:00:00.000Z; scheme=W3C-DTF</dcterms:available>
+    <dc:relation.RelatedEntryId feedId="tag:pmlsc.channel4.com,2009:/programmes/dispatches/episode-guide/series-71">tag:pmlsc.channel4.com,2009:/programmes/dispatches/episode-guide/series-71/episode-1</dc:relation.RelatedEntryId>
+    <dc:relation.AgeRating>16</dc:relation.AgeRating>
+    <dc:relation.Guidance>Very strong language from the start and throughout and scenes of warfare that may disturb some viewers</dc:relation.Guidance>
+    <dc:date.TXDate>2010-10-06T23:00:00.000Z</dc:date.TXDate>
+    <dc:relation.TXChannel>C4</dc:relation.TXChannel>
+    <dc:relation.Subtitles>true</dc:relation.Subtitles>
+    <dc:relation.AudioDescription>false</dc:relation.AudioDescription>
+    <dc:relation.Duration>73:00</dc:relation.Duration>
+    <dc:relation.LoginRequired>true</dc:relation.LoginRequired>
+    <dc:relation.requestType>ARCHIVE</dc:relation.requestType>
+    <dc:relation.programmeId>50341/001</dc:relation.programmeId>
+  </entry>
+  <entry>
+    <id>tag:pmlsc.channel4.com,2009:/programmes/dispatches/4od%233176525</id>
+    <title type="text">Iraq's Secret War Files</title>
+    <summary type="text">Dispatches exposes the full and unreported horror of the Iraqi conflict and its aftermath. The programme reveals the true scale of civilian casualties, and allegations that after the scandal of Abu Ghraib, American soldiers continued to abuse prisoners; and that US forces did not systematically intervene in the torture and murder of detainees by the Iraqi security services.
+
+The programme also features previously unreported material of insurgents being killed while trying to surrender.
+
+Channel 4 is the only UK broadcaster to have been given access to nearly 400,000 secret military significant activities reports (SIGACTS) logged by the US military in Iraq between 2004 and 2009. These reports tell the story of the war and occupation which the US military did not want the world to know.
+
+Initially, the Americans claimed that they were not recording casualty figures and President Bush stated that America would do its utmost to avoid civilian casualties. In the files, Dispatches found details of over 109,000 deaths; 66,000 of these were civilians; 176,000 civilians and others were reported as wounded.
+
+Under rules of engagement, known as escalation of force, anyone approaching the US military was warned to slow down and stop. The analysis reveals more than 800 people were killed in escalation of force incidents: 681 (80%) of these were civilians; a further 2,200 were wounded. Thirteen coalition troops were killed during these incidents. Dispatches found 30 children had been killed when shots were fired near civilians by US troops at checkpoints.
+
+Over a six-year period, the data records the imprisonment of 180,000 Iraqis: one in 50 of the adult male population. Dispatches found more than 300 reports alleging abuse by US forces on Iraqi prisoners after April 2004.
+
+The Americans effectively ignored the torture and murder of many detainees by Iraqi security forces. Dispatches has found evidence of more than 1,300 individual cases of the torture and abuse of Iraqi prisoners by Iraqis in police stations and army bases: witnessed or reported on by American troops. Dispatches reveals that US troops were ordered not to investigate Iraqi-on-Iraqi violence.
+
+The data shows that the Americans were aware of the horrific level of violence inflicted by Iraqi sectarian militias: over 32,500 murders; more than 10,000 shot in the head; nearly 450 decapitated; over 160 were children.
+
+One of the reasons given for the invasion of Iraq was the suggestion of links between Iraq and Al Qaeda. The US told the UN Security Council in 2003 that Iraq 'harboured' the terrorist network. However, in the leaked data there are only seven reports mentioning Al Qaeda in 2004, and none of these refer to Al Qaeda killing anyone. By 2008, there are 8,208 reports mentioning Al Qaeda attributing to it the deaths of 45 coalition soldiers, 486 members of the Iraqi Security Services and 1,291 civilians.</summary>
+    <updated>2011-03-30T10:11:17.483Z</updated>
+    <link href="http://www.channel4.com/programmes/dispatches/4od#3176525" rel="alternate" type="text/html" />
+    <link href="http://pmlsc.channel4.com/pmlsd/dispatches/episode-guide/series-74/episode-1.atom" rel="related" type="application/atom+xml" />
+    <media:group>
+      <media:player url="http://www.channel4.com/programmes/dispatches/4od#3176525" />
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/dispatches/series-74/episode-1/6e126ba4-7ecd-4736-8f4f-41787a4d5282_200x113.jpg" height="113" width="200" imageSource="own" altText="Helicopters" />
+      <media:rating>nonadult</media:rating>
+      <media:copyright url="http://cache.channel4.com/terms_and_conditions.html">Terms and Conditions</media:copyright>
+      <media:restriction relationship="allow" type="country">GB,GG,IE,IM,JE</media:restriction>
+      <media:rights status="official" />
+    </media:group>
+    <dc:relation.BrandTitle>Dispatches</dc:relation.BrandTitle>
+    <dcterms:available>start=2011-04-23T22:00:00.000Z; end=2013-10-25T22:00:00.000Z; scheme=W3C-DTF</dcterms:available>
+    <dc:relation.RelatedEntryId feedId="tag:pmlsc.channel4.com,2009:/programmes/dispatches/episode-guide/series-74">tag:pmlsc.channel4.com,2009:/programmes/dispatches/episode-guide/series-74/episode-1</dc:relation.RelatedEntryId>
+    <dc:relation.AgeRating>0</dc:relation.AgeRating>
+    <dc:relation.Guidance>With descriptions and scenes of killings, torture and bloodshed which may disturb some viewers</dc:relation.Guidance>
+    <dc:date.TXDate>2010-10-24T23:00:00.000Z</dc:date.TXDate>
+    <dc:relation.TXChannel>C4</dc:relation.TXChannel>
+    <dc:relation.Subtitles>true</dc:relation.Subtitles>
+    <dc:relation.AudioDescription>false</dc:relation.AudioDescription>
+    <dc:relation.Duration>48:33</dc:relation.Duration>
+    <dc:relation.LoginRequired>true</dc:relation.LoginRequired>
+    <dc:relation.requestType>ARCHIVE</dc:relation.requestType>
+    <dc:relation.programmeId>50888/001</dc:relation.programmeId>
+  </entry>
+  <entry>
+    <id>tag:pmlsc.channel4.com,2009:/programmes/dispatches/4od%233164515</id>
+    <title type="text">City of Fear</title>
+    <summary type="text">For one year, Dispatches follows the police and people of Islamabad as Pakistan's capital battles to overcome an unprecedented wave of terrorist attacks, providing a powerful insight into a normally closed world in which everyone battles to survive the daily threat of death with courage and resilience.
+
+Pakistan is in chaos; more than 3,500 people have been killed in suicide blasts in the past three years. Only a few years ago, attacks in the capital were rare, but disparate terrorist groups are increasingly working together and Islamabad has become their ultimate target. 
+
+Featuring intimate, direct-to-camera interviews of startling candour - from a teenage girl whose best friend was blown up, to the Inspector General of Police - Dispatches follows those affected as they attempt to continue their lives on the frontline of a war on terror - and refuse to be beaten by it. 
+
+With unprecedented access, including interviews filmed in the immediate aftermath of explosions and behind-the-scenes footage of police investigations, the film documents the real war on terrorism fought on the streets of the metropolis... with bloody and tragic consequences.</summary>
+    <updated>2011-02-17T10:25:06.881Z</updated>
+    <link href="http://www.channel4.com/programmes/dispatches/4od#3164515" rel="alternate" type="text/html" />
+    <link href="http://pmlsc.channel4.com/pmlsd/dispatches/episode-guide/series-76/episode-1.atom" rel="related" type="application/atom+xml" />
+    <media:group>
+      <media:player url="http://www.channel4.com/programmes/dispatches/4od#3164515" />
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/dispatches/series-76/episode-1/5de045f2-94fc-4fa0-81b2-bc6a5c943100_200x113.jpg" height="113" width="200" imageSource="own" altText="Amber and Gohar" />
+      <media:rating>nonadult</media:rating>
+      <media:copyright url="http://cache.channel4.com/terms_and_conditions.html">Terms and Conditions</media:copyright>
+      <media:restriction relationship="allow" type="country">GB,GG,IE,IM,JE</media:restriction>
+      <media:rights status="official" />
+    </media:group>
+    <dc:relation.BrandTitle>Dispatches</dc:relation.BrandTitle>
+    <dcterms:available>start=2011-02-21T00:00:00.000Z; end=2013-11-19T00:00:00.000Z; scheme=W3C-DTF</dcterms:available>
+    <dc:relation.RelatedEntryId feedId="tag:pmlsc.channel4.com,2009:/programmes/dispatches/episode-guide/series-76">tag:pmlsc.channel4.com,2009:/programmes/dispatches/episode-guide/series-76/episode-1</dc:relation.RelatedEntryId>
+    <dc:relation.AgeRating>0</dc:relation.AgeRating>
+    <dc:relation.Guidance>This programme contains images which some viewers may find upsetting</dc:relation.Guidance>
+    <dc:date.TXDate>2010-10-21T23:00:00.000Z</dc:date.TXDate>
+    <dc:relation.TXChannel>C4</dc:relation.TXChannel>
+    <dc:relation.Subtitles>true</dc:relation.Subtitles>
+    <dc:relation.AudioDescription>false</dc:relation.AudioDescription>
+    <dc:relation.Duration>47:37</dc:relation.Duration>
+    <dc:relation.LoginRequired>true</dc:relation.LoginRequired>
+    <dc:relation.requestType>ARCHIVE</dc:relation.requestType>
+    <dc:relation.programmeId>49531/001</dc:relation.programmeId>
+  </entry>
+  <entry>
+    <id>tag:pmlsc.channel4.com,2009:/programmes/dispatches/4od%233261268</id>
+    <title type="text">The Kids Britain Doesn't Want</title>
+    <summary type="text">Every year, thousands of children come from all over the world to Britain seeking refuge from persecution, terrorism and war. But many arrive to find this country is not the place of safety that they hoped. Instead they are met by a culture of disbelief and an asylum system that in some cases causes them profound psychological and physical harm.
+
+Through the stories of a 10-year-old Iranian boy, a 16-year-old Afghan and a 22-year-old Ugandan woman, Dispatches explores the experiences of young people who have been brutalized by the British asylum system. This is the story of the kids Britain doesn't want.</summary>
+    <updated>2011-11-21T12:17:33.941Z</updated>
+    <link href="http://www.channel4.com/programmes/dispatches/4od#3261268" rel="alternate" type="text/html" />
+    <link href="http://pmlsc.channel4.com/pmlsd/dispatches/episode-guide/series-77/episode-1.atom" rel="related" type="application/atom+xml" />
+    <media:group>
+      <media:player url="http://www.channel4.com/programmes/dispatches/4od#3261268" />
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/dispatches/series-77/episode-1/1dec6a37-5b55-4e6c-af0c-88b395a8c5ec_200x113.jpg" height="113" width="200" imageSource="own" altText="Dispatches" />
+      <media:rating>nonadult</media:rating>
+      <media:copyright url="http://cache.channel4.com/terms_and_conditions.html">Terms and Conditions</media:copyright>
+      <media:restriction relationship="allow" type="country">GB,GG,IE,IM,JE</media:restriction>
+      <media:rights status="official" />
+    </media:group>
+    <dc:relation.BrandTitle>Dispatches</dc:relation.BrandTitle>
+    <dcterms:available>start=2011-12-01T00:00:00.000Z; end=2013-12-01T00:00:00.000Z; scheme=W3C-DTF</dcterms:available>
+    <dc:relation.RelatedEntryId feedId="tag:pmlsc.channel4.com,2009:/programmes/dispatches/episode-guide/series-77">tag:pmlsc.channel4.com,2009:/programmes/dispatches/episode-guide/series-77/episode-1</dc:relation.RelatedEntryId>
+    <dc:relation.AgeRating>0</dc:relation.AgeRating>
+    <dc:relation.Guidance>This programme contains scenes and descriptions some viewers may find distressing</dc:relation.Guidance>
+    <dc:date.TXDate>2010-11-29T20:00:00.000Z</dc:date.TXDate>
+    <dc:relation.TXChannel>C4</dc:relation.TXChannel>
+    <dc:relation.Subtitles>true</dc:relation.Subtitles>
+    <dc:relation.AudioDescription>false</dc:relation.AudioDescription>
+    <dc:relation.Duration>48:12</dc:relation.Duration>
+    <dc:relation.LoginRequired>true</dc:relation.LoginRequired>
+    <dc:relation.requestType>ARCHIVE</dc:relation.requestType>
+    <dc:relation.programmeId>49105/001</dc:relation.programmeId>
+  </entry>
+  <entry>
+    <id>tag:pmlsc.channel4.com,2009:/programmes/dispatches/4od%233172032</id>
+    <title type="text">The Battle for Haiti</title>
+    <summary type="text">On the night of the Haiti earthquake something happened in downtown Port au Prince - the  Haitian capital - which would leave the fate of all the aid efforts and the country's future hanging in the balance: 4,500 prisoners escaped from Haiti's terrifying and overcrowded prison, the National Penitentiary.
+
+They included many of the hardcore criminals, kidnappers and gang bosses who'd reduced Haiti to anarchy from 2004 to 2007, but had then been subdued after an all-out military onslaught by the police and heavily-armed UN peacekeepers. Now they were free to regain control of the slums and the tent cities where most Haitians live, using murder and rape to enforce their rule, with Haiti more vulnerable and less well-policed than ever before. 
+
+Helping battle the escaped gangsters is Mario Andresol, Haiti's police chief, who put many of them in prison in the first place. At great personal risk, he played a key role in the United Nations offensive that smashed the power of the gangs. Now, four years later, he has to do it all again. His force is riddled with corruption and many of his officers are without homes and living in tent camps. 
+
+BAFTA-winning director Dan Reed captures the daily battle for Haiti's future, filming with Andresol, escaped gangsters, the beleaguered special police unit that's trying to capture them, UN peacekeepers, and the despairing and philosophical inhabitants of the slums and tent cities.</summary>
+    <updated>2011-05-12T14:23:31.109Z</updated>
+    <link href="http://www.channel4.com/programmes/dispatches/4od#3172032" rel="alternate" type="text/html" />
+    <link href="http://pmlsc.channel4.com/pmlsd/dispatches/episode-guide/series-78/episode-1.atom" rel="related" type="application/atom+xml" />
+    <media:group>
+      <media:player url="http://www.channel4.com/programmes/dispatches/4od#3172032" />
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/dispatches/series-78/episode-1/baae866c-0887-49cb-817a-669cd173eb2f_200x113.jpg" height="113" width="200" imageSource="own" altText="Dispatches: The Battle for Haiti" />
+      <media:rating>nonadult</media:rating>
+      <media:copyright url="http://cache.channel4.com/terms_and_conditions.html">Terms and Conditions</media:copyright>
+      <media:restriction relationship="allow" type="country">GB,GG,IE,IM,JE</media:restriction>
+      <media:rights status="official" />
+    </media:group>
+    <dc:relation.BrandTitle>Dispatches</dc:relation.BrandTitle>
+    <dcterms:available>start=2011-03-07T00:00:00.000Z; end=2014-01-05T00:00:00.000Z; scheme=W3C-DTF</dcterms:available>
+    <dc:relation.RelatedEntryId feedId="tag:pmlsc.channel4.com,2009:/programmes/dispatches/episode-guide/series-78">tag:pmlsc.channel4.com,2009:/programmes/dispatches/episode-guide/series-78/episode-1</dc:relation.RelatedEntryId>
+    <dc:relation.AgeRating>0</dc:relation.AgeRating>
+    <dc:relation.Guidance>Contains personal accounts and scenes of violence some viewers may find disturbing</dc:relation.Guidance>
+    <dc:date.TXDate>2011-01-09T00:00:00.000Z</dc:date.TXDate>
+    <dc:relation.TXChannel>C4</dc:relation.TXChannel>
+    <dc:relation.Subtitles>true</dc:relation.Subtitles>
+    <dc:relation.AudioDescription>false</dc:relation.AudioDescription>
+    <dc:relation.Duration>48:19</dc:relation.Duration>
+    <dc:relation.LoginRequired>true</dc:relation.LoginRequired>
+    <dc:relation.requestType>ARCHIVE</dc:relation.requestType>
+    <dc:relation.programmeId>49592/001</dc:relation.programmeId>
+  </entry>
+  <entry>
+    <id>tag:pmlsc.channel4.com,2009:/programmes/dispatches/4od%233263365</id>
+    <title type="text">Lessons in Hate and Violence</title>
+    <summary type="text">Dispatches goes undercover to investigate allegations that teachers regularly assault young children in some of the 2,000 Muslim schools in Britain run by Islamic organisations.
+
+The programme also follows up allegations that, behind closed doors, some Muslim secondary schools teach a message of hatred and intolerance.
+
+The programme is presented by reporter Tazeen Ahmad.
+
+Dispatches: Lessons in Hate and Violence will not be available on 4oD at this time, due to an ongoing police investigation concerning subjects featured in the programme.</summary>
+    <updated>2012-04-30T12:51:35.947Z</updated>
+    <link href="http://www.channel4.com/programmes/dispatches/4od#3263365" rel="alternate" type="text/html" />
+    <link href="http://pmlsc.channel4.com/pmlsd/dispatches/episode-guide/series-80/episode-1.atom" rel="related" type="application/atom+xml" />
+    <media:group>
+      <media:player url="http://www.channel4.com/programmes/dispatches/4od#3263365" />
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/dispatches/series-80/episode-1/9f7874f5-bd8c-49f5-ae95-c083f54ecee5_200x113.jpg" height="113" width="200" imageSource="own" altText="Dispatches: Lessons in Hate and Violence" />
+      <media:rating>nonadult</media:rating>
+      <media:copyright url="http://cache.channel4.com/terms_and_conditions.html">Terms and Conditions</media:copyright>
+      <media:restriction relationship="allow" type="country">GG,GB,JE,IM,IE</media:restriction>
+      <media:rights status="official" />
+    </media:group>
+    <dc:relation.BrandTitle>Dispatches</dc:relation.BrandTitle>
+    <dcterms:available>start=2011-11-24T08:00:00.000Z; end=2014-02-13T23:59:00.000Z; scheme=W3C-DTF</dcterms:available>
+    <dc:relation.RelatedEntryId feedId="tag:pmlsc.channel4.com,2009:/programmes/dispatches/episode-guide/series-80">tag:pmlsc.channel4.com,2009:/programmes/dispatches/episode-guide/series-80/episode-1</dc:relation.RelatedEntryId>
+    <dc:relation.AgeRating>0</dc:relation.AgeRating>
+    <dc:date.TXDate>2011-02-14T20:00:00.000Z</dc:date.TXDate>
+    <dc:relation.TXChannel>C4</dc:relation.TXChannel>
+    <dc:relation.Subtitles>false</dc:relation.Subtitles>
+    <dc:relation.AudioDescription>false</dc:relation.AudioDescription>
+    <dc:relation.Duration>47:48</dc:relation.Duration>
+    <dc:relation.LoginRequired>true</dc:relation.LoginRequired>
+    <dc:relation.requestType>ARCHIVE</dc:relation.requestType>
+    <dc:relation.programmeId>47663/001</dc:relation.programmeId>
+  </entry>
+  <entry>
+    <id>tag:pmlsc.channel4.com,2009:/programmes/dispatches/4od%233220372</id>
+    <title type="text">Landlords from Hell</title>
+    <summary type="text">In this undercover investigation, Jon Snow reports on the return of the slum landlord in 21st-century Britain. At a time when more people than ever are having to rent privately, unable to get on the property ladder, Dispatches reveals the shocking conditions in which tenants are forced to live.
+
+Dispatches sends an undercover reporter to work for a rogue property empire in the north of England. He reveals a world of forced evictions, slum properties in dangerous condition, and routine bullying of tenants. Jon confronts the man raking in millions while his tenants suffer. 
+
+Dispatches also exposes an extraordinary new phenomenon: thousands of people living in illegal sheds, transforming parts of London into slums. A second undercover reporter lives in a squalid, illegal shed in London, paying £40 a week rent to another rogue landlord. 
+
+Dispatches lifts the lid on a world where unscrupulous landlords are exploiting the most vulnerable people in society and getting away with it. 
+
+August 2011:
+
+Since the programme has gone out, the Charity Commission has opened an inquiry into housing charity, the Meridian Foundation, exposed in a recent Channel 4 Dispatches undercover investigation. 
+
+Meridian's property empire extends across greater Manchester and the north west of England. It has a turnover of hundreds of thousands of pounds with much of that money from the taxpayer in the form of Housing Benefit.
+
+A spokeswoman for the Charity Commission confirmed it had received 25 complaints about the charity after the programme was broadcast.</summary>
+    <updated>2011-08-17T11:49:48.397Z</updated>
+    <link href="http://www.channel4.com/programmes/dispatches/4od#3220372" rel="alternate" type="text/html" />
+    <link href="http://pmlsc.channel4.com/pmlsd/dispatches/episode-guide/series-96/episode-1.atom" rel="related" type="application/atom+xml" />
+    <media:group>
+      <media:player url="http://www.channel4.com/programmes/dispatches/4od#3220372" />
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/dispatches/series-96/episode-1/844e20b5-afa7-4afb-bb23-abc6de0125c8_200x113.jpg" height="113" width="200" imageSource="own" altText="Landlords from Hell: Dispatches" />
+      <media:rating>nonadult</media:rating>
+      <media:copyright url="http://cache.channel4.com/terms_and_conditions.html">Terms and Conditions</media:copyright>
+      <media:restriction relationship="allow" type="country">GB,GG,IE,IM,JE</media:restriction>
+      <media:rights status="official" />
+    </media:group>
+    <dc:relation.BrandTitle>Dispatches</dc:relation.BrandTitle>
+    <dcterms:available>start=2011-08-21T22:00:00.000Z; end=2014-07-03T22:00:00.000Z; scheme=W3C-DTF</dcterms:available>
+    <dc:relation.RelatedEntryId feedId="tag:pmlsc.channel4.com,2009:/programmes/dispatches/episode-guide/series-96">tag:pmlsc.channel4.com,2009:/programmes/dispatches/episode-guide/series-96/episode-1</dc:relation.RelatedEntryId>
+    <dc:relation.AgeRating>0</dc:relation.AgeRating>
+    <dc:date.TXDate>2011-07-03T23:00:00.000Z</dc:date.TXDate>
+    <dc:relation.TXChannel>C4</dc:relation.TXChannel>
+    <dc:relation.Subtitles>false</dc:relation.Subtitles>
+    <dc:relation.AudioDescription>false</dc:relation.AudioDescription>
+    <dc:relation.Duration>48:21</dc:relation.Duration>
+    <dc:relation.LoginRequired>true</dc:relation.LoginRequired>
+    <dc:relation.requestType>ARCHIVE</dc:relation.requestType>
+    <dc:relation.programmeId>51359/001</dc:relation.programmeId>
+  </entry>
+  <entry>
+    <id>tag:pmlsc.channel4.com,2009:/programmes/dispatches/4od%233262308</id>
+    <title type="text">Murder on Honeymoon</title>
+    <summary type="text">What happened to Anni Dewani while on honeymoon in South Africa in November 2010?  Why did the life of this young woman, married only a few weeks earlier to Bristol businessman Shrien Dewani, come to such a brutal end in one of South Africa's roughest townships?
+
+As a court in London decides whether Anni's husband, Shrien Dewani should be extradited to South Africa to stand trial for her murder. 
+
+With exclusive access to Anni's family and to the prosecution case, Dispatches investigates the events surrounding her death.</summary>
+    <updated>2012-01-06T14:57:37.972Z</updated>
+    <link href="http://www.channel4.com/programmes/dispatches/4od#3262308" rel="alternate" type="text/html" />
+    <link href="http://pmlsc.channel4.com/pmlsd/dispatches/episode-guide/series-97/episode-1.atom" rel="related" type="application/atom+xml" />
+    <media:group>
+      <media:player url="http://www.channel4.com/programmes/dispatches/4od#3262308" />
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/dispatches/series-97/episode-1/dfa3be11-aa0d-4142-862a-acacc90d69cc_200x113.jpg" height="113" width="200" imageSource="own" altText="Murder on Honeymoon" />
+      <media:rating>nonadult</media:rating>
+      <media:copyright url="http://cache.channel4.com/terms_and_conditions.html">Terms and Conditions</media:copyright>
+      <media:restriction relationship="allow" type="country">GG,GB,JE,IM,IE</media:restriction>
+      <media:rights status="official" />
+    </media:group>
+    <dc:relation.BrandTitle>Dispatches</dc:relation.BrandTitle>
+    <dcterms:available>start=2012-01-10T00:00:00.000Z; end=2012-07-09T22:00:00.000Z; scheme=W3C-DTF</dcterms:available>
+    <dc:relation.RelatedEntryId feedId="tag:pmlsc.channel4.com,2009:/programmes/dispatches/episode-guide/series-97">tag:pmlsc.channel4.com,2009:/programmes/dispatches/episode-guide/series-97/episode-1</dc:relation.RelatedEntryId>
+    <dc:relation.AgeRating>0</dc:relation.AgeRating>
+    <dc:date.TXDate>2011-07-11T19:00:00.000Z</dc:date.TXDate>
+    <dc:relation.TXChannel>C4</dc:relation.TXChannel>
+    <dc:relation.Subtitles>false</dc:relation.Subtitles>
+    <dc:relation.AudioDescription>false</dc:relation.AudioDescription>
+    <dc:relation.Duration>48:23</dc:relation.Duration>
+    <dc:relation.LoginRequired>true</dc:relation.LoginRequired>
+    <dc:relation.requestType>ARCHIVE</dc:relation.requestType>
+    <dc:relation.programmeId>52165/001</dc:relation.programmeId>
+  </entry>
+  <entry>
+    <id>tag:pmlsc.channel4.com,2009:/programmes/dispatches/4od%233268469</id>
+    <title type="text">Britain's Sex Gangs</title>
+    <summary type="text">Research suggests that thousands of children are potentially being sexually exploited by street grooming gangs. This may only be the tip of the iceberg, as experts believe many crimes of this nature go unreported. 
+
+Journalist Tazeen Ahmad investigates street grooming and hears from community leaders who say enough is enough and demand action on the issue. She meets victims of grooming and their parents, whose lives have been torn apart. 
+
+She hears how girls as young as 12 have been targeted by these gangs and so terrorised and brainwashed that they keep their ordeal secret for years. 
+
+In a particularly shocking encounter she talks to two young men who explain in detail how grooming by gangs is perpetrated, why virgins are more highly prized and how the commerce of this type of brutal sexual exploitation unfolds.</summary>
+    <updated>2011-12-08T10:00:57.851Z</updated>
+    <link href="http://www.channel4.com/programmes/dispatches/4od#3268469" rel="alternate" type="text/html" />
+    <link href="http://pmlsc.channel4.com/pmlsd/dispatches/episode-guide/series-105/episode-1.atom" rel="related" type="application/atom+xml" />
+    <media:group>
+      <media:player url="http://www.channel4.com/programmes/dispatches/4od#3268469" />
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/dispatches/series-105/episode-1/e502d652-e476-4db3-ba81-fd6ba8768c6f_200x113.jpg" height="113" width="200" imageSource="own" altText="Britain's Sex Gangs: Tazeen Ahmad" />
+      <media:rating>adult</media:rating>
+      <media:copyright url="http://cache.channel4.com/terms_and_conditions.html">Terms and Conditions</media:copyright>
+      <media:restriction relationship="allow" type="country">GG,GB,JE,IM,IE</media:restriction>
+      <media:rights status="official" />
+    </media:group>
+    <dc:relation.BrandTitle>Dispatches</dc:relation.BrandTitle>
+    <dcterms:available>start=2011-12-08T00:00:00.000Z; end=2014-11-07T00:00:00.000Z; scheme=W3C-DTF</dcterms:available>
+    <dc:relation.RelatedEntryId feedId="tag:pmlsc.channel4.com,2009:/programmes/dispatches/episode-guide/series-105">tag:pmlsc.channel4.com,2009:/programmes/dispatches/episode-guide/series-105/episode-1</dc:relation.RelatedEntryId>
+    <dc:relation.AgeRating>18</dc:relation.AgeRating>
+    <dc:relation.Guidance>Descriptions of sexual violence that some viewers may find upsetting</dc:relation.Guidance>
+    <dc:date.TXDate>2011-11-07T22:30:00.000Z</dc:date.TXDate>
+    <dc:relation.TXChannel>C4</dc:relation.TXChannel>
+    <dc:relation.Subtitles>false</dc:relation.Subtitles>
+    <dc:relation.AudioDescription>false</dc:relation.AudioDescription>
+    <dc:relation.Duration>48:21</dc:relation.Duration>
+    <dc:relation.LoginRequired>true</dc:relation.LoginRequired>
+    <dc:relation.complianceText>or more information and to join the conversation about the issues raised in tonight's programme, head to channel4.com/dispatches</dc:relation.complianceText>
+    <dc:relation.requestType>ARCHIVE</dc:relation.requestType>
+    <dc:relation.programmeId>53392/001</dc:relation.programmeId>
+  </entry>
+  <entry>
+    <id>tag:pmlsc.channel4.com,2009:/programmes/dispatches/4od%233278384</id>
+    <title type="text">Landlords from Hell</title>
+    <summary type="text">As the numbers of homeless rise, Dispatches goes undercover in the property rental market again to find out what really happens when you're without a roof over your ahead and desperate.
+
+Local councils are supposed to look after you, but now the housing minister wants them to sort the problem by working with private landlords. But how suitable are the landlords they send you to? And what checks do councils make on the rooms they rent? 
+
+Jon Snow, with a team of undercover reporters, returns to investigate the reality of life for people at the mercy of private landlords, and finds families with young children sent by local authorities to live in filthy, bed bug-infested properties, while their rogue landlords make a fortune out of public money.
+
+Have you been affected by the standard of your rental property? If you have a story about your housing situation and want to share it with Dispatches, you can email us at dispatches@channel4.co.uk.</summary>
+    <updated>2012-01-10T15:02:47.057Z</updated>
+    <link href="http://www.channel4.com/programmes/dispatches/4od#3278384" rel="alternate" type="text/html" />
+    <link href="http://pmlsc.channel4.com/pmlsd/dispatches/episode-guide/series-106/episode-1.atom" rel="related" type="application/atom+xml" />
+    <media:group>
+      <media:player url="http://www.channel4.com/programmes/dispatches/4od#3278384" />
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/dispatches/series-106/episode-1/047a9b8c-986e-48cf-9c99-cdd787e357a8_200x113.jpg" height="113" width="200" imageSource="own" altText="Landlords from Hell" />
+      <media:rating>nonadult</media:rating>
+      <media:copyright url="http://cache.channel4.com/terms_and_conditions.html">Terms and Conditions</media:copyright>
+      <media:restriction relationship="allow" type="country">GG,GB,JE,IM,IE</media:restriction>
+      <media:rights status="official" />
+    </media:group>
+    <dc:relation.BrandTitle>Dispatches</dc:relation.BrandTitle>
+    <dcterms:available>start=2012-01-05T00:00:00.000Z; end=2013-01-05T00:00:00.000Z; scheme=W3C-DTF</dcterms:available>
+    <dc:relation.RelatedEntryId feedId="tag:pmlsc.channel4.com,2009:/programmes/dispatches/episode-guide/series-106">tag:pmlsc.channel4.com,2009:/programmes/dispatches/episode-guide/series-106/episode-1</dc:relation.RelatedEntryId>
+    <dc:relation.AgeRating>0</dc:relation.AgeRating>
+    <dc:date.TXDate>2011-12-05T20:30:00.000Z</dc:date.TXDate>
+    <dc:relation.TXChannel>C4</dc:relation.TXChannel>
+    <dc:relation.Subtitles>false</dc:relation.Subtitles>
+    <dc:relation.AudioDescription>false</dc:relation.AudioDescription>
+    <dc:relation.Duration>25:05</dc:relation.Duration>
+    <dc:relation.LoginRequired>true</dc:relation.LoginRequired>
+    <dc:relation.requestType>ARCHIVE</dc:relation.requestType>
+    <dc:relation.programmeId>52982/001</dc:relation.programmeId>
+  </entry>
+  <entry>
+    <id>tag:pmlsc.channel4.com,2009:/programmes/dispatches/4od%233300983</id>
+    <title type="text">The Great Ticket Scandal</title>
+    <summary type="text">Fans queuing for hours to buy tickets get turned away empty handed while tickets for the same 'sold out' events appear online shortly afterwards, sometimes at astronomical prices. 
+
+Channel 4 News correspondent Morland Sanders investigates the multi-million-pound world of online ticket reselling where fans desperate not to miss out on in-demand concerts, festivals and sporting events often buy their tickets. 
+
+Leading 'fan-to-fan' ticket exchange websites say they allow 'real fans' to sell on tickets they can no longer use. 
+
+Dispatches sent reporters undercover inside two major 'fan-to-fan' ticket exchange websites to investigate who is selling via their websites and why so many tickets appear at over the face value so soon after the box office sells out.
+
+Join in the discussion on Twitter using #TicketScandal.</summary>
+    <updated>2012-03-20T10:00:18.846Z</updated>
+    <link href="http://www.channel4.com/programmes/dispatches/4od#3300983" rel="alternate" type="text/html" />
+    <link href="http://pmlsc.channel4.com/pmlsd/dispatches/episode-guide/series-108/episode-1.atom" rel="related" type="application/atom+xml" />
+    <media:group>
+      <media:player url="http://www.channel4.com/programmes/dispatches/4od#3300983" />
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/dispatches/series-108/episode-1/ee7a6428-c901-4b25-a148-a572627d5bcf_200x113.jpg" height="113" width="200" imageSource="own" altText="The Great Ticket Scandal" />
+      <media:rating>adult</media:rating>
+      <media:copyright url="http://cache.channel4.com/terms_and_conditions.html">Terms and Conditions</media:copyright>
+      <media:restriction relationship="allow" type="country">GG,GB,JE,IM,IE</media:restriction>
+      <media:rights status="official" />
+    </media:group>
+    <dc:relation.BrandTitle>Dispatches</dc:relation.BrandTitle>
+    <dcterms:available>start=2012-03-25T00:00:00.000Z; end=2013-06-24T22:00:00.000Z; scheme=W3C-DTF</dcterms:available>
+    <dc:relation.RelatedEntryId feedId="tag:pmlsc.channel4.com,2009:/programmes/dispatches/episode-guide/series-108">tag:pmlsc.channel4.com,2009:/programmes/dispatches/episode-guide/series-108/episode-1</dc:relation.RelatedEntryId>
+    <dc:relation.AgeRating>16</dc:relation.AgeRating>
+    <dc:relation.Guidance>Strong langauge</dc:relation.Guidance>
+    <dc:date.TXDate>2012-02-23T21:00:00.000Z</dc:date.TXDate>
+    <dc:relation.TXChannel>C4</dc:relation.TXChannel>
+    <dc:relation.Subtitles>false</dc:relation.Subtitles>
+    <dc:relation.AudioDescription>false</dc:relation.AudioDescription>
+    <dc:relation.Duration>47:31</dc:relation.Duration>
+    <dc:relation.LoginRequired>true</dc:relation.LoginRequired>
+    <dc:relation.requestType>ARCHIVE</dc:relation.requestType>
+    <dc:relation.programmeId>51850/001</dc:relation.programmeId>
+  </entry>
+  <entry>
+    <id>tag:pmlsc.channel4.com,2009:/programmes/dispatches/4od%233346306</id>
+    <title type="text">Watching the Detectives</title>
+    <summary type="text">How safe are your secrets? Channel 4 Dispatches reveals how easy it is to buy our most personal and confidential information. 
+
+In a year-long undercover investigation, private detectives sell us access to health and criminal records, mobile phone bills and bank accounts. 
+
+The programme discovers the extent of the black market in personal data and reveals how supposedly secure databases are open to exploitation.</summary>
+    <updated>2012-05-14T17:58:36.636Z</updated>
+    <link href="http://www.channel4.com/programmes/dispatches/4od#3346306" rel="alternate" type="text/html" />
+    <link href="http://pmlsc.channel4.com/pmlsd/dispatches/episode-guide/series-109/episode-1.atom" rel="related" type="application/atom+xml" />
+    <media:group>
+      <media:player url="http://www.channel4.com/programmes/dispatches/4od#3346306" />
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/dispatches/series-109/episode-1/509e9600-1762-4fd3-891d-6e58d0efe3de_200x113.jpg" height="113" width="200" imageSource="own" altText="Watching the Detectives: Channel 4 Dispatches" />
+      <media:rating>nonadult</media:rating>
+      <media:copyright url="http://cache.channel4.com/terms_and_conditions.html">Terms and Conditions</media:copyright>
+      <media:restriction relationship="allow" type="country">GG,GB,JE,IM,IE</media:restriction>
+      <media:rights status="official" />
+    </media:group>
+    <dc:relation.BrandTitle>Dispatches</dc:relation.BrandTitle>
+    <dcterms:available>start=2012-05-14T19:00:00.000Z; end=2012-06-13T19:00:00.000Z; scheme=W3C-DTF</dcterms:available>
+    <dc:relation.RelatedEntryId feedId="tag:pmlsc.channel4.com,2009:/programmes/dispatches/episode-guide/series-109">tag:pmlsc.channel4.com,2009:/programmes/dispatches/episode-guide/series-109/episode-1</dc:relation.RelatedEntryId>
+    <dc:relation.AgeRating>0</dc:relation.AgeRating>
+    <dc:date.TXDate>2012-05-14T19:00:00.000Z</dc:date.TXDate>
+    <dc:relation.TXChannel>C4</dc:relation.TXChannel>
+    <dc:relation.Subtitles>true</dc:relation.Subtitles>
+    <dc:relation.AudioDescription>false</dc:relation.AudioDescription>
+    <dc:relation.Duration>48:29</dc:relation.Duration>
+    <dc:relation.LoginRequired>false</dc:relation.LoginRequired>
+    <dc:relation.requestType>CATCHUP</dc:relation.requestType>
+    <dc:relation.programmeId>53106/001</dc:relation.programmeId>
+  </entry>
+  <entry>
+    <id>tag:pmlsc.channel4.com,2009:/programmes/dispatches/4od%233358442</id>
+    <title type="text">Beating the Recession - Cash vs Cards</title>
+    <summary type="text">Personal finance expert Harry Wallop investigates whether cutting up our credit cards and paying for everything in cash could leave us with more money in our pockets. 
+
+Exclusive research for Channel 4 reveals how families are now realising the value of a 'return to cash', drawing out more from cash machines than at any time in the last five years. 
+
+But that's not what the banks and credit card companies want us to do - so is the move towards a cashless society more about the banks' profits than the convenience of financially-stretched consumers?
+
+Join the conversation about the programme on Twitter by using #CashVCards.</summary>
+    <updated>2012-05-21T16:52:57.184Z</updated>
+    <link href="http://www.channel4.com/programmes/dispatches/4od#3358442" rel="alternate" type="text/html" />
+    <link href="http://pmlsc.channel4.com/pmlsd/dispatches/episode-guide/series-110/episode-1.atom" rel="related" type="application/atom+xml" />
+    <media:group>
+      <media:player url="http://www.channel4.com/programmes/dispatches/4od#3358442" />
+      <media:thumbnail url="http://cache.channel4.com/assets/programmes/images/dispatches/series-110/episode-1/93444c2e-ddfb-4f93-adcd-c30df10555da_200x113.jpg" height="113" width="200" imageSource="own" altText="Beating the Recession - Cash vs Cards: Channel 4 Dispatches" />
+      <media:rating>nonadult</media:rating>
+      <media:copyright url="http://cache.channel4.com/terms_and_conditions.html">Terms and Conditions</media:copyright>
+      <media:restriction relationship="allow" type="country">GG,GB,JE,IM,IE</media:restriction>
+      <media:rights status="official" />
+    </media:group>
+    <dc:relation.BrandTitle>Dispatches</dc:relation.BrandTitle>
+    <dcterms:available>start=2012-05-21T18:30:00.000Z; end=2012-06-20T18:30:00.000Z; scheme=W3C-DTF</dcterms:available>
+    <dc:relation.RelatedEntryId feedId="tag:pmlsc.channel4.com,2009:/programmes/dispatches/episode-guide/series-110">tag:pmlsc.channel4.com,2009:/programmes/dispatches/episode-guide/series-110/episode-1</dc:relation.RelatedEntryId>
+    <dc:relation.AgeRating>0</dc:relation.AgeRating>
+    <dc:date.TXDate>2012-05-21T19:00:00.000Z</dc:date.TXDate>
+    <dc:relation.TXChannel>C4</dc:relation.TXChannel>
+    <dc:relation.Subtitles>false</dc:relation.Subtitles>
+    <dc:relation.AudioDescription>false</dc:relation.AudioDescription>
+    <dc:relation.Duration>28:01</dc:relation.Duration>
+    <dc:relation.LoginRequired>false</dc:relation.LoginRequired>
+    <dc:relation.requestType>CATCHUP</dc:relation.requestType>
+    <dc:relation.programmeId>51977/001</dc:relation.programmeId>
+  </entry>
+</feed>

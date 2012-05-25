@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <id>tag:pmlsc.channel4.com,2009:/programmes/x-men-the-last-stand/epg</id>
+  <title type="text">X-Men: The Last Stand EPG</title>
+  <subtitle type="html">When a cure is found for their condition, the powerful mutants find themselves divided</subtitle>
+  <updated>2012-05-24T16:47:12.426Z</updated>
+  <author>
+    <name>Channel 4 Television</name>
+  </author>
+  <link href="http://pmlsc.channel4.com/pmlsd/x-men-the-last-stand.atom" rel="up" type="application/atom+xml" title="Brand Atom Feed" />
+  <link href="http://pmlsc.channel4.com/pmlsd/x-men-the-last-stand/epg.atom" rel="self" type="application/atom+xml" />
+  <logo imageSource="default">http://cache.channel4.com/static/programmes/images/c4-atom-logo.gif</logo>
+  <dc:relation.platformClientVersion>1.0</dc:relation.platformClientVersion>
+  <generator version="1.29.1">PMLSD</generator>
+  <entry>
+    <id>tag:pmlsc.channel4.com,2009:slot/26465256</id>
+    <title type="text">X-Men: The Last Stand</title>
+    <summary type="html">(2006) The X-Men face a new threat: the development of an enforced cure for mutants. With Famke Janssen, Halle Berry, Ian McKellen and Patrick Stewart. Fantasy violence.</summary>
+    <updated>2012-05-24T16:47:12.427Z</updated>
+    <dc:relation.SeriesNumber>1</dc:relation.SeriesNumber>
+    <dc:relation.EpisodeNumber>1</dc:relation.EpisodeNumber>
+    <dc:relation.TXChannel>C4</dc:relation.TXChannel>
+    <dc:relation.TXStartTime>Saturday 26 May 2012 10:00 PM</dc:relation.TXStartTime>
+    <dc:relation.Duration>120:00</dc:relation.Duration>
+    <dc:relation.Repeat>true</dc:relation.Repeat>
+    <dc:relation.Subtitles>true</dc:relation.Subtitles>
+    <dc:relation.AudioDescription>true</dc:relation.AudioDescription>
+    <link href="http://pmlsc.channel4.com/pmlsd/x-men-the-last-stand.atom" rel="up" type="application/atom+xml" title="Up" />
+  </entry>
+</feed>

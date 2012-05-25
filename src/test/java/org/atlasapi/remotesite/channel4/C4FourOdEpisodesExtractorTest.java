@@ -64,7 +64,7 @@ public class C4FourOdEpisodesExtractorTest extends TestCase {
 		assertThat(firstEpisode.getCanonicalUri(), is("http://www.channel4.com/programmes/36423/001"));
 		assertThat(firstEpisode.getAliases(), is((Set<String>) ImmutableSet.of("http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#2922045")));
 		
-		assertThat(firstEpisode.getCurie(), is("c4:ramsays-kitchen-nightmares-series-1-episode-1"));
+		assertThat(firstEpisode.getCurie(), is("c4:36423-001"));
 		assertThat(firstEpisode.getTitle(), is("Series 1 Episode 1"));
 		assertThat(firstEpisode.getPublisher(), is(Publisher.C4));
 		assertThat(firstEpisode.getSeriesNumber(), is(1));

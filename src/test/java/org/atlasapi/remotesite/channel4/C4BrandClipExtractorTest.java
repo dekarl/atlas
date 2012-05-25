@@ -34,7 +34,7 @@ public class C4BrandClipExtractorTest {
         assertThat(clip.getIsLongForm(), is(false));
         assertThat(clip.getMediaType(), is(MediaType.VIDEO));
         assertThat(clip.getSpecialization(), is(Specialization.TV));
-        assertThat(clip.getTitle(), is("Guyball"));
+        assertThat(clip.getTitle(), is("Guyball"));        
         assertThat(clip.getDescription(), is("'This country could soon have a new world champion'"));
         assertThat(clip.getImage(), is("http://www.channel4.com/assets/programmes/images/green-wing/series-1/episode-7/guyball/green-wing-s1e7-guyball_625x352.jpg"));
         assertThat(clip.getThumbnail(), is("http://www.channel4.com/assets/programmes/images/green-wing/series-1/episode-7/guyball/green-wing-s1e7-guyball_200x113.jpg"));
