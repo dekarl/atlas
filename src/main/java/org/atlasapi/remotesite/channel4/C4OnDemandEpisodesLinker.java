@@ -19,6 +19,7 @@ class C4OnDemandEpisodesLinker {
                 Episode odEpisode = odIndex.get(episode.getCanonicalUri());
                 if (odEpisode != null) {
                     episode.setVersions(odEpisode.getVersions());
+                    episode.addAliases(odEpisode.getAliases());
                 }
             }
         }

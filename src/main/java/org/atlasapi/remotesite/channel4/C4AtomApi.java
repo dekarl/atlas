@@ -38,7 +38,9 @@ public class C4AtomApi {
     public static final String DC_DURATION = "dc:relation.Duration";
     private static final String C4_WEB_ROOT = "http://www.channel4.com/";
 	public static final String PROGRAMMES_BASE = C4_WEB_ROOT + "programmes/";
-	
+	private static final String API_BASE_URL = "http://pmlsc.channel4.com/pmlsd/";
+	private static final String ATOZ_BASE_URL = "http://pmlsc.channel4.com/pmlsd/atoz/";
+
 	private static final String WEB_SAFE_NAME_PATTERN = "[a-z0-9\\-]+";
 	private static final String FEED_ID_PREFIX_PATTERN = "tag:[a-z0-9.]+\\.channel4\\.com,\\d{4}:/programmes/";
 	private static final String FEED_ID_CANONICAL_PREFIX = "tag:www.channel4.com,2009:/programmes/";
@@ -55,9 +57,9 @@ public class C4AtomApi {
 	private static final Pattern BRAND_PAGE_ID_PATTERN = Pattern.compile(String.format("%s(%s)", FEED_ID_PREFIX_PATTERN, WEB_SAFE_NAME_PATTERN));
 	private static final Pattern SERIES_PAGE_ID_PATTERN = Pattern.compile(String.format("%s(%s/episode-guide/series-\\d+)", FEED_ID_PREFIX_PATTERN, WEB_SAFE_NAME_PATTERN));
 	private static final Pattern EPISODE_PAGE_ID_PATTERN = Pattern.compile(String.format("%s(%s/episode-guide/series-\\d+/episode-\\d+)", FEED_ID_PREFIX_PATTERN, WEB_SAFE_NAME_PATTERN));
-
-	private static final String API_BASE_URL = "http://api.channel4.com/pmlsd/";
-	private static final String ATOZ_BASE_URL = "http://api.channel4.com/pmlsd/atoz/";
+	
+	private static final Pattern BRAND_API_PAGE_PATTERN = Pattern.compile(String.format("%s(%s).atom",  API_BASE_URL, WEB_SAFE_NAME_PATTERN)); 
+	
 	
 	public static final String DC_EPISODE_NUMBER = "dc:relation.EpisodeNumber";
 	public static final String DC_SERIES_NUMBER = "dc:relation.SeriesNumber";
@@ -162,6 +164,18 @@ public class C4AtomApi {
             String href = link.getHref();
             if (C4AtomApi.isACanonicalEpisodeUri(href)) {
                 return href;
+            }
+        }
+        
+        Map<String, String> lookup = foreignElementLookup(entry);
+        String series = lookup.get(DC_SERIES_NUMBER);
+        String episode = lookup.get(DC_EPISODE_NUMBER);
+        
+        links = entry.getOtherLinks();
+        for(Link link : links) {
+            Matcher matcher = BRAND_API_PAGE_PATTERN.matcher(link.getHref());
+            if(matcher.matches()) {
+                return episodeUri(matcher.group(1), Integer.parseInt(series), Integer.parseInt(episode));
             }
         }
         
@@ -300,7 +314,7 @@ public class C4AtomApi {
 		location.setUri(uri);
 		
 		if(locationId != null) { 
-			location.addAlias(locationId);
+			location.addAlias(locationId.replace("tag:pmlsc", "tag:www"));
 		}
 		location.setTransportType(TransportType.LINK);
 		

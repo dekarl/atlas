@@ -30,6 +30,7 @@ public class C4EpgEpisodeExtractor extends BaseC4EpisodeExtractor implements
         .put("M4", "http://www.channel4.com/more4")
         .put("E4", "http://www.e4.com")
         .put("4M", "http://www.4music.com")
+        .put("F4", "http://film4.com")
         .build();
 
     public C4EpgEpisodeExtractor(Clock clock) {
@@ -66,6 +67,9 @@ public class C4EpgEpisodeExtractor extends BaseC4EpisodeExtractor implements
             
             broadcast.setLastUpdated(episode.getLastUpdated());
             version.addBroadcast(broadcast);
+        }
+        else {
+            throw new IllegalArgumentException(String.format("Channel %s not recognised", txChannel));
         }
 
         return episode;

@@ -14,11 +14,12 @@ import com.sun.syndication.feed.atom.Entry;
 
 public class C4BrandClipExtractor extends BaseC4EpisodeExtractor implements ContentExtractor<Entry, Clip> {
 
-    // TODO: Do we have platform-specific clips?
-    private final C4AtomEntryVersionExtractor versionExtractor = new C4AtomEntryVersionExtractor(Optional.<Platform>absent());
+    private final C4AtomEntryVersionExtractor versionExtractor;
 
     public C4BrandClipExtractor(Clock clock) {
         super(clock);
+        // TODO: Do we have platform-specific clips?
+        versionExtractor = new C4AtomEntryVersionExtractor(Optional.<Platform>absent(), clock);
     }
 
     @Override

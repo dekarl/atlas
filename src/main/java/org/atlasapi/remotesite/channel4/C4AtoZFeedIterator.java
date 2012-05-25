@@ -74,7 +74,7 @@ public class C4AtoZFeedIterator extends AbstractIterator<Optional<Feed>> {
     }
 
     private String constructUri(String letter) {
-        return String.format("%s/atoz/%s.atom", uriBase, letter);
+        return String.format("%satoz/%s.atom", uriBase, letter);
     }
 
     @SuppressWarnings("unchecked")

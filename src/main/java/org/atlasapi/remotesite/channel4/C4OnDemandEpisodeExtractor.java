@@ -22,7 +22,7 @@ final class C4OnDemandEpisodeExtractor extends BaseC4EpisodeExtractor implements
 
     public C4OnDemandEpisodeExtractor(Optional<Platform> platform, Clock clock) {
         super(clock);
-        versionExtractor = new C4AtomEntryVersionExtractor(platform);
+        versionExtractor = new C4AtomEntryVersionExtractor(platform, clock);
     }
 
     @Override
