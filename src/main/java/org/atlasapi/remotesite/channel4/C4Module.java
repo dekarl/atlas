@@ -37,9 +37,10 @@ import com.metabroadcast.common.time.DayRangeGenerator;
 @Configuration
 public class C4Module {
     
-    private static final String ATOZ_BASE = "http://pmlsc.channel4.com/pmlsd";
+    private static final String ATOZ_BASE = "https://pmlsc.channel4.com/pmlsd/";
 
 	private final static RepetitionRule BRAND_UPDATE_TIME = RepetitionRules.daily(new LocalTime(2, 0, 0));
+	private final static RepetitionRule XBOX_UPDATE_TIME = RepetitionRules.daily(new LocalTime(1, 0, 0));
 	private final static RepetitionRule TWO_HOURS = RepetitionRules.every(Duration.standardHours(2));
 
 	private @Autowired SimpleScheduler scheduler;
@@ -50,13 +51,14 @@ public class C4Module {
 	private @Autowired ScheduleResolver scheduleResolver;
 	private @Autowired ChannelResolver channelResolver;
 	
-	private @Value("${c4.keystore.path") String keyStorePath;
+	private @Value("${c4.keystore.path}") String keyStorePath;
 	private @Value("${c4.keystore.password}") String keyStorePass;
 	
     @PostConstruct
     public void startBackgroundTasks() {
         scheduler.schedule(c4EpgUpdater(), TWO_HOURS);
-        scheduler.schedule(pcC4AtozUpdater(), BRAND_UPDATE_TIME);
+        scheduler.schedule(pcC4AtozUpdater().withName("C4 4OD PC Updater"), BRAND_UPDATE_TIME);
+        scheduler.schedule(xboxC4AtozUpdater().withName("C4 4OD XBox Updater"), XBOX_UPDATE_TIME);
         log.record(new AdapterLogEntry(Severity.INFO).withDescription("C4 update scheduled tasks installed").withSource(getClass()));
     }
 
@@ -88,7 +90,7 @@ public class C4Module {
 	}
 	
 	protected C4AtomBackedBrandUpdater c4BrandFetcher(Optional<Platform> platform) {
-	    Optional<String> platformParam = platform.isPresent() ? Optional.of(platform.get().toString()) : Optional.<String>absent();
+	    Optional<String> platformParam = platform.isPresent() ? Optional.of(platform.get().toString().toLowerCase()) : Optional.<String>absent();
 	    C4AtomApiClient client = new C4AtomApiClient(httpsClient(), ATOZ_BASE, platformParam);
 		return new C4AtomBackedBrandUpdater(client, platform, contentResolver, lastUpdatedSettingContentWriter(), channelResolver);
 	}
