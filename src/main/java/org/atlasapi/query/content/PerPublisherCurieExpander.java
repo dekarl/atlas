@@ -39,7 +39,8 @@ public class PerPublisherCurieExpander implements CurieExpander {
 			}
 		},
 		C4 {
-			
+		    
+		    final Pattern c4ProgrammeIdCuriePattern = Pattern.compile("(\\d+)-(\\d+)");
 			final String separator = "_";
 			@Override
 			public String expand(String curie) {
@@ -48,6 +49,10 @@ public class PerPublisherCurieExpander implements CurieExpander {
 					return uri.requireValue();
 				}
 				String withoutPrefix = curie.substring(curie.indexOf(":") + 1);
+				Matcher matcher = c4ProgrammeIdCuriePattern.matcher(withoutPrefix);
+				if(matcher.matches()) {
+				    return String.format("http://www.channel4.com/programmes/%s/%s", matcher.group(1), matcher.group(2));
+				}
 				if (withoutPrefix.contains(separator)) {
 					String[] components = withoutPrefix.split(separator);
 					return String.format("http://www.channel4.com/programmes/%s/4od#%s", components[0], components[1]);
@@ -68,7 +73,8 @@ public class PerPublisherCurieExpander implements CurieExpander {
 					return null;
 				}
 			}
-			
+
+			final Pattern c4programmeIdPattern = Pattern.compile("http://www.channel4.com/programmes/(\\d+)/(\\d+)");
 			final Pattern c4CuriePattern = Pattern.compile("([a-zA-Z0-9-/]+?)(-series-\\d+)?(-episode-\\d+)?");
 
 			final Pattern c4BrandIdPattern = Pattern.compile("http://www.channel4.com/programmes/([^\\./&=]+)(?:/episode-guide/(series-\\d+)(?:/(episode-\\d+))?)?");
@@ -80,6 +86,11 @@ public class PerPublisherCurieExpander implements CurieExpander {
 				Maybe<String> curie = compactC4Uri(url);
 				if (curie.hasValue()) {
 					return curie.requireValue();
+				}
+				
+				Matcher programmeIdMatcher = c4programmeIdPattern.matcher(url);
+				if(programmeIdMatcher.matches()) {
+				    return String.format("%s:%s-%s", this.name().toLowerCase(), programmeIdMatcher.group(1), programmeIdMatcher.group(2));
 				}
 				
 				Matcher itemMatcher = c4odPattern.matcher(url);

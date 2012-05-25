@@ -62,8 +62,8 @@ public class PerPublisherCurieExpanderTest extends TestCase {
 		assertThat(expander.expand("c4:atoz_a"), is(Maybe.just("http://www.channel4.com/programmes/atoz/a")));
 		assertThat(expander.expand("c4:atoz_0-9"), is(Maybe.just("http://www.channel4.com/programmes/atoz/0-9")));
 
-		assertThat(expander.expand("c4:highlights"), is(Maybe.just("http://www.channel4.com/programmes/4od/highlights")));
-		assertThat(expander.expand("c4:most-popular"), is(Maybe.just("http://www.channel4.com/programmes/4od/most-popular")));
+		//assertThat(expander.expand("c4:highlights"), is(Maybe.just("http://www.channel4.com/programmes/4od/highlights")));
+		//assertThat(expander.expand("c4:most-popular"), is(Maybe.just("http://www.channel4.com/programmes/4od/most-popular")));
 
 		assertThat(expander.expand("c4:ramsays-kitchen-nightmares-series-3"), is(Maybe.just("http://www.channel4.com/programmes/ramsays-kitchen-nightmares/episode-guide/series-3")));
 		assertThat(expander.expand("c4:ramsays-kitchen-nightmares-series-3-episode-1"), is(Maybe.just("http://www.channel4.com/programmes/ramsays-kitchen-nightmares/episode-guide/series-3/episode-1")));
@@ -75,6 +75,8 @@ public class PerPublisherCurieExpanderTest extends TestCase {
 		assertThat(expander.expand("c4:test-of-series"), is(Maybe.just("http://www.channel4.com/programmes/test-of-series")));
 		assertThat(expander.expand("c4:test-of-series-series-1"), is(Maybe.just("http://www.channel4.com/programmes/test-of-series/episode-guide/series-1")));
 		assertThat(expander.expand("c4:test-of-series-series-1-episode-3"), is(Maybe.just("http://www.channel4.com/programmes/test-of-series/episode-guide/series-1/episode-3")));
+		
+		assertThat(expander.expand("c4:32023-001"), is(Maybe.just("http://www.channel4.com/programmes/32023/001")));
 	}
 	
 	public void testProducesC4Curies() throws Exception {
@@ -83,13 +85,12 @@ public class PerPublisherCurieExpanderTest extends TestCase {
 
 		assertThat(C4.compact("http://www.channel4.com/programmes/atoz/a"), is("c4:atoz_a"));
 		assertThat(C4.compact("http://www.channel4.com/programmes/atoz/0-9"), is("c4:atoz_0-9"));
-		
-		assertThat(C4.compact("http://www.channel4.com/programmes/4od/highlights"), is("c4:highlights"));
-		assertThat(C4.compact("http://www.channel4.com/programmes/4od/most-popular"), is("c4:most-popular"));
 
 		assertThat(C4.compact("http://www.channel4.com/programmes/ramsays-kitchen-nightmares/episode-guide/series-3"), is("c4:ramsays-kitchen-nightmares-series-3"));
 
 		assertThat(C4.compact("http://www.channel4.com/programmes/ramsays-kitchen-nightmares/episode-guide/series-3/episode-1"), is("c4:ramsays-kitchen-nightmares-series-3-episode-1"));
+		
+		assertThat(C4.compact("http://www.channel4.com/programmes/32023/001"), is("c4:32023-001"));
 	}
 	
 	public void testExpandsItvCuries() throws Exception {
