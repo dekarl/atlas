@@ -29,7 +29,7 @@ import com.metabroadcast.common.time.DateTimeZones;
 
 public class C4EpgChannelDayUpdater {
 
-    private final static String epgUriPattern = "http://api.channel4.com/pmlsd/tv-listings/daily/%s/%s.atom";
+    private final static String epgUriPattern = "https://pmlsc.channel4.com/pmlsd/tv-listings/daily/%s/%s.atom";
 
     private final RemoteSiteClient<List<C4EpgEntry>> scheduleClient;
     private final ContentWriter writer;
