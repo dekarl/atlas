@@ -5,6 +5,7 @@ import java.util.Map;
 import org.atlasapi.media.entity.Broadcast;
 import org.atlasapi.media.entity.Episode;
 import org.atlasapi.media.entity.Version;
+import org.atlasapi.persistence.logging.AdapterLog;
 import org.atlasapi.remotesite.ContentExtractor;
 import org.jdom.Element;
 import org.joda.time.DateTime;

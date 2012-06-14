@@ -171,11 +171,13 @@ public class C4AtomApi {
         String series = lookup.get(DC_SERIES_NUMBER);
         String episode = lookup.get(DC_EPISODE_NUMBER);
         
-        links = entry.getOtherLinks();
-        for(Link link : links) {
-            Matcher matcher = BRAND_API_PAGE_PATTERN.matcher(link.getHref());
-            if(matcher.matches()) {
-                return episodeUri(matcher.group(1), Integer.parseInt(series), Integer.parseInt(episode));
+        if(series != null && episode != null) {
+            links = entry.getOtherLinks();
+            for(Link link : links) {
+                Matcher matcher = BRAND_API_PAGE_PATTERN.matcher(link.getHref());
+                if(matcher.matches()) {
+                    return episodeUri(matcher.group(1), Integer.parseInt(series), Integer.parseInt(episode));
+                }
             }
         }
         

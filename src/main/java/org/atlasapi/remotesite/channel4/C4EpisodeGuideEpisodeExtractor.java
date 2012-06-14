@@ -1,6 +1,7 @@
 package org.atlasapi.remotesite.channel4;
 
 import org.atlasapi.media.entity.Episode;
+import org.atlasapi.persistence.logging.AdapterLog;
 import org.atlasapi.remotesite.ContentExtractor;
 import org.jdom.Element;
 

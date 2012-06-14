@@ -38,7 +38,7 @@ public class C4BrandEpgAdapter implements SiteSpecificAdapter<List<Episode>> {
                 try {
                     episodes.add(extractor.extract(atomEntry));
                 } catch (Exception e) {
-                    log.warn("Failed to extract episode from " + atomEntry.getId(), e);
+                    log.warn(String.format("Failed to extract episode from %s for brand %s", atomEntry.getId(), uri), e);
                 }
             }
         }

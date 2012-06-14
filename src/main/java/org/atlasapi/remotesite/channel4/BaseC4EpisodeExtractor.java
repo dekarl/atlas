@@ -2,6 +2,8 @@ package org.atlasapi.remotesite.channel4;
 
 import java.util.Map;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.atlasapi.media.entity.Episode;
 import org.atlasapi.media.entity.Item;
 import org.atlasapi.media.entity.Publisher;
@@ -16,6 +18,8 @@ import com.sun.syndication.feed.atom.Entry;
 
 public abstract class BaseC4EpisodeExtractor {
 
+    private final Log log = LogFactory.getLog(getClass());
+    
     protected static final String DC_EPISODE_NUMBER = "dc:relation.EpisodeNumber";
     protected static final String DC_SERIES_NUMBER = "dc:relation.SeriesNumber";
     protected static final String DC_PROGRAMME_ID = "dc:relation.programmeId";
@@ -29,7 +33,7 @@ public abstract class BaseC4EpisodeExtractor {
         String episodeUri = extractEpisodeUri(source, lookup);
         
         if (episodeUri == null) {
-            return null;
+            throw new IllegalArgumentException(String.format("Could not extract episode URI from provided entry: %s", source.getId()));
         }
         
         Episode episode = new Episode(episodeUri, PerPublisherCurieExpander.CurieAlgorithm.C4.compact(episodeUri), Publisher.C4);
@@ -71,7 +75,6 @@ public abstract class BaseC4EpisodeExtractor {
     }
 
     protected Element getMedia(Entry source) {
-        // TODO: This needs writing?
         return null;
     }
 

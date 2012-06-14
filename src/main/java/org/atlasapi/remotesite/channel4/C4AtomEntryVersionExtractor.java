@@ -54,6 +54,9 @@ public class C4AtomEntryVersionExtractor implements ContentExtractor<Entry, Vers
         if (uri == null) {
             uri = C4AtomApi.clipUri(entry);
         }
+        if(uri == null) {
+            throw new IllegalArgumentException("Could not find URI for version of item");
+        }
         return version(uri, entry.getId(), C4AtomApi.foreignElementLookup(entry), availableCountries);
     }
     

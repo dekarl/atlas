@@ -6,8 +6,6 @@ import java.util.Map;
 import java.util.Set;
 import java.util.regex.Pattern;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.atlasapi.media.channel.ChannelResolver;
 import org.atlasapi.media.entity.Brand;
 import org.atlasapi.media.entity.Broadcast;
@@ -19,14 +17,16 @@ import org.atlasapi.media.entity.Episode;
 import org.atlasapi.media.entity.Identified;
 import org.atlasapi.media.entity.Item;
 import org.atlasapi.media.entity.Location;
+import org.atlasapi.media.entity.Policy.Platform;
 import org.atlasapi.media.entity.Restriction;
 import org.atlasapi.media.entity.Series;
-import org.atlasapi.media.entity.Policy.Platform;
 import org.atlasapi.media.entity.Version;
 import org.atlasapi.persistence.content.ContentResolver;
 import org.atlasapi.persistence.content.ContentWriter;
 import org.atlasapi.remotesite.FetchException;
 import org.joda.time.Duration;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.google.common.base.Function;
 import com.google.common.base.Objects;
@@ -43,7 +43,7 @@ public class C4AtomBackedBrandUpdater implements C4BrandUpdater {
 
 	private static final Pattern BRAND_PAGE_PATTERN = Pattern.compile("http://www.channel4.com/programmes/([^/\\s]+)");
 
-	private final Log log = LogFactory.getLog(getClass());
+	private final Logger log = LoggerFactory.getLogger(getClass());
 	
 	private final C4AtomApiClient feedClient;
 	private final C4AtomContentResolver resolver;
@@ -167,20 +167,21 @@ public class C4AtomBackedBrandUpdater implements C4BrandUpdater {
         Version existingVersion = Iterables.getOnlyElement(existingClip.getVersions(), null);
         Version fetchedVersion = Iterables.getOnlyElement(fetchedClip.getVersions(), null);
         if(existingVersion != null || fetchedVersion != null) {
-            versions.add(updateVersion(existingVersion, fetchedVersion));
+            versions.add(updateVersion(existingClip, existingVersion, fetchedVersion));
         }
         existingClip.setVersions(versions);
         return existingClip;
     }
 
-    private Version updateVersion(Version existing, Version fetched) {
+    private Version updateVersion(Item item, Version existing, Version fetched) {
         if(existing == null) {
             return fetched;
         }
-        if(existing != null && fetched == null) {
-            throw new IllegalStateException("Expecting a version in the fetched item but did not get one.");
+        if(fetched == null) {
+            log.debug("Did not fetch a version for item {}", item.getCanonicalUri());
+            return existing;
         }
-        if (!Objects.equal(existing.getDuration(), fetched.getDuration())) {
+        if (fetched.getDuration() != null && !Objects.equal(existing.getDuration(), fetched.getDuration())) {
             existing.setDuration(Duration.standardSeconds(fetched.getDuration()));
             copyLastUpdated(fetched, existing);
         }
