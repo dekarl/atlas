@@ -58,7 +58,8 @@ public class C4AtomApi {
 	private static final Pattern SERIES_PAGE_ID_PATTERN = Pattern.compile(String.format("%s(%s/episode-guide/series-\\d+)", FEED_ID_PREFIX_PATTERN, WEB_SAFE_NAME_PATTERN));
 	private static final Pattern EPISODE_PAGE_ID_PATTERN = Pattern.compile(String.format("%s(%s/episode-guide/series-\\d+/episode-\\d+)", FEED_ID_PREFIX_PATTERN, WEB_SAFE_NAME_PATTERN));
 	
-	private static final Pattern BRAND_API_PAGE_PATTERN = Pattern.compile(String.format("%s(%s).atom",  API_BASE_URL, WEB_SAFE_NAME_PATTERN)); 
+	private static final Pattern BRAND_API_PAGE_PATTERN = Pattern.compile(String.format("%s(%s).atom",  API_BASE_URL, WEB_SAFE_NAME_PATTERN));
+	private static final Pattern EPISODE_API_PAGE_PATTERN = Pattern.compile(String.format("%s(%s)/episode-guide/series-(\\d+)/episode-(\\d+).atom",  API_BASE_URL, WEB_SAFE_NAME_PATTERN));
 	
 	
 	public static final String DC_EPISODE_NUMBER = "dc:relation.EpisodeNumber";
@@ -164,6 +165,10 @@ public class C4AtomApi {
             String href = link.getHref();
             if (C4AtomApi.isACanonicalEpisodeUri(href)) {
                 return href;
+            }
+            Matcher matcher = EPISODE_API_PAGE_PATTERN.matcher(href);
+            if(matcher.matches()) {
+                return episodeUri(matcher.group(1), Integer.parseInt(matcher.group(2)), Integer.parseInt(matcher.group(3)));
             }
         }
         

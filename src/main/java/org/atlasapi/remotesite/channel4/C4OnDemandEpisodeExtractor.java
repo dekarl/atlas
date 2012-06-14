@@ -34,7 +34,11 @@ final class C4OnDemandEpisodeExtractor extends BaseC4EpisodeExtractor implements
         if (fourOdUri != null) {
             episode.addAlias(fourOdUri);
         }
-        
+        String seriesEpisodeUri = C4AtomApi.canonicalUri(source);
+        if(seriesEpisodeUri == null) {
+            throw new IllegalArgumentException("Could not create series/episode URI from 4od episode");
+        }
+        episode.addAlias(seriesEpisodeUri);
         episode.addVersion(setLastUpdated(versionExtractor.extract(source), episode.getLastUpdated()));
         
         return episode;
