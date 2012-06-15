@@ -83,7 +83,7 @@ public class C4EpgEntryItemExtractor implements ContentExtractor<C4EpgEntryItemS
         broadcast.setLastUpdated(now);
         version.addBroadcast(broadcast);
         
-        if (entry.getEpgEntry().media() != null) {
+        if (entry.getEpgEntry().media() != null && !Strings.isNullOrEmpty(entry.getEpgEntry().media().player())) {
             version.addManifestedAs(extractEncoding(entry, now));
         }
         

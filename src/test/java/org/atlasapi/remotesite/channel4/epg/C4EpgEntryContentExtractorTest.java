@@ -34,6 +34,7 @@ import org.junit.runner.RunWith;
 import com.google.common.base.Optional;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
+import com.google.common.collect.Iterables;
 import com.metabroadcast.common.intl.Countries;
 import com.metabroadcast.common.time.Clock;
 import com.metabroadcast.common.time.DateTimeZones;
@@ -145,6 +146,36 @@ public class C4EpgEntryContentExtractorTest {
         assertThat(extracted.getItem().getAliases(), is(hasItem(idUri)));
     }
     
+    @Test
+    public void testDoesntAddEncodingWhereNoOnDemand() {
+        C4EpgEntry entry = entryWithThumbnailNoOnDemand();
+        C4EpgChannelEntry source = new C4EpgChannelEntry(entry, channel);
+        
+        final String idUri = "http://www.channel4.com/programmes/30630/003";
+        final String hierarchyUri = "http://www.channel4.com/programmes/the-hoobs/episode-guide/series-1/episode-3";
+        final String synthUri = "http://www.channel4.com/programmes/synthesized/the-hoobs/26424439";
+        final String seriesUri = "http://www.channel4.com/programmes/the-hoobs/episode-guide/series-1";
+        final String brandUri = "http://www.channel4.com/programmes/the-hoobs";
+        
+        context.checking(new Expectations(){{
+            one(resolver).findByCanonicalUris(with(hasItems(idUri, hierarchyUri, synthUri)));
+            will(returnValue(ResolvedContent.builder().build()));
+            
+            one(resolver).findByCanonicalUris(with(hasItems(seriesUri)));
+            will(returnValue(ResolvedContent.builder().build()));
+            
+            one(resolver).findByCanonicalUris(with(hasItems(brandUri)));
+            will(returnValue(ResolvedContent.builder().build()));
+            
+            one(brandUpdater).createOrUpdateBrand(brandUri);
+            will(returnValue(null));
+        }});
+
+        ContentHierarchyAndBroadcast extracted = extractor.extract(source);
+        
+        assertThat(Iterables.getOnlyElement(extracted.getItem().getVersions()).getManifestedAs().size(), is(0));
+    }
+    
     private Item testItem(String uri) {
         Item item = new Item();
         item.setCanonicalUri(uri);
@@ -199,6 +230,31 @@ public class C4EpgEntryContentExtractorTest {
                     .withRestriction(ImmutableSet.of(Countries.GB, Countries.IE))
             );
         
+    }
+    
+    private C4EpgEntry entryWithThumbnailNoOnDemand() {
+        return new C4EpgEntry("tag:pmlsc.channel4.com,2009:slot/26424439")
+        .withTitle("Hello")
+        .withSummary("Groove thinks there can't be a better way")
+        .withUpdated(new DateTime("2010-11-03T05:57:50.175Z", DateTimeZones.UTC))
+        .withTxDate(new DateTime("2012-04-26T05:15:00.000Z", DateTimeZones.UTC))
+        .withTxChannel("C4")
+        .withSubtitles(true)
+        .withAudioDescription(false)
+        .withDuration(Duration.standardSeconds(1455))
+        .withWideScreen(null)
+        .withSigning(null)
+        .withRepeat(null)
+        .withProgrammeId("30630/003")
+        .withSimulcastRights(true)
+        .withLinks(ImmutableList.of(
+            new TypedLink("http://www.channel4.com/programmes/the-hoobs/4od#2924127", "alternate"),
+            new TypedLink("http://pmlsc.channel4.com/pmlsd/the-hoobs/episode-guide/series-1/episode-3.atom", "related")
+        ))
+        .withMedia(
+            new C4EpgMedia()
+                .withThumbnail("http://cache.channel4.com/assets/programmes/images/the-hoobs/series-1/the-hoobs-s1-20090623112301_200x113.jpg")
+        );
     }
 
 }
