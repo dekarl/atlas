@@ -169,6 +169,18 @@ public class C4AtomBackedBrandUpdater implements C4BrandUpdater {
         if(existingVersion != null || fetchedVersion != null) {
             versions.add(updateVersion(existingClip, existingVersion, fetchedVersion));
         }
+        
+        if(existingClip instanceof Episode) {
+            Episode existingEpisode = (Episode) existingClip;
+            Episode fetchedEpisode = (Episode) fetchedClip;
+            if(existingEpisode.getEpisodeNumber() == null) {
+                existingEpisode.setEpisodeNumber(fetchedEpisode.getEpisodeNumber());
+            }
+            if(existingEpisode.getSeriesNumber() == null) {
+                existingEpisode.setSeriesNumber(fetchedEpisode.getSeriesNumber());
+            }
+        }
+        
         existingClip.setVersions(versions);
         return existingClip;
     }
