@@ -28,6 +28,7 @@ import org.springframework.context.annotation.Configuration;
 
 import com.google.common.base.Optional;
 import com.google.common.base.Throwables;
+import com.google.common.collect.ImmutableMap;
 import com.metabroadcast.common.http.SimpleHttpClient;
 import com.metabroadcast.common.scheduling.RepetitionRule;
 import com.metabroadcast.common.scheduling.RepetitionRules;
@@ -93,6 +94,10 @@ public class C4Module {
 	    Optional<String> platformParam = platform.isPresent() ? Optional.of(platform.get().toString().toLowerCase()) : Optional.<String>absent();
 	    C4AtomApiClient client = new C4AtomApiClient(httpsClient(), ATOZ_BASE, platformParam);
 		return new C4AtomBackedBrandUpdater(client, platform, contentResolver, lastUpdatedSettingContentWriter(), channelResolver);
+	}
+	
+	@Bean protected C4BrandUpdateController c4BrandUpdateController() {
+	    return new C4BrandUpdateController(c4BrandFetcher(Optional.<Platform>absent()), ImmutableMap.of(Platform.XBOX, c4BrandFetcher(Optional.of(Platform.XBOX))));
 	}
 	
     @Bean protected LastUpdatedSettingContentWriter lastUpdatedSettingContentWriter() {

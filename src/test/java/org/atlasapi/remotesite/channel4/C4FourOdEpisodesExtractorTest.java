@@ -1,6 +1,7 @@
 package org.atlasapi.remotesite.channel4;
 
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.hasItems;
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.startsWith;
 
@@ -62,10 +63,13 @@ public class C4FourOdEpisodesExtractorTest extends TestCase {
 		Episode firstEpisode = (Episode) Iterables.get(episodes, 0);
 		
 		assertThat(firstEpisode.getCanonicalUri(), is("http://www.channel4.com/programmes/36423/001"));
-		assertThat(firstEpisode.getAliases(), is((Set<String>) ImmutableSet.of("http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#2922045")));
+		assertThat(firstEpisode.getAliases(), hasItems(
+		    "http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#2922045",
+		    "http://www.channel4.com/programmes/ramsays-kitchen-nightmares/episode-guide/series-1/episode-1"
+	    ));
 		
 		assertThat(firstEpisode.getCurie(), is("c4:36423-001"));
-		assertThat(firstEpisode.getTitle(), is("Series 1 Episode 1"));
+		assertThat(firstEpisode.getTitle(), is("Ramsay's Kitchen Nightmares"));
 		assertThat(firstEpisode.getPublisher(), is(Publisher.C4));
 		assertThat(firstEpisode.getSeriesNumber(), is(1));
 		assertThat(firstEpisode.getEpisodeNumber(), is(1));
@@ -94,7 +98,7 @@ public class C4FourOdEpisodesExtractorTest extends TestCase {
 		
 		Policy firstEpisodePolicy = firstEpsiodeLocation.getPolicy();
 		assertThat(firstEpisodePolicy.getAvailabilityStart().withZone(DateTimeZones.UTC), is(new DateTime("2009-07-01T22:00:00.000Z").withZone(DateTimeZones.UTC)));
-		assertThat(firstEpisodePolicy.getAvailabilityEnd().withZone(DateTimeZones.UTC), is(new DateTime("2010-12-31T00:00:00.000Z").withZone(DateTimeZones.UTC)));
+		assertThat(firstEpisodePolicy.getAvailabilityEnd().withZone(DateTimeZones.UTC), is(new DateTime("2012-12-31T00:00:00.000Z").withZone(DateTimeZones.UTC)));
 		assertThat(firstEpisodePolicy.getAvailableCountries(), is((Set<Country>) Sets.newHashSet(Countries.GB, Countries.IE)));
 		
 		Episode episodeWithABroadcast = (Episode) Iterables.get(episodes, 4);

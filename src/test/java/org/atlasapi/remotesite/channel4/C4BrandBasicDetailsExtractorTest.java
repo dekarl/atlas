@@ -36,6 +36,7 @@ public class C4BrandBasicDetailsExtractorTest extends TestCase {
     private static final Channel F4 = new Channel(Publisher.METABROADCAST, "Film4", "more4", MediaType.VIDEO, "http://film4.com");
     private static final Channel C4 = new Channel(Publisher.METABROADCAST, "Channel 4", "channel4", MediaType.VIDEO, "http://www.channel4.com");
     private static final Channel M4 = new Channel(Publisher.METABROADCAST, "More4", "more4", MediaType.VIDEO, "http://www.more4.com");
+    private static final Channel FS = new Channel(Publisher.METABROADCAST, "FourSeven", "fourseven", MediaType.VIDEO, "http://www.channel4.com/4seven");
 	
 
     private final Clock clock = new TimeMachine(new DateTime(DateTimeZones.UTC));
@@ -50,6 +51,7 @@ public class C4BrandBasicDetailsExtractorTest extends TestCase {
         when(channelResolver.fromUri("http://film4.com")).thenReturn(Maybe.just(F4));
         when(channelResolver.fromUri("http://www.e4.com")).thenReturn(Maybe.just(E4));
         when(channelResolver.fromUri("http://www.4music.com")).thenReturn(Maybe.just(FM));
+        when(channelResolver.fromUri("http://www.channel4.com/4seven")).thenReturn(Maybe.just(FS));
         
         extractor = new C4BrandBasicDetailsExtractor(channelResolver , clock);
     }

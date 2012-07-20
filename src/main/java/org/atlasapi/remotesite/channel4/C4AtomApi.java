@@ -19,7 +19,6 @@ import org.joda.time.DateTime;
 import org.joda.time.Duration;
 
 import com.google.common.base.Optional;
-import com.google.common.base.Preconditions;
 import com.google.common.base.Splitter;
 import com.google.common.base.Strings;
 import com.google.common.collect.BiMap;
@@ -39,7 +38,7 @@ public class C4AtomApi {
     private static final String C4_WEB_ROOT = "http://www.channel4.com/";
 	public static final String PROGRAMMES_BASE = C4_WEB_ROOT + "programmes/";
 	private static final String API_BASE_URL = "http://pmlsc.channel4.com/pmlsd/";
-	private static final String ATOZ_BASE_URL = "http://pmlsc.channel4.com/pmlsd/atoz/";
+	private static final String ATOZ_BASE_URL = API_BASE_URL + "atoz/";
 
 	private static final String WEB_SAFE_NAME_PATTERN = "[a-z0-9\\-]+";
 	private static final String FEED_ID_PREFIX_PATTERN = "tag:[a-z0-9.]+\\.channel4\\.com,\\d{4}:/programmes/";
@@ -58,8 +57,9 @@ public class C4AtomApi {
 	private static final Pattern SERIES_PAGE_ID_PATTERN = Pattern.compile(String.format("%s(%s/episode-guide/series-\\d+)", FEED_ID_PREFIX_PATTERN, WEB_SAFE_NAME_PATTERN));
 	private static final Pattern EPISODE_PAGE_ID_PATTERN = Pattern.compile(String.format("%s(%s/episode-guide/series-\\d+/episode-\\d+)", FEED_ID_PREFIX_PATTERN, WEB_SAFE_NAME_PATTERN));
 	
-	private static final Pattern BRAND_API_PAGE_PATTERN = Pattern.compile(String.format("%s(%s).atom",  API_BASE_URL, WEB_SAFE_NAME_PATTERN));
-	private static final Pattern EPISODE_API_PAGE_PATTERN = Pattern.compile(String.format("%s(%s)/episode-guide/series-(\\d+)/episode-(\\d+).atom",  API_BASE_URL, WEB_SAFE_NAME_PATTERN));
+    private static final String API_PATTERN_ROOT = "https?://[^.]*.channel4.com/pmlsd/";
+	private static final Pattern BRAND_API_PAGE_PATTERN = Pattern.compile(String.format("%s(%s).atom.*",  API_PATTERN_ROOT, WEB_SAFE_NAME_PATTERN));
+	private static final Pattern EPISODE_API_PAGE_PATTERN = Pattern.compile(String.format("%s(%s)/episode-guide/series-(\\d+)/episode-(\\d+).atom.*",  API_PATTERN_ROOT, WEB_SAFE_NAME_PATTERN));
 	
 	
 	public static final String DC_EPISODE_NUMBER = "dc:relation.EpisodeNumber";
@@ -111,20 +111,6 @@ public class C4AtomApi {
 		return CANONICAL_BRAND_URI_PATTERN.matcher(brandUri).matches();
 	}
 
-	public static String requestForBrand(String brandCanonicalUri, String extension) {
-		return createBrandRequest(extractWebSafeNameFromBrandUri(brandCanonicalUri), extension);
-	}
-
-	private static String extractWebSafeNameFromBrandUri(String brandCanonicalUri) {
-		Matcher matcher = CANONICAL_BRAND_URI_PATTERN.matcher(brandCanonicalUri);
-		Preconditions.checkArgument(matcher.matches(), "Not a valid brand URI: " + brandCanonicalUri);
-		return matcher.group(1);
-	}
-
-	public static String createBrandRequest(String webSafeName, String extension) {
-		return API_BASE_URL + webSafeName + extension;
-	}
-	
 	public static String createAtoZRequest(String webSafeName, String extension) {
         return ATOZ_BASE_URL + webSafeName + extension;
     }

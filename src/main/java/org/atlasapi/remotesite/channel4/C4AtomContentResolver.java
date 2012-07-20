@@ -47,7 +47,7 @@ public class C4AtomContentResolver {
          */
 
         if(Iterables.size(itemFilteredResults) > 1) {
-            log.error(String.format("Multiple items found for item. Lookup URI [%s]. SlotId URI [%s]", canonicalUri.orNull(), slotIdUri.orNull()));
+            log.error(String.format("Multiple items found for item. ProgrammeId URI [%s]. Hierarchy URI [%s]. SlotId URI [%s]", id, canonicalUri.orNull(), slotIdUri.orNull()));
             itemFilteredResults = Iterables.filter(itemFilteredResults, new Predicate<Item>() {
 
                 @Override

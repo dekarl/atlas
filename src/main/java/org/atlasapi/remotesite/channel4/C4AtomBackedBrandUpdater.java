@@ -33,6 +33,7 @@ import com.google.common.base.Objects;
 import com.google.common.base.Optional;
 import com.google.common.base.Preconditions;
 import com.google.common.base.Predicate;
+import com.google.common.base.Strings;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Maps;
@@ -76,16 +77,9 @@ public class C4AtomBackedBrandUpdater implements C4BrandUpdater {
 			
 			if (source.isPresent()) {
 			    BrandSeriesAndEpisodes brandHierarchy = extractor.extract(source.get());
-			    Brand brand = resolveAndUpdate(brandHierarchy.getBrand());
-			    writer.createOrUpdate(brand);
+			    writer.createOrUpdate(resolveAndUpdate(brandHierarchy.getBrand()));
 			    
-			    for (SeriesAndEpisodes seriesAndEpisodes : brandHierarchy.getSeriesAndEpisodes()) {
-			        writer.createOrUpdate(resolveAndUpdate(seriesAndEpisodes.getSeries()));
-			        for (Episode episode : seriesAndEpisodes.getEpisodes()) {
-			            episode.setContainer(brand);
-			            writer.createOrUpdate(resolveAndUpdate(episode));
-			        }
-			    }
+			    writeSeriesAndEpisodes(brandHierarchy);
 			    
 			    return brandHierarchy.getBrand();
 			}
@@ -96,6 +90,23 @@ public class C4AtomBackedBrandUpdater implements C4BrandUpdater {
 		}
 	}
 
+    private void writeSeriesAndEpisodes(BrandSeriesAndEpisodes brandHierarchy) {
+        for (SeriesAndEpisodes seriesAndEpisodes : brandHierarchy.getSeriesAndEpisodes()) {
+            Series series = seriesAndEpisodes.getSeries();
+            series.setParent(brandHierarchy.getBrand());
+            writer.createOrUpdate(resolveAndUpdate(series));
+            
+            for (Episode episode : seriesAndEpisodes.getEpisodes()) {
+                episode.setContainer(brandHierarchy.getBrand());
+                try {
+                    writer.createOrUpdate(resolveAndUpdate(episode));
+                } catch (Exception e) {
+                    log.warn("Failed to write " + episode.getCanonicalUri(), e);
+                }
+            }
+        }
+    }
+
     private Item resolveAndUpdate(Episode episode) {
         Optional<Item> existingEpisode = resolve(episode);
         if (!existingEpisode.isPresent()) {
@@ -105,7 +116,9 @@ public class C4AtomBackedBrandUpdater implements C4BrandUpdater {
     }
 
     private Optional<Item> resolve(Episode episode) {
-        return resolver.itemFor(episode.getCanonicalUri(), Optional.fromNullable(hierarchyUri(episode)), Optional.<String>absent());
+        String hierarchyUri = hierarchyUri(episode);
+        Preconditions.checkArgument(!Strings.isNullOrEmpty(hierarchyUri), "%s requires hierarchy URI", episode.getCanonicalUri());
+        return resolver.itemFor(episode.getCanonicalUri(), Optional.fromNullable(hierarchyUri), Optional.<String>absent());
     }
 
     private String hierarchyUri(Episode episode) {
@@ -179,6 +192,11 @@ public class C4AtomBackedBrandUpdater implements C4BrandUpdater {
             if(existingEpisode.getSeriesNumber() == null) {
                 existingEpisode.setSeriesNumber(fetchedEpisode.getSeriesNumber());
             }
+            
+            Set<String> allAliases = Sets.newHashSet(Sets.union(existingEpisode.getAliases(),fetchedEpisode.getAliases()));
+            allAliases.add(fetchedEpisode.getCanonicalUri());
+            allAliases.remove(existingEpisode.getCanonicalUri());
+            existingEpisode.setAliases(allAliases);
         }
         
         existingClip.setVersions(versions);
