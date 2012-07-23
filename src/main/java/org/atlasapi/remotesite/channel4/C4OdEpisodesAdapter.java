@@ -5,6 +5,8 @@ import java.util.List;
 import org.atlasapi.media.entity.Episode;
 import org.atlasapi.media.entity.Policy.Platform;
 import org.atlasapi.remotesite.SiteSpecificAdapter;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.google.common.base.Optional;
 import com.google.common.base.Preconditions;
@@ -14,6 +16,8 @@ import com.sun.syndication.feed.atom.Entry;
 import com.sun.syndication.feed.atom.Feed;
 
 public class C4OdEpisodesAdapter implements SiteSpecificAdapter<List<Episode>> {
+    
+    private static Logger log = LoggerFactory.getLogger(C4OdEpisodesAdapter.class);
 
     private final C4AtomApiClient feedClient;
     private final C4OnDemandEpisodeExtractor itemExtractor;
@@ -34,9 +38,14 @@ public class C4OdEpisodesAdapter implements SiteSpecificAdapter<List<Episode>> {
         
         if (brand4oDFeed.isPresent()) {
             for (Object entry : brand4oDFeed.get().getEntries()) {
-                Episode episode = itemExtractor.extract(((Entry)entry));
-                if (episode != null) {
-                    episodes.add(episode);
+                Entry oDentry = (Entry)entry;
+                try {
+                    Episode episode = itemExtractor.extract(oDentry);
+                    if (episode != null) {
+                        episodes.add(episode);
+                    }
+                } catch (Exception e) {
+                    log.warn("Failed to extract Episode from entry " + oDentry.getId() , e);
                 }
             }
         }
