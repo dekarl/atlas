@@ -1,8 +1,8 @@
 package org.atlasapi.remotesite.channel4;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.atlasapi.remotesite.support.atom.AtomClient;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.google.common.base.Optional;
 import com.metabroadcast.common.http.HttpException;
@@ -13,7 +13,7 @@ import com.sun.syndication.feed.atom.Feed;
 
 public class C4AtomApiClient {
     
-    private final Log log = LogFactory.getLog(getClass());
+    private final Logger log = LoggerFactory.getLogger(getClass());
 
     private final AtomClient client;
     private final String apiUrlBase;
@@ -63,6 +63,7 @@ public class C4AtomApiClient {
     private Optional<Feed> get(String uri) {
         Feed feed = null;
         try {
+            log.debug("Fetching {}", uri);
             feed = client.get(uri);
         } catch (HttpException e) {
             if (HttpStatusCode.NOT_FOUND.code() == e.getResponse().statusCode()) {

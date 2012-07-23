@@ -94,12 +94,14 @@ public class C4AtomBackedBrandUpdater implements C4BrandUpdater {
         for (SeriesAndEpisodes seriesAndEpisodes : brandHierarchy.getSeriesAndEpisodes()) {
             Series series = seriesAndEpisodes.getSeries();
             series.setParent(brandHierarchy.getBrand());
-            writer.createOrUpdate(resolveAndUpdate(series));
+            Series series = resolveAndUpdate(series);
+            writer.createOrUpdate(series);
             
             for (Episode episode : seriesAndEpisodes.getEpisodes()) {
-                episode.setContainer(brandHierarchy.getBrand());
                 try {
-                    writer.createOrUpdate(resolveAndUpdate(episode));
+                    episode = resolveAndUpdate(episode);
+                    episode.setContainer(brandHierarchy.getBrand());
+                    writer.createOrUpdate(episode);
                 } catch (Exception e) {
                     log.warn("Failed to write " + episode.getCanonicalUri(), e);
                 }
@@ -107,12 +109,45 @@ public class C4AtomBackedBrandUpdater implements C4BrandUpdater {
         }
     }
 
-    private Item resolveAndUpdate(Episode episode) {
+    private Episode resolveAndUpdate(Episode episode) {
         Optional<Item> existingEpisode = resolve(episode);
         if (!existingEpisode.isPresent()) {
             return episode;
         }
-        return updateItem(existingEpisode.get(), episode);
+        return updateItem(ensureEpisode(existingEpisode.get()), episode);
+    }
+
+    private Episode ensureEpisode(Item item) {
+        if (item instanceof Episode) {
+            return (Episode) item;
+        }
+        return createAsEpisode(item);
+    }
+
+    private Episode createAsEpisode(Item item) {
+        Episode episode = new Episode(item.getCanonicalUri(), item.getCurie(), item.getPublisher());
+        episode.setAliases(item.getAliases());
+        episode.setBlackAndWhite(item.getBlackAndWhite());
+        episode.setClips(item.getClips());
+        episode.setParentRef(item.getContainer());
+        episode.setCountriesOfOrigin(item.getCountriesOfOrigin());
+        episode.setDescription(item.getDescription());
+        episode.setFirstSeen(item.getFirstSeen());
+        episode.setGenres(item.getGenres());
+        episode.setImage(item.getImage());
+        episode.setIsLongForm(item.getIsLongForm());
+        episode.setLastFetched(item.getLastFetched());
+        episode.setLastUpdated(item.getLastUpdated());
+        episode.setMediaType(item.getMediaType());
+        episode.setPeople(item.getPeople());
+        episode.setScheduleOnly(item.isScheduleOnly());
+        episode.setSpecialization(item.getSpecialization());
+        episode.setTags(item.getTags());
+        episode.setThisOrChildLastUpdated(item.getThisOrChildLastUpdated());
+        episode.setThumbnail(item.getThumbnail());
+        episode.setTitle(item.getTitle());
+        episode.setVersions(item.getVersions());
+        return episode;
     }
 
     private Optional<Item> resolve(Episode episode) {
