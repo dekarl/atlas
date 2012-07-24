@@ -49,7 +49,10 @@ public class C4EpgEntryContentExtractor implements
     public ContentHierarchyAndBroadcast extract(C4EpgChannelEntry source) {
         DateTime now = clock.now();
 
-        Optional<Brand> brand = resolveBrand(source).or(fetchBrand(source)).or(createBrandFrom(source));
+        Optional<Brand> brand = resolveBrand(source);
+        if (!brand.isPresent()) {
+            brand = fetchBrand(source).or(createBrandFrom(source));
+        }
         Optional<Series> series = resolveSeries(source).or(createSeriesFrom(source));
         Item item = resolveItem(source, brand).or(createItem(source, brand, series, now));
         

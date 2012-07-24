@@ -2,30 +2,22 @@ package org.atlasapi.remotesite.channel4;
 
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import org.atlasapi.media.TransportType;
 import org.atlasapi.media.channel.Channel;
 import org.atlasapi.media.channel.ChannelResolver;
 import org.atlasapi.media.entity.Content;
-import org.atlasapi.media.entity.Location;
-import org.atlasapi.media.entity.Policy;
-import org.atlasapi.media.entity.Policy.Platform;
 import org.jdom.Element;
 import org.jdom.Namespace;
-import org.joda.time.DateTime;
 import org.joda.time.Duration;
 
-import com.google.common.base.Optional;
 import com.google.common.base.Splitter;
 import com.google.common.base.Strings;
 import com.google.common.collect.BiMap;
 import com.google.common.collect.ImmutableBiMap;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
-import com.metabroadcast.common.intl.Country;
 import com.sun.syndication.feed.atom.Entry;
 import com.sun.syndication.feed.atom.Feed;
 import com.sun.syndication.feed.atom.Link;
@@ -61,12 +53,10 @@ public class C4AtomApi {
 	private static final Pattern BRAND_API_PAGE_PATTERN = Pattern.compile(String.format("%s(%s).atom.*",  API_PATTERN_ROOT, WEB_SAFE_NAME_PATTERN));
 	private static final Pattern EPISODE_API_PAGE_PATTERN = Pattern.compile(String.format("%s(%s)/episode-guide/series-(\\d+)/episode-(\\d+).atom.*",  API_PATTERN_ROOT, WEB_SAFE_NAME_PATTERN));
 	
-	
 	public static final String DC_EPISODE_NUMBER = "dc:relation.EpisodeNumber";
 	public static final String DC_SERIES_NUMBER = "dc:relation.SeriesNumber";
 	public static final String DC_TERMS_AVAILABLE = "dcterms:available";
 	public static final String DC_TX_DATE = "dc:date.TXDate";
-
 
 	private static final Pattern IMAGE_PATTERN = Pattern.compile("https?://.+\\.channel4\\.com/(.+?)\\d+x\\d+(\\.[a-zA-Z]+)");
 	
@@ -74,7 +64,6 @@ public class C4AtomApi {
 	private static final String THUMBNAIL_SIZE = "200x113";
 	
     public static final Pattern SLOT_PATTERN = Pattern.compile("tag:.*,\\d{4}:slot/(\\d+)");
-	private static final Pattern AVAILABILTY_RANGE_PATTERN = Pattern.compile("start=(.*); end=(.*); scheme=W3C-DTF");
 
 	private final BiMap<String, Channel> channelMap;
 	
@@ -253,10 +242,6 @@ public class C4AtomApi {
         }
         return null;
 	}
-
-	public static boolean isAnEpisodeId(String id) {
-		return EPISODE_PAGE_ID_PATTERN.matcher(id).matches();
-	}
 	
 	public static String hierarchyEpisodeUri(Entry source) {
 	    Matcher matcher = EPISODE_PAGE_ID_PATTERN.matcher(source.getId());
@@ -302,40 +287,4 @@ public class C4AtomApi {
 		return channelMap;
 	}
 	
-	public static Location locationFrom(String uri, String locationId, Map<String, String> lookup, Set<Country> availableCountries, Optional<Platform> platform) {
-		Location location = new Location();
-		location.setUri(uri);
-		
-		if(locationId != null) { 
-			location.addAlias(locationId.replace("tag:pmlsc", "tag:www"));
-		}
-		location.setTransportType(TransportType.LINK);
-		
-		// The feed only contains available content
-		location.setAvailable(true);
-		
-		String availability = lookup.get(DC_TERMS_AVAILABLE);
-		
-		if (availability != null) {
-			Matcher matcher = AVAILABILTY_RANGE_PATTERN.matcher(availability);
-			if (!matcher.matches()) {
-				throw new IllegalStateException("Availability range format not recognised, was " + availability);
-			}
-			String txDate = lookup.get(DC_TX_DATE);
-            Policy policy = new Policy()
-				.withAvailabilityStart(new DateTime(Strings.isNullOrEmpty(txDate) ? matcher.group(1) : txDate))
-				.withAvailabilityEnd(new DateTime(matcher.group(2)));
-				
-			if (availableCountries != null) {
-				policy.setAvailableCountries(availableCountries);
-			}
-			
-			if(platform.isPresent()) {
-				policy.setPlatform(platform.get());
-			}
-			
-			location.setPolicy(policy);
-		}
-		return location;
-	}
 }

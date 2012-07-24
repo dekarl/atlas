@@ -9,6 +9,7 @@ import org.atlasapi.media.TransportSubType;
 import org.atlasapi.media.TransportType;
 import org.atlasapi.media.entity.Encoding;
 import org.atlasapi.media.entity.Location;
+import org.atlasapi.media.entity.Policy;
 import org.atlasapi.media.entity.Policy.Platform;
 import org.atlasapi.media.entity.Restriction;
 import org.atlasapi.media.entity.Version;
@@ -18,6 +19,7 @@ import org.joda.time.DateTime;
 import org.joda.time.Duration;
 
 import com.google.common.base.Optional;
+import com.google.common.base.Strings;
 import com.metabroadcast.common.intl.Countries;
 import com.metabroadcast.common.intl.Country;
 import com.metabroadcast.common.time.Clock;
@@ -86,7 +88,7 @@ public class C4AtomEntryVersionExtractor implements ContentExtractor<Entry, Vers
         }
         
         Encoding encoding = new Encoding();
-        Location location = C4AtomApi.locationFrom(uri, locationId, lookup, availableCountries, platform);
+        Location location = locationFrom(uri, locationId, lookup, availableCountries, platform);
         location.setLastUpdated(lastUpdated);
         if (location.getPolicy() != null) {
             location.getPolicy().setLastUpdated(lastUpdated);
@@ -103,6 +105,44 @@ public class C4AtomEntryVersionExtractor implements ContentExtractor<Entry, Vers
         version.addManifestedAs(encoding);
                 
         return version.getBroadcasts().isEmpty() && version.getManifestedAs().isEmpty() ? null : version;
+    }
+
+    private static final Pattern AVAILABILTY_RANGE_PATTERN = Pattern.compile("start=(.*); end=(.*); scheme=W3C-DTF");
+    private Location locationFrom(String uri, String locationId, Map<String, String> lookup, Set<Country> availableCountries, Optional<Platform> platform) {
+        Location location = new Location();
+        location.setUri(uri);
+        
+        if(locationId != null) { 
+            location.addAlias(locationId.replace("tag:pmlsc", "tag:www"));
+        }
+        location.setTransportType(TransportType.LINK);
+        
+        // The feed only contains available content
+        location.setAvailable(true);
+        
+        String availability = lookup.get(C4AtomApi.DC_TERMS_AVAILABLE);
+        
+        if (availability != null) {
+            Matcher matcher = AVAILABILTY_RANGE_PATTERN.matcher(availability);
+            if (!matcher.matches()) {
+                throw new IllegalStateException("Availability range format not recognised, was " + availability);
+            }
+            String txDate = lookup.get(C4AtomApi.DC_TX_DATE);
+            Policy policy = new Policy()
+                .withAvailabilityStart(new DateTime(Strings.isNullOrEmpty(txDate) ? matcher.group(1) : txDate))
+                .withAvailabilityEnd(new DateTime(matcher.group(2)));
+                
+            if (availableCountries != null) {
+                policy.setAvailableCountries(availableCountries);
+            }
+            
+            if(platform.isPresent()) {
+                policy.setPlatform(platform.get());
+            }
+            
+            location.setPolicy(policy);
+        }
+        return location;
     }
 
     private Location embedLocation(String embedId, Location linkLocation) {
