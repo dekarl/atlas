@@ -73,7 +73,7 @@ public class C4AtomContentResolver {
     
     public Optional<Series> seriesFor(String canonicalUri) {
         Maybe<Identified> result = resolver.findByCanonicalUris(ImmutableList.of(canonicalUri)).get(canonicalUri);
-        if (result.hasValue() && result.requireValue() instanceof Brand) {
+        if (result.hasValue() && result.requireValue() instanceof Series) {
             return Optional.of((Series)result.requireValue());
         }
         return Optional.absent();
