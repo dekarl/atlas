@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT best_known_for (#PCDATA)>
+<!ELEMENT born (#PCDATA)>
+<!ELEMENT born_in (#PCDATA)>
+<!ELEMENT career (#PCDATA)>
+<!ELEMENT died (#PCDATA)>
+<!ELEMENT dont_mention (#PCDATA)>
+<!ELEMENT early_life (#PCDATA)>
+<!ELEMENT firstname (#PCDATA)>
+<!ELEMENT gender (#PCDATA)>
+<!ELEMENT lastname (#PCDATA)>
+<!ELEMENT love_life (#PCDATA)>
+<!ELEMENT middlename (#PCDATA)>
+<!ELEMENT name (firstname?, middlename?, lastname?)>
+<!ELEMENT person (name?, gender?, born?, born_in?, died?, early_life, career?, quote?, best_known_for?, love_life?, dont_mention?, stereotype?)>
+<!ATTLIST person
+	id CDATA #REQUIRED
+	modified CDATA #IMPLIED
+	checked CDATA #IMPLIED
+>
+<!ELEMENT profiles (person+)>
+<!ELEMENT quote (#PCDATA)>
+<!ELEMENT stereotype (#PCDATA)>

@@ -51,6 +51,19 @@
                             <generateDirectory>${project.build.directory}/generated-sources/pa-features</generateDirectory>
                         </configuration>
                     </execution>
+                    <execution>
+                        <id>generate-people-schema</id>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <generatePackage>org.atlasapi.remotesite.pa.profiles.bindings</generatePackage>
+                            <schemaIncludes>
+                                <schemaInclude>profiles.dtd</schemaInclude>
+                            </schemaIncludes>
+                            <generateDirectory>${project.build.directory}/generated-sources/pa-profiles</generateDirectory>
+                        </configuration>
+                    </execution>
                 </executions>
             </plugin>
             <plugin>
