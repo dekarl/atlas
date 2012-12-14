@@ -78,9 +78,12 @@ public class PaCompletePeopleUpdater extends ScheduledTask {
     @Override
     protected void runTask() {
         if (lock.tryLock()) {
-            processor = new PaPeopleProcessor(personResolver, personWriter);
-            processFiles(store.localProfilesFiles(Predicates.<File>alwaysTrue()));
-            lock.unlock();
+            try {
+                processor = new PaPeopleProcessor(personResolver, personWriter);
+                processFiles(store.localProfilesFiles(Predicates.<File>alwaysTrue()));
+            } finally {
+                lock.unlock();
+            }
         } else {
             reportStatus("Another PA People ingest is running, this task has not run");
         }

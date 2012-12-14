@@ -80,15 +80,18 @@ public class PaDailyPeopleUpdater extends ScheduledTask {
     @Override
     protected void runTask() {
         if (lock.tryLock()) {
-            processor = new PaPeopleProcessor(personResolver, personWriter);
-            processFiles(store.localProfilesFiles(new Predicate<File>() {
-                @Override
-                public boolean apply(File input) {
-                    Maybe<FileUploadResult> result = fileUploadResultStore.latestResultFor(SERVICE, input.getName());
-                    return (result.isNothing() || !FileUploadResultType.SUCCESS.equals(result.requireValue().type()));
-                }
-            }));
-            lock.unlock();
+            try {
+                processor = new PaPeopleProcessor(personResolver, personWriter);
+                processFiles(store.localProfilesFiles(new Predicate<File>() {
+                    @Override
+                    public boolean apply(File input) {
+                        Maybe<FileUploadResult> result = fileUploadResultStore.latestResultFor(SERVICE, input.getName());
+                        return (result.isNothing() || !FileUploadResultType.SUCCESS.equals(result.requireValue().type()));
+                    }
+                }));
+            } finally {
+                lock.unlock();
+            }
         } else {
             reportStatus("Another PA People ingest is running, this task has not run");
         }
