@@ -1,6 +1,8 @@
 package org.atlasapi.remotesite.pa;
 
 import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
+import java.util.concurrent.locks.ReentrantReadWriteLock.WriteLock;
 
 import javax.annotation.PostConstruct;
 
@@ -69,7 +71,7 @@ public class PaModule {
     private @Autowired ChannelResolver channelResolver;
     private @Autowired FileUploadResultStore fileUploadResultStore;
     private @Autowired DatabasedMongo mongo;
-    private @Autowired Lock peopleLock;
+    private final Lock peopleLock = new ReentrantLock();
     
     private @Value("${pa.ftp.username}") String ftpUsername;
     private @Value("${pa.ftp.password}") String ftpPassword;
