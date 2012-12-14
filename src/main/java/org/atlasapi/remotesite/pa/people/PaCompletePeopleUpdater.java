@@ -2,6 +2,7 @@ package org.atlasapi.remotesite.pa.people;
 
 import java.io.File;
 import java.util.NoSuchElementException;
+import java.util.concurrent.locks.Lock;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -32,12 +33,14 @@ public class PaCompletePeopleUpdater extends ScheduledTask {
 
     private static final String SERVICE = "PA";
     private static final Pattern FULL_FILE = Pattern.compile("^.*(\\d{8})_profiles_full_dump.xml$");
+    private static final Pattern DAILY_DATE = Pattern.compile("^.*(\\d{8})_profiles.xml$");
     
     private final PaProgrammeDataStore store;
     private final PeopleResolver personResolver;
     private final PersonWriter personWriter;
     private final Logger log = LoggerFactory.getLogger(PaDailyPeopleUpdater.class);
     private final DateTimeFormatter dateFormatter = ISODateTimeFormat.basicDate();
+    private final Lock lock;
     
     // orders by the date (if the file matches the pattern) or by filename
     private final Ordering<File> BY_DATE_ORDER = new Ordering<File>() {
@@ -65,16 +68,22 @@ public class PaCompletePeopleUpdater extends ScheduledTask {
     
     private PaPeopleProcessor processor;
 
-    public PaCompletePeopleUpdater(PaProgrammeDataStore store, PeopleResolver personResolver, PersonWriter personWriter) {
+    public PaCompletePeopleUpdater(PaProgrammeDataStore store, PeopleResolver personResolver, PersonWriter personWriter, Lock lock) {
         this.store = store;
         this.personResolver = personResolver;
         this.personWriter = personWriter;
+        this.lock = lock;
     }
     
     @Override
     protected void runTask() {
-        processor = new PaPeopleProcessor(personResolver, personWriter);
-        processFiles(store.localProfilesFiles(Predicates.<File>alwaysTrue()));
+        if (lock.tryLock()) {
+            processor = new PaPeopleProcessor(personResolver, personWriter);
+            processFiles(store.localProfilesFiles(Predicates.<File>alwaysTrue()));
+            lock.unlock();
+        } else {
+            reportStatus("Another PA People ingest is running, this task has not run");
+        }
     }
     
     private void processFiles(Iterable<File> files) {
@@ -97,6 +106,19 @@ public class PaCompletePeopleUpdater extends ScheduledTask {
                 reader.parse(fileToProcess.toURI().toString());
 
                 FileUploadResult.successfulUpload(SERVICE, latestFile.getName());
+                
+                // mark all daily files before that date as run
+                DateTime bootstrapDate = dateFormatter.parseDateTime(matcher.group(1));
+                for (File file : files) {
+                    Matcher fileMatcher = DAILY_DATE.matcher(file.toURI().toString());
+                    if (fileMatcher.matches()) {
+                        DateTime fileTime = dateFormatter.parseDateTime(fileMatcher.group(1));
+                        if (fileTime.isBefore(bootstrapDate)) {
+                            FileUploadResult.successfulUpload(SERVICE, file.getName());    
+                        }
+                    }
+                }
+                
             } else {
                 throw new RuntimeException("No full profiles dump file found");
             }
