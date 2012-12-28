@@ -16,7 +16,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.google.common.collect.ImmutableList;
-import com.metabroadcast.common.query.Selection;
 
 @Controller
 public class PeopleController extends BaseController<Iterable<Person>> {
@@ -39,7 +38,7 @@ public class PeopleController extends BaseController<Iterable<Person>> {
                 throw new IllegalArgumentException("No uri specified");
             }
             
-            Person person = resolver.person(uri);
+            Person person = resolver.person(uri).valueOrNull();
             
             modelAndViewFor(request, response, ImmutableList.of(person), filter.getConfiguration());
         } catch (Exception e) {

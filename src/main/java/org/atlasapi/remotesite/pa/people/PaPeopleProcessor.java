@@ -8,9 +8,11 @@ import org.atlasapi.remotesite.pa.profiles.bindings.Name;
 import org.joda.time.format.DateTimeFormatter;
 import org.joda.time.format.ISODateTimeFormat;
 
+import com.metabroadcast.common.base.Maybe;
+
 public class PaPeopleProcessor {
 
-    private static final String PERSON_URI_PREFIX = "http://people.atlasapi.org/pressassociation.com/";
+    public static final String PERSON_URI_PREFIX = "http://people.atlasapi.org/people.pressassociation.com/";
     
     private final PeopleResolver personResolver;
     private final PersonWriter personWriter;
@@ -23,12 +25,12 @@ public class PaPeopleProcessor {
     
     public void process(org.atlasapi.remotesite.pa.profiles.bindings.Person paPerson) {
         Person person = ingestPerson(paPerson);
-        Person existing = personResolver.person(person.getCanonicalUri());
-        if (existing == null) {
+        Maybe<Person> existing = personResolver.person(person.getCanonicalUri());
+        if (!existing.hasValue()) {
             personWriter.createOrUpdatePerson(person);
         } else {
-            merge(existing, person);
-            personWriter.createOrUpdatePerson(existing);
+            merge(existing.requireValue(), person);
+            personWriter.createOrUpdatePerson(existing.requireValue());
         }
     }
     
