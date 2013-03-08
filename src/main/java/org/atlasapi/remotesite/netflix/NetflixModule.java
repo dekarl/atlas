@@ -67,7 +67,7 @@ public class NetflixModule {
         NetflixContentExtractor<Series> seriesExtractor = new NetflixSeriesExtractor();
         ContentExtractor<Element, Set<? extends Content>> extractor = new NetflixXmlElementContentExtractor(filmExtractor, brandExtractor, episodeExtractor, seriesExtractor);
         NetflixXmlElementHandler xmlHandler= new DefaultNetflixXmlElementHandler(extractor, resolver, contentWriter);
-        return new NetflixUpdater(fileUpdater, xmlHandler, dataStore);
+        return new NetflixUpdater(fileUpdater, xmlHandler);
     }
     
 }

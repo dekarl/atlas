@@ -27,6 +27,7 @@ import com.metabroadcast.common.query.Selection;
 public class TitleSearchGenerator<T extends Content> implements EquivalenceGenerator<T> {
 
     private final static float TITLE_WEIGHTING = 1.0f;
+    public final static String NAME = "Title";
     
     public static final <T extends Content> TitleSearchGenerator<T> create(SearchResolver searchResolver, Class<? extends T> cls, Iterable<Publisher> publishers) {
         return new TitleSearchGenerator<T>(searchResolver, cls, publishers);
@@ -49,7 +50,7 @@ public class TitleSearchGenerator<T extends Content> implements EquivalenceGener
         this.searchLimit = searchLimit;
         this.searchPublishers = ImmutableSet.copyOf(publishers);
         this.titleTransform = titleTransform;
-        this.titleScorer = new ContentTitleScorer<T>(titleTransform);
+        this.titleScorer = new ContentTitleScorer<T>(NAME, titleTransform);
     }
 
     @Override

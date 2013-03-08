@@ -13,7 +13,7 @@ import org.atlasapi.media.entity.Item;
 import com.google.common.base.Objects;
 import com.google.common.collect.Iterables;
 
-public class SequenceItemEquivalenceScorer implements EquivalenceScorer<Item> {
+public class SequenceItemScorer implements EquivalenceScorer<Item> {
 
     @Override
     public ScoredCandidates<Item> score(Item subject, Set<? extends Item> candidates, ResultDescription desc) {

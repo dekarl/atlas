@@ -29,12 +29,14 @@ public class AliasResolvingEquivalenceGenerator<T extends Content> implements Eq
     public ScoredCandidates<T> generate(T content, ResultDescription desc) {
         Builder<T> equivalents = DefaultScoredCandidates.fromSource("Alias");
         desc.startStage("Resolving aliases:");
-        for (String alias : content.getAliases()) {
+        // TODO new aliases
+        for (String alias : content.getAliasUrls()) {
             desc.appendText(alias);
         }
         desc.finishStage();
         
-       ResolvedContent resolved = resolver.findByCanonicalUris(content.getAliases());
+        // TODO new alias
+       ResolvedContent resolved = resolver.findByCanonicalUris(content.getAliasUrls());
        
        for (T identified : Iterables.filter(resolved.getAllResolvedResults(), cls)) {
                equivalents.addEquivalent(identified, Score.ONE);

@@ -74,7 +74,8 @@ public class FilmEquivalenceGeneratorTest extends TestCase {
         Film film = new Film(title+" Uri", title+" Curie", publisher);
         film.setYear(year);
         film.setTitle(title);
-        film.setAliases(ImmutableSet.copyOf(aliases));
+        // TODO new alias
+        film.setAliasUrls(ImmutableSet.copyOf(aliases));
         return film;
     }
     

@@ -29,8 +29,9 @@ public class FacebookAdapterTest {
         assertThat(fetched.getCanonicalUri(), is("http://graph.facebook.com/7608631709"));
         assertThat(fetched.getTitle(), is("House"));
         assertThat(fetched.getDescription(), startsWith("DR. GREGORY HOUSE (Laurie), devoid of bedside manner"));
-        assertThat(fetched.getAliases(), hasItem("http://www.facebook.com/House"));
-        assertThat(fetched.getAliases(), hasItem("http://graph.facebook.com/House"));
+        // TODO new alias
+        assertThat(fetched.getAliasUrls(), hasItem("http://www.facebook.com/House"));
+        assertThat(fetched.getAliasUrls(), hasItem("http://graph.facebook.com/House"));
     }
 
 }

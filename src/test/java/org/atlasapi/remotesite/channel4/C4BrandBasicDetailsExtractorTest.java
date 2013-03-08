@@ -63,8 +63,9 @@ public class C4BrandBasicDetailsExtractorTest extends TestCase {
 		Brand brand = extractor.extract(brandFeed.build());
 		
 		assertThat(brand.getCanonicalUri(), is("http://www.channel4.com/programmes/ramsays-kitchen-nightmares"));
-		assertThat(brand.getAliases(), hasItem("http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od"));
-		assertThat(brand.getAliases(), hasItem("tag:www.channel4.com,2009:/programmes/ramsays-kitchen-nightmares"));
+		// TODO new alias
+		assertThat(brand.getAliasUrls(), hasItem("http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od"));
+		assertThat(brand.getAliasUrls(), hasItem("tag:www.channel4.com,2009:/programmes/ramsays-kitchen-nightmares"));
 		assertThat(brand.getCurie(), is("c4:ramsays-kitchen-nightmares"));
 		assertThat(brand.getTitle(), is("Ramsay's Kitchen Nightmares"));
 		assertThat(brand.getLastUpdated(), is(new DateTime("2010-11-17T17:35:38.468Z", DateTimeZones.UTC)));

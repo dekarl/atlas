@@ -5,8 +5,8 @@ import java.util.Set;
 import org.atlasapi.application.ApplicationConfiguration;
 import org.atlasapi.media.entity.Schedule.ScheduleChannel;
 import org.atlasapi.media.entity.simple.ScheduleQueryResult;
+import org.atlasapi.output.simple.ChannelSimplifier;
 import org.atlasapi.output.simple.ItemModelSimplifier;
-import org.atlasapi.query.v2.ChannelSimplifier;
 
 import com.google.common.collect.ImmutableList;
 
@@ -43,7 +43,7 @@ public class SimpleScheduleModelWriter extends TransformingModelWriter<Iterable<
 	    newScheduleChannel.setChannelTitle(scheduleChannel.channel().title());
 	    
 	    if (annotations.contains(Annotation.CHANNEL)) {
-	        newScheduleChannel.setChannel(channelSimplifier.simplify(scheduleChannel.channel(), false));
+	        newScheduleChannel.setChannel(channelSimplifier.simplify(scheduleChannel.channel(), false, false, false));
 	    }
 	    
 	    ImmutableList.Builder<org.atlasapi.media.entity.simple.Item> items = ImmutableList.builder();

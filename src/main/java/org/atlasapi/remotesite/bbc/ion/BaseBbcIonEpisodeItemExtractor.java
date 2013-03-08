@@ -96,7 +96,8 @@ public abstract class BaseBbcIonEpisodeItemExtractor {
         
         item.setTitle(getTitle(episode));
         item.setDescription(episode.getSynopsis());
-        item.setAliases(BbcAliasCompiler.bbcAliasUrisFor(item.getCanonicalUri()));
+        // TODO new alias
+        item.setAliasUrls(BbcAliasCompiler.bbcAliasUrisFor(item.getCanonicalUri()));
         item.setIsLongForm(true);
         item.setLastUpdated(episode.getUpdated());
         item.setGenres(genreMap.fromIon(episode.getGenres()));

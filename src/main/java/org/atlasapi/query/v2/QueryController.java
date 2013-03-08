@@ -34,6 +34,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.google.common.base.Function;
+import com.google.common.base.Optional;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
@@ -82,7 +83,13 @@ public class QueryController extends BaseController<QueryResult<Content, ? exten
 			    if(!ids.isEmpty()) {
 			        modelAndViewFor(request, response, QueryResult.of(Iterables.filter(Iterables.concat(executor.executeIdQuery(decode(ids), filter).values()),Content.class)),filter.getConfiguration());
 			    } else {
-			        throw new IllegalArgumentException("Must specify content uri or id");
+			        List<String> values = getAliasValueList(request);
+			        if (values != null) {
+			            String namespace = getAliasNamespace(request);
+			            modelAndViewFor(request, response, QueryResult.of(Iterables.filter(Iterables.concat(executor.executeAliasQuery(Optional.fromNullable(namespace), values, filter).values()),Content.class)),filter.getConfiguration());
+			        } else {
+			            throw new IllegalArgumentException("Must specify content uri(s) or id(s) or alias(es)");
+			        }
 			    }
 			}
 		} catch (Exception e) {
@@ -101,6 +108,14 @@ public class QueryController extends BaseController<QueryResult<Content, ? exten
 
     private List<String> getUriList(HttpServletRequest request) {
         return split(request.getParameter("uri"));
+    }
+
+    private List<String> getAliasValueList(HttpServletRequest request) {
+        return split(request.getParameter("aliases.value"));
+    }
+
+    private String getAliasNamespace(HttpServletRequest request) {
+        return request.getParameter("aliases.namespace");
     }
 
     private List<String> getIdList(HttpServletRequest request) {

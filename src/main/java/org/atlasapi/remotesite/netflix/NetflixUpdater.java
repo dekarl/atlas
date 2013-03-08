@@ -13,21 +13,18 @@ import com.metabroadcast.common.scheduling.ScheduledTask;
 public class NetflixUpdater extends ScheduledTask {
 
     private final NetflixXmlElementHandler elementHandler;
-    private final NetflixDataStore dataStore;
     private static final Logger log = LoggerFactory.getLogger(NetflixUpdater.class);
     private final NetflixFileUpdater fileUpdater;
     
-    public NetflixUpdater(NetflixFileUpdater fileUpdater, NetflixXmlElementHandler elementHandler, NetflixDataStore store) {
+    public NetflixUpdater(NetflixFileUpdater fileUpdater, NetflixXmlElementHandler elementHandler) {
         this.fileUpdater = fileUpdater;
         this.elementHandler = elementHandler;
-        this.dataStore = store;
     }
 
     @Override
     protected void runTask() {
         try {
-            fileUpdater.updateFile();
-            Document netflixData = dataStore.getData();
+            Document netflixData = fileUpdater.updateFile();
             
             Element rootElement = netflixData.getRootElement();
             NetflixDataProcessor<UpdateProgress> processor = processor();

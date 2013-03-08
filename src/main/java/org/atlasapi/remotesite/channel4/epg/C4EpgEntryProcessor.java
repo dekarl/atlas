@@ -98,7 +98,8 @@ public class C4EpgEntryProcessor {
             Maybe<Identified> resolved = contentStore.findByCanonicalUris(ImmutableList.of(itemUri)).get(itemUri);
             if (resolved.isNothing()) {
                 episode = new Episode(itemUri, PerPublisherCurieExpander.CurieAlgorithm.C4.compact(itemUri), Publisher.C4);
-                episode.addAlias(String.format(TAG_ALIAS_BASE+"%s/episode-guide/series-%s/episode-%s", webSafeBrandName, entry.seriesNumber(), entry.episodeNumber()));
+                // TODO new alias
+                episode.addAliasUrl(String.format(TAG_ALIAS_BASE+"%s/episode-guide/series-%s/episode-%s", webSafeBrandName, entry.seriesNumber(), entry.episodeNumber()));
             } else {
                 episode = (Episode) resolved.requireValue();
             }
@@ -143,7 +144,8 @@ public class C4EpgEntryProcessor {
             } catch (Exception e) {
                 Brand brand = new Brand(brandUri, PerPublisherCurieExpander.CurieAlgorithm.C4.compact(brandUri), C4);
                 brand.setTitle(entry.brandTitle());
-                brand.addAlias(TAG_ALIAS_BASE+brandName);
+                // TODO new alias
+                brand.addAliasUrl(TAG_ALIAS_BASE+brandName);
                 brand.setLastUpdated(now);
                 return brand;
             }
@@ -159,7 +161,8 @@ public class C4EpgEntryProcessor {
             series = (Series) maybeSeries.requireValue();
         } else {
             series = new Series(seriesUri, PerPublisherCurieExpander.CurieAlgorithm.C4.compact(seriesUri), C4);
-            series.addAlias(String.format(TAG_ALIAS_BASE+"%s/episode-guide/series-%s", brandName, episode.getSeriesNumber()));
+            // TODO new alias
+            series.addAliasUrl(String.format(TAG_ALIAS_BASE+"%s/episode-guide/series-%s", brandName, episode.getSeriesNumber()));
             series.withSeriesNumber(episode.getSeriesNumber());
             series.setLastUpdated(now);
         }

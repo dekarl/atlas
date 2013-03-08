@@ -298,7 +298,7 @@ public class C4BrandExtractor {
                     boolean found = false;
                     for (Broadcast currentBroadcast : version.getBroadcasts()) {
                         if (currentBroadcast.equals(broadcast) || (currentBroadcast.getSourceId() != null && currentBroadcast.getSourceId().equals(broadcast.getSourceId()))) {
-                            currentBroadcast.setAliases(broadcast.getAliases());
+                            currentBroadcast.setAliasUrls(broadcast.getAliasUrls());
                             currentBroadcast.setLastUpdated(broadcast.getLastUpdated());
                             found = true;
                         }

@@ -41,7 +41,7 @@ public class ItemScoreFilteringCombinerTest extends TestCase {
     private final ResultDescription desc = context.mock(ResultDescription.class);
     
     private final String sourceName = "itemSource";
-    private final ItemScoreFilteringCombiner<Item> combiner = new ItemScoreFilteringCombiner<Item>(delegate, sourceName, ScoreThreshold.greaterThan(0.2));
+    private final RequiredScoreFilteringCombiner<Item> combiner = new RequiredScoreFilteringCombiner<Item>(delegate, sourceName, ScoreThreshold.greaterThan(0.2));
 
     @Test
     public void testMaintainsScoreWhenItemScorePassesThreshold() {

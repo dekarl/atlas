@@ -49,7 +49,7 @@ public class ScheduleProbe implements HealthProbe {
         
         DateTime date = clock.now().withTime(0, 0, 0, 0);
 
-        Schedule schedule = scheduleResolver.schedule(date.minusMillis(1), date.plusDays(1), ImmutableSet.of(channel), ImmutableSet.of(publisher));
+        Schedule schedule = scheduleResolver.schedule(date.minusMillis(1), date.plusDays(1), ImmutableSet.of(channel), ImmutableSet.of(publisher), null);
         List<Item> items = Iterables.getOnlyElement(schedule.scheduleChannels()).items();
         result.addEntry(scheduleSize(items.size()));
 

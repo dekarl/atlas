@@ -34,12 +34,12 @@ import com.google.common.collect.Iterables;
 import com.metabroadcast.common.time.DateTimeZones;
 
 @RunWith(JMock.class)
-public class ContainerHierarchyMatchingEquivalenceScorerTest {
+public class ContainerHierarchyMatchingScorerTest {
 
     private final Mockery context = new Mockery();
     private final ContentResolver contentResolver = context.mock(ContentResolver.class);
     
-    private final ContainerHierarchyMatchingEquivalenceScorer scorer = new ContainerHierarchyMatchingEquivalenceScorer(contentResolver);
+    private final ContainerHierarchyMatchingScorer scorer = new ContainerHierarchyMatchingScorer(contentResolver);
     
     @Test
     @SuppressWarnings("unchecked")

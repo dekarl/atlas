@@ -4,6 +4,7 @@ import org.atlasapi.media.entity.Episode;
 
 import com.google.common.base.Objects;
 
+@Deprecated
 public final class SeriesAndEpisodeNumber {
 	
 	private int seriesNumber;

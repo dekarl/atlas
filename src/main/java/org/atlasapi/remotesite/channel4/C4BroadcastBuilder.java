@@ -68,7 +68,8 @@ public class C4BroadcastBuilder {
         checkArgument(ID_PATTERN.matcher(atomId).matches());
         
         Broadcast broadcast = new Broadcast(channelUri, start, duration).withId(idFrom(channelUri, atomId));
-        broadcast.addAlias(aliasFrom(channelUri, atomId));
+        // TODO new alias
+        broadcast.addAliasUrl(aliasFrom(channelUri, atomId));
         return broadcast;
     }
 

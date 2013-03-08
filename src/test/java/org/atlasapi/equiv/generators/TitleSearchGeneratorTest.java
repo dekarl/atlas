@@ -18,7 +18,7 @@ import org.junit.Test;
 
 import com.google.common.collect.ImmutableList;
 
-public class TitleMatchingEquivalenceScoringGeneratorTest {
+public class TitleSearchGeneratorTest {
 
     @Test
     public void testDoesntSearchForPublisherOfSubjectContent() {

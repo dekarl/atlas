@@ -40,7 +40,7 @@ public class C4EpisodeBroadcastExtractorTest extends TestCase {
         
         Broadcast broadcast = version.getBroadcasts().iterator().next();
         
-        assertTrue(broadcast.getAliases().contains("tag:www.channel4.com,2009:slot/E439861"));
+        assertTrue(broadcast.getAliasUrls().contains("tag:www.channel4.com,2009:slot/E439861"));
         assertEquals(Integer.valueOf(55*60), broadcast.getBroadcastDuration());
     }
 }

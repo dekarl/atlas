@@ -1,36 +1,26 @@
 package org.atlasapi.equiv.results.persistence;
 
-import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.Map;
 
 import org.atlasapi.equiv.results.EquivalenceResult;
 import org.atlasapi.media.entity.Container;
 import org.atlasapi.media.entity.Content;
 import org.atlasapi.media.entity.Item;
 
+import com.google.common.cache.Cache;
+import com.google.common.cache.CacheBuilder;
 import com.google.common.collect.ImmutableList;
 
 public class RecentEquivalenceResultStore implements EquivalenceResultStore {
 
-    private static class LimitedSizeResultMap extends LinkedHashMap<String,StoredEquivalenceResult> {
-
-        private static final long serialVersionUID = 1L;
-
-        @Override
-        protected boolean removeEldestEntry(java.util.Map.Entry<String, StoredEquivalenceResult> eldest) {
-            return size() > 50;
-        }
-    }
-    
     private final EquivalenceResultStore delegate;
-    private final Map<String,StoredEquivalenceResult> mrwItemCache;
-    private final Map<String,StoredEquivalenceResult> mrwContainerCache;
+    private final Cache<String, StoredEquivalenceResult> mrwItemCache;
+    private final Cache<String, StoredEquivalenceResult> mrwContainerCache;
 
     public RecentEquivalenceResultStore(EquivalenceResultStore delegate) {
         this.delegate = delegate;
-        this.mrwItemCache = new LimitedSizeResultMap();
-        this.mrwContainerCache = new LimitedSizeResultMap();
+        this.mrwItemCache = CacheBuilder.newBuilder().maximumSize(50).build();
+        this.mrwContainerCache = CacheBuilder.newBuilder().maximumSize(50).build();
     }
     
     @Override
@@ -47,12 +37,12 @@ public class RecentEquivalenceResultStore implements EquivalenceResultStore {
 
     @Override
     public StoredEquivalenceResult forId(String canonicalUri) {
-        StoredEquivalenceResult equivalenceResult = mrwItemCache.get(canonicalUri);
+        StoredEquivalenceResult equivalenceResult = mrwItemCache.getIfPresent(canonicalUri);
         if(equivalenceResult != null) {
             return equivalenceResult;
         }
         
-        equivalenceResult = mrwContainerCache.get(canonicalUri);
+        equivalenceResult = mrwContainerCache.getIfPresent(canonicalUri);
         if(equivalenceResult != null) {
             return equivalenceResult;
         }
@@ -65,11 +55,11 @@ public class RecentEquivalenceResultStore implements EquivalenceResultStore {
     }
     
     public List<StoredEquivalenceResult> latestItemResults() {
-        return ImmutableList.copyOf(mrwItemCache.values());
+        return ImmutableList.copyOf(mrwItemCache.asMap().values());
     }
 
     public List<StoredEquivalenceResult> latestContainerResults() {
-        return ImmutableList.copyOf(mrwContainerCache.values());
+        return ImmutableList.copyOf(mrwContainerCache.asMap().values());
     }
 
 }

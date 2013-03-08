@@ -43,7 +43,7 @@ public class PaEmptyScheduleProcessor implements PaProgDataProcessor {
         DateTime transmissionTime = PaProgrammeProcessor.getTransmissionTime(progData.getDate(), progData.getTime(), zone);
         DateTime transmissionEndTime = transmissionTime.plus(duration);
         
-        Schedule schedule = scheduleResolver.schedule(transmissionTime, transmissionEndTime, ImmutableSet.of(channel), ImmutableSet.of(Publisher.PA));
+        Schedule schedule = scheduleResolver.schedule(transmissionTime, transmissionEndTime, ImmutableSet.of(channel), ImmutableSet.of(Publisher.PA), null);
         if (schedule.scheduleChannels().isEmpty()) {
             return true;
         }

@@ -9,9 +9,13 @@ import com.google.common.collect.ImmutableList;
 
 public class ConjunctiveFilter<T> implements EquivalenceFilter<T> {
 
+    public static final <T> EquivalenceFilter<T> valueOf(Iterable<? extends EquivalenceFilter<T>> filters) {
+        return new ConjunctiveFilter<T>(filters);
+    }
+    
     private final List<EquivalenceFilter<T>> filters;
 
-    public ConjunctiveFilter(Iterable<? extends EquivalenceFilter<T>> filters) {
+    private ConjunctiveFilter(Iterable<? extends EquivalenceFilter<T>> filters) {
         this.filters = ImmutableList.copyOf(filters);
     }
 

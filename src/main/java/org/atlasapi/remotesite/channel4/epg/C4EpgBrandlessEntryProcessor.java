@@ -100,10 +100,12 @@ public class C4EpgBrandlessEntryProcessor {
         Episode episode = null;
         if(possibleEpisode.hasValue()) {
             episode = new Episode(synthesizedEpisodeUriFrom(entry), "c4:"+synthBrandName +"-"+slotId, C4);
-            episode.addAlias(SYNTH_TAG_BASE+synthBrandName+"/"+slotId);
+            // TODO new alias
+            episode.addAliasUrl(SYNTH_TAG_BASE+synthBrandName+"/"+slotId);
         } else {
             episode = new Episode(synthesizedBrandlessEpisodeUriFrom(entry), "c4:"+slotId, C4);
-            episode.addAlias(SYNTH_TAG_BASE+slotId);
+            // TODO new alias
+            episode.addAliasUrl(SYNTH_TAG_BASE+slotId);
         }
 
         boolean changed = false;
@@ -148,7 +150,8 @@ public class C4EpgBrandlessEntryProcessor {
             brand = brandUpdater.createOrUpdateBrand(REAL_PROGRAMME_BASE + synthBrandName);
         } catch (Exception e) {
             brand = new Brand(REAL_PROGRAMME_BASE + synthBrandName, "c4:"+synthBrandName, C4);
-            brand.addAlias(REAL_TAG_BASE + synthBrandName);
+            // TODO new alias
+            brand.addAliasUrl(REAL_TAG_BASE + synthBrandName);
             brand.setTitle(entry.title());
             brand.setLastUpdated(entry.updated());
         }
@@ -188,7 +191,8 @@ public class C4EpgBrandlessEntryProcessor {
 
     private Broadcast createBroadcast(C4EpgEntry entry, Channel channel) {
         Broadcast entryBroadcast = new Broadcast(channel.uri(), entry.txDate(), entry.duration()).withId(C4BroadcastBuilder.idFrom(channel.uri(), entry.id()));
-        entryBroadcast.addAlias(C4BroadcastBuilder.aliasFrom(channel.uri(), entry.id()));
+        // TODO new alias
+        entryBroadcast.addAliasUrl(C4BroadcastBuilder.aliasFrom(channel.uri(), entry.id()));
         entryBroadcast.setIsActivelyPublished(true);
         entryBroadcast.setLastUpdated(entry.updated() != null ? entry.updated() : new DateTime());
         return entryBroadcast;

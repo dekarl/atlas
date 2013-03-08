@@ -17,6 +17,7 @@ import org.atlasapi.media.entity.Identified;
 import org.atlasapi.media.entity.Publisher;
 import org.atlasapi.persistence.content.query.KnownTypeQueryExecutor;
 
+import com.google.common.base.Optional;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Iterables;
@@ -115,6 +116,12 @@ public class MergeOnOutputQueryExecutorTest extends TestCase {
 
             @Override
             public Map<String, List<Identified>> executeIdQuery(Iterable<Long> ids, ContentQuery query) {
+                return ImmutableMap.<String, List<Identified>>of(respondWith[0].getCanonicalUri(), ImmutableList.<Identified>copyOf(respondWith));
+            }
+
+            @Override
+            public Map<String, List<Identified>> executeAliasQuery(Optional<String> namespace, Iterable<String> values,
+                    ContentQuery query) {
                 return ImmutableMap.<String, List<Identified>>of(respondWith[0].getCanonicalUri(), ImmutableList.<Identified>copyOf(respondWith));
             }
 		};

@@ -52,7 +52,8 @@ public class PreviewFilmProcessor {
         String website = get(movieElement, "official_website");
 
         String imdbLink = "http://imdb.com/title/" + movieElement.getAttributeValue("imdb_id");
-        film.addAlias(imdbLink);
+        // TODO new alias
+        film.addAliasUrl(imdbLink);
         if (!Strings.isNullOrEmpty(website)) {
             film.setWebsiteUrl(website);
         }

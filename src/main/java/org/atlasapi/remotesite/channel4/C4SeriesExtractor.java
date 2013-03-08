@@ -39,8 +39,9 @@ public class C4SeriesExtractor implements ContentExtractor<Feed, SeriesAndEpisod
 		Series series = new Series(uri, PerPublisherCurieExpander.CurieAlgorithm.C4.compact(uri), Publisher.C4);
 		
 		series.withSeriesNumber(seriesNumberFrom(source));
-		
-		series.addAlias(source.getId());
+
+		// TODO new alias
+		series.addAliasUrl(source.getId());
 		series.setTitle(source.getTitle());
 		series.setDescription(source.getSubtitle().getValue());
 

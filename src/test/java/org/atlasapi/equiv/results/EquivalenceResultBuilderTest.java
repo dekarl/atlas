@@ -29,7 +29,7 @@ public class EquivalenceResultBuilderTest {
     public void testResultFor() {
 
         ScoreCombiner<Item> combiner = new AddingEquivalenceCombiner<Item>();
-        EquivalenceFilter<Item> filter = new AlwaysTrueFilter<Item>();
+        EquivalenceFilter<Item> filter = AlwaysTrueFilter.get();
         EquivalenceExtractor<Item> extractor = new TopEquivalenceExtractor<Item>();
         EquivalenceResultBuilder<Item> builder = new DefaultEquivalenceResultBuilder<Item>(combiner, filter, extractor);
 

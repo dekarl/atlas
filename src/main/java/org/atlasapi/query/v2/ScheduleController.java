@@ -1,6 +1,9 @@
 package org.atlasapi.query.v2;
 
+import static org.atlasapi.application.ApplicationConfiguration.defaultConfiguration;
+
 import java.io.IOException;
+import java.util.List;
 import java.util.Set;
 
 import javax.servlet.http.HttpServletRequest;
@@ -22,9 +25,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.google.common.base.Function;
+import com.google.common.base.Predicates;
 import com.google.common.base.Strings;
+import com.google.common.collect.Collections2;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Iterables;
+import com.google.common.collect.Sets;
 import com.metabroadcast.common.base.Maybe;
 import com.metabroadcast.common.ids.NumberToShortStringCodec;
 import com.metabroadcast.common.ids.SubstitutionTableNumberCodec;
@@ -50,7 +56,7 @@ public class ScheduleController extends BaseController<Iterable<ScheduleChannel>
             @RequestParam(required=false) String to, @RequestParam(required=false) String from, 
             @RequestParam(required=false) String on, 
             @RequestParam(required=false) String channel, @RequestParam(value="channel_id",required=false) String channelId, 
-            @RequestParam String publisher, 
+            @RequestParam(required=false) String publisher, 
             HttpServletRequest request, HttpServletResponse response) throws IOException {
         try {
             DateTime fromWhen = null;
@@ -66,8 +72,18 @@ public class ScheduleController extends BaseController<Iterable<ScheduleChannel>
                 throw new IllegalArgumentException("You must pass either 'on' or 'from' and 'to'");
             }
             
-            ApplicationConfiguration appConfig = appConfig(request);
-            Set<Publisher> publishers = publishers(publisher, appConfig);
+            String apiKey = request.getParameter("apiKey");
+            boolean apiKeySupplied = apiKey != null;
+            Maybe<ApplicationConfiguration> requestedConfig = possibleAppConfig(request);
+            if (apiKeySupplied && requestedConfig.isNothing()) {
+                    throw new IllegalArgumentException("Unknown API key: " + apiKey);
+            }
+            ApplicationConfiguration appConfig = requestedConfig.valueOrDefault(ApplicationConfiguration.defaultConfiguration());
+            
+            boolean publishersSupplied = !Strings.isNullOrEmpty(publisher);
+
+            Set<Publisher> publishers = getPublishers(publisher, appConfig);
+            
             if (publishers.isEmpty()) {
                 throw new IllegalArgumentException("You must specify at least one publisher that you have permission to view");
             }
@@ -80,12 +96,24 @@ public class ScheduleController extends BaseController<Iterable<ScheduleChannel>
                 throw new IllegalArgumentException("You must specify at least one channel that exists using the channel or channel_id parameter");
             }
             
-            modelAndViewFor(request, response, scheduleResolver.schedule(fromWhen, toWhen, channels, publishers).scheduleChannels(), appConfig);
+            ApplicationConfiguration mergeConfig = apiKeySupplied && !publishersSupplied ? appConfig : null;
+            modelAndViewFor(request, response, scheduleResolver.schedule(fromWhen, toWhen, channels, publishers, mergeConfig).scheduleChannels(), appConfig);
         } catch (Exception e) {
             errorViewFor(request, response, AtlasErrorSummary.forException(e));
         }
     }
     
+    private Set<Publisher> getPublishers(String publisher,
+                                         ApplicationConfiguration appConfig) {
+        if (!Strings.isNullOrEmpty(publisher)) {
+            return Sets.intersection(publishersFrom(publisher), appConfig.getEnabledSources());
+        }
+        if (appConfig.precedenceEnabled()) {
+            return ImmutableSet.of(appConfig.orderdPublishers().get(0));
+        } 
+        throw new IllegalArgumentException("Need precedence enabled");
+    }
+
     private Set<Channel> channelsFromIds(String channelId) {
         return ImmutableSet.copyOf(Iterables.transform(Iterables.filter(Iterables.transform(URI_SPLITTER.split(channelId), new Function<String, Maybe<Channel>>() {
             @Override

@@ -10,9 +10,11 @@ import static com.metabroadcast.common.persistence.mongo.MongoBuilders.where;
 import java.net.UnknownHostException;
 import java.util.Set;
 
+import org.atlasapi.media.channel.CachingChannelStore;
 import org.atlasapi.media.channel.Channel;
 import org.atlasapi.media.channel.ChannelResolver;
 import org.atlasapi.media.channel.ChannelTranslator;
+import org.atlasapi.media.channel.MongoChannelGroupStore;
 import org.atlasapi.media.channel.MongoChannelStore;
 import org.atlasapi.media.entity.Publisher;
 
@@ -44,7 +46,7 @@ public class ChannelAvailableOnSettingTask extends ScheduledTask {
                 availableOn.add(channel.broadcaster().key());
             }
             
-            addAll(availableOn, filter(transform(channel.getAliases(), TO_AVAILABLE_ON), notNull()));
+            addAll(availableOn, filter(transform(channel.getAliasUrls(), TO_AVAILABLE_ON), notNull()));
             
             collection.update(where().idEquals(channel.getId()).build(), update().setField(ChannelTranslator.AVAILABLE_ON, availableOn).build());
         }
@@ -69,6 +71,8 @@ public class ChannelAvailableOnSettingTask extends ScheduledTask {
         
         DatabasedMongo mongo = new DatabasedMongo(new Mongo(Configurer.get("mongo.host").get()), Configurer.get("mongo.dbName").get());
         
-        new ChannelAvailableOnSettingTask(new MongoChannelStore(mongo) ,mongo.collection(MongoChannelStore.COLLECTION)).run();
+        MongoChannelGroupStore store = new MongoChannelGroupStore(mongo);
+        
+        new ChannelAvailableOnSettingTask(new CachingChannelStore(new MongoChannelStore(mongo, store, store)) ,mongo.collection(MongoChannelStore.COLLECTION)).run();
     }
 }

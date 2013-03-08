@@ -62,8 +62,12 @@ public abstract class BaseController<T> {
     }
 
     protected ApplicationConfiguration appConfig(HttpServletRequest request) {
-        Maybe<ApplicationConfiguration> config = configFetcher.configurationFor(request);
-        return config.hasValue() ? config.requireValue() : ApplicationConfiguration.DEFAULT_CONFIGURATION;
+        Maybe<ApplicationConfiguration> config = possibleAppConfig(request);
+        return config.hasValue() ? config.requireValue() : ApplicationConfiguration.defaultConfiguration();
+    }
+
+    protected Maybe<ApplicationConfiguration> possibleAppConfig(HttpServletRequest request) {
+        return configFetcher.configurationFor(request);
     }
 
     protected Set<Publisher> publishers(String publisherString, ApplicationConfiguration config) {
@@ -72,6 +76,12 @@ public abstract class BaseController<T> {
             return appPublishers;
         }
 
+        ImmutableSet<Publisher> build = publishersFrom(publisherString);
+
+        return Sets.intersection(build, appPublishers);
+    }
+
+    protected ImmutableSet<Publisher> publishersFrom(String publisherString) {
         ImmutableSet.Builder<Publisher> publishers = ImmutableSet.builder();
         for (String publisherKey : URI_SPLITTER.split(publisherString)) {
             Maybe<Publisher> publisher = Publisher.fromKey(publisherKey);
@@ -79,8 +89,8 @@ public abstract class BaseController<T> {
                 publishers.add(publisher.requireValue());
             }
         }
-
-        return Sets.intersection(publishers.build(), appPublishers);
+        ImmutableSet<Publisher> build = publishers.build();
+        return build;
     }
 
     protected Set<Specialization> specializations(String specializationString) {

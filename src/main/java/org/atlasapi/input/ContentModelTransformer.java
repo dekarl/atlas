@@ -155,7 +155,8 @@ public abstract class ContentModelTransformer<F extends Description,T extends Co
         }
         member.withPublisher(publisher);
         member.withName(person.getName());
-        member.setAliases(person.getAliases());
+        // TODO new alias
+        member.setAliasUrls(person.getAliases());
         member.setCanonicalUri(person.getUri());
         member.setCurie(person.getCurie());
         return member;

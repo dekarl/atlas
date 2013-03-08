@@ -21,7 +21,8 @@ public class PersonModelSimplifier extends DescribedModelSimplifier<Person, org.
         copyBasicDescribedAttributes(fullPerson, person, annotations);
 
         person.setName(fullPerson.getTitle());
-        person.setProfileLinks(fullPerson.getAliases());
+        // TODO new alias
+        person.setProfileLinks(fullPerson.getAliasUrls());
         person.setContent(simpleContentListFrom(fullPerson.getContents()));
         person.setGivenName(fullPerson.getGivenName());
         person.setFamilyName(fullPerson.getFamilyName());

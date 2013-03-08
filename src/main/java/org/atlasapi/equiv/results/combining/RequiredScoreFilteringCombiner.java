@@ -14,20 +14,20 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Maps.EntryTransformer;
 
-public class ItemScoreFilteringCombiner<T extends Content> implements ScoreCombiner<T> {
+public class RequiredScoreFilteringCombiner<T extends Content> implements ScoreCombiner<T> {
 
     private final ScoreCombiner<T> delegate;
     private final String source;
     private final ScoreThreshold threshold;
 
-    public ItemScoreFilteringCombiner(ScoreCombiner<T> delegate, String source, ScoreThreshold threshold) {
+    public RequiredScoreFilteringCombiner(ScoreCombiner<T> delegate, String source, ScoreThreshold threshold) {
         this.delegate = delegate;
         this.source = source;
         this.threshold = threshold;
     }
     
-    public ItemScoreFilteringCombiner(ScoreCombiner<T> delegate, String source) {
-        this(delegate, source, ScoreThreshold.POSITIVE);
+    public RequiredScoreFilteringCombiner(ScoreCombiner<T> delegate, String source) {
+        this(delegate, source, ScoreThreshold.positive());
     }
     
     @Override
@@ -50,6 +50,10 @@ public class ItemScoreFilteringCombiner<T extends Content> implements ScoreCombi
             public Score transformEntry(T equiv, Score combinedScore) {
                 Score itemScore = itemScoreMap.get(equiv);
 
+                if (itemScore == null) {
+                    return Score.NULL_SCORE;
+                }
+                
                 if (threshold.apply(itemScore)) {
                     return combinedScore;
                 }

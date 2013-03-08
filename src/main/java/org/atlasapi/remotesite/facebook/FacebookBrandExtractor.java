@@ -46,12 +46,15 @@ public class FacebookBrandExtractor implements ContentExtractor<FacebookPage, Br
         brand.setDescription(source.getPlotOutline());
         
         if (!Strings.isNullOrEmpty(source.getLink())) {
-            brand.addAlias(source.getLink());
+            // TODO new alias
+            brand.addAliasUrl(source.getLink());
         }
         if (!Strings.isNullOrEmpty(source.getUsername())) {
-            brand.addAlias(CANONICAL_PREFIX + source.getUsername());
+            // TODO new alias
+            brand.addAliasUrl(CANONICAL_PREFIX + source.getUsername());
         }
-        brand.addAliases(extractUrls(source.getWebsite()));
+        // TODO new alias
+        brand.addAliasUrls(extractUrls(source.getWebsite()));
         
         for (CrewMember director : extractDirectors(source.getDirectedBy())) {
             brand.addPerson(director);

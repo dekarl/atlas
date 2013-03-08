@@ -92,7 +92,8 @@ public class FilmEquivalenceGenerator implements EquivalenceGenerator<Item> {
     }
 
     private Maybe<String> getImdbRef(Film film) {
-        for (String alias : film.getAliases()) {
+     // TODO new alias
+        for (String alias : film.getAliasUrls()) {
             if(IMDB_REF.matcher(alias).matches()) {
                 return Maybe.just(alias);
             }

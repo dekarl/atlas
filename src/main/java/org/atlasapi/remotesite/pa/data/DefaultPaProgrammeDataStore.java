@@ -27,6 +27,7 @@ public class DefaultPaProgrammeDataStore implements PaProgrammeDataStore {
 
     private static final String TV_LISTINGS_DTD = "TVListings.dtd";
     private static final String FEATURES_DTD = "features.dtd";
+    private static final String TV_CHANNEL_DATA_DTD = "tv_channel_data.dtd";
     private static final FilenameFilter tvDataFilenameFilter = new FilenameFilter() {
         @Override
         public boolean accept(File dir, String name) {
@@ -39,10 +40,18 @@ public class DefaultPaProgrammeDataStore implements PaProgrammeDataStore {
             return name.endsWith("_features.xml");
         }
     };
+
     private static final FilenameFilter profilesFilenameFilter = new FilenameFilter() {
         @Override
         public boolean accept(File dir, String name) {
             return name.endsWith("_profiles.xml") || name.endsWith("_profiles_full_dump.xml");
+	}
+    };
+
+    private static final FilenameFilter channelsFilenameFilter = new FilenameFilter() {
+        @Override
+        public boolean accept(File dir, String name) {
+            return name.endsWith("_tv_channel_data.xml");
         }
     };
     private static final String PROCESSING_DIR = "/processing";
@@ -72,6 +81,7 @@ public class DefaultPaProgrammeDataStore implements PaProgrammeDataStore {
         
         loadDtdFile(TV_LISTINGS_DTD);
         loadDtdFile(FEATURES_DTD);
+        loadDtdFile(TV_CHANNEL_DATA_DTD);
     }
     
     private void loadDtdFile(String dtdFileName) {
@@ -158,6 +168,12 @@ public class DefaultPaProgrammeDataStore implements PaProgrammeDataStore {
     public List<File> localProfilesFiles(Predicate<File> filter) {
         Predicate<File> fileFilter = filter == null ? Predicates.<File> alwaysTrue() : filter;
         return FILE_NAME_ORDER.immutableSortedCopy(Iterables.filter(ImmutableList.copyOf(localFolder.listFiles(profilesFilenameFilter)), fileFilter));
+    }
+    
+    @Override
+    public List<File> localChannelsFiles(Predicate<File> filter) {
+        Predicate<File> fileFilter = filter == null ? Predicates.<File> alwaysTrue() : filter;
+        return FILE_NAME_ORDER.immutableSortedCopy(Iterables.filter(ImmutableList.copyOf(localFolder.listFiles(channelsFilenameFilter)), fileFilter));
     }
     
     private final Ordering<File> FILE_NAME_ORDER = new Ordering<File>() {

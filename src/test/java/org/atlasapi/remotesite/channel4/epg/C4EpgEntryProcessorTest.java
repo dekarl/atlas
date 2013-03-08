@@ -94,8 +94,9 @@ public class C4EpgEntryProcessorTest extends TestCase {
         
         Broadcast broadcast = getOnlyElement(version.getBroadcasts());
         assertThat(broadcast.getSourceId(), is(equalTo("c4:337")));
-        assertThat(broadcast.getAliases().size(), is(1));
-        assertThat(broadcast.getAliases(), hasItem("tag:www.channel4.com,2009:slot/C4337"));
+        assertThat(broadcast.getAliasUrls().size(), is(1));
+        // TODO new alias
+        assertThat(broadcast.getAliasUrls(), hasItem("tag:www.channel4.com,2009:slot/C4337"));
         assertThat(broadcast.getTransmissionTime(), is(equalTo(new DateTime("2011-01-07T06:35:00.000Z"))));
         assertThat(broadcast.getTransmissionEndTime(), is(equalTo(new DateTime("2011-01-07T06:35:00.000Z").plus(Duration.standardMinutes(24).plus(Duration.standardSeconds(12))))));
         
@@ -145,8 +146,9 @@ public class C4EpgEntryProcessorTest extends TestCase {
         assertThat(version.getBroadcasts().size(), is(2));
         Broadcast broadcast = Iterables.getLast(version.getBroadcasts()).getCurie() != null ? Iterables.get(version.getBroadcasts(), 0) : Iterables.getLast(version.getBroadcasts());
         assertThat(broadcast.getSourceId(), is(equalTo("c4:337")));
-        assertThat(broadcast.getAliases().size(), is(1));
-        assertThat(broadcast.getAliases(), hasItem("tag:www.channel4.com,2009:slot/C4337"));
+        // TODO new alias
+        assertThat(broadcast.getAliasUrls().size(), is(1));
+        assertThat(broadcast.getAliasUrls(), hasItem("tag:www.channel4.com,2009:slot/C4337"));
         assertThat(broadcast.getTransmissionTime(), is(equalTo(new DateTime("2011-01-07T06:35:00.000Z"))));
         assertThat(broadcast.getTransmissionEndTime(), is(equalTo(new DateTime("2011-01-07T06:35:00.000Z").plus(Duration.standardMinutes(24).plus(Duration.standardSeconds(12))))));
         
@@ -216,8 +218,9 @@ public class C4EpgEntryProcessorTest extends TestCase {
         
         Broadcast broadcast = getOnlyElement(version.getBroadcasts());
         assertThat(broadcast.getSourceId(), is(equalTo("c4:337")));
-        assertThat(broadcast.getAliases().size(), is(1));
-        assertThat(broadcast.getAliases(), hasItem("tag:www.channel4.com,2009:slot/C4337"));
+        // TODO new alias
+        assertThat(broadcast.getAliasUrls().size(), is(1));
+        assertThat(broadcast.getAliasUrls(), hasItem("tag:www.channel4.com,2009:slot/C4337"));
         assertThat(broadcast.getTransmissionTime(), is(equalTo(new DateTime("2011-01-07T06:35:00.000Z"))));
         assertThat(broadcast.getTransmissionEndTime(), is(equalTo(new DateTime("2011-01-07T06:35:00.000Z").plus(Duration.standardMinutes(24).plus(Duration.standardSeconds(12))))));
         

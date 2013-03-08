@@ -21,7 +21,7 @@ import com.google.common.base.Functions;
 
 public class ContentTitleScorerTest {
 
-    private final ContentTitleScorer<Container> scorer = new ContentTitleScorer<Container>(Functions.<String>identity());
+    private final ContentTitleScorer<Container> scorer = new ContentTitleScorer<Container>("Title", Functions.<String>identity());
 
     private final ResultDescription desc = new DefaultDescription();
 

@@ -60,12 +60,14 @@ public class ItvMercuryBrandExtractor implements ContentExtractor<Map<String, Ob
                         String curie = "itv:" + id;
                         brand = new Brand(uri, curie, Publisher.ITV);
                         brand.setTitle(title);
-                        brand.addAlias(UrlEncoding.decode(uri));
+                        // TODO new alias
+                        brand.addAliasUrl(UrlEncoding.decode(uri));
                         
                         brand.setDescription((String) progInfo.get("ShortSynopsis"));
                         brand.setGenres(genres((String) progInfo.get("Genres")));
                         if (progInfo.containsKey("AdditionalContentUri")) {
-                            brand.addAlias((String) progInfo.get("AdditionalContentUri"));
+                            // TODO new alias
+                            brand.addAliasUrl((String) progInfo.get("AdditionalContentUri"));
                         }
                         brand.setImage(getImage((String) progInfo.get("ImageUri")));
                         brand.setThumbnail(getThumbnail((String) progInfo.get("ImageUri")));

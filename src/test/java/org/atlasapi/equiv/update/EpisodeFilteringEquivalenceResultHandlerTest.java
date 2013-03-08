@@ -46,8 +46,6 @@ public class EpisodeFilteringEquivalenceResultHandlerTest {
     private final EquivalenceResultHandler<Item> delegate = mock(EquivalenceResultHandler.class);
     private final EquivalenceSummaryStore summaryStore = mock(EquivalenceSummaryStore.class);
     
-    EquivalenceResultHandler<Item> handler = new EpisodeFilteringEquivalenceResultHandler(delegate, summaryStore) ;
-    
     private Episode subject;
     private Brand subjectContainer;
     
@@ -65,7 +63,11 @@ public class EpisodeFilteringEquivalenceResultHandlerTest {
         return new TypeSafeMatcher<EquivalenceResult<Item>>() {
 
             @Override
-            public void describeTo(Description arg0) {
+            public void describeTo(Description desc) {
+                desc.appendText("result with strong equivalent: ")
+                    .appendValue(publisher)
+                    .appendText("/")
+                    .appendValue(uri);
             }
 
             @Override
@@ -79,7 +81,8 @@ public class EpisodeFilteringEquivalenceResultHandlerTest {
         return new TypeSafeMatcher<EquivalenceResult<Item>>() {
 
             @Override
-            public void describeTo(Description arg0) {
+            public void describeTo(Description desc) {
+                desc.appendText("result with no strong equivalences");
             }
 
             @Override
@@ -108,6 +111,8 @@ public class EpisodeFilteringEquivalenceResultHandlerTest {
         
         EquivalenceResult<Item> result = new EquivalenceResult<Item>(subject, noScores, emptyCombined , strong, new DefaultDescription());
 
+        EquivalenceResultHandler<Item> handler = EpisodeFilteringEquivalenceResultHandler.relaxed(delegate, summaryStore);
+        
         handler.handle(result);
         
         verify(delegate).handle(argThat(resultWithNoStrongEquivalents()));
@@ -133,18 +138,20 @@ public class EpisodeFilteringEquivalenceResultHandlerTest {
         
         EquivalenceResult<Item> result = new EquivalenceResult<Item>(subject, noScores, emptyCombined , strong, new DefaultDescription());
         
+        EquivalenceResultHandler<Item> handler = EpisodeFilteringEquivalenceResultHandler.relaxed(delegate, summaryStore);
+        
         handler.handle(result);
 
         verify(delegate).handle(argThat(resultWithStrongEquiv(Publisher.BBC, "gequiv")));
     }
     
     @Test
-    public void testDoesntFilterItemFromSourceWithNoStrongBrands() {
+    public void testDoesntFilterItemFromSourceWithNoStrongBrandsWhenRelaxed() {
 
-        EquivalenceSummary equivSummary = new EquivalenceSummary(subject.getCanonicalUri(), ImmutableList.<String>of(), ImmutableMap.<Publisher,ContentRef>of());
+        EquivalenceSummary equivSummary = new EquivalenceSummary(subject.getContainer().getUri(), ImmutableList.<String>of(), ImmutableMap.<Publisher,ContentRef>of());
         
         when(summaryStore.summariesForUris(argThat(hasItem(subject.getContainer().getUri()))))
-            .thenReturn(ImmutableOptionalMap.copyOf(ImmutableMap.of(subject.getContainer().getUri(), Optional.of(equivSummary))));
+            .thenReturn(ImmutableOptionalMap.fromMap(ImmutableMap.of(subject.getContainer().getUri(), equivSummary)));
         
         Episode ignoredEquiv = new Episode("ignoredequiv", "ignoredequiv", Publisher.C4);
         ignoredEquiv.setParentRef(new ParentRef("weakbutignoredbrand"));
@@ -154,6 +161,8 @@ public class EpisodeFilteringEquivalenceResultHandlerTest {
         );
         
         EquivalenceResult<Item> result = new EquivalenceResult<Item>(subject, noScores, emptyCombined , strong, new DefaultDescription());
+
+        EquivalenceResultHandler<Item> handler = EpisodeFilteringEquivalenceResultHandler.relaxed(delegate, summaryStore);
         
         handler.handle(result);
 
@@ -175,11 +184,46 @@ public class EpisodeFilteringEquivalenceResultHandlerTest {
         );
         
         EquivalenceResult<Item> result = new EquivalenceResult<Item>(subject, noScores, emptyCombined , strong, new DefaultDescription());
+
+        EquivalenceResultHandler<Item> handler = EpisodeFilteringEquivalenceResultHandler.relaxed(delegate, summaryStore);
         
         handler.handle(result);
         
         verify(delegate).handle(argThat(resultWithStrongEquiv(Publisher.FIVE, "nobrand")));
     }
+    
+    @Test
+    public void testFiltersItemFromSourceWithNoStrongBrandsWhenStrict() {
+        
+        EquivalenceSummary equivSummary = new EquivalenceSummary(
+            subject.getContainer().getUri(), 
+            ImmutableList.<String>of(), 
+            ImmutableMap.<Publisher,ContentRef>of()
+        );
+        
+        when(summaryStore.summariesForUris(argThat(hasItem(subject.getContainer().getUri()))))
+            .thenReturn(ImmutableOptionalMap.fromMap(ImmutableMap.of(
+                subject.getContainer().getUri(), equivSummary
+            )));
+        
+        Episode ignoredEquiv = new Episode("filteredequiv", "filteredequiv", Publisher.C4);
+        ignoredEquiv.setParentRef(new ParentRef("weakbutignoredbrand"));
+
+        Map<Publisher, ScoredCandidate<Item>> strong = ImmutableMap.of(
+            Publisher.C4, ScoredCandidate.<Item>valueOf(ignoredEquiv, Score.ONE)
+        );
+        
+        EquivalenceResult<Item> result = new EquivalenceResult<Item>(
+            subject, noScores, emptyCombined , strong, new DefaultDescription()
+        );
+
+        EquivalenceResultHandler<Item> handler = EpisodeFilteringEquivalenceResultHandler.strict(delegate, summaryStore);
+        
+        handler.handle(result);
+
+        verify(delegate).handle(argThat(resultWithNoStrongEquivalents()));
+    }
+    
 
     private EquivalenceSummary summary(String uri, Container strongContainer) {
         EquivalenceSummary equivSummary = new EquivalenceSummary(uri, ImmutableList.<String>of(), ImmutableMap.of(strongContainer.getPublisher(), ContentRef.valueOf(strongContainer)));

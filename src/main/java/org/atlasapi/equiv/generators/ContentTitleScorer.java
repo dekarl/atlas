@@ -13,14 +13,16 @@ import com.google.common.base.Function;
 
 public final class ContentTitleScorer<T extends Content> {
     
-    private Function<String, String> titleTransform;
+    private final Function<String, String> titleTransform;
+    private final String name;
 
-    public ContentTitleScorer(Function<String, String> titleTransform) {
+    public ContentTitleScorer(String name, Function<String, String> titleTransform) {
+        this.name = name;
         this.titleTransform = titleTransform;
     }
 
     public ScoredCandidates<T> scoreCandidates(T content, Iterable<? extends T> candidates, ResultDescription desc) {
-        Builder<T> equivalents = DefaultScoredCandidates.fromSource("Title");
+        Builder<T> equivalents = DefaultScoredCandidates.fromSource(name);
         desc.appendText("Scoring %s candidates", Iterables.size(candidates));
         
         for (T found : ImmutableSet.copyOf(candidates)) {
@@ -37,6 +39,9 @@ public final class ContentTitleScorer<T extends Content> {
      * @return score representing how closely candidate's title matches subject's title.
      */
     public Score score(Content subject, Content candidate, ResultDescription desc) {
+        if (subject.getTitle() == null || candidate.getTitle() == null) {
+            return Score.NULL_SCORE;
+        }
         String subjectTitle = sanitize(subject.getTitle());
         String contentTitle = sanitize(candidate.getTitle());
         double score = score(subjectTitle, contentTitle);

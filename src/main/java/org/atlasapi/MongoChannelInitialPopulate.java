@@ -2,6 +2,7 @@ package org.atlasapi;
 
 import java.util.List;
 
+import org.atlasapi.media.channel.MongoChannelGroupStore;
 import org.atlasapi.media.channel.MongoChannelStore;
 import org.atlasapi.media.channel.OldChannel;
 import org.atlasapi.media.entity.MediaType;
@@ -25,7 +26,8 @@ public class MongoChannelInitialPopulate {
 	}
 
     public static int writeChannels(DatabasedMongo dbMongo) {
-        MongoChannelStore store = new MongoChannelStore(dbMongo);
+        MongoChannelGroupStore channelGroupStore = new MongoChannelGroupStore(dbMongo);
+        MongoChannelStore store = new MongoChannelStore(dbMongo, channelGroupStore, channelGroupStore);
 		int written = 0;
 		for(OldChannel oldChannel: OldChannel.all()) {
 			if(oldChannel.title().toLowerCase().contains("radio") || NEW_RADIO_STATIONS.contains(oldChannel)) {
@@ -36,20 +38,23 @@ public class MongoChannelInitialPopulate {
 			}
 			if(XMLTV_MAP.containsKey(oldChannel)) {
 				for(Integer id : XMLTV_MAP.get(oldChannel)) {
-					oldChannel.addAlias(String.format("http://xmltv.radiotimes.com/channels/%d", id));
+					oldChannel.addAliasUrl(String.format("http://xmltv.radiotimes.com/channels/%d", id));
+					// TODO new alias
 				}
 			}
 			if(PA_CHANNEL_MAP.containsKey(oldChannel)) {
 				Integer id = PA_CHANNEL_MAP.get(oldChannel);
-				oldChannel.addAlias(String.format("http://pressassociation.com/channels/%d", id));
+				oldChannel.addAliasUrl(String.format("http://pressassociation.com/channels/%d", id));
+				// TODO new alias
 			}
 			if(REDUX_CHANNEL_MAP.containsKey(oldChannel)) {
 				String id = REDUX_CHANNEL_MAP.get(oldChannel);
-				oldChannel.addAlias(String.format("http://devapi.bbcredux.com/channels/%s", id));
+				oldChannel.addAliasUrl(String.format("http://devapi.bbcredux.com/channels/%s", id));
+				// TODO new alias
 			}
 			oldChannel.setSource(Publisher.METABROADCAST);
 			oldChannel.setCanonicalUri(oldChannel.uri());
-			store.write(oldChannel);
+			store.createOrUpdate(oldChannel);
 			written++;
 		}
         return written;

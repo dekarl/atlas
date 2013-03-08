@@ -8,6 +8,7 @@ import java.util.List;
 
 import junit.framework.TestCase;
 
+import org.atlasapi.application.ApplicationConfiguration;
 import org.atlasapi.media.channel.Channel;
 import org.atlasapi.media.entity.Item;
 import org.atlasapi.media.entity.MediaType;
@@ -114,7 +115,7 @@ public class ScheduleLivenessHealthProbeTest extends TestCase {
 
 		@Override
 		public Schedule schedule(DateTime from, DateTime to,
-				Iterable<Channel> channels, Iterable<Publisher> publisher) {
+				Iterable<Channel> channels, Iterable<Publisher> publisher, ApplicationConfiguration mergeConfig) {
 			
 			this.requestedStartTime = from;
 			this.requestedEndTime = to;

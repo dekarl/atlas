@@ -158,7 +158,7 @@ public class BroadcastMatchingItemEquivalenceGenerator implements EquivalenceGen
         DateTime end = broadcast.getTransmissionEndTime().plus(flexibility);
         Maybe<Channel> channel = channelResolver.fromUri(broadcast.getBroadcastOn());
         if (channel.hasValue()) {
-            return resolver.schedule(start, end, ImmutableSet.of(channel.requireValue()), publishers);
+            return resolver.schedule(start, end, ImmutableSet.of(channel.requireValue()), publishers, null);
         }
         return null;
     }

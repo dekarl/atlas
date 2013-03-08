@@ -36,7 +36,8 @@ public class FullProgrammeItemExtractorTest extends TestCase {
     public void testExtract() {
 
         final Channel channel = new Channel(Publisher.METABROADCAST, "BBC One", "bbcone", false, MediaType.VIDEO, "http://www.bbc.co.uk/bbcone");
-    	channel.addAlias("http://devapi.bbcredux.com/channels/bbconehd");
+        // TODO new alias
+    	channel.addAliasUrl("http://devapi.bbcredux.com/channels/bbconehd");
     	context.checking(new Expectations() {
 			{
 				allowing(channelResolver).forAliases("http://devapi.bbcredux.com/channels/");

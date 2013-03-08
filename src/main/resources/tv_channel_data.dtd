@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!ELEMENT tv_channel_data (stations, regions?, service_providers?, platforms?)>
+
+<!ELEMENT stations (station+)>
+
+<!ELEMENT station (names, channels)>
+<!ATTLIST station
+  id CDATA #REQUIRED
+>
+
+<!ELEMENT channels (channel+)>
+
+<!ELEMENT channel (names, variation*, logos?, provider_channel_ids?)>
+<!ATTLIST channel
+  id CDATA #REQUIRED
+  start_date CDATA #REQUIRED
+  format CDATA #IMPLIED
+  media_type CDATA #IMPLIED
+>
+
+
+<!-- timeshift attribute indicates number of minutes channel is timeshifted from base channel and appears on timeshift type variation channels only -->
+<!-- base_channel_id indicates the channel that this channel is a variation of and appears on timeshift and HD type variations only -->
+<!-- type regional indicates that this channel is a regional variation. timeshift and base_channel_id attrubutes will not be present for regional type variations -->
+<!ELEMENT variation EMPTY>
+<!ATTLIST variation
+  type CDATA #REQUIRED
+  base_channel_id CDATA #IMPLIED
+  timeshift CDATA #IMPLIED
+>
+
+<!ELEMENT logos (logo+)>
+<!ELEMENT logo (#PCDATA)>
+<!ATTLIST logo
+  start_date CDATA #REQUIRED
+  end_date CDATA #IMPLIED
+  width CDATA #REQUIRED
+  height CDATA #REQUIRED
+>
+
+
+<!ELEMENT provider_channel_ids (provider_channel_id+)>
+<!ELEMENT provider_channel_id (#PCDATA)>
+<!ATTLIST provider_channel_id
+  service_provider_id CDATA #REQUIRED
+>
+
+<!-- Services e.g. Sky, Freeview -->
+<!ELEMENT service_providers (service_provider+)>
+<!ELEMENT service_provider (names, regionalisation_list?)>
+<!ATTLIST service_provider
+  id CDATA #REQUIRED
+>
+
+<!-- NOTE: region_id references region_id of region element -->
+<!ELEMENT regionalisation_list (regionalisation+)>
+<!ELEMENT regionalisation EMPTY>
+<!ATTLIST regionalisation
+  region_id CDATA #REQUIRED  
+>
+
+<!-- Platforms e.g. Sky HD, Freeview -->
+<!ELEMENT platforms (platform+)>
+<!ELEMENT platform (names, countries?, epg)>
+<!ATTLIST platform
+  id CDATA #REQUIRED
+  service_provider_id CDATA #REQUIRED
+>
+
+<!ELEMENT countries (country+)>
+<!ELEMENT country (#PCDATA)>
+<!ATTLIST country
+  code CDATA #REQUIRED
+>
+
+<!-- Regions -->
+<!ELEMENT regions (region+)>
+<!ELEMENT region (names)>
+<!ATTLIST region
+  id CDATA #REQUIRED
+>
+
+
+<!-- name which can be date dependent due to entity changing its name from a particular date -->
+<!ELEMENT names (name+)>
+<!ELEMENT name (#PCDATA)>
+<!ATTLIST name 	start_date	CDATA	#REQUIRED>
+<!ATTLIST name 	end_date	CDATA	#IMPLIED>
+<!ATTLIST name 	type CDATA	#IMPLIED>
+
+
+<!-- platform_epg_content -->
+<!ELEMENT epg (epg_content+)>
+
+<!ELEMENT epg_content (regionalisation_list?)>
+<!ATTLIST epg_content
+  channel_number CDATA #REQUIRED
+  channel_id CDATA #REQUIRED
+  start_date CDATA #REQUIRED
+  end_date CDATA #IMPLIED
+>

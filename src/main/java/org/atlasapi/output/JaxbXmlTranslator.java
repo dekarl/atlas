@@ -32,6 +32,12 @@ import nu.xom.Serializer;
 
 import org.atlasapi.application.ApplicationConfiguration;
 import org.atlasapi.media.entity.simple.Broadcast;
+import org.atlasapi.media.entity.simple.Channel;
+import org.atlasapi.media.entity.simple.ChannelGroup;
+import org.atlasapi.media.entity.simple.ChannelGroupQueryResult;
+import org.atlasapi.media.entity.simple.ChannelQueryResult;
+import org.atlasapi.media.entity.simple.ContentGroup;
+import org.atlasapi.media.entity.simple.ContentGroupQueryResult;
 import org.atlasapi.media.entity.simple.ContentQueryResult;
 import org.atlasapi.media.entity.simple.Item;
 import org.atlasapi.media.entity.simple.Location;
@@ -49,8 +55,6 @@ import com.google.common.base.Charsets;
 import com.google.common.base.Throwables;
 import com.metabroadcast.common.http.HttpHeaders;
 import com.sun.xml.bind.marshaller.NamespacePrefixMapper;
-import org.atlasapi.media.entity.simple.ContentGroup;
-import org.atlasapi.media.entity.simple.ContentGroupQueryResult;
 
 /**
  * Outputs simple URIplay model in plain XML format using JAXB.
@@ -83,7 +87,11 @@ public class JaxbXmlTranslator<T> implements AtlasModelWriter<T> {
                 Item.class,
                 Location.class,
                 Broadcast.class,
-                PublisherDetails.class, 
+                PublisherDetails.class,
+                ChannelGroup.class,
+                Channel.class,
+                ChannelQueryResult.class,
+                ChannelGroupQueryResult.class,
                 Topic.class, 
                 TopicQueryResult.class,
                 ContentGroup.class,

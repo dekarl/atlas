@@ -40,7 +40,7 @@ public class ScheduleResolverBroadcastTrimmer implements BroadcastTrimmer {
     public void trimBroadcasts(Interval scheduleInterval, Channel channel, Map<String, String> acceptableIds) {
         try {
             //Get items currently broadcast in the interval
-            Schedule schedule = scheduleResolver.schedule(scheduleInterval.getStart(), scheduleInterval.getEnd(), ImmutableSet.of(channel), ImmutableSet.of(publisher));
+            Schedule schedule = scheduleResolver.schedule(scheduleInterval.getStart(), scheduleInterval.getEnd(), ImmutableSet.of(channel), ImmutableSet.of(publisher), null);
 
             //For each item, check that it's broadcasts are in correct in the acceptable set, set actively published false if not.
             for (Item itemEmbeddedInSchedule : Iterables.getOnlyElement(schedule.scheduleChannels()).items()) {

@@ -42,7 +42,12 @@ public class EquivalenceResult<T> {
 
     @Override
     public String toString() {
-        return String.format("%s: %s", subject, scores);
+        return Objects.toStringHelper(getClass())
+            .addValue(subject)
+            .add("scores", scores)
+            .add("combined", combined)
+            .add("strong", strong)
+            .toString();
     }
     
     @Override

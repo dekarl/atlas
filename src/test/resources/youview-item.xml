@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<atom:feed xmlns:atom="http://www.w3.org/2005/Atom" xmlns:os="http://a9.com/-/spec/opensearch/1.1/" xmlns:yv="http://refdata.youview.com/schemas/ClientMetadata/2012-01-25" xmlns:media="http://search.yahoo.com/mrss/" xmlns:dcterms="http://purl.org/dc/terms/">
+<atom:entry>
+<atom:id>7780297</atom:id>
+<atom:updated>2012-11-22T17:51:19Z</atom:updated>
+<atom:title>Hatfields &amp; McCoys</atom:title>
+<yv:entityType>scheduleevent</yv:entityType>
+<atom:content/>
+<yv:programmeId>7655992</yv:programmeId>
+<yv:serviceId>1044</yv:serviceId>
+<media:content duration="3600"/>
+<yv:scheduleSlot>2012-11-18T23:30:00Z</yv:scheduleSlot>
+<yv:available start="2012-11-15T21:00:00Z" end="2012-12-15T21:00:00Z">1</yv:available>
+<yv:identifier type="http://refdata.youview.com/mpeg7cs/YouViewIdentifierTypeCS/2010-12-09#linear.programmeCRID">crid://www.five.tv/V65K2</yv:identifier>
+<yv:identifier type="http://refdata.youview.com/mpeg7cs/YouViewIdentifierTypeCS/2010-12-09#linear.eventLocator">dvb://233a..2134;8696</yv:identifier>
+<yv:identifier type="http://refdata.youview.com/mpeg7cs/YouViewIdentifierTypeCS/2010-12-09#linear.seriesCRID">crid://www.five.tv/RBJW</yv:identifier>
+</atom:entry>
+</atom:feed>

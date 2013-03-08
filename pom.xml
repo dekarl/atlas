@@ -52,6 +52,19 @@
                         </configuration>
                     </execution>
                     <execution>
+                        <id>generate-channels-schema</id>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <generatePackage>org.atlasapi.remotesite.pa.channels.bindings</generatePackage>
+                            <schemaIncludes>
+                                <schemaInclude>tv_channel_data.dtd</schemaInclude>
+                            </schemaIncludes>
+                            <generateDirectory>${project.build.directory}/generated-sources/pa-channels</generateDirectory>
+                        </configuration>
+                    </execution>
+                     <execution>
                         <id>generate-people-schema</id>
                         <goals>
                             <goal>generate</goal>
@@ -190,10 +203,10 @@
             </plugin>
         </plugins>
         <extensions>
-            <extension>
+	    <extension>
                 <groupId>org.apache.maven.wagon</groupId>
-                <artifactId>wagon-webdav</artifactId>
-                <version>1.0-beta-2</version>
+                <artifactId>wagon-webdav-jackrabbit</artifactId>
+                <version>2.3</version>
             </extension>
         </extensions>
         <pluginManagement>
@@ -515,3 +528,4 @@
         </repository>
     </repositories>
 </project>
+

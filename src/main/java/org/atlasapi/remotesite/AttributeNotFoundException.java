@@ -1,4 +1,4 @@
-package org.atlasapi.remotesite.netflix;
+package org.atlasapi.remotesite;
 
 import nu.xom.Element;
 

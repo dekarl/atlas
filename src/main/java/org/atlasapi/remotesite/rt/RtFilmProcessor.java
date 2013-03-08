@@ -29,7 +29,6 @@ import org.atlasapi.persistence.logging.AdapterLog;
 import org.atlasapi.persistence.logging.AdapterLogEntry;
 import org.atlasapi.persistence.logging.AdapterLogEntry.Severity;
 import org.atlasapi.remotesite.pa.PaCountryMap;
-import org.atlasapi.remotesite.pa.PaHelper;
 import org.atlasapi.remotesite.util.EnglishLanguageCodeMap;
 import org.joda.time.Duration;
 import org.joda.time.format.DateTimeFormat;
@@ -84,7 +83,8 @@ public class RtFilmProcessor {
 
         Element imdbElem = filmElement.getFirstChildElement("imdb_ref");
         if (imdbElem != null) {
-            film.addAlias(normalize(imdbElem.getValue()));
+            // TODO new alias
+            film.addAliasUrl(normalize(imdbElem.getValue()));
         }
 
         film.setSpecialization(Specialization.FILM);

@@ -1,10 +1,29 @@
 package org.atlasapi.equiv.results.scores;
 
+import static com.google.common.base.Preconditions.checkNotNull;
+
 import com.google.common.base.Predicate;
-import com.google.common.base.Predicates;
 
 public abstract class ScoreThreshold implements Predicate<Score> {
 
+    public static final ScoreThreshold positive() {
+        return POSITIVE;
+    }
+    public static final ScoreThreshold nonNegative() {
+        return NON_NEGATIVE;
+    }
+    public static final ScoreThreshold negative() {
+        return NEGATIVE;
+    }
+    public static final ScoreThreshold nonPositive() {
+        return NON_POSITIVE;
+    }
+    
+    private static final ScoreThreshold POSITIVE = greaterThan(0);
+    private static final ScoreThreshold NON_NEGATIVE = greaterThanOrEqual(0);
+    private static final ScoreThreshold NEGATIVE = not(NON_NEGATIVE);
+    private static final ScoreThreshold NON_POSITIVE = not(POSITIVE);
+    
     public static final ScoreThreshold greaterThan(double threshold) {
         return new GreaterThanThreshold(threshold);
     }
@@ -14,25 +33,21 @@ public abstract class ScoreThreshold implements Predicate<Score> {
     }
     
     public static final ScoreThreshold not(ScoreThreshold threshold) {
-        return new InverseThreshold(threshold);
+        return threshold instanceof InverseThreshold ? ((InverseThreshold)threshold).delegate
+                                                     : new InverseThreshold(threshold);
     }
-    
-    public static final ScoreThreshold POSITIVE = greaterThan(0);
-    public static final ScoreThreshold NON_NEGATIVE = greaterThanOrEqual(0);
-    public static final ScoreThreshold NEGATIVE = not(greaterThanOrEqual(0));
-    public static final ScoreThreshold NON_POSITIVE = not(greaterThan(0));
     
     private static final class InverseThreshold extends ScoreThreshold {
 
-        private final Predicate<Score> delegate;
+        private final ScoreThreshold delegate;
 
         public InverseThreshold(ScoreThreshold delegate) {
-            this.delegate = Predicates.not(delegate);
+            this.delegate = delegate;
         }
         
         @Override
-        public boolean apply(Score input) {
-            return delegate.apply(input);
+        public boolean applyThreshold(Score input) {
+            return !delegate.applyThreshold(input);
         }
         
     }
@@ -45,8 +60,8 @@ public abstract class ScoreThreshold implements Predicate<Score> {
         }
         
         @Override
-        public boolean apply(Score input) {
-            return input != null && input.isRealScore() && input.asDouble() > threshold;
+        public boolean applyThreshold(Score input) {
+            return input.asDouble() > threshold;
         }
         
         @Override
@@ -63,8 +78,8 @@ public abstract class ScoreThreshold implements Predicate<Score> {
         }
         
         @Override
-        public boolean apply(Score input) {
-            return input != null && input.isRealScore() && input.asDouble() >= threshold;
+        public boolean applyThreshold(Score input) {
+            return input.asDouble() >= threshold;
         }
 
         @Override
@@ -72,4 +87,12 @@ public abstract class ScoreThreshold implements Predicate<Score> {
             return String.format("greater than or equal %s", threshold);
         }
     }
+    
+    @Override
+    public final boolean apply(Score input) {
+        return checkNotNull(input).isRealScore() && applyThreshold(input);
+    }
+    
+    protected abstract boolean applyThreshold(Score input);
+    
 }

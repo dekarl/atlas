@@ -13,6 +13,7 @@ import org.atlasapi.media.entity.Identified;
 import org.atlasapi.media.entity.Publisher;
 import org.atlasapi.persistence.content.query.KnownTypeQueryExecutor;
 
+import com.google.common.base.Optional;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Sets;
@@ -39,6 +40,12 @@ public class ApplicationConfigurationQueryExecutor implements KnownTypeQueryExec
 	public Map<String,List<Identified>> executeIdQuery(Iterable<Long> ids, ContentQuery query) {
 	    return delegate.executeIdQuery(ids, queryForContent(query));
 	}
+
+    @Override
+    public Map<String, List<Identified>> executeAliasQuery(Optional<String> namespace, Iterable<String> values,
+            ContentQuery query) {
+        return delegate.executeAliasQuery(namespace, values, queryForContent(query));
+    }
 	
 	private ContentQuery queryForContent(ContentQuery query) {
 		Iterable<AtomicQuery> softs = ImmutableList.of(/*(AtomicQuery)

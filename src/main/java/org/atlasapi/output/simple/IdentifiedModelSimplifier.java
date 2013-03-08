@@ -15,6 +15,7 @@ import com.metabroadcast.common.ids.SubstitutionTableNumberCodec;
 public abstract class IdentifiedModelSimplifier<F extends Identified, T extends Aliased> implements ModelSimplifier<F, T> {
 
     protected final SubstitutionTableNumberCodec idCodec = new SubstitutionTableNumberCodec();
+    private final PublisherSimplifier publisherSimplifier = new PublisherSimplifier();
     
     protected void copyIdentifiedAttributesTo(Identified identified, Aliased aliased, Set<Annotation> annotations) {
         
@@ -25,7 +26,8 @@ public abstract class IdentifiedModelSimplifier<F extends Identified, T extends 
         
         if (annotations.contains(Annotation.DESCRIPTION)
          || annotations.contains(Annotation.EXTENDED_DESCRIPTION)) {
-            aliased.setAliases(identified.getAliases());
+            // TODO add in new aliases
+            aliased.setAliases(identified.getAliasUrls());
             aliased.setCurie(identified.getCurie());
         }
         
@@ -38,18 +40,6 @@ public abstract class IdentifiedModelSimplifier<F extends Identified, T extends 
     }
 
     protected PublisherDetails toPublisherDetails(Publisher publisher) {
-
-        if (publisher == null) {
-            return null;
-        }
-        
-        PublisherDetails details = new PublisherDetails(publisher.key());
-        
-        if (publisher.country() != null) {
-            details.setCountry(publisher.country().code());
-        }
-        
-        details.setName(publisher.title());
-        return details;
+        return publisherSimplifier.simplify(publisher);
     }
 }

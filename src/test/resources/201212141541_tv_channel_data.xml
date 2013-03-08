@@ -1,0 +1,451 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE tv_channel_data SYSTEM "tv_channel_data.dtd">
+
+<tv_channel_data>
+  <stations>
+    <station id="1">
+      <names>
+        <name start_date="2012-11-13">BBC One</name>
+      </names>
+      <channels>
+        <channel id="11" start_date="1999-01-01" media_type="TV">
+          <names>
+            <name start_date="2012-11-13">BBC One West Midlands</name>
+          </names>
+          <variation type="regional" />
+          <logos>
+            <logo width="320" start_date="2012-11-21" height="180">p131474.png</logo>
+          </logos>
+        </channel>
+        <channel id="1663" start_date="2011-11-22" media_type="TV">
+          <names>
+            <name start_date="2012-11-13">BBC One Channel Islands</name>
+          </names>
+          <variation type="regional" />
+          <logos>
+            <logo width="320" start_date="2012-11-21" height="180">p131731.png</logo>
+          </logos>
+        </channel>
+        <channel id="17" start_date="1999-01-01" media_type="TV">
+          <names>
+            <name start_date="2012-11-13">BBC One South West</name>
+          </names>
+          <variation type="regional" />
+          <logos>
+            <logo width="320" start_date="2012-11-21" height="180">p131742.png</logo>
+          </logos>
+        </channel>
+        <channel id="2" start_date="1999-01-01" media_type="TV">
+          <names>
+            <name start_date="2012-11-13">BBC One Scotland</name>
+          </names>
+          <variation type="regional" />
+          <logos>
+            <logo width="320" start_date="2012-11-21" height="180">p131774.png</logo>
+          </logos>
+        </channel>
+        <channel id="1" start_date="1999-01-01" media_type="TV">
+          <names>
+            <name start_date="2012-11-13">BBC One Northern Ireland</name>
+          </names>
+          <variation type="regional" />
+          <logos>
+            <logo width="320" start_date="2012-11-21" height="180">p131751.png</logo>
+          </logos>
+        </channel>
+        <channel id="18" start_date="1999-01-01" media_type="TV">
+          <names>
+            <name start_date="2012-11-13">BBC One West</name>
+          </names>
+          <variation type="regional" />
+          <logos>
+            <logo width="320" start_date="2012-11-21" height="180">p131747.png</logo>
+          </logos>
+        </channel>
+        <channel id="16" start_date="1999-01-01" media_type="TV">
+          <names>
+            <name start_date="2012-11-13">BBC One South East</name>
+          </names>
+          <variation type="regional" />
+          <logos>
+            <logo width="320" start_date="2012-11-21" height="180">p131738.png</logo>
+          </logos>
+        </channel>
+        <channel id="13" start_date="1999-01-01" media_type="TV">
+          <names>
+            <name start_date="2012-11-13">BBC One North East &amp; Cumbria</name>
+          </names>
+          <variation type="regional" />
+          <logos>
+            <logo width="320" start_date="2012-11-21" height="180">p131544.png</logo>
+          </logos>
+        </channel>
+        <channel id="1665" start_date="2011-11-22" media_type="TV">
+          <names>
+            <name start_date="2012-11-13">BBC One Yorkshire &amp; Lincolnshire</name>
+          </names>
+          <variation type="regional" />
+          <logos>
+            <logo width="320" start_date="2012-11-21" height="180">p131733.png</logo>
+          </logos>
+        </channel>
+        <channel id="713" start_date="2001-09-05" media_type="TV">
+          <names>
+            <name start_date="2012-11-13">BBC One London</name>
+          </names>
+          <variation type="regional" />
+          <logos>
+            <logo width="320" start_date="2012-11-21" height="180">p131847.png</logo>
+          </logos>
+        </channel>
+        <channel id="3" start_date="1999-01-01" media_type="TV">
+          <names>
+            <name start_date="2012-11-13">BBC One Wales</name>
+          </names>
+          <variation type="regional" />
+          <logos>
+            <logo width="320" start_date="2012-11-21" height="180">p131785.png</logo>
+          </logos>
+        </channel>
+        <channel id="9" start_date="1999-01-01" media_type="TV">
+          <names>
+            <name start_date="2012-11-13">BBC One East</name>
+          </names>
+          <variation type="regional" />
+          <logos>
+            <logo width="320" start_date="2012-11-21" height="180">p131916.png</logo>
+          </logos>
+        </channel>
+        <channel id="12" start_date="1999-01-01" media_type="TV">
+          <names>
+            <name start_date="2012-11-13">BBC One Yorkshire</name>
+          </names>
+          <variation type="regional" />
+          <logos>
+            <logo width="320" start_date="2012-11-21" height="180">p131512.png</logo>
+          </logos>
+        </channel>
+        <channel id="14" start_date="1999-01-01" media_type="TV">
+          <names>
+            <name start_date="2012-11-13">BBC One North West</name>
+          </names>
+          <variation type="regional" />
+          <logos>
+            <logo width="320" start_date="2012-11-21" height="180">p131610.png</logo>
+          </logos>
+        </channel>
+        <channel id="15" start_date="1999-01-01" media_type="TV">
+          <names>
+            <name start_date="2012-11-13">BBC One South</name>
+          </names>
+          <variation type="regional" />
+          <logos>
+            <logo width="320" start_date="2012-11-21" height="180">p131677.png</logo>
+          </logos>
+        </channel>
+        <channel id="1664" start_date="2011-11-22" media_type="TV">
+          <names>
+            <name start_date="2012-11-13">BBC One Cambridgeshire</name>
+          </names>
+          <variation type="regional" />
+          <logos>
+            <logo width="320" start_date="2012-11-21" height="180">p131732.png</logo>
+          </logos>
+        </channel>
+        <channel id="1662" start_date="2011-11-22" media_type="TV">
+          <names>
+            <name start_date="2012-11-13">BBC One Oxfordshire</name>
+          </names>
+          <variation type="regional" />
+          <logos>
+            <logo width="320" start_date="2012-11-21" height="180">p131730.png</logo>
+          </logos>
+        </channel>
+        <channel id="10" start_date="1999-01-01" media_type="TV">
+          <names>
+            <name start_date="2012-11-13">BBC One East Midlands</name>
+          </names>
+          <variation type="regional" />
+          <logos>
+            <logo width="320" start_date="2012-11-21" height="180">p131467.png</logo>
+          </logos>
+        </channel>
+      </channels>
+    </station>
+    <station id="518">
+      <names>
+        <name start_date="2012-11-28">BBC Four</name>
+      </names>
+      <channels>
+        <channel id="742" start_date="2002-02-14" media_type="TV">
+          <names>
+            <name start_date="2012-11-28">BBC Four</name>
+          </names>
+          <logos>
+            <logo width="320" start_date="2012-11-21" height="180">p131854.png</logo>
+          </logos>
+        </channel>
+      </channels>
+    </station>
+  </stations>
+  <regions>
+    <region id="47">
+      <names>
+        <name start_date="2000-01-01">Cambridgeshire</name>
+      </names>
+    </region>
+    <region id="48">
+      <names>
+        <name start_date="2000-01-01">Channel Islands</name>
+      </names>
+    </region>
+    <region id="49">
+      <names>
+        <name start_date="2000-01-01">Cumbria</name>
+      </names>
+    </region>
+    <region id="50">
+      <names>
+        <name start_date="2000-01-01">East</name>
+      </names>
+    </region>
+    <region id="51">
+      <names>
+        <name start_date="2000-01-01">East Midlands</name>
+      </names>
+    </region>
+    <region id="52">
+      <names>
+        <name start_date="2000-01-01">Yorkshire &amp; Lincolnshire</name>
+      </names>
+    </region>
+    <region id="53">
+      <names>
+        <name start_date="2000-01-01">London</name>
+      </names>
+    </region>
+    <region id="54">
+      <names>
+        <name start_date="2000-01-01">North East</name>
+      </names>
+    </region>
+    <region id="55">
+      <names>
+        <name start_date="2000-01-01">North West</name>
+      </names>
+    </region>
+    <region id="56">
+      <names>
+        <name start_date="2000-01-01">Northern Ireland</name>
+      </names>
+    </region>
+    <region id="57">
+      <names>
+        <name start_date="2000-01-01">Oxfordshire</name>
+      </names>
+    </region>
+    <region id="58">
+      <names>
+        <name start_date="2000-01-01">Scotland (Borders)</name>
+      </names>
+    </region>
+    <region id="59">
+      <names>
+        <name start_date="2000-01-01">Scotland (Central)</name>
+      </names>
+    </region>
+    <region id="60">
+      <names>
+        <name start_date="2000-01-01">Scotland (North)</name>
+      </names>
+    </region>
+    <region id="61">
+      <names>
+        <name start_date="2000-01-01">South</name>
+      </names>
+    </region>
+    <region id="62">
+      <names>
+        <name start_date="2000-01-01">South East</name>
+      </names>
+    </region>
+    <region id="63">
+      <names>
+        <name start_date="2000-01-01">South West</name>
+      </names>
+    </region>
+    <region id="64">
+      <names>
+        <name start_date="2000-01-01">Wales</name>
+      </names>
+    </region>
+    <region id="65">
+      <names>
+        <name start_date="2000-01-01">West</name>
+      </names>
+    </region>
+    <region id="66">
+      <names>
+        <name start_date="2000-01-01">West Midlands</name>
+      </names>
+    </region>
+    <region id="67">
+      <names>
+        <name start_date="2000-01-01">Yorkshire</name>
+      </names>
+    </region>
+  </regions>
+  <service_providers>
+    <service_provider id="2">
+      <names>
+        <name start_date="2000-01-01">Freeview</name>
+      </names>
+      <regionalisation_list>
+        <regionalisation region_id="47" />
+        <regionalisation region_id="48" />
+        <regionalisation region_id="49" />
+        <regionalisation region_id="50" />
+        <regionalisation region_id="51" />
+        <regionalisation region_id="52" />
+        <regionalisation region_id="53" />
+        <regionalisation region_id="54" />
+        <regionalisation region_id="55" />
+        <regionalisation region_id="56" />
+        <regionalisation region_id="57" />
+        <regionalisation region_id="58" />
+        <regionalisation region_id="59" />
+        <regionalisation region_id="60" />
+        <regionalisation region_id="61" />
+        <regionalisation region_id="62" />
+        <regionalisation region_id="63" />
+        <regionalisation region_id="64" />
+        <regionalisation region_id="65" />
+        <regionalisation region_id="66" />
+        <regionalisation region_id="67" />
+      </regionalisation_list>
+    </service_provider>
+    <service_provider id="9">
+      <names>
+        <name start_date="2000-01-01">YouView</name>
+      </names>
+    </service_provider>
+  </service_providers>
+  <platforms>
+    <platform id="3" service_provider_id="2">
+      <names>
+        <name start_date="2000-01-01">Freeview</name>
+      </names>
+      <countries>
+        <country code="GB">United Kingdon</country>
+      </countries>
+      <epg>
+        <epg_content channel_number="1" channel_id="13" start_date="2004-08-24">
+          <regionalisation_list>
+            <regionalisation region_id="49" />
+          </regionalisation_list>
+        </epg_content>
+        <epg_content channel_number="1" channel_id="2" start_date="2004-08-24">
+          <regionalisation_list>
+            <regionalisation region_id="59" />
+          </regionalisation_list>
+        </epg_content>
+        <epg_content channel_number="1" channel_id="713" start_date="2004-08-24">
+          <regionalisation_list>
+            <regionalisation region_id="53" />
+          </regionalisation_list>
+        </epg_content>
+        <epg_content channel_number="1" channel_id="15" start_date="2004-08-24">
+          <regionalisation_list>
+            <regionalisation region_id="61" />
+          </regionalisation_list>
+        </epg_content>
+        <epg_content channel_number="1" channel_id="11" start_date="2004-08-24">
+          <regionalisation_list>
+            <regionalisation region_id="66" />
+          </regionalisation_list>
+        </epg_content>
+        <epg_content channel_number="1" channel_id="18" start_date="2004-08-24">
+          <regionalisation_list>
+            <regionalisation region_id="65" />
+          </regionalisation_list>
+        </epg_content>
+        <epg_content channel_number="1" channel_id="13" start_date="2004-08-24">
+          <regionalisation_list>
+            <regionalisation region_id="54" />
+          </regionalisation_list>
+        </epg_content>
+        <epg_content channel_number="1" channel_id="2" start_date="2004-08-24">
+          <regionalisation_list>
+            <regionalisation region_id="60" />
+          </regionalisation_list>
+        </epg_content>
+        <epg_content channel_number="1" channel_id="9" start_date="2004-08-24">
+          <regionalisation_list>
+            <regionalisation region_id="50" />
+          </regionalisation_list>
+        </epg_content>
+        <epg_content channel_number="1" channel_id="16" start_date="2004-08-24">
+          <regionalisation_list>
+            <regionalisation region_id="62" />
+          </regionalisation_list>
+        </epg_content>
+        <epg_content channel_number="1" channel_id="12" start_date="2004-08-24">
+          <regionalisation_list>
+            <regionalisation region_id="67" />
+          </regionalisation_list>
+        </epg_content>
+        <epg_content channel_number="1" channel_id="2" start_date="2004-08-24">
+          <regionalisation_list>
+            <regionalisation region_id="58" />
+          </regionalisation_list>
+        </epg_content>
+        <epg_content channel_number="1" channel_id="14" start_date="2004-08-24">
+          <regionalisation_list>
+            <regionalisation region_id="55" />
+          </regionalisation_list>
+        </epg_content>
+        <epg_content channel_number="1" channel_id="3" start_date="2004-08-24">
+          <regionalisation_list>
+            <regionalisation region_id="64" />
+          </regionalisation_list>
+        </epg_content>
+        <epg_content channel_number="1" channel_id="10" start_date="2004-08-24">
+          <regionalisation_list>
+            <regionalisation region_id="51" />
+          </regionalisation_list>
+        </epg_content>
+        <epg_content channel_number="1" channel_id="17" start_date="2004-08-24">
+          <regionalisation_list>
+            <regionalisation region_id="63" />
+          </regionalisation_list>
+        </epg_content>
+        <epg_content channel_number="1" channel_id="1663" start_date="2010-11-22">
+          <regionalisation_list>
+            <regionalisation region_id="48" />
+          </regionalisation_list>
+        </epg_content>
+        <epg_content channel_number="1" channel_id="1662" start_date="2011-11-15">
+          <regionalisation_list>
+            <regionalisation region_id="57" />
+          </regionalisation_list>
+        </epg_content>
+        <epg_content channel_number="1" channel_id="1665" start_date="2011-11-15">
+          <regionalisation_list>
+            <regionalisation region_id="52" />
+          </regionalisation_list>
+        </epg_content>
+        <epg_content channel_number="1" channel_id="1664" start_date="2011-11-22">
+          <regionalisation_list>
+            <regionalisation region_id="47" />
+          </regionalisation_list>
+        </epg_content>
+        <epg_content channel_number="1" channel_id="1" start_date="2012-12-14">
+          <regionalisation_list>
+            <regionalisation region_id="56" />
+          </regionalisation_list>
+        </epg_content>
+        <epg_content channel_number="9" channel_id="742" start_date="2005-10-18" />
+      </epg>
+    </platform>
+  </platforms>
+</tv_channel_data>

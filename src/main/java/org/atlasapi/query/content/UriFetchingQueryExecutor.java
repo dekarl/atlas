@@ -30,6 +30,7 @@ import org.atlasapi.persistence.content.query.KnownTypeQueryExecutor;
 import org.atlasapi.persistence.system.Fetcher;
 
 import com.google.common.base.Function;
+import com.google.common.base.Optional;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableMap.Builder;
@@ -76,6 +77,12 @@ public class UriFetchingQueryExecutor implements KnownTypeQueryExecutor {
 	public Map<String, List<Identified>> executeIdQuery(Iterable<Long> ids, ContentQuery query) {
 	    return delegate.executeIdQuery(ids, query);
 	}
+
+    @Override
+    public Map<String, List<Identified>> executeAliasQuery(Optional<String> namespace, Iterable<String> values,
+            ContentQuery query) {
+        return delegate.executeAliasQuery(namespace, values, query);
+    }
 	
 	public Map<String, List<Identified>> executeContentQuery(Iterable<String> uris, ContentQuery query) {
 

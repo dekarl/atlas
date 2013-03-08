@@ -17,8 +17,10 @@ public interface PaProgrammeDataStore {
     List<File> localTvDataFiles(Predicate<File> filter);
     
     List<File> localFeaturesFiles(Predicate<File> filter);
-    
+
     List<File> localProfilesFiles(Predicate<File> filter);
+
+    List<File> localChannelsFiles(Predicate<File> filter);
     
     File copyForProcessing(File file);
 }

@@ -129,7 +129,8 @@ public class HuluItemContentExtractor implements ContentExtractor<HtmlNavigator,
                     linkLocation.setAvailable(true);
                     linkLocation.setTransportType(TransportType.LINK);
                     
-                    item.addAlias(videoLink);
+                    // TODO new alias
+                    item.addAliasUrl(videoLink);
                     item.setDescription((String) attributes.get("video_description"));
                     item.setIsLongForm(true);
                     

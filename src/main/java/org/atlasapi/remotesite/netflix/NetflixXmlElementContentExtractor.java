@@ -9,6 +9,7 @@ import org.atlasapi.media.entity.Content;
 import org.atlasapi.media.entity.Episode;
 import org.atlasapi.media.entity.Film;
 import org.atlasapi.media.entity.Series;
+import org.atlasapi.remotesite.AttributeNotFoundException;
 import org.atlasapi.remotesite.ContentExtractor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

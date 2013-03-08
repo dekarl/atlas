@@ -82,8 +82,9 @@ public class C4EpgBrandlessEntryProcessorTest extends TestCase {
         
         Broadcast broadcast = getOnlyElement(version.getBroadcasts());
         assertThat(broadcast.getSourceId(), is(equalTo("c4:606")));
-        assertThat(broadcast.getAliases().size(), is(1));
-        assertThat(broadcast.getAliases(), hasItem("tag:www.channel4.com,2009:slot/C4606"));
+        // TODO new alias
+        assertThat(broadcast.getAliasUrls().size(), is(1));
+        assertThat(broadcast.getAliasUrls(), hasItem("tag:www.channel4.com,2009:slot/C4606"));
         assertThat(broadcast.getTransmissionTime(), is(equalTo(new DateTime("2011-01-08T00:05:00.000Z"))));
         assertThat(broadcast.getTransmissionEndTime(), is(equalTo(new DateTime("2011-01-08T00:05:00.000Z").plus(Duration.standardMinutes(110)))));
         

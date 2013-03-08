@@ -26,10 +26,10 @@ public class ConjunctiveFilterTest {
 
     @Test
     public void test() {
-        ConjunctiveFilter<Integer> filter = new ConjunctiveFilter<Integer>(ImmutableList.of(
+        EquivalenceFilter<Integer> filter = ConjunctiveFilter.valueOf(ImmutableList.of(
             MultiplesFilter.of(3),
             MultiplesFilter.of(2),
-            new AlwaysTrueFilter<Integer>()
+            AlwaysTrueFilter.<Integer>get()
         ));
         
         DefaultDescription desc = new DefaultDescription();

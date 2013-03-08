@@ -1,16 +1,17 @@
 package org.atlasapi.remotesite.netflix;
 
+import static org.atlasapi.remotesite.netflix.NetflixEpisodeParseTest.extractXmlFromFile;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
-import static org.junit.Assert.fail;
 
+import java.io.IOException;
 import java.util.Set;
 
-import nu.xom.Builder;
-import nu.xom.Document;
 import nu.xom.Element;
+import nu.xom.ParsingException;
+import nu.xom.ValidityException;
 
 import org.atlasapi.media.entity.Brand;
 import org.atlasapi.media.entity.Certificate;
@@ -20,7 +21,6 @@ import org.atlasapi.media.entity.CrewMember.Role;
 import org.atlasapi.media.entity.Specialization;
 import org.junit.Test;
 import org.mockito.Mockito;
-import org.springframework.core.io.ClassPathResource;
 
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
@@ -28,27 +28,18 @@ import com.google.common.collect.Iterables;
 import com.metabroadcast.common.intl.Countries;
 
 public class NetflixBrandParseTest {
+    
+    private final NetflixContentExtractor<Brand> brandExtractor = new NetflixBrandExtractor();
 
     @SuppressWarnings("unchecked")
     @Test
-    public void testBrandParsing() {
-        Document netflixData;
-        try {
-            netflixData = new Builder().build(new ClassPathResource("netflix-brand.xml").getInputStream());
-        } catch (Exception e) {
-            fail("Exception " + e + " was thrown while opening the test file");
-            // will never reach here;
-            return;
-        }
+    public void testBrandParsing() throws ValidityException, ParsingException, IOException {
+        Element element = extractXmlFromFile("netflix-brand.xml");
         
-        Element rootElement = netflixData.getRootElement();
-        
-        NetflixContentExtractor<Brand> brandExtractor = new NetflixBrandExtractor();        
         NetflixXmlElementContentExtractor extractor = new NetflixXmlElementContentExtractor(Mockito.mock(NetflixContentExtractor.class), brandExtractor, Mockito.mock(NetflixContentExtractor.class), Mockito.mock(NetflixContentExtractor.class));
 
-        assertThat(rootElement.getChildElements().size(), is(1));
         
-        Set<? extends Content> contents = extractor.extract(rootElement.getChildElements().get(0));
+        Set<? extends Content> contents = extractor.extract(element);
         
         Content content = Iterables.getOnlyElement(contents);
         Brand brand = (Brand) content;
@@ -146,8 +137,9 @@ public class NetflixBrandParseTest {
             assertThat(cert.country(), equalTo(Countries.GB));
         }
         
-        assertThat(brand.getAliases().size(), is(1));
-        for (String alias : brand.getAliases()) {
+        assertThat(brand.getAliasUrls().size(), is(1));
+        // TODO new alias
+        for (String alias : brand.getAliasUrls()) {
             assertThat(alias, equalTo("http://api.netflix.com/catalog/titles/series/70136130"));
         }
 
@@ -156,24 +148,13 @@ public class NetflixBrandParseTest {
 
     @SuppressWarnings("unchecked")
     @Test
-    public void testBrandParsingNoLongSynopsis() {
-        Document netflixData;
-        try {
-            netflixData = new Builder().build(new ClassPathResource("netflix-brand-short-synopsis.xml").getInputStream());
-        } catch (Exception e) {
-            fail("Exception " + e + " was thrown while opening the test file");
-            // will never reach here;
-            return;
-        }
+    public void testBrandParsingNoLongSynopsis() throws ValidityException, ParsingException, IOException {
+        Element element = extractXmlFromFile("netflix-brand-short-synopsis.xml");
         
-        Element rootElement = netflixData.getRootElement();
-        
-        NetflixContentExtractor<Brand> brandExtractor = new NetflixBrandExtractor();        
         NetflixXmlElementContentExtractor extractor = new NetflixXmlElementContentExtractor(Mockito.mock(NetflixContentExtractor.class), brandExtractor, Mockito.mock(NetflixContentExtractor.class), Mockito.mock(NetflixContentExtractor.class));
 
-        assertThat(rootElement.getChildElements().size(), is(1));
         
-        Set<? extends Content> contents = extractor.extract(rootElement.getChildElements().get(0));
+        Set<? extends Content> contents = extractor.extract(element);
         
         Content content = Iterables.getOnlyElement(contents);
         Brand brand = (Brand) content;

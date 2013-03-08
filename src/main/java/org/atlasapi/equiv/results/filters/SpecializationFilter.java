@@ -7,7 +7,7 @@ import org.atlasapi.media.entity.Specialization;
 
 import com.google.common.base.Objects;
 
-public class SpecializationMatchingFilter<T extends Content> extends AbstractEquivalenceFilter<T> {
+public class SpecializationFilter<T extends Content> extends AbstractEquivalenceFilter<T> {
 
     @Override
     public boolean doFilter(ScoredCandidate<T> candidate, T subject, ResultDescription desc) {
@@ -15,10 +15,13 @@ public class SpecializationMatchingFilter<T extends Content> extends AbstractEqu
         Specialization candSpec = equivalent.getSpecialization();
         Specialization subSpec = subject.getSpecialization();
         
-        boolean result = (candSpec == null || subSpec == null || Objects.equal(candSpec, subSpec));
+        boolean result = candSpec == null 
+            || subSpec == null 
+            || Objects.equal(candSpec, subSpec);
         
         if (!result) {
-            desc.appendText("%s removed. %s != %s", equivalent, candSpec, subSpec);
+            desc.appendText("%s removed. %s != %s", 
+                equivalent, candSpec, subSpec);
         }
         return result;
     }

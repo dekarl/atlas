@@ -63,7 +63,8 @@ public class FullProgrammeItemExtractor implements ContentExtractor<FullReduxPro
         
         Item item = new Item(REDUX_URI_BASE + source.getCanonical(), CURIE_BASE + source.getDiskref(), Publisher.BBC_REDUX);
         if(!Strings.isNullOrEmpty(source.getUri())) {
-            item.addAlias(REDUX_URI_BASE + source.getUri());
+            // TODO new alias
+            item.addAliasUrl(REDUX_URI_BASE + source.getUri());
         }
         
         item.setTitle(source.getTitle());

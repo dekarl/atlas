@@ -1,8 +1,11 @@
 package org.atlasapi.query.v2;
 
 import com.google.common.base.Function;
+import com.google.common.base.Predicate;
+
 import java.io.IOException;
 
+import javax.annotation.Nullable;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -31,7 +34,9 @@ import org.atlasapi.persistence.content.ResolvedContent;
 @Controller
 public class ContentGroupController extends BaseController<Iterable<ContentGroup>> {
 
-    private static final AtlasErrorSummary NOT_FOUND = new AtlasErrorSummary(new NullPointerException()).withErrorCode("PRODUCT_NOT_FOUND").withStatusCode(HttpStatusCode.NOT_FOUND);
+    private static final AtlasErrorSummary NOT_FOUND = new AtlasErrorSummary(new NullPointerException()).withErrorCode("CONTENT_GROUP_NOT_FOUND").withStatusCode(HttpStatusCode.NOT_FOUND);
+    private static final AtlasErrorSummary FORBIDDEN = new AtlasErrorSummary(new NullPointerException()).withErrorCode("CONTENT_GROUP_UNAVAILABLE").withStatusCode(HttpStatusCode.FORBIDDEN);
+    
     private static final Function<ChildRef, String> CHILD_REF_TO_URI_FN = new ChildRefToUri();
     //
     private final ContentGroupResolver contentGroupResolver;
@@ -47,53 +52,69 @@ public class ContentGroupController extends BaseController<Iterable<ContentGroup
 
     @RequestMapping(value = {"3.0/content_groups.*", "content_groups.*"})
     public void contentGroup(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-        try {
-            ContentQuery query = builder.build(req);
-            modelAndViewFor(req, resp, contentGroupResolver.findAll(), query.getConfiguration());
-        } catch (NumberFormatException ex) {
-            outputter.writeError(req, resp, NOT_FOUND.withMessage("Error retrieving Content Groups!"));
-        }
+        ContentQuery query = builder.build(req);
+        modelAndViewFor(req, resp, query.getSelection().apply(Iterables.filter(contentGroupResolver.findAll(), publisherFilter(query))), query.getConfiguration());
     }
 
     @RequestMapping(value = {"3.0/content_groups/{id}.*", "content_groups/{id}.*"})
     public void contentGroup(HttpServletRequest req, HttpServletResponse resp, @PathVariable("id") String id) throws IOException {
+        long contentGroupId;
         try {
-            ContentQuery query = builder.build(req);
-            ResolvedContent contentGroup = contentGroupResolver.findByIds(ImmutableList.of(idCodec.decode(id).longValue()));
-            if (contentGroup.isEmpty()) {
-                outputter.writeError(req, resp, NOT_FOUND.withMessage("Content Group " + idCodec.decode(id).longValue() + " not found"));
-            } else {
-                modelAndViewFor(req, resp, ImmutableSet.of((ContentGroup) contentGroup.getFirstValue().requireValue()), query.getConfiguration());
-            }
-        } catch (NumberFormatException ex) {
-            outputter.writeError(req, resp, NOT_FOUND.withMessage("Content Group " + idCodec.decode(id).longValue() + " unavailable"));
+            contentGroupId = idCodec.decode(id).longValue();
+        } catch (IllegalArgumentException e) {
+            outputter.writeError(req, resp, NOT_FOUND.withMessage("Content Group " + id + " not found"));
+            return;
         }
+        
+        ContentQuery query = builder.build(req);
+        ResolvedContent resolvedContent = contentGroupResolver.findByIds(ImmutableList.of(contentGroupId));
+        if (resolvedContent.isEmpty()) {
+            outputter.writeError(req, resp, NOT_FOUND.withMessage("Content Group " + idCodec.decode(id).longValue() + " not found"));
+            return;
+        }
+        
+        ContentGroup contentGroup = (ContentGroup)resolvedContent.getFirstValue().requireValue();
+        if (!query.allowsSource(contentGroup.getPublisher())) {
+            outputter.writeError(req, resp, FORBIDDEN.withErrorCode("Content Group not available"));
+            return;
+        }
+        modelAndViewFor(req, resp, ImmutableSet.of(contentGroup), query.getConfiguration());
     }
 
     @RequestMapping(value = {"3.0/content_groups/{id}/content.*", "content_groups/{id}/content.*"})
     public void contentGroupContents(HttpServletRequest req, HttpServletResponse resp, @PathVariable("id") String id) throws IOException {
+        long contentGroupId;
         try {
-            ContentQuery query = builder.build(req);
-            ResolvedContent resolvedContent = contentGroupResolver.findByIds(ImmutableList.of(idCodec.decode(id).longValue()));
-            if (resolvedContent.isEmpty()) {
-                outputter.writeError(req, resp, NOT_FOUND.withMessage("Content Group " + idCodec.decode(id).longValue() + " not found"));
-            } else {
-                try {
-                    ContentGroup contentGroup = (ContentGroup) resolvedContent.getFirstValue().requireValue();
-                    Selection selection = query.getSelection();
-                    QueryResult<Content, ContentGroup> result = QueryResult.of(
-                            Iterables.filter(
-                            Iterables.concat(
-                            queryExecutor.executeUriQuery(Iterables.transform(contentGroup.getContents(), CHILD_REF_TO_URI_FN), query).values()),
-                            Content.class),
-                            contentGroup);
-                    queryController.modelAndViewFor(req, resp, result.withSelection(selection), query.getConfiguration());
-                } catch (Exception e) {
-                    errorViewFor(req, resp, AtlasErrorSummary.forException(e));
-                }
-            }
-        } catch (NumberFormatException ex) {
-            outputter.writeError(req, resp, NOT_FOUND.withMessage("Content Group " + idCodec.decode(id).longValue() + " unavailable"));
+            contentGroupId = idCodec.decode(id).longValue();
+        } catch (IllegalArgumentException e) {
+            outputter.writeError(req, resp, NOT_FOUND.withMessage("Content Group " + id + " not found"));
+            return;
+        }
+        
+        ContentQuery query = builder.build(req);
+        ResolvedContent resolvedContent = contentGroupResolver.findByIds(ImmutableList.of(contentGroupId));
+        if (resolvedContent.isEmpty()) {
+            outputter.writeError(req, resp, NOT_FOUND.withMessage("Content Group " + id + " not found"));
+            return;
+        } 
+        
+        ContentGroup contentGroup = (ContentGroup) resolvedContent.getFirstValue().requireValue();
+        if (!query.allowsSource(contentGroup.getPublisher())) {
+            outputter.writeError(req, resp, FORBIDDEN.withErrorCode("Content Group not available"));
+            return;
+        }
+        
+        try {
+            Selection selection = query.getSelection();
+            QueryResult<Content, ContentGroup> result = QueryResult.of(
+                    Iterables.filter(
+                    Iterables.concat(
+                    queryExecutor.executeUriQuery(Iterables.transform(contentGroup.getContents(), CHILD_REF_TO_URI_FN), query).values()),
+                    Content.class),
+                    contentGroup);
+            queryController.modelAndViewFor(req, resp, result.withSelection(selection), query.getConfiguration());
+        } catch (Exception e) {
+            errorViewFor(req, resp, AtlasErrorSummary.forException(e));
         }
     }
 
@@ -103,5 +124,16 @@ public class ContentGroupController extends BaseController<Iterable<ContentGroup
         public String apply(ChildRef input) {
             return input.getUri();
         }
+    }
+    
+    private Predicate<ContentGroup> publisherFilter(final ContentQuery query)  {
+
+        return new Predicate<ContentGroup>() {
+
+            @Override
+            public boolean apply(ContentGroup input) {
+                return query.allowsSource(input.getPublisher());
+            }
+        };
     }
 }

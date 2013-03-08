@@ -23,14 +23,14 @@ import com.google.common.collect.Iterators;
 import com.google.common.collect.Ordering;
 import com.google.common.collect.PeekingIterator;
 
-public class ContainerHierarchyMatchingEquivalenceScorer implements EquivalenceScorer<Container> {
+public class ContainerHierarchyMatchingScorer implements EquivalenceScorer<Container> {
 
     private static final int MAX_EPISODE_DIFFERENCE = 1;
     private static final int MAX_SERIES_DIFFERENCE = 1;
 
     private final ContentResolver contentResolver;
 
-    public ContainerHierarchyMatchingEquivalenceScorer(ContentResolver contentResolver) {
+    public ContainerHierarchyMatchingScorer(ContentResolver contentResolver) {
         this.contentResolver = contentResolver;
     }
     

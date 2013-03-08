@@ -2,32 +2,29 @@ package org.atlasapi.query.v2;
 
 import static com.google.common.base.Preconditions.checkArgument;
 
+import java.util.List;
 import java.util.Set;
 
 import org.atlasapi.media.channel.Channel;
-import org.atlasapi.media.channel.ChannelGroup;
+import org.atlasapi.media.channel.ChannelNumbering;
 import org.atlasapi.media.entity.MediaType;
 import org.atlasapi.media.entity.Publisher;
 
 import com.google.common.base.Optional;
-import com.google.common.base.Preconditions;
 import com.google.common.base.Predicate;
+import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Iterables;
-import com.google.common.collect.SetMultimap;
 import com.google.common.collect.Sets;
-import com.google.inject.internal.Nullable;
 
 public class ChannelFilterer {
     
-    public Set<Channel> filter(Iterable<Channel> channels, ChannelFilter filter, @Nullable SetMultimap<Channel, ChannelGroup> channelToGroups) {
+    public List<Channel> filter(Iterable<Channel> channels, ChannelFilter filter) {
         
-        Preconditions.checkArgument(!(filter.channelGroups.isPresent() && channelToGroups == null));
-        
-        return ImmutableSet.copyOf(Iterables.filter(channels, filterPredicate(filter, channelToGroups)));
+        return ImmutableList.copyOf(Iterables.filter(channels, filterPredicate(filter)));
     }
     
-    private Predicate<Channel> filterPredicate(final ChannelFilter filter, @Nullable final SetMultimap<Channel, ChannelGroup> channelToGroups) {
+    private Predicate<Channel> filterPredicate(final ChannelFilter filter) {
         return new Predicate<Channel>() {
             @Override
             public boolean apply(Channel input) {
@@ -44,7 +41,7 @@ public class ChannelFilterer {
                     return false;
                 }
                 
-                if (filter.channelGroups.isPresent() && Sets.intersection(filter.channelGroups.get(), channelToGroups.get(input)).isEmpty()) {
+                if (filter.channelGroups.isPresent() && Sets.intersection(filter.channelGroups.get(), ImmutableSet.copyOf(Iterables.transform(input.channelNumbers(), ChannelNumbering.TO_CHANNEL_GROUP))).isEmpty()) {
                     return false;
                 }
                 
@@ -57,9 +54,9 @@ public class ChannelFilterer {
         private final Optional<Publisher> broadcaster;
         private final Optional<MediaType> mediaType;
         private final Optional<Publisher> availableFrom;
-        private final Optional<Set<ChannelGroup>> channelGroups;
+        private final Optional<Set<Long>> channelGroups;
         
-        private ChannelFilter(Optional<Publisher> broadcaster, Optional<MediaType> mediaType, Optional<Publisher> availableFrom, Optional<Set<ChannelGroup>> channelGroups) {
+        private ChannelFilter(Optional<Publisher> broadcaster, Optional<MediaType> mediaType, Optional<Publisher> availableFrom, Optional<Set<Long>> channelGroups) {
             this.broadcaster = broadcaster;
             this.mediaType = mediaType;
             this.availableFrom = availableFrom;
@@ -78,7 +75,7 @@ public class ChannelFilterer {
             private Optional<Publisher> broadcaster = Optional.absent();
             private Optional<MediaType> mediaType = Optional.absent();
             private Optional<Publisher> availableFrom = Optional.absent();
-            private Optional<Set<ChannelGroup>> channelGroups = Optional.absent();
+            private Optional<Set<Long>> channelGroups = Optional.absent();
             
             private ChannelFilterBuilder() {
             }
@@ -102,7 +99,7 @@ public class ChannelFilterer {
                 return this;
             }
             
-            public ChannelFilterBuilder withChannelGroups(Set<ChannelGroup> channelGroups) {
+            public ChannelFilterBuilder withChannelGroups(Set<Long> channelGroups) {
                 checkArgument(!channelGroups.isEmpty());
                 this.channelGroups = Optional.of(channelGroups);
                 return this;

@@ -3,35 +3,37 @@ package org.atlasapi.remotesite;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.atlasapi.feeds.lakeview.LakeviewModule;
 import org.atlasapi.remotesite.archiveorg.ArchiveOrgModule;
 import org.atlasapi.remotesite.bbc.BbcModule;
+import org.atlasapi.remotesite.bbc.products.BBCProductsModule;
 import org.atlasapi.remotesite.channel4.C4Module;
 import org.atlasapi.remotesite.five.FiveModule;
 import org.atlasapi.remotesite.hulu.HuluModule;
 import org.atlasapi.remotesite.itunes.ItunesModule;
 import org.atlasapi.remotesite.itv.ItvModule;
 import org.atlasapi.remotesite.itv.interlinking.ItvInterlinkingModule;
-import org.atlasapi.remotesite.pa.PaModule;
-import org.atlasapi.remotesite.preview.PreviewNetworksModule;
-import org.atlasapi.remotesite.redux.ReduxModule;
-import org.atlasapi.remotesite.tvblob.TVBlobModule;
-import org.atlasapi.remotesite.voila.VoilaModule;
-import org.atlasapi.remotesite.worldservice.WorldServicesModule;
-import com.google.common.collect.ImmutableMap;
-import com.google.common.collect.Lists;
-import com.hp.hpl.jena.graph.query.StageElement.PutBindings;
-import com.metabroadcast.common.properties.Configurer;
-import com.metabroadcast.common.properties.Parameter;
-import org.atlasapi.remotesite.bbc.products.BBCProductsModule;
 import org.atlasapi.remotesite.lovefilm.LoveFilmModule;
 import org.atlasapi.remotesite.metabroadcast.MetaBroadcastModule;
-import org.atlasapi.remotesite.space.TheSpaceModule;
 import org.atlasapi.remotesite.music.emipub.EmiPubModule;
 import org.atlasapi.remotesite.music.musicbrainz.MusicBrainzModule;
 import org.atlasapi.remotesite.netflix.NetflixModule;
+import org.atlasapi.remotesite.pa.PaModule;
+import org.atlasapi.remotesite.preview.PreviewNetworksModule;
+import org.atlasapi.remotesite.redux.ReduxModule;
+import org.atlasapi.remotesite.space.TheSpaceModule;
+import org.atlasapi.remotesite.tvblob.TVBlobModule;
+import org.atlasapi.remotesite.voila.VoilaModule;
+import org.atlasapi.remotesite.worldservice.WorldServicesModule;
+import org.atlasapi.remotesite.youview.YouViewModule;
+
+import com.google.common.collect.ImmutableMap;
+import com.google.common.collect.Lists;
+import com.metabroadcast.common.properties.Configurer;
+import com.metabroadcast.common.properties.Parameter;
 
 public class RemoteSiteModuleConfigurer {
 
@@ -59,6 +61,7 @@ public class RemoteSiteModuleConfigurer {
         .put("voila", VoilaModule.class)
         .put("lovefilm", LoveFilmModule.class)
         .put("netflix", NetflixModule.class)
+        .put("youview", YouViewModule.class)
         .put("bbc-products", BBCProductsModule.class)
         .put("thespace", TheSpaceModule.class)
         .put("musicbrainz", MusicBrainzModule.class)

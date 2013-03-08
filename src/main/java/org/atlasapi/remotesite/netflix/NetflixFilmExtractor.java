@@ -1,5 +1,15 @@
 package org.atlasapi.remotesite.netflix;
 
+import static org.atlasapi.remotesite.netflix.NetflixContentExtractionHelper.getAlias;
+import static org.atlasapi.remotesite.netflix.NetflixContentExtractionHelper.getCertificates;
+import static org.atlasapi.remotesite.netflix.NetflixContentExtractionHelper.getDescription;
+import static org.atlasapi.remotesite.netflix.NetflixContentExtractionHelper.getGenres;
+import static org.atlasapi.remotesite.netflix.NetflixContentExtractionHelper.getPeople;
+import static org.atlasapi.remotesite.netflix.NetflixContentExtractionHelper.getPublisher;
+import static org.atlasapi.remotesite.netflix.NetflixContentExtractionHelper.getTitle;
+import static org.atlasapi.remotesite.netflix.NetflixContentExtractionHelper.getVersion;
+import static org.atlasapi.remotesite.netflix.NetflixContentExtractionHelper.getYear;
+
 import java.util.Set;
 
 import nu.xom.Element;
@@ -7,12 +17,11 @@ import nu.xom.Element;
 import org.atlasapi.media.entity.Film;
 import org.atlasapi.media.entity.Specialization;
 
-import com.google.inject.internal.ImmutableSet;
+import com.google.common.collect.ImmutableSet;
 
-public class NetflixFilmExtractor extends NetflixContentExtractor<Film>  {
+public class NetflixFilmExtractor implements NetflixContentExtractor<Film>  {
     
     private static final String MOVIES_URL_PREFIX = "http://gb.netflix.com/movies/";
-    private static final String LOCATIONS_URL_PREFIX = "http://movies.netflix.com/movie/";
     
     @Override
     public Set<Film> extract(Element source, int id) {
@@ -23,11 +32,12 @@ public class NetflixFilmExtractor extends NetflixContentExtractor<Film>  {
         film.setTitle(getTitle(source));
         film.setYear(getYear(source));
         film.setDescription(getDescription(source));
-        film.addVersion(getVersion(source, getEncoding(LOCATIONS_URL_PREFIX + id)));
+        film.addVersion(getVersion(source, id));
         film.setGenres(getGenres(source));
         film.setPeople(getPeople(source));
         film.setCertificates(getCertificates(source));
-        film.addAlias(getAlias(source));
+        // TODO new alias
+        film.addAliasUrl(getAlias(source));
         film.setPublisher(getPublisher());
         film.setSpecialization(Specialization.FILM);
 

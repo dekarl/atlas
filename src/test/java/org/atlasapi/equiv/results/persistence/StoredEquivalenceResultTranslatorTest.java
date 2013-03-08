@@ -30,7 +30,7 @@ public class StoredEquivalenceResultTranslatorTest extends TestCase {
 
     private final StoredEquivalenceResultTranslator translator = new StoredEquivalenceResultTranslator();
     private final ScoreCombiner<Item> combiner = AddingEquivalenceCombiner.create();
-    private final EquivalenceFilter<Item> filter = new AlwaysTrueFilter<Item>();
+    private final EquivalenceFilter<Item> filter = AlwaysTrueFilter.get();
     private final EquivalenceExtractor<Item> extractor = TopEquivalenceExtractor.create();
     private final EquivalenceResultBuilder<Item> resultBuilder = DefaultEquivalenceResultBuilder.<Item>create(combiner, filter, extractor);
 

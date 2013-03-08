@@ -173,7 +173,7 @@ public class LastUpdatedSettingContentWriter implements ContentWriter {
     }
 
     private boolean equal(Container prevContainer, Container container) {
-        return Objects.equal(prevContainer.getAliases(), container.getAliases())
+        return Objects.equal(prevContainer.getAliasUrls(), container.getAliasUrls())
             && Objects.equal(prevContainer.getTitle(), container.getTitle())
             && Objects.equal(prevContainer.getDescription(), container.getDescription());
     }

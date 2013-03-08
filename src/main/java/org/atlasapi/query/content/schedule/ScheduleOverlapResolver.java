@@ -2,6 +2,7 @@ package org.atlasapi.query.content.schedule;
 
 import java.util.List;
 
+import org.atlasapi.application.ApplicationConfiguration;
 import org.atlasapi.media.channel.Channel;
 import org.atlasapi.media.entity.Broadcast;
 import org.atlasapi.media.entity.Item;
@@ -34,8 +35,8 @@ public class ScheduleOverlapResolver implements ScheduleResolver {
     }
 
     @Override
-    public Schedule schedule(DateTime from, DateTime to, Iterable<Channel> channels, Iterable<Publisher> publishers) {
-        Schedule schedule = scheduleResovler.schedule(from, to, channels, publishers);
+    public Schedule schedule(DateTime from, DateTime to, Iterable<Channel> channels, Iterable<Publisher> publishers, ApplicationConfiguration mergeConfig) {
+        Schedule schedule = scheduleResovler.schedule(from, to, channels, publishers, mergeConfig);
 
         ImmutableList.Builder<ScheduleChannel> scheduleChannels = ImmutableList.builder();
         for (ScheduleChannel channel : schedule.scheduleChannels()) {

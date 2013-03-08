@@ -266,8 +266,9 @@ public class C4AtomApi {
 		Location location = new Location();
 		location.setUri(uri);
 		
-		if(locationId != null) { 
-			location.addAlias(locationId);
+		if(locationId != null) {
+		    // TODO new alias
+			location.addAliasUrl(locationId);
 		}
 		location.setTransportType(TransportType.LINK);
 		location.setLastUpdated(lastUpdated);

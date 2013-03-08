@@ -46,7 +46,8 @@ public class FacebookBrandExtractorTest {
         assertThat(brand.getCanonicalUri(), is("http://graph.facebook.com/12345"));
         assertThat(brand.getTitle(), is("name"));
         assertThat(brand.getDescription(), is("plotoutline"));
-        assertThat(brand.getAliases(), hasItems(
+        // TODO new alias
+        assertThat(brand.getAliasUrls(), hasItems(
             "a link", 
             "http://www.awebsite.com", 
             "http://anotherwebsite.com",
@@ -63,11 +64,12 @@ public class FacebookBrandExtractorTest {
 
         Brand brand = extractor.extract(page);
 
-        assertThat(brand.getAliases(), hasItems(
+        // TODO new alias
+        assertThat(brand.getAliasUrls(), hasItems(
             "http://www.channel4.com/programmes/father-ted", 
             "http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewTVShow?id=281913183&uo=6&partnerId=2003"
         ));
-        assertThat(brand.getAliases(), not(hasItems("I-tunes:")));
+        assertThat(brand.getAliasUrls(), not(hasItems("I-tunes:")));
     }
 
     @Test
@@ -77,7 +79,8 @@ public class FacebookBrandExtractorTest {
         page.setWebsite("http://www.FOX.com/glee; http://www.twitter.com/GLEEonFOX; http://www.myspace.com/gleeonfox");
         Brand brand = extractor.extract(page);
         
-        assertThat(brand.getAliases(), hasItems(
+     // TODO new alias
+        assertThat(brand.getAliasUrls(), hasItems(
             "http://www.FOX.com/glee", 
             "http://www.twitter.com/GLEEonFOX",
             "http://www.myspace.com/gleeonfox"

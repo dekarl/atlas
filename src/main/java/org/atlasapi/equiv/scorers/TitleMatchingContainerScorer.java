@@ -11,10 +11,12 @@ import com.google.common.base.Functions;
 
 public class TitleMatchingContainerScorer implements EquivalenceScorer<Container> {
 
-    private ContentTitleScorer<Container> scorer;
+    public static final String NAME = "Title";
+    
+    private final ContentTitleScorer<Container> scorer;
 
     public TitleMatchingContainerScorer() {
-        this.scorer = new ContentTitleScorer<Container>(Functions.<String>identity());
+        this.scorer = new ContentTitleScorer<Container>(NAME, Functions.<String>identity());
     }
     
     @Override

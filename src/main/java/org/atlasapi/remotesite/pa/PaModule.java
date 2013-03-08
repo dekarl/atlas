@@ -7,7 +7,10 @@ import java.util.concurrent.locks.ReentrantReadWriteLock.WriteLock;
 import javax.annotation.PostConstruct;
 
 import org.atlasapi.feeds.upload.persistence.FileUploadResultStore;
+import org.atlasapi.media.channel.ChannelGroupResolver;
+import org.atlasapi.media.channel.ChannelGroupWriter;
 import org.atlasapi.media.channel.ChannelResolver;
+import org.atlasapi.media.channel.ChannelWriter;
 import org.atlasapi.media.entity.Publisher;
 import org.atlasapi.persistence.content.ContentGroupResolver;
 import org.atlasapi.persistence.content.ContentGroupWriter;
@@ -23,6 +26,10 @@ import org.atlasapi.persistence.logging.AdapterLogEntry;
 import org.atlasapi.persistence.logging.AdapterLogEntry.Severity;
 import org.atlasapi.remotesite.channel4.epg.BroadcastTrimmer;
 import org.atlasapi.remotesite.channel4.epg.ScheduleResolverBroadcastTrimmer;
+import org.atlasapi.remotesite.pa.channels.PaChannelDataHandler;
+import org.atlasapi.remotesite.pa.channels.PaChannelGroupsIngester;
+import org.atlasapi.remotesite.pa.channels.PaChannelsIngester;
+import org.atlasapi.remotesite.pa.channels.PaChannelsUpdater;
 import org.atlasapi.remotesite.pa.data.DefaultPaProgrammeDataStore;
 import org.atlasapi.remotesite.pa.data.PaProgrammeDataStore;
 import org.atlasapi.remotesite.pa.features.PaFeaturesUpdater;
@@ -52,6 +59,7 @@ import com.metabroadcast.common.security.UsernameAndPassword;
 public class PaModule {
     private final static RepetitionRule PEOPLE_COMPLETE_INGEST = RepetitionRules.NEVER;
     private final static RepetitionRule PEOPLE_INGEST = RepetitionRules.daily(LocalTime.MIDNIGHT);
+    private final static RepetitionRule CHANNELS_INGEST = RepetitionRules.every(Duration.standardHours(12));
     private final static RepetitionRule FEATURES_INGEST = RepetitionRules.daily(LocalTime.MIDNIGHT);
     private final static RepetitionRule RECENT_FILE_INGEST = RepetitionRules.every(Duration.standardMinutes(10)).withOffset(Duration.standardMinutes(15));
     private final static RepetitionRule RECENT_FILE_DOWNLOAD = RepetitionRules.every(Duration.standardMinutes(10));
@@ -64,11 +72,14 @@ public class PaModule {
     private @Autowired ContentGroupResolver contentGroupResolver;
     private @Autowired PeopleResolver personResolver;
     private @Autowired PersonWriter personWriter;
+    private @Autowired ChannelGroupWriter channelGroupWriter;
+    private @Autowired ChannelGroupResolver channelGroupResolver;
     private @Autowired AdapterLog log;
     private @Autowired ScheduleResolver scheduleResolver;
     private @Autowired ItemsPeopleWriter peopleWriter;
     private @Autowired ScheduleWriter scheduleWriter;
     private @Autowired ChannelResolver channelResolver;
+    private @Autowired ChannelWriter channelWriter;
     private @Autowired FileUploadResultStore fileUploadResultStore;
     private @Autowired DatabasedMongo mongo;
     private final Lock peopleLock = new ReentrantLock();
@@ -86,6 +97,7 @@ public class PaModule {
     public void startBackgroundTasks() {
         scheduler.schedule(paCompletePeopleUpdater().withName("PA Complete People Updater"), PEOPLE_COMPLETE_INGEST);
         scheduler.schedule(paDailyPeopleUpdater().withName("PA People Updater"), PEOPLE_INGEST);
+        scheduler.schedule(paChannelsUpdater().withName("PA Channels Updater"), CHANNELS_INGEST);
         scheduler.schedule(paFeaturesUpdater().withName("PA Features Updater"), FEATURES_INGEST);
         scheduler.schedule(paFileUpdater().withName("PA File Updater"), RECENT_FILE_DOWNLOAD);
         scheduler.schedule(paCompleteUpdater().withName("PA Complete Updater"), COMPLETE_INGEST);
@@ -93,12 +105,20 @@ public class PaModule {
         log.record(new AdapterLogEntry(Severity.INFO).withDescription("PA update scheduled task installed").withSource(PaCompleteUpdater.class));
     }
     
+
     private PaCompletePeopleUpdater paCompletePeopleUpdater() {
         return new PaCompletePeopleUpdater(paProgrammeDataStore(), personResolver, personWriter, peopleLock);
     }
 
     private PaDailyPeopleUpdater paDailyPeopleUpdater() {
         return new PaDailyPeopleUpdater(paProgrammeDataStore(), personResolver, personWriter, fileUploadResultStore, peopleLock);
+
+    @Bean PaChannelsUpdater paChannelsUpdater() {
+        return new PaChannelsUpdater(paProgrammeDataStore(), channelDataHandler());
+    }
+    
+    @Bean PaChannelDataHandler channelDataHandler() {
+        return new PaChannelDataHandler(new PaChannelsIngester(), new PaChannelGroupsIngester(), channelResolver, channelWriter, channelGroupResolver, channelGroupWriter);
     }
 
     @Bean PaFeaturesUpdater paFeaturesUpdater() {

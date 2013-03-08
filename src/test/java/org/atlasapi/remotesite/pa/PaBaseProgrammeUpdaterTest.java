@@ -18,6 +18,7 @@ import org.atlasapi.media.entity.Specialization;
 import org.atlasapi.media.entity.Version;
 import org.atlasapi.persistence.content.ContentResolver;
 import org.atlasapi.persistence.content.ContentWriter;
+import org.atlasapi.persistence.content.EquivalentContentResolver;
 import org.atlasapi.persistence.content.LookupResolvingContentResolver;
 import org.atlasapi.persistence.content.mongo.MongoContentResolver;
 import org.atlasapi.persistence.content.mongo.MongoContentWriter;
@@ -77,7 +78,8 @@ public class PaBaseProgrammeUpdaterTest extends TestCase {
         channelResolver = new DummyChannelResolver();
         contentWriter = new MongoContentWriter(db, lookupStore, clock);
         programmeProcessor = new PaProgrammeProcessor(contentWriter, resolver, channelResolver, new DummyItemsPeopleWriter(), log);
-        scheduleWriter = new MongoScheduleStore(db, resolver, channelResolver);
+        EquivalentContentResolver equivContentResolver = context.mock(EquivalentContentResolver.class);
+        scheduleWriter = new MongoScheduleStore(db, resolver, channelResolver, equivContentResolver);
     }
 
     @Test
@@ -240,6 +242,11 @@ public class PaBaseProgrammeUpdaterTest extends TestCase {
 
         @Override
         public Iterable<Channel> forIds(Iterable<Long> ids) {
+            throw new UnsupportedOperationException();
+        }
+
+        @Override
+        public Maybe<Channel> forAlias(String alias) {
             throw new UnsupportedOperationException();
         }
     	

@@ -111,7 +111,8 @@ public class C4BrandExtractorTest extends TestCase {
 		
 		assertThat(firstItem.getCanonicalUri(), is("http://www.channel4.com/programmes/ramsays-kitchen-nightmares/episode-guide/series-3/episode-1"));
 
-		assertThat(firstItem.getAliases(), is((Set<String>) ImmutableSet.of("http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#2921983", "tag:www.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/episode-guide/series-3/episode-1")));
+		// TODO new alias
+		assertThat(firstItem.getAliasUrls(), is((Set<String>) ImmutableSet.of("http://www.channel4.com/programmes/ramsays-kitchen-nightmares/4od#2921983", "tag:www.channel4.com,2009:/programmes/ramsays-kitchen-nightmares/episode-guide/series-3/episode-1")));
 		
 		assertThat(firstItem.getTitle(), is(("Series 3 Episode 1")));
 		
@@ -143,7 +144,7 @@ public class C4BrandExtractorTest extends TestCase {
 	            assertEquals(1, version.getBroadcasts().size());
 	            for (Broadcast broadcast: version.getBroadcasts()) {
 	                if (broadcast.getBroadcastDuration() == 60*55) {
-	                    assertTrue(broadcast.getAliases().contains("tag:www.channel4.com,2009:slot/E439861"));
+	                    assertTrue(broadcast.getAliasUrls().contains("tag:www.channel4.com,2009:slot/E439861"));
 	                    assertThat(broadcast.getSourceId(), is("e4:39861"));
 	                    assertEquals(new DateTime("2010-08-11T14:06:33.341Z", DateTimeZones.UTC), broadcast.getLastUpdated());
 	                    found = true;
@@ -163,7 +164,8 @@ public class C4BrandExtractorTest extends TestCase {
 	    Version version = new Version();
 	    episode.addVersion(version);
 	    Broadcast oldBroadcast = new Broadcast("some channel", new DateTime(), new DateTime());
-	    oldBroadcast.addAlias("tag:www.channel4.com:someid");
+	    // TODO new alias
+	    oldBroadcast.addAliasUrl("tag:www.channel4.com:someid");
 	    version.addBroadcast(oldBroadcast);
 	    contentResolver.respondTo(episode);
 	    
@@ -179,11 +181,11 @@ public class C4BrandExtractorTest extends TestCase {
                 assertEquals(2, version.getBroadcasts().size());
                 for (Broadcast broadcast: version.getBroadcasts()) {
                     if (broadcast.getBroadcastDuration() == 60*55) {
-                        assertTrue(broadcast.getAliases().contains("tag:www.channel4.com,2009:slot/E439861"));
+                        assertTrue(broadcast.getAliasUrls().contains("tag:www.channel4.com,2009:slot/E439861"));
                         assertThat(broadcast.getSourceId(), is("e4:39861"));
                         assertEquals(new DateTime("2010-08-11T14:06:33.341Z", DateTimeZones.UTC), broadcast.getLastUpdated());
                         found = true;
-                    } else if (broadcast.getAliases().contains("tag:www.channel4.com:someid")) {
+                    } else if (broadcast.getAliasUrls().contains("tag:www.channel4.com:someid")) {
                         foundOld = true;
                     }
                 }

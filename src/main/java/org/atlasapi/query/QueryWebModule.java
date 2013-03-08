@@ -4,7 +4,9 @@ import org.atlasapi.application.query.ApplicationConfigurationFetcher;
 import org.atlasapi.input.DefaultGsonModelReader;
 import org.atlasapi.input.DelegatingModelTransformer;
 import org.atlasapi.input.ItemModelTransformer;
-import org.atlasapi.media.channel.ChannelGroupStore;
+import org.atlasapi.media.channel.Channel;
+import org.atlasapi.media.channel.ChannelGroup;
+import org.atlasapi.media.channel.ChannelGroupResolver;
 import org.atlasapi.media.channel.ChannelResolver;
 import org.atlasapi.media.entity.Broadcast;
 import org.atlasapi.media.entity.Content;
@@ -15,6 +17,7 @@ import org.atlasapi.media.entity.Person;
 import org.atlasapi.media.entity.Schedule.ScheduleChannel;
 import org.atlasapi.media.entity.Topic;
 import org.atlasapi.media.entity.simple.ChannelGroupQueryResult;
+import org.atlasapi.media.entity.simple.ChannelQueryResult;
 import org.atlasapi.media.entity.simple.ContentGroupQueryResult;
 import org.atlasapi.media.entity.simple.ContentQueryResult;
 import org.atlasapi.media.entity.simple.PeopleQueryResult;
@@ -29,6 +32,8 @@ import org.atlasapi.output.DispatchingAtlasModelWriter;
 import org.atlasapi.output.JaxbXmlTranslator;
 import org.atlasapi.output.JsonTranslator;
 import org.atlasapi.output.QueryResult;
+import org.atlasapi.output.SimpleChannelGroupModelWriter;
+import org.atlasapi.output.SimpleChannelModelWriter;
 import org.atlasapi.output.SimpleContentGroupModelWriter;
 import org.atlasapi.output.SimpleContentModelWriter;
 import org.atlasapi.output.SimplePersonModelWriter;
@@ -36,10 +41,19 @@ import org.atlasapi.output.SimpleProductModelWriter;
 import org.atlasapi.output.SimpleScheduleModelWriter;
 import org.atlasapi.output.SimpleTopicModelWriter;
 import org.atlasapi.output.rdf.RdfXmlTranslator;
+import org.atlasapi.output.simple.ChannelGroupModelSimplifier;
+import org.atlasapi.output.simple.ChannelGroupSimplifier;
+import org.atlasapi.output.simple.ChannelModelSimplifier;
+import org.atlasapi.output.simple.ChannelNumberingChannelGroupModelSimplifier;
+import org.atlasapi.output.simple.ChannelNumberingChannelModelSimplifier;
+import org.atlasapi.output.simple.ChannelNumberingsChannelGroupToChannelModelSimplifier;
+import org.atlasapi.output.simple.ChannelNumberingsChannelToChannelGroupModelSimplifier;
+import org.atlasapi.output.simple.ChannelSimplifier;
 import org.atlasapi.output.simple.ContainerModelSimplifier;
 import org.atlasapi.output.simple.ContentGroupModelSimplifier;
 import org.atlasapi.output.simple.ItemModelSimplifier;
 import org.atlasapi.output.simple.ProductModelSimplifier;
+import org.atlasapi.output.simple.PublisherSimplifier;
 import org.atlasapi.output.simple.TopicModelSimplifier;
 import org.atlasapi.persistence.content.ContentGroupResolver;
 import org.atlasapi.persistence.content.ContentGroupWriter;
@@ -67,7 +81,6 @@ import org.atlasapi.query.topic.PublisherFilteringTopicContentLister;
 import org.atlasapi.query.topic.PublisherFilteringTopicResolver;
 import org.atlasapi.query.v2.ChannelController;
 import org.atlasapi.query.v2.ChannelGroupController;
-import org.atlasapi.query.v2.ChannelSimplifier;
 import org.atlasapi.query.v2.ContentGroupController;
 import org.atlasapi.query.v2.ContentWriteController;
 import org.atlasapi.query.v2.PeopleController;
@@ -100,7 +113,7 @@ public class QueryWebModule {
     private @Autowired ContentWriter contentWriter;
     private @Autowired ContentResolver contentResolver;
     private @Autowired ChannelResolver channelResolver;
-    private @Autowired ChannelGroupStore channelGroupResolver;
+    private @Autowired ChannelGroupResolver channelGroupResolver;
     private @Autowired ScheduleResolver scheduleResolver;
     private @Autowired SearchResolver searchResolver;
     private @Autowired PeopleResolver peopleResolver;
@@ -115,18 +128,52 @@ public class QueryWebModule {
     private @Autowired AdapterLog log;
     
     @Bean ChannelController channelController() {
-        return new ChannelController(channelResolver, channelGroupResolver, channelSimplifier(), new SubstitutionTableNumberCodec());
+        return new ChannelController(configFetcher, log, channelModelWriter(), channelResolver, new SubstitutionTableNumberCodec());
     }
 
-    @Bean ChannelSimplifier channelSimplifier() {
-        return new ChannelSimplifier(new SubstitutionTableNumberCodec(), channelResolver, channelGroupResolver);
+    @Bean AtlasModelWriter<Iterable<Channel>> channelModelWriter() {
+        ChannelModelSimplifier channelModelSimplifier = channelModelSimplifier();
+        return this.<Iterable<Channel>>standardWriter(
+            new SimpleChannelModelWriter(new JsonTranslator<ChannelQueryResult>(), channelModelSimplifier),
+            new SimpleChannelModelWriter(new JaxbXmlTranslator<ChannelQueryResult>(), channelModelSimplifier));
     }
+    
+    @Bean ChannelModelSimplifier channelModelSimplifier() {
+        return new ChannelModelSimplifier(channelSimplifier(), new ChannelNumberingsChannelToChannelGroupModelSimplifier(
+            channelGroupResolver, 
+            new ChannelNumberingChannelGroupModelSimplifier(channelGroupSimplifier())));
+    }
+    
+    @Bean ChannelSimplifier channelSimplifier() {
+        return new ChannelSimplifier(new SubstitutionTableNumberCodec(), channelResolver, publisherSimplifier());
+    }
+    
+    @Bean ChannelGroupSimplifier channelGroupSimplifier() {
+        return new ChannelGroupSimplifier(new SubstitutionTableNumberCodec(), channelGroupResolver, publisherSimplifier());
+    }
+
 
     @Bean
     ChannelGroupController channelGroupController() {
         NumberToShortStringCodec idCodec = new SubstitutionTableNumberCodec();
-        return new ChannelGroupController(channelGroupResolver, idCodec, channelSimplifier(), configFetcher, log,
-                standardWriter(new JsonTranslator<ChannelGroupQueryResult>(), new JaxbXmlTranslator<ChannelGroupQueryResult>()));
+        return new ChannelGroupController(configFetcher, log, channelGroupModelWriter(), channelGroupResolver, idCodec);
+    }
+
+    @Bean AtlasModelWriter<Iterable<ChannelGroup>> channelGroupModelWriter() {
+        ChannelGroupModelSimplifier channelGroupModelSimplifier = ChannelGroupModelSimplifier();
+        return this.<Iterable<ChannelGroup>>standardWriter(
+            new SimpleChannelGroupModelWriter(new JsonTranslator<ChannelGroupQueryResult>(), channelGroupModelSimplifier),
+            new SimpleChannelGroupModelWriter(new JaxbXmlTranslator<ChannelGroupQueryResult>(), channelGroupModelSimplifier));
+    }
+
+    @Bean ChannelGroupModelSimplifier ChannelGroupModelSimplifier() {
+        return new ChannelGroupModelSimplifier(channelGroupSimplifier(), new ChannelNumberingsChannelGroupToChannelModelSimplifier(
+            channelResolver,
+            new ChannelNumberingChannelModelSimplifier(channelSimplifier())));
+    }
+    
+    @Bean PublisherSimplifier publisherSimplifier() {
+        return new PublisherSimplifier();
     }
 
     @Bean

@@ -31,7 +31,7 @@ public class EquivalenceResultTranslatorTest extends TestCase {
 
     private final EquivalenceResultTranslator translator = new EquivalenceResultTranslator();
     private final ScoreCombiner<Item> combiner = AddingEquivalenceCombiner.create();
-    private final EquivalenceFilter<Item> filter = new AlwaysTrueFilter<Item>();
+    private final EquivalenceFilter<Item> filter = AlwaysTrueFilter.get();
     private final EquivalenceExtractor<Item> extractor = TopEquivalenceExtractor.create();
     private final EquivalenceResultBuilder<Item> resultBuilder = DefaultEquivalenceResultBuilder.<Item>create(combiner, filter, extractor);
 

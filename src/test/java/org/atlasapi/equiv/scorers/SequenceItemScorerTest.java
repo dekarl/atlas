@@ -16,9 +16,9 @@ import org.junit.Test;
 
 import com.google.common.collect.ImmutableSet;
 
-public class SequenceItemEquivalenceScorerTest {
+public class SequenceItemScorerTest {
 
-    private final SequenceItemEquivalenceScorer scorer = new SequenceItemEquivalenceScorer();
+    private final SequenceItemScorer scorer = new SequenceItemScorer();
     private final ResultDescription desc = new DefaultDescription();
 
     @Test

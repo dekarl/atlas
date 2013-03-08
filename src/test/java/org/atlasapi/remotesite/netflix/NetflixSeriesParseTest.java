@@ -1,14 +1,18 @@
 package org.atlasapi.remotesite.netflix;
 
+import static org.atlasapi.remotesite.netflix.NetflixEpisodeParseTest.extractXmlFromFile;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.is;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertThat;
 
+import java.io.IOException;
 import java.util.Set;
 
-import nu.xom.Builder;
-import nu.xom.Document;
 import nu.xom.Element;
+import nu.xom.ParsingException;
+import nu.xom.ValidityException;
 
 import org.atlasapi.media.entity.Content;
 import org.atlasapi.media.entity.Episode;
@@ -16,31 +20,21 @@ import org.atlasapi.media.entity.Series;
 import org.atlasapi.media.entity.Specialization;
 import org.junit.Test;
 import org.mockito.Mockito;
-import org.springframework.core.io.ClassPathResource;
 
 public class NetflixSeriesParseTest {
+    
+    private final NetflixContentExtractor<Series> seriesExtractor = new NetflixSeriesExtractor();
 
     @SuppressWarnings("unchecked")
     @Test
-    public void testSeriesParsing() {
-        Document netflixData;
-        try {
-            netflixData = new Builder().build(new ClassPathResource("netflix-episode.xml").getInputStream());
-        } catch (Exception e) {
-            fail("Exception " + e + " was thrown while opening the test file");
-            // will never reach here;
-            return;
-        }
-        
-        Element rootElement = netflixData.getRootElement();
+    public void testSeriesParsing() throws ValidityException, ParsingException, IOException {
+        Element element = extractXmlFromFile("netflix-episode.xml");
         
         NetflixContentExtractor<Episode> episodeExtractor = new NetflixEpisodeExtractor();
-        NetflixContentExtractor<Series> seriesExtractor = new NetflixSeriesExtractor();
         NetflixXmlElementContentExtractor extractor = new NetflixXmlElementContentExtractor(Mockito.mock(NetflixContentExtractor.class), Mockito.mock(NetflixContentExtractor.class), episodeExtractor, seriesExtractor);
 
-        assertThat(rootElement.getChildElements().size(), is(1));
         
-        Set<? extends Content> contents = extractor.extract(rootElement.getChildElements().get(0));
+        Set<? extends Content> contents = extractor.extract(element);
         
         assertThat(contents.size(), is(2));
         

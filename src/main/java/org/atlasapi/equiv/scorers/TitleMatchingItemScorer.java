@@ -18,6 +18,8 @@ import com.google.common.collect.Iterables;
 
 public class TitleMatchingItemScorer implements EquivalenceScorer<Item> {
     
+    public static final String NAME = "Title";
+
     public enum TitleType {
         
         DATE("\\d{1,2}/\\d{1,2}/(\\d{2}|\\d{4})"),
@@ -53,7 +55,7 @@ public class TitleMatchingItemScorer implements EquivalenceScorer<Item> {
     
     @Override
     public ScoredCandidates<Item> score(Item subject, Set<? extends Item> suggestions, ResultDescription desc) {
-        Builder<Item> equivalents = DefaultScoredCandidates.fromSource("Title");
+        Builder<Item> equivalents = DefaultScoredCandidates.fromSource(NAME);
         
         if(!Strings.isNullOrEmpty(subject.getTitle())) {
             for (Item suggestion : Iterables.filter(suggestions, Item.class)) {

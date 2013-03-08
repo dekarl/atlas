@@ -159,7 +159,8 @@ public class C4EpisodesExtractor implements ContentExtractor<Feed, List<Episode>
 
 		String fourOdUri = C4AtomApi.fourOdUri(entry);
 		if (fourOdUri != null) {
-			clip.addAlias(fourOdUri);
+		    // TODO new alias
+			clip.addAliasUrl(fourOdUri);
 		}
 
 		clip.setTitle(title(entry));
@@ -202,12 +203,14 @@ public class C4EpisodesExtractor implements ContentExtractor<Feed, List<Episode>
 
 		String fourOdUri = C4AtomApi.fourOdUri(entry);
 		if (fourOdUri != null) {
-			episode.addAlias(fourOdUri);
+		    // TODO new alias
+			episode.addAliasUrl(fourOdUri);
 		}
 		
 		
 		if (C4AtomApi.isAnEpisodeId(entry.getId())) {
-			episode.addAlias(entry.getId());
+		    // TODO new alias
+			episode.addAliasUrl(entry.getId());
 		}
 
 		episode.setTitle(title(entry));
