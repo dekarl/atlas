@@ -59,6 +59,7 @@ import org.atlasapi.persistence.content.ContentGroupResolver;
 import org.atlasapi.persistence.content.ContentGroupWriter;
 import org.atlasapi.persistence.content.ContentResolver;
 import org.atlasapi.persistence.content.ContentWriter;
+import org.atlasapi.persistence.content.PeopleQueryResolver;
 import org.atlasapi.persistence.content.PeopleResolver;
 import org.atlasapi.persistence.content.ScheduleResolver;
 import org.atlasapi.persistence.content.SearchResolver;
@@ -122,6 +123,7 @@ public class QueryWebModule {
     private @Autowired TopicContentLister topicContentLister;
     private @Autowired SegmentResolver segmentResolver;
     private @Autowired ProductResolver productResolver;
+    private @Autowired PeopleQueryResolver peopleQueryResolver;
 
     private @Autowired KnownTypeQueryExecutor queryExecutor;
     private @Autowired ApplicationConfigurationFetcher configFetcher;
@@ -205,7 +207,7 @@ public class QueryWebModule {
 
     @Bean
     PeopleController peopleController() {
-        return new PeopleController(peopleResolver, configFetcher, log, personModelOutputter());
+        return new PeopleController(peopleQueryResolver, configFetcher, log, personModelOutputter());
     }
 
     @Bean

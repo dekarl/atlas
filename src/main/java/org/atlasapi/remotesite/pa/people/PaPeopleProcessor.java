@@ -1,5 +1,6 @@
 package org.atlasapi.remotesite.pa.people;
 
+import org.atlasapi.media.entity.LookupRef;
 import org.atlasapi.media.entity.Person;
 import org.atlasapi.media.entity.Publisher;
 import org.atlasapi.persistence.content.PeopleResolver;
@@ -8,11 +9,13 @@ import org.atlasapi.remotesite.pa.profiles.bindings.Name;
 import org.joda.time.format.DateTimeFormatter;
 import org.joda.time.format.ISODateTimeFormat;
 
-import com.metabroadcast.common.base.Maybe;
+import com.google.common.base.Optional;
+import com.google.common.collect.ImmutableSet;
 
 public class PaPeopleProcessor {
 
     public static final String PERSON_URI_PREFIX = "http://people.atlasapi.org/people.pressassociation.com/";
+    private static final String PA_PERSON_URI_PREFIX = "http://people.atlasapi.org/pressassociation.com/";
     
     private final PeopleResolver personResolver;
     private final PersonWriter personWriter;
@@ -25,12 +28,12 @@ public class PaPeopleProcessor {
     
     public void process(org.atlasapi.remotesite.pa.profiles.bindings.Person paPerson) {
         Person person = ingestPerson(paPerson);
-        Maybe<Person> existing = personResolver.person(person.getCanonicalUri());
-        if (!existing.hasValue()) {
+        Optional<Person> existing = personResolver.person(person.getCanonicalUri());
+        if (!existing.isPresent()) {
             personWriter.createOrUpdatePerson(person);
         } else {
-            merge(existing.requireValue(), person);
-            personWriter.createOrUpdatePerson(existing.requireValue());
+            merge(existing.get(), person);
+            personWriter.createOrUpdatePerson(existing.get());
         }
     }
     
@@ -46,7 +49,7 @@ public class PaPeopleProcessor {
         existing.setPublisher(Publisher.PA_PEOPLE);
     }
 
-    Person ingestPerson(org.atlasapi.remotesite.pa.profiles.bindings.Person paPerson) {
+    private Person ingestPerson(org.atlasapi.remotesite.pa.profiles.bindings.Person paPerson) {
         Person person = new Person();
         person.setCanonicalUri(PERSON_URI_PREFIX + paPerson.getId());
         Name name = paPerson.getName();
@@ -63,6 +66,24 @@ public class PaPeopleProcessor {
         person.setDescription(paPerson.getEarlyLife() + "\n\n" + paPerson.getCareer());
         person.addQuote(paPerson.getQuote());
         person.setPublisher(Publisher.PA_PEOPLE);
+        
+        setDirectEquivalentToPAPerson(person, paPerson.getId());
         return person;
+    }
+    
+    /**
+     * PA People are ingested separately from PA biogs people. Therefore
+     * we set a direct equivalence on the PA person if they exist. In the 
+     * future this will change to an equivalence job so the equivalence
+     * will be asserted at a later stage even if the PA person doesn't
+     * exist at the time when the PA biog person is ingested.
+     * 
+     * @param person
+     */
+    private void setDirectEquivalentToPAPerson(Person person, String id) {
+        Optional<Person> paPerson = personResolver.person(PA_PERSON_URI_PREFIX + id);
+        if(paPerson.isPresent()) {
+            person.setEquivalentTo(ImmutableSet.of(LookupRef.from(paPerson.get())));
+        }
     }
 }
