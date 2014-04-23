@@ -38,6 +38,7 @@ import com.metabroadcast.common.scheduling.UpdateProgress;
 
 public class PicksDayUpdater implements ChannelDayProcessor {
 
+    private static final int MAX_CONTENT_GROUP_SIZE = 10000;
     private static final int LARGE_BRAND_SIZE = 1000;
     private static final Duration SHORT_BROADCAST_LENGTH = Duration.standardMinutes(10);
     
@@ -106,7 +107,9 @@ public class PicksDayUpdater implements ChannelDayProcessor {
     private void addPicksToContentGroup(Iterable<Item> items) {
         ContentGroup contentGroup = resolveOrCreateContentGroup();
         Iterable<ChildRef> childRefs = transform(items, Item.TO_CHILD_REF);
+        pruneContents(contentGroup);
         for (ChildRef childRef : childRefs) {
+            
             if (!contentGroup.getContents().contains(childRef)) {
                 contentGroup.addContent(childRef);
             }
@@ -114,6 +117,15 @@ public class PicksDayUpdater implements ChannelDayProcessor {
         contentGroupWriter.createOrUpdate(contentGroup);
     }
     
+    // The picks should be kept to a finite size, else we'll hit document size limits in mongo
+    private void pruneContents(ContentGroup contentGroup) {
+        ImmutableList<ChildRef> contents = contentGroup.getContents();
+        int size = contentGroup.getContents().size();
+        if (size > MAX_CONTENT_GROUP_SIZE) {
+            contentGroup.setContents(Iterables.skip(contents, size - MAX_CONTENT_GROUP_SIZE));
+        }
+    }
+
     private ContentGroup resolveOrCreateContentGroup() {
         ResolvedContent contentGroup = contentGroupResolver.findByCanonicalUris(ImmutableSet.of(CONTENT_GROUP));
         Maybe<Identified> first = contentGroup.getFirstValue();

@@ -21,6 +21,7 @@ import org.junit.Test;
 import org.mockito.Mockito;
 
 import com.metabroadcast.common.ids.NumberToShortStringCodec;
+import com.metabroadcast.common.ids.SubstitutionTableNumberCodec;
 
 
 public class ContentModelSimplifierTest {
@@ -51,7 +52,7 @@ public class ContentModelSimplifierTest {
         Mockito.mock(ContainerSummaryResolver.class), 
         Mockito.mock(ChannelResolver.class), 
         Mockito.mock(NumberToShortStringCodec.class), 
-        Mockito.mock(NumberToShortStringCodec.class), 
+        new SubstitutionTableNumberCodec(), 
         Mockito.mock(ImageSimplifier.class),
         Mockito.mock(PeopleQueryResolver.class),
         Mockito.mock(UpcomingItemsResolver.class),

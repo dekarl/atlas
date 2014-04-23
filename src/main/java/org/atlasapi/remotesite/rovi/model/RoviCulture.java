@@ -22,11 +22,11 @@ public class RoviCulture {
         cultureToLocale.put("Croatian_Generic", new Locale("hr"));
         cultureToLocale.put("Danish Generic", new Locale("da"));
         cultureToLocale.put("Dutch Generic", new Locale("nl"));
-        cultureToLocale.put("English - NA", new Locale("en", "GB"));
-        cultureToLocale.put("English - UK", new Locale("en", "US"));
+        cultureToLocale.put("English - NA", new Locale("en", "US"));
+        cultureToLocale.put("English - UK", new Locale("en", "GB"));
         cultureToLocale.put("Finnish Generic", new Locale("fi"));
-        cultureToLocale.put("French - Québec", new Locale("fr", "FR"));
-        cultureToLocale.put("French Generic", new Locale("fr", "CA"));
+        cultureToLocale.put("French - Québec", new Locale("fr", "CA"));
+        cultureToLocale.put("French Generic", new Locale("fr", "FR"));
         cultureToLocale.put("Gallegan Generic", new Locale("gl"));
         cultureToLocale.put("German Generic", new Locale("de"));
         cultureToLocale.put("Greek Generic", new Locale("el"));

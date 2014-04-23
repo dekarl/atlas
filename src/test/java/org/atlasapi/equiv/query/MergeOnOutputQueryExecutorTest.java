@@ -124,6 +124,12 @@ public class MergeOnOutputQueryExecutorTest extends TestCase {
                     ContentQuery query) {
                 return ImmutableMap.<String, List<Identified>>of(respondWith[0].getCanonicalUri(), ImmutableList.<Identified>copyOf(respondWith));
             }
+
+            @Override
+            public Map<String, List<Identified>> executePublisherQuery(
+                    Iterable<Publisher> publishers, ContentQuery query) {
+                throw new UnsupportedOperationException();
+            }
 		};
 	}
 }

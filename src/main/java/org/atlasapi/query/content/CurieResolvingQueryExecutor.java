@@ -5,6 +5,7 @@ import java.util.Map;
 
 import org.atlasapi.content.criteria.ContentQuery;
 import org.atlasapi.media.entity.Identified;
+import org.atlasapi.media.entity.Publisher;
 import org.atlasapi.persistence.content.query.KnownTypeQueryExecutor;
 
 import com.google.common.base.Optional;
@@ -39,6 +40,12 @@ public class CurieResolvingQueryExecutor implements KnownTypeQueryExecutor {
             ContentQuery query) {
         return delegate.executeAliasQuery(namespace, values, query);
     }
+    
+    @Override
+    public Map<String, List<Identified>> executePublisherQuery(Iterable<Publisher> publishers,
+            ContentQuery query) {
+        return delegate.executePublisherQuery(publishers, query);
+    }
 	
 	private List<String> resolve(Iterable<String> ids) {
 		List<String> resolved = Lists.newArrayList(); 
@@ -52,4 +59,6 @@ public class CurieResolvingQueryExecutor implements KnownTypeQueryExecutor {
 		}
 		return resolved;
 	}
+
+    
 }

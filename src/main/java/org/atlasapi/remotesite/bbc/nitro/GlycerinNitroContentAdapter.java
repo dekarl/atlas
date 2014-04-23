@@ -6,6 +6,8 @@ import static com.metabroadcast.atlas.glycerin.queries.ProgrammesMixin.TITLES;
 
 import java.util.List;
 
+import javax.annotation.Nullable;
+
 import org.atlasapi.media.entity.Brand;
 import org.atlasapi.media.entity.Clip;
 import org.atlasapi.media.entity.Item;
@@ -18,10 +20,13 @@ import org.atlasapi.remotesite.bbc.nitro.extract.NitroUtil;
 import org.atlasapi.remotesite.bbc.nitro.v1.NitroClient;
 import org.atlasapi.remotesite.bbc.nitro.v1.NitroFormat;
 import org.atlasapi.remotesite.bbc.nitro.v1.NitroGenreGroup;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.google.common.base.Function;
 import com.google.common.base.Predicates;
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableListMultimap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.ListMultimap;
@@ -46,6 +51,8 @@ import com.metabroadcast.common.time.Clock;
  */
 public class GlycerinNitroContentAdapter implements NitroContentAdapter {
 
+    private static final Logger log = LoggerFactory.getLogger(GlycerinNitroContentAdapter.class);
+    
     private final Glycerin glycerin;
     private final GlycerinNitroClipsAdapter clipsAdapter;
     private final NitroClient nitroClient;
@@ -125,6 +132,19 @@ public class GlycerinNitroContentAdapter implements NitroContentAdapter {
         try {
             checkRefType(refs, "episode");
             ImmutableList<Programme> programmes = fetchProgrammes(refs);
+            
+            if (programmes.isEmpty()) {
+                log.warn("No programmes found for refs {}", Iterables.transform(refs, new Function<PidReference, String>() {
+
+                    @Override
+                    public String apply(@Nullable PidReference pidRef) {
+                        return pidRef.getPid();
+                    }
+                    
+                }));
+                return ImmutableSet.of();
+            }
+            
             ImmutableList<Episode> episodes = getAsEpisodes(programmes);
             ImmutableList<NitroItemSource<Episode>> sources = toItemSources(episodes);
             Multimap<String, Clip> clips = clipsAdapter.clipsFor(refs);
@@ -219,6 +239,10 @@ public class GlycerinNitroContentAdapter implements NitroContentAdapter {
     }
 
     private ListMultimap<String, Availability> availabilities(ImmutableList<Episode> episodes) throws GlycerinException {
+        if (episodes.isEmpty()) {
+            return ImmutableListMultimap.of();
+        }
+        
         AvailabilityQuery query = AvailabilityQuery.builder()
                 .withDescendantsOf(toPids(episodes))
                 .withPageSize(pageSize)

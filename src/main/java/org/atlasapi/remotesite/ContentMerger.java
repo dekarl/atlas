@@ -21,12 +21,22 @@ public class ContentMerger {
         current = mergeVersions(current, extracted);
         current = mergeContents(current, extracted);
         
-        current.setParentRef(extracted.getContainer());
+        if ( current.getContainer() == null 
+                || extracted.getContainer() == null
+                || !current.getContainer().getUri().equals(extracted.getContainer().getUri())) {            
+            current.setParentRef(extracted.getContainer());
+        }
+        
         if (current instanceof Episode && extracted instanceof Episode) {
             Episode currentEp = (Episode) current;
             Episode extractedEp = (Episode) extracted;
             currentEp.setEpisodeNumber(extractedEp.getEpisodeNumber());
-            currentEp.setSeriesRef(extractedEp.getSeriesRef());
+            
+            if ( currentEp.getSeriesRef() == null 
+                    || extractedEp.getSeriesRef() == null
+                    || !currentEp.getSeriesRef().getUri().equals(extractedEp.getSeriesRef().getUri())) {
+                currentEp.setSeriesRef(extractedEp.getSeriesRef());                
+            }
         }
         
         if (current instanceof Film && extracted instanceof Film) {

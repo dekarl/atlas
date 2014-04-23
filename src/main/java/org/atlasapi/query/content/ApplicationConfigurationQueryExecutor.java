@@ -46,6 +46,12 @@ public class ApplicationConfigurationQueryExecutor implements KnownTypeQueryExec
             ContentQuery query) {
         return delegate.executeAliasQuery(namespace, values, queryForContent(query));
     }
+    
+    @Override
+    public Map<String, List<Identified>> executePublisherQuery(Iterable<Publisher> publishers,
+            ContentQuery query) {
+        return delegate.executePublisherQuery(publishers, queryForContent(query));
+    }
 	
 	private ContentQuery queryForContent(ContentQuery query) {
 		Iterable<AtomicQuery> softs = ImmutableList.of(/*(AtomicQuery)
@@ -74,4 +80,5 @@ public class ApplicationConfigurationQueryExecutor implements KnownTypeQueryExec
 		
 		return attr.createQuery(Operators.EQUALS, values);
 	}
+
 }

@@ -15,7 +15,10 @@ import org.atlasapi.remotesite.redux.model.PaginatedBaseProgrammes;
 import org.atlasapi.remotesite.redux.model.ReduxMedia;
 import org.joda.time.LocalDate;
 import org.joda.time.format.ISODateTimeFormat;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
+import com.google.common.base.Joiner;
 import com.google.common.cache.CacheBuilder;
 import com.google.common.cache.CacheLoader;
 import com.google.common.cache.LoadingCache;
@@ -38,10 +41,13 @@ import com.metabroadcast.common.security.UsernameAndPassword;
 
 public class HttpBackedReduxClient implements ReduxClient {
 
+    private final Logger log = LoggerFactory.getLogger(HttpBackedReduxClient.class);
+    
     private static final String MEDIA_TYPE_TV = "tv";
     private static final String MEDIA_TYPE_RADIO = "radio";
     private static final int MEDIA_MAP_CACHE_TIMEOUT_HOURS = 13;
-
+    private static final Joiner CHANNEL_JOINER = Joiner.on(";channel=").skipNulls();
+    
     public static final Builder reduxClientForHost(HostSpecifier host) {
         return new Builder(host);
     }
@@ -145,4 +151,11 @@ public class HttpBackedReduxClient implements ReduxClient {
         return getAsType(selection.appendToUrl(requestBase + "latest"), TypeToken.get(PaginatedBaseProgrammes.class));
     }
     
+    @Override
+    public PaginatedBaseProgrammes latest(Selection selection, Iterable<String> channels) throws HttpException, Exception {
+        String uri = selection.appendToUrl(requestBase + "latest?channel=" + CHANNEL_JOINER.join(channels));
+        log.trace("Redux request URI: {}", uri);
+        return getAsType(uri, TypeToken.get(PaginatedBaseProgrammes.class));
+    }
+
 }

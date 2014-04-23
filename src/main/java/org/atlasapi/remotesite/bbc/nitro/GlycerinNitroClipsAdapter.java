@@ -4,15 +4,20 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 import java.util.List;
 
+import javax.annotation.Nullable;
+
 import org.atlasapi.remotesite.bbc.BbcFeeds;
 import org.atlasapi.remotesite.bbc.nitro.extract.NitroClipExtractor;
 import org.atlasapi.remotesite.bbc.nitro.extract.NitroItemSource;
 import org.atlasapi.remotesite.bbc.nitro.extract.NitroUtil;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.google.common.base.Function;
 import com.google.common.base.Predicate;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableListMultimap;
+import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.ListMultimap;
 import com.google.common.collect.Lists;
@@ -36,6 +41,8 @@ import com.metabroadcast.common.time.Clock;
  */
 public class GlycerinNitroClipsAdapter {
 
+    private static final Logger log = LoggerFactory.getLogger(GlycerinNitroClipsAdapter.class);
+    
     private static final int BATCH_SIZE = 100;
     
     private static final Predicate<Programme> isClip
@@ -65,8 +72,25 @@ public class GlycerinNitroClipsAdapter {
     
     public Multimap<String, org.atlasapi.media.entity.Clip> clipsFor(Iterable<PidReference> refs) throws NitroException {
         try {
+            if (Iterables.isEmpty(refs)) {
+                return ImmutableMultimap.of();
+            }
+            
             Iterable<com.metabroadcast.atlas.glycerin.model.Clip> nitroClips
                 = Iterables.transform(Iterables.filter(getNitroClips(refs), isClip), toClip);
+            
+            if (Iterables.isEmpty(nitroClips)) {
+                log.warn("No programmes found for clipRefs {}", Iterables.transform(refs, new Function<PidReference, String>() {
+
+                    @Override
+                    public String apply(@Nullable PidReference pidRef) {
+                        return pidRef.getPid();
+                    }
+                    
+                }));
+                return ImmutableMultimap.of();
+            }
+            
             Iterable<List<Clip>> clipParts = Iterables.partition(nitroClips, BATCH_SIZE);
             ImmutableListMultimap.Builder<String, org.atlasapi.media.entity.Clip> clips
                 = ImmutableListMultimap.builder();
@@ -93,6 +117,10 @@ public class GlycerinNitroClipsAdapter {
     }
 
     private ListMultimap<String, Availability> getNitroAvailabilities(List<Clip> clipPart) throws GlycerinException {
+        if (clipPart.isEmpty()) {
+            return ImmutableListMultimap.of();
+        }
+        
         AvailabilityQuery query = AvailabilityQuery.builder()
                 .withDescendantsOf(toPid(clipPart))
                 .withPageSize(pageSize)

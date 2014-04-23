@@ -9,6 +9,7 @@ import nu.xom.Element;
 import nu.xom.Elements;
 
 import org.atlasapi.media.entity.Actor;
+import org.atlasapi.media.entity.Alias;
 import org.atlasapi.media.entity.Certificate;
 import org.atlasapi.media.entity.CrewMember;
 import org.atlasapi.media.entity.CrewMember.Role;
@@ -48,6 +49,7 @@ import com.metabroadcast.common.text.MoreStrings;
 public class RtFilmProcessor {
     
     private static final String RT_FILM_URI_BASE = "http://radiotimes.com/films/";
+    private static final String RT_FILM_ALIAS = "rt:filmid";
     
     private final ContentResolver contentResolver;
     private final ContentWriter contentWriter;
@@ -86,6 +88,7 @@ public class RtFilmProcessor {
             // TODO new alias
             film.addAliasUrl(normalize(imdbElem.getValue()));
         }
+        film.setAliases(ImmutableSet.of(new Alias(RT_FILM_ALIAS, id)));
 
         film.setSpecialization(Specialization.FILM);
         film.setTitle(filmElement.getFirstChildElement("title").getValue());
@@ -94,11 +97,11 @@ public class RtFilmProcessor {
             film.setYear(Integer.parseInt(year));
         }
 
-        Version version = getVersion(film);
-        if (version == null) {
-            version = new Version();
-            film.addVersion(version);
-        }
+        Version version = Iterables.getFirst(film.getVersions(), new Version());
+        
+        // Due to a bug we were creating multiple versions; setting explicitly here to a single
+        // version to remove the erroneous ones;
+        film.setVersions(ImmutableSet.of(version));
         
         version.setProvider(Publisher.RADIO_TIMES);
         Element certificateElement = filmElement.getFirstChildElement("certificate");
@@ -214,15 +217,6 @@ public class RtFilmProcessor {
 
     public boolean hasValue(Element subtitlesElement) {
         return subtitlesElement != null && !Strings.isNullOrEmpty(subtitlesElement.getValue());
-    }
-
-    private Version getVersion(Item item) {
-        for (Version version : item.getVersions()) {
-            if (version.getProvider() == Publisher.PA) {
-                return version;
-            }
-        }
-        return null;
     }
     
     private String normalize(String imdbRef) {

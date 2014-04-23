@@ -1,6 +1,8 @@
 package org.atlasapi.output.simple;
 
 import java.math.BigInteger;
+import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Set;
 
 import javax.annotation.Nullable;
@@ -42,10 +44,12 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.google.common.base.Function;
+import com.google.common.base.Optional;
 import com.google.common.base.Predicate;
 import com.google.common.base.Predicates;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.ImmutableSet.Builder;
+import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Ordering;
 import com.metabroadcast.common.base.Maybe;
@@ -58,6 +62,22 @@ import com.metabroadcast.common.time.SystemClock;
 public class ItemModelSimplifier extends ContentModelSimplifier<Item, org.atlasapi.media.entity.simple.Item> {
 
     private static final Logger log = LoggerFactory.getLogger(ItemModelSimplifier.class);
+
+    // Parent channels don't have images currently, so we override the images for them
+    // from chosen child channels. This map is from parent channel -> child channel
+    // where the child channel's images are provided.
+    
+    // For ease of maintenance, we keep the map as strings, then map to Long ids at runtime
+    private static final Map<String, String> CHANNEL_IMAGE_OVERRIDES = ImmutableMap.<String, String>builder()
+                                                                               .put("cbPF", "cbbh") // BBC One
+                                                                               .put("cbRD", "cbbG") // BBC Two
+                                                                               .put("cbSM", "cbdw") // ITV1
+                                                                               .put("cbPG", "cbdj") // Channel4
+                                                                               .put("cbSR", "cbns") // Sky Atlantic
+                                                                               .put("cbPK", "cbdq") // Channel 5
+                                                                               .put("cbPW", "cbhf") // Sky 1 
+                                                                               .put("cbRT", "cbny") // Sky living
+                                                                               .build();
     
     private final NumberToShortStringCodec idCodec;
     private final ContainerSummaryResolver containerSummaryResolver;
@@ -66,6 +86,7 @@ public class ItemModelSimplifier extends ContentModelSimplifier<Item, org.atlasa
     private final SegmentModelSimplifier segmentSimplifier;
     private final NumberToShortStringCodec channelIdCodec;
     private final ImageSimplifier imageSimplifier;
+    private final Map<Long, Long> channelImageOverrides;
     
     public ItemModelSimplifier(String localHostName, ContentGroupResolver contentGroupResolver, 
             TopicQueryResolver topicResolver, ProductResolver productResolver, SegmentResolver segmentResolver, 
@@ -95,6 +116,12 @@ public class ItemModelSimplifier extends ContentModelSimplifier<Item, org.atlasa
         this.channelResolver = channelResolver;
         this.idCodec = idCodec;
         this.channelIdCodec = channelIdCodec;
+        ImmutableMap.Builder<Long, Long> builder = ImmutableMap.builder();
+        
+        for (Entry<String, String> entry : CHANNEL_IMAGE_OVERRIDES.entrySet()) {
+            builder.put(channelIdCodec.decode(entry.getKey()).longValue(), channelIdCodec.decode(entry.getValue()).longValue());
+        }
+        this.channelImageOverrides = builder.build();
     }
 
     @Override
@@ -273,7 +300,8 @@ public class ItemModelSimplifier extends ContentModelSimplifier<Item, org.atlasa
         simpleModel.setAliases(broadcast.getAliasUrls());
         Maybe<org.atlasapi.media.channel.Channel> channel = channelResolver.fromUri(broadcast.getBroadcastOn());
         if (channel.hasValue()) {
-            simpleModel.setChannel(simplify(channel.requireValue(), annotations));
+            simpleModel.setChannel(simplify(channel.requireValue(), annotations, 
+                    Optional.<Image>absent(), Optional.<Set<Image>>absent()));
         } else {
             log.error("Could not resolve channel " + broadcast.getBroadcastOn());
         }
@@ -281,22 +309,27 @@ public class ItemModelSimplifier extends ContentModelSimplifier<Item, org.atlasa
         return simpleModel;
     }
     
-    private Channel simplify(org.atlasapi.media.channel.Channel channel, Set<Annotation> annotations) {
+    private Channel simplify(org.atlasapi.media.channel.Channel channel, Set<Annotation> annotations, 
+            Optional<Image> overrideImage, Optional<Set<Image>> overrideChannelImages) {
         Channel simpleChannel = new Channel();
         simpleChannel.setId(channelIdCodec.encode(BigInteger.valueOf(channel.getId())));
         if(annotations.contains(Annotation.CHANNEL_SUMMARY)) {
             simpleChannel.setTitle(channel.getTitle());
-            Image image = channel.getImage();
-            if (image != null) {
-                simpleChannel.setImage(image.getCanonicalUri());
+            
+            if (overrideImage.isPresent()) {
+                simpleChannel.setImage(overrideImage.get().getCanonicalUri());
+            } else if (channel.getImage() != null) {
+                simpleChannel.setImage(channel.getImage().getCanonicalUri());
             }
+            
             simpleChannel.setHighDefinition(channel.getHighDefinition());
             simpleChannel.setRegional(channel.getRegional());
             if (channel.getTimeshift() != null) {
                 simpleChannel.setTimeshift(channel.getTimeshift().getStandardSeconds());
             }
+            Set<Image> channelImages = overrideChannelImages.or(channel.getImages());
             simpleChannel.setImages(Iterables.transform(
-                channel.getImages(), 
+                channelImages, 
                 new Function<Image, org.atlasapi.media.entity.simple.Image>() {
                     @Override
                     public org.atlasapi.media.entity.simple.Image apply(Image input) {
@@ -304,8 +337,36 @@ public class ItemModelSimplifier extends ContentModelSimplifier<Item, org.atlasa
                     }
                 }
             ));
+            simpleChannel.setParent(simplifyParentChannel(channel.getParent(), annotations));
         }
         return simpleChannel;
+    }
+
+    private Channel simplifyParentChannel(Long parent, Set<Annotation> annotations) {
+        if (parent == null) {
+            return null;
+        }
+        Maybe<org.atlasapi.media.channel.Channel> possibleChannel = channelResolver.fromId(parent);
+        if (!possibleChannel.hasValue()) {
+            return null;
+        }
+        org.atlasapi.media.channel.Channel channel = possibleChannel.requireValue();
+        if (parent.equals(channel.getParent())) {
+            // avoid an infinite loop. Something's wrong here, let's just give up.
+            return null;
+        }
+        // Channel image overrides are to tide us over until we get images from source on
+        // parent channels (a.k.a. stations).
+        Long overrideChannel = channelImageOverrides.get(channel.getId());
+        if (overrideChannel != null) {
+            Maybe<org.atlasapi.media.channel.Channel> channelForImages = channelResolver.fromId(overrideChannel);
+            if (channelForImages.hasValue()) {
+                return simplify(channel, annotations,
+                        Optional.of(channelForImages.requireValue().getImage()), 
+                        Optional.of(channelForImages.requireValue().getImages()));
+            }
+        }
+        return simplify(channel, annotations, Optional.<Image>absent(), Optional.<Set<Image>>absent());
     }
 
     private void copyProperties(Version version, org.atlasapi.media.entity.simple.Version simpleLocation, org.atlasapi.media.entity.Item item) {

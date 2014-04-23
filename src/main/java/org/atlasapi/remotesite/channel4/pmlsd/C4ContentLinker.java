@@ -105,8 +105,13 @@ class C4ContentLinker {
 
         for (Clip clip : clips) {
             Episode episode = findEpisode(lookup, clip);
-
             if (episode != null) {
+                // This is a temporary container of the series/episode number until we have
+                // episode IDs in the clip API.
+                // 
+                // The clipOf field should be unset, since it's not actually a reference to
+                // another item
+                clip.setClipOf(null);
                 episode.addClip(clip);
             } else {
                 brand.addClip(clip);
@@ -119,13 +124,7 @@ class C4ContentLinker {
     public static final Pattern SERIES_AND_EPISODE_NUMBER_IN_ANY_URI = Pattern.compile("series-(\\d+)/episode-(\\d+)");
     
     private Episode findEpisode(Map<String, Episode> lookup, Clip clip) {
-        Matcher matcher = SERIES_AND_EPISODE_NUMBER_IN_ANY_URI.matcher(clip.getCanonicalUri());
-        if (matcher.find()) {
-            Integer series = Integer.valueOf(matcher.group(1));
-            Integer episodeNumber = Integer.valueOf(matcher.group(2));
-            return lookup.get(concatSeriesAndEpNum(series, episodeNumber));
-        }
-        return null;
+        return lookup.get(clip.getClipOf());
     }
 
     private Map<String, Episode> toEpisodeLookup(Iterable<Episode> contents) {

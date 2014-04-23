@@ -17,6 +17,7 @@ import static org.hamcrest.Matchers.lessThan;
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.greaterThan;
 
+import com.google.common.collect.ImmutableSet;
 import com.google.common.net.HostSpecifier;
 import com.metabroadcast.common.http.HttpException;
 import com.metabroadcast.common.query.Selection;
@@ -43,6 +44,17 @@ public class ReduxClientTest {
 		assertNotNull(programme.getDiskref());
 		assertNotNull(programme.getTitle());
 	}
+	
+	@Test
+    public void testCanGetLatestForChannel() throws HttpException, Exception {
+        PaginatedBaseProgrammes pbp = reduxClient.latest(Selection.ALL, ImmutableSet.of("bbcone"));
+        int first = pbp.getFirst();
+        int last = pbp.getLast();
+        assertThat(first, lessThan(last));
+        BaseReduxProgramme programme = pbp.getResults().get(0);
+        assertNotNull(programme.getDiskref());
+        assertNotNull(programme.getTitle());
+    }
 
 	@Test
 	public void testCanGetProgramme() throws HttpException, Exception {

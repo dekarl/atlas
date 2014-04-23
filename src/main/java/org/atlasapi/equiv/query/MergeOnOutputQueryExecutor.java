@@ -8,6 +8,7 @@ import org.atlasapi.content.criteria.ContentQuery;
 import org.atlasapi.equiv.OutputContentMerger;
 import org.atlasapi.media.entity.Content;
 import org.atlasapi.media.entity.Identified;
+import org.atlasapi.media.entity.Publisher;
 import org.atlasapi.persistence.content.query.KnownTypeQueryExecutor;
 
 import com.google.common.base.Function;
@@ -42,6 +43,12 @@ public class MergeOnOutputQueryExecutor implements KnownTypeQueryExecutor {
             ContentQuery query) {
         return mergeResults(query, delegate.executeAliasQuery(namespace, values, query));
     }
+    
+    @Override
+    public Map<String, List<Identified>> executePublisherQuery(Iterable<Publisher> publishers,
+            ContentQuery query) {
+        return mergeResults(query, delegate.executePublisherQuery(publishers, query));
+    }
 
     private Map<String, List<Identified>> mergeResults(final ContentQuery query, Map<String, List<Identified>> unmergedResult) {
         final ApplicationConfiguration config = query.getConfiguration();
@@ -68,4 +75,5 @@ public class MergeOnOutputQueryExecutor implements KnownTypeQueryExecutor {
             }
         });
     }
+
 }

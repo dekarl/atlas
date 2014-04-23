@@ -17,5 +17,7 @@ public interface ReduxClient {
     FullReduxProgramme programmeFor(String diskRef) throws HttpException, Exception;
     
     PaginatedBaseProgrammes latest(Selection selection) throws HttpException, Exception;
+
+    PaginatedBaseProgrammes latest(Selection selection, Iterable<String> channels) throws HttpException, Exception;
     
 }

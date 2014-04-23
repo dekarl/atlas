@@ -17,6 +17,7 @@ import org.atlasapi.media.entity.simple.Image;
 import org.atlasapi.media.entity.simple.LocalizedDescription;
 import org.atlasapi.media.entity.simple.LocalizedTitle;
 import org.atlasapi.media.entity.simple.RelatedLink;
+import org.atlasapi.media.entity.simple.Review;
 import org.atlasapi.media.entity.simple.SameAs;
 import org.atlasapi.output.Annotation;
 import org.slf4j.Logger;
@@ -35,6 +36,7 @@ public abstract class DescribedModelSimplifier<F extends Described, T extends De
     private final ImageSimplifier imageSimplifier;
     private final DescriptionWatermarker descriptionWatermarker;
     private final DescribedImageExtractor imageExtractor = new DescribedImageExtractor();
+    private final PublisherSimplifier publisherSimplifier = new PublisherSimplifier();
     
     protected DescribedModelSimplifier(ImageSimplifier imageSimplifier) {
         this.imageSimplifier = imageSimplifier;
@@ -90,6 +92,9 @@ public abstract class DescribedModelSimplifier<F extends Described, T extends De
         if (annotations.contains(Annotation.RELATED_LINKS)) {
             simpleDescription.setRelatedLinks(simplifyRelatedLinks(content));
         }
+        if (annotations.contains(Annotation.REVIEWS)) {
+            simpleDescription.setReviews(simplifyReviews(content));
+        }
     }
 
     private String applyWatermark(F described, String description) {
@@ -144,6 +149,25 @@ public abstract class DescribedModelSimplifier<F extends Described, T extends De
         });
     }
     
+    private Iterable<Review> simplifyReviews(final F content) {
+        return Iterables.transform(content.getReviews(), new Function<org.atlasapi.media.entity.Review, Review>() {
+
+            @Override
+            public Review apply(org.atlasapi.media.entity.Review complex) {
+                Review simple = new Review();
+                
+                if (complex.getLocale() != null) {
+                    simple.setLanguage(complex.getLocale().toLanguageTag());
+                }
+                simple.setReview(complex.getReview());
+                simple.setPublisherDetails(toPublisherDetails(content.getPublisher()));
+                
+                return simple;
+            }
+        });
+    }
+
+    
     private Set<LocalizedDescription> simplifyLocalizedDescriptions(F content) {
         return ImmutableSet.copyOf(Iterables.transform(content.getLocalizedDescriptions(),
                 TO_SIMPLE_LOCALISED_DESCRIPTION));
@@ -182,6 +206,5 @@ public abstract class DescribedModelSimplifier<F extends Described, T extends De
             return simple;
         }
     };
-
     
 }

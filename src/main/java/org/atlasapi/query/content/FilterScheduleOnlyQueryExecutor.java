@@ -5,11 +5,10 @@ import static com.google.common.base.Preconditions.checkNotNull;
 import java.util.List;
 import java.util.Map;
 
-import javax.annotation.Nullable;
-
 import org.atlasapi.content.criteria.ContentQuery;
 import org.atlasapi.media.entity.Content;
 import org.atlasapi.media.entity.Identified;
+import org.atlasapi.media.entity.Publisher;
 import org.atlasapi.persistence.content.query.KnownTypeQueryExecutor;
 
 import com.google.common.base.Optional;
@@ -40,6 +39,12 @@ public class FilterScheduleOnlyQueryExecutor implements KnownTypeQueryExecutor {
             Iterable<String> values, ContentQuery query) {
         return filter(delegate.executeAliasQuery(namespace, values, query));
     }
+    
+    @Override
+    public Map<String, List<Identified>> executePublisherQuery(Iterable<Publisher> publishers,
+            ContentQuery query) {
+        return filter(delegate.executePublisherQuery(publishers, query));
+    }
 
     private Map<String, List<Identified>> filter(Map<String, List<Identified>> unfiltered) {
         return Maps.filterValues(unfiltered, new Predicate<List<Identified>>() {
@@ -54,6 +59,5 @@ public class FilterScheduleOnlyQueryExecutor implements KnownTypeQueryExecutor {
             }
         });
     }
-    
-    
+
 }

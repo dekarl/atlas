@@ -34,6 +34,7 @@ public class NitroAvailabilityExtractor implements ContentExtractor<Iterable<Ava
     private static final String APPLE_IPHONE4_IPAD_HLS_3G = "apple-iphone4-ipad-hls-3g";
     private static final String APPLE_IPHONE4_HLS = "apple-iphone4-hls";
     private static final String PC = "pc";
+    private static final String AVAILABLE = "available";
     
     private final Map<String, Platform> mediaSetPlatform = ImmutableMap.of(
         PC, Platform.PC,
@@ -81,7 +82,16 @@ public class NitroAvailabilityExtractor implements ContentExtractor<Iterable<Ava
             policy.setAvailabilityStart(toDateTime(scheduledTime.getStart()));
             policy.setAvailabilityEnd(toDateTime(scheduledTime.getEnd()));
         }
-        policy.setActualAvailabilityStart(toDateTime(source.getActualStart()));
+        // Even if ActualStart is set, the location may not be available. The Status field 
+        // must be referred to in order to confirm that it is.
+        //
+        // If we've passed the end of the availability window then ingest the actual availability
+        // start for reference, since there's the possibility of having missed it if we never
+        // ingested during the availability window.
+        if (AVAILABLE.equals(source.getStatus())
+                || (policy.getAvailabilityEnd() != null && policy.getAvailabilityEnd().isBeforeNow())) {
+            policy.setActualAvailabilityStart(toDateTime(source.getActualStart()));
+        }
         policy.setPlatform(platform);
         policy.setNetwork(network);
         policy.setAvailableCountries(ImmutableSet.of(Countries.GB));

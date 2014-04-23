@@ -33,8 +33,6 @@ import org.atlasapi.persistence.system.Fetcher;
 import com.google.common.base.Function;
 import com.google.common.base.Optional;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import com.google.common.collect.ImmutableMap.Builder;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Maps;
@@ -84,6 +82,12 @@ public class UriFetchingQueryExecutor implements KnownTypeQueryExecutor {
     public Map<String, List<Identified>> executeAliasQuery(Optional<String> namespace, Iterable<String> values,
             ContentQuery query) {
         return delegate.executeAliasQuery(namespace, values, query);
+    }
+    
+    @Override
+    public Map<String, List<Identified>> executePublisherQuery(Iterable<Publisher> publishers,
+            ContentQuery query) {
+        return delegate.executePublisherQuery(publishers, query);
     }
 	
 	public Map<String, List<Identified>> executeContentQuery(Iterable<String> uris, ContentQuery query) {
@@ -140,4 +144,5 @@ public class UriFetchingQueryExecutor implements KnownTypeQueryExecutor {
 	private static Set<String> missingUris(Iterable<String> content, Iterable<String> uris) {
 		return Sets.difference(ImmutableSet.copyOf(uris), ImmutableSet.copyOf(content));
 	}
+
 }

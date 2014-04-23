@@ -111,12 +111,50 @@ public class BroadcastMatchingItemEquivalenceGeneratorTest extends TestCase {
         assertThat(scoreMap.get(item2).asDouble(), is(equalTo(1.0)));
     }
     
+    @Test
+    public void testGenerateIsFlexibleAroundStartTimes() {
+        
+        final ChannelResolver channelResolver = context.mock(ChannelResolver.class, "otherChannelResolver");
+        
+        context.checking(new Expectations() {{
+            allowing(channelResolver).fromUri(BBC_ONE.getUri());
+                will(returnValue(Maybe.just(BBC_ONE)));
+        }});
+        
+        BroadcastMatchingItemEquivalenceGenerator generator
+            = new BroadcastMatchingItemEquivalenceGenerator(resolver, channelResolver, ImmutableSet.of(BBC), standardMinutes(10));
+        
+        
+        final Item item1 = episodeWithBroadcasts("subjectItem", Publisher.PA, 
+                new Broadcast(BBC_ONE.getUri(), time("2014-03-21T15:00:00Z"), time("2014-03-21T15:50:00Z")));
+        
+        final Item item2 = episodeWithBroadcasts("equivItem", Publisher.BBC, 
+                new Broadcast(BBC_ONE.getUri(), time("2014-03-21T15:00:00Z"), time("2014-03-21T16:00:00Z")));
+        
+        context.checking(new Expectations(){{
+            one(resolver).unmergedSchedule(time("2014-03-21T14:50:00Z"), time("2014-03-21T16:00:00Z"), ImmutableSet.of(BBC_ONE), ImmutableSet.of(BBC));
+                will(returnValue(Schedule.fromChannelMap(ImmutableMap.of(BBC_ONE, (List<Item>)ImmutableList.<Item>of(item2)), interval(40000, 260000))));
+        }});
+        
+
+        ScoredCandidates<Item> equivalents = generator.generate(item1, new DefaultDescription());
+        
+        Map<Item, Score> scoreMap = equivalents.candidates();
+        
+        assertThat(scoreMap.size(), is(1));
+        assertThat(scoreMap.get(item2).asDouble(), is(equalTo(1.0)));
+    }
+    
     private Interval interval(long startMillis, long endMillis) {
         return new Interval(startMillis, endMillis, DateTimeZones.UTC);
     }
     
     private DateTime utcTime(long millis) {
         return new DateTime(millis, DateTimeZones.UTC);
+    }
+
+    private DateTime time(String date) {
+        return new DateTime(date);
     }
     
     private Episode episodeWithBroadcasts(String episodeId, Publisher publisher, Broadcast... broadcasts) {

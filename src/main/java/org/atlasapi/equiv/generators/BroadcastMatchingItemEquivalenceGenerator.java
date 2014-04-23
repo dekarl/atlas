@@ -149,11 +149,13 @@ public class BroadcastMatchingItemEquivalenceGenerator implements EquivalenceGen
     }
 
     private boolean around(Broadcast broadcast, Broadcast referenceBroadcast) {
-        return around(broadcast.getTransmissionTime(), referenceBroadcast.getTransmissionTime()) && around(broadcast.getTransmissionEndTime(), referenceBroadcast.getTransmissionEndTime());
+        return around(broadcast.getTransmissionTime(), referenceBroadcast.getTransmissionTime())
+            && around(broadcast.getTransmissionEndTime(), referenceBroadcast.getTransmissionEndTime());
     }
 
     private boolean around(DateTime transmissionTime, DateTime transmissionTime2) {
-        return transmissionTime.isAfter(transmissionTime2.minus(flexibility)) && transmissionTime.isBefore(transmissionTime2.plus(flexibility));
+        return !transmissionTime.isBefore(transmissionTime2.minus(flexibility))
+            && !transmissionTime.isAfter(transmissionTime2.plus(flexibility));
     }
 
     private Schedule scheduleAround(Broadcast broadcast, Set<Publisher> publishers) {

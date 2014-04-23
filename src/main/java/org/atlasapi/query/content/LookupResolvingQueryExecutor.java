@@ -8,12 +8,14 @@ import org.atlasapi.content.criteria.ContentQuery;
 import org.atlasapi.media.entity.Described;
 import org.atlasapi.media.entity.Identified;
 import org.atlasapi.media.entity.LookupRef;
+import org.atlasapi.media.entity.Publisher;
 import org.atlasapi.persistence.content.DefaultEquivalentContentResolver;
 import org.atlasapi.persistence.content.EquivalentContent;
 import org.atlasapi.persistence.content.EquivalentContentResolver;
 import org.atlasapi.persistence.content.KnownTypeContentResolver;
 import org.atlasapi.persistence.content.ResolvedContent;
 import org.atlasapi.persistence.content.query.KnownTypeQueryExecutor;
+import org.atlasapi.persistence.lookup.entry.LookupEntry;
 import org.atlasapi.persistence.lookup.entry.LookupEntryStore;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -27,6 +29,7 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Multimaps;
+import com.metabroadcast.common.query.Selection;
 
 public class LookupResolvingQueryExecutor implements KnownTypeQueryExecutor {
 
@@ -34,11 +37,13 @@ public class LookupResolvingQueryExecutor implements KnownTypeQueryExecutor {
     private final KnownTypeContentResolver cassandraContentResolver;
     private final boolean cassandraEnabled;
     private final EquivalentContentResolver mongoEquivsResolver;
+    private final LookupEntryStore lookupEntryStore;
 
     public LookupResolvingQueryExecutor(KnownTypeContentResolver cassandraContentResolver, KnownTypeContentResolver mongoContentResolver, LookupEntryStore mongoLookupResolver, boolean cassandraEnabled) {
         this.cassandraContentResolver = cassandraContentResolver;
         this.mongoEquivsResolver = new DefaultEquivalentContentResolver(mongoContentResolver, mongoLookupResolver);
         this.cassandraEnabled = cassandraEnabled;
+        this.lookupEntryStore = mongoLookupResolver;
     }
 
     @Override
@@ -54,6 +59,12 @@ public class LookupResolvingQueryExecutor implements KnownTypeQueryExecutor {
             }
         }
         return ImmutableMap.copyOf(results);
+    }
+    
+    @Override
+    public Map<String, List<Identified>> executePublisherQuery(Iterable<Publisher> publishers, final ContentQuery query) {
+        Iterable<LookupEntry> entries = lookupEntryStore.entriesForPublishers(publishers, query.getSelection());
+        return executeUriQuery(Iterables.transform(entries, LookupEntry.TO_ID), query.copyWithSelection(Selection.all())); 
     }
 
     @Override

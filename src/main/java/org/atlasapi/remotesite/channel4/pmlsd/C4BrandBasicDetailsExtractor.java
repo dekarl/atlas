@@ -28,72 +28,74 @@ import com.sun.syndication.feed.atom.Link;
  */
 public class C4BrandBasicDetailsExtractor implements ContentExtractor<Feed, Brand> {
 
-	private static final String PRESENTATION_BRAND = "relation.presentationBrand";
-	
-	private final C4AtomApi c4AtomApi;
+    private static final String PRESENTATION_BRAND = "relation.presentationBrand";
+
+    private final C4AtomApi c4AtomApi;
     private final Clock clock;
     private final ContentFactory<Feed, Feed, Entry> contentFactory;
-    
-	public C4BrandBasicDetailsExtractor(C4AtomApi c4AtomApi, 
-	        ContentFactory<Feed, Feed, Entry> contentFactory, Clock clock) {
+
+    public C4BrandBasicDetailsExtractor(C4AtomApi c4AtomApi, 
+            ContentFactory<Feed, Feed, Entry> contentFactory, Clock clock) {
         this.c4AtomApi = c4AtomApi;
         this.contentFactory = contentFactory;
         this.clock = clock;
-	}
-	
+    }
+
     @Override
-	public Brand extract(Feed source) {
+    public Brand extract(Feed source) {
         Preconditions.checkArgument(C4AtomApi.isABrandFeed(source), "Not a brand feed");
-		
+
         Brand brand = contentFactory.createBrand(source).get();
-		brand.setLastUpdated(clock.now());
+        brand.setLastUpdated(clock.now());
 
-		// TODO new alias
-		brand.addAliasUrl(canonicalIdTag(source));
-		brand.addAliasUrl(C4AtomApi.hierarchyUriFromCanonical(brand.getCanonicalUri()));
+        // TODO new alias
+        brand.addAliasUrl(canonicalIdTag(source));
+        brand.addAliasUrl(C4AtomApi.hierarchyUriFromCanonical(brand.getCanonicalUri()));
 
-		brand.setTitle(source.getTitle());
-		brand.setDescription(source.getSubtitle().getValue());
-		
-		brand.setMediaType(MediaType.VIDEO);
-		brand.setSpecialization(Specialization.TV);
-		
-		Set<String> genres = Sets.newHashSet();
-		for (Object cat : source.getCategories()) {
-            String category = canonicalise((Category) cat);
-            if (category != null) {
-                genres.add(category);
+        brand.setTitle(source.getTitle());
+        brand.setDescription(source.getSubtitle().getValue());
+
+        brand.setMediaType(MediaType.VIDEO);
+        brand.setSpecialization(Specialization.TV);
+
+        Set<String> genres = Sets.newHashSet();
+        if (source.getCategories() != null) {
+            for (Object cat : source.getCategories()) {
+                String category = canonicalise((Category) cat);
+                if (category != null) {
+                    genres.add(category);
+                }
             }
         }
-		brand.setGenres(new C4CategoryGenreMap().mapRecognised(genres));
-		
-		String presentationBrand = getPresentationBrand(source);
-		if(presentationBrand != null) {
-		    brand.setPresentationChannel(c4AtomApi.getChannelMap().get(presentationBrand));
-		}
-		
-		C4AtomApi.addImages(brand, source.getLogo());
-		
-		return brand;
-	}
-	
+        brand.setGenres(new C4CategoryGenreMap().mapRecognised(genres));
+
+        String presentationBrand = getPresentationBrand(source);
+        if(presentationBrand != null) {
+            brand.setPresentationChannel(c4AtomApi.getChannelMap().get(presentationBrand));
+        }
+
+        C4AtomApi.addImages(brand, source.getLogo());
+
+        return brand;
+    }
+
     private String canonicalIdTag(Feed source) {
         return C4AtomApi.canonicalizeBrandFeedId(source);
     }
 
     private final Pattern CATEGORY_PATTERN = Pattern.compile("https?://[^.]+\\.channel4\\.com/[^/]+/(tags/[^.]+)\\.atom.*");
-    
-	private String canonicalise(Category category) {
-	    Matcher matcher = CATEGORY_PATTERN.matcher(category.getTerm());
-	    if (matcher.matches()) {
-	        return C4AtomApi.WEB_BASE + matcher.group(1);
-	    }
+
+    private String canonicalise(Category category) {
+        Matcher matcher = CATEGORY_PATTERN.matcher(category.getTerm());
+        if (matcher.matches()) {
+            return C4AtomApi.WEB_BASE + matcher.group(1);
+        }
         return null;
     }
 
     @SuppressWarnings("unchecked")
     private String getPresentationBrand(Feed source) {
-	    Iterable<Element> markup = (Iterable<Element>) source.getForeignMarkup();
+        Iterable<Element> markup = (Iterable<Element>) source.getForeignMarkup();
         for (Element element : markup) {
             if (PRESENTATION_BRAND.equals(element.getName())) {
                 return element.getValue();

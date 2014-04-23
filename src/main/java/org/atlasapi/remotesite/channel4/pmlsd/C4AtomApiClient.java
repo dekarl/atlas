@@ -48,7 +48,7 @@ public class C4AtomApiClient {
     }
 
     public Optional<Feed> brandVideoFeed(String canonicalBrandUri) {
-        return getFeed(canonicalBrandUri, "/video");
+        return getFeed(canonicalBrandUri, "/videos/all");
     }
 
     private Optional<Feed> getFeed(String brandUri, String suffix) {
