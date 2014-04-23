@@ -57,3 +57,32 @@ Enjoy!
 ## Contributions
 
 We welcome contributions to Atlas! If you'd like to get your hands dirty, please [fork the repositories](https://help.github.com/articles/fork-a-repo) and submit [pull requests](https://help.github.com/articles/using-pull-requests) with your changes. 
+
+### setup environment
+
+Fork on github
+Clone it
+ git clone https://github.com/<yourname>/atlas.git
+Add upstream
+ git remote add upstream https://github.com/atlasapi/atlas.git
+ git fetch upstream
+
+Don't forget to set email and username! https://help.github.com/articles/setting-your-email-in-git
+
+## update master from upstream
+
+https://help.github.com/articles/fork-a-repo
+
+    $ git fetch upstream
+    $ git merge upstream/master
+    $ git push origin master
+
+## create a local feature branch
+
+    $ git checkout -b <name of branch>
+or the longer form
+    $ git branch <name of branch>
+    $ git checkout <name of branch>
+
+## todo, figure out a good way to have local master / stage separate from upstream master / stage
+
