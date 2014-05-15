@@ -15,6 +15,7 @@ import org.atlasapi.media.entity.Series;
 import org.atlasapi.persistence.content.ContentResolver;
 import org.atlasapi.persistence.content.ResolvedContent;
 import org.atlasapi.remotesite.ContentMerger;
+import org.atlasapi.remotesite.ContentMerger.MergeStrategy;
 import org.atlasapi.remotesite.bbc.BbcFeeds;
 import org.atlasapi.remotesite.bbc.ion.BbcIonMediaTypeMapping;
 import org.atlasapi.remotesite.bbc.nitro.extract.NitroUtil;
@@ -43,11 +44,13 @@ public class LocalOrRemoteNitroFetcher {
     private final ContentResolver resolver;
     private final NitroContentAdapter contentAdapter;
     private final Clock clock;
+    private final ContentMerger contentMerger;
 
     public LocalOrRemoteNitroFetcher(ContentResolver resolver, NitroContentAdapter contentAdapter, Clock clock) {
         this.resolver = resolver;
         this.contentAdapter = contentAdapter;
         this.clock = clock;
+        this.contentMerger = new ContentMerger(MergeStrategy.MERGE);
     }
     
     public ResolveOrFetchResult<Item> resolveOrFetchItem(Iterable<Broadcast> broadcasts) throws NitroException {
@@ -73,7 +76,7 @@ public class LocalOrRemoteNitroFetcher {
         for (Item existing : existingItems) {
             Item fetched = fetchedIndex.remove(existing.getCanonicalUri());
             if (fetched != null) {
-                existing = ContentMerger.merge(existing, fetched);
+                existing = contentMerger.merge(existing, fetched);
             }
             resolved.add(existing);
         }

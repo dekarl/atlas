@@ -11,6 +11,7 @@ import org.atlasapi.persistence.content.ContentResolver;
 import org.atlasapi.persistence.content.ContentWriter;
 import org.atlasapi.persistence.content.ResolvedContent;
 import org.atlasapi.remotesite.ContentMerger;
+import org.atlasapi.remotesite.ContentMerger.MergeStrategy;
 
 import com.google.common.base.Optional;
 import com.google.common.collect.ImmutableList;
@@ -21,11 +22,13 @@ public class ItvWhatsOnEntryProcessor {
     private final ItvWhatsOnEntryExtractor extractor;
     private final ContentResolver contentResolver;
     private final ContentWriter contentWriter;
+    private final ContentMerger contentMerger;
   
     public ItvWhatsOnEntryProcessor(ContentResolver contentResolver, ContentWriter contentWriter, ChannelResolver channelResolver) {
         this.extractor = new ItvWhatsOnEntryExtractor(new ItvWhatsonChannelMap(channelResolver));
         this.contentResolver = contentResolver;
         this.contentWriter = contentWriter;
+        this.contentMerger = new ContentMerger(MergeStrategy.MERGE);
     }
     
     private Content createOrUpdate(Content content) {
@@ -57,7 +60,7 @@ public class ItvWhatsOnEntryProcessor {
             if (resolvedItem.getContainer() != null) {
                 contentItem.setParentRef(resolvedItem.getContainer());
             }
-            contentWriter.createOrUpdate(ContentMerger.merge(resolvedItem, contentItem));
+            contentWriter.createOrUpdate(contentMerger.merge(resolvedItem, contentItem));
             return resolvedItem;
         } else {
             // Only title and uri of brands and series is provided

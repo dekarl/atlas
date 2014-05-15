@@ -1,6 +1,5 @@
 package org.atlasapi.remotesite.youview;
 
-import org.joda.time.Duration;
 
 public class YouViewFortnightUpdater extends YouViewUpdater {
 

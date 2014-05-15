@@ -1,5 +1,7 @@
 package org.atlasapi.remotesite.five;
 
+import static com.google.common.base.Preconditions.checkNotNull;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.concurrent.TimeUnit;
@@ -11,6 +13,7 @@ import nu.xom.Elements;
 
 import org.atlasapi.media.channel.Channel;
 import org.atlasapi.media.channel.ChannelResolver;
+import org.atlasapi.persistence.content.ContentResolver;
 import org.atlasapi.persistence.content.ContentWriter;
 import org.atlasapi.remotesite.HttpClients;
 import org.atlasapi.remotesite.channel4.RequestLimitingRemoteSiteClient;
@@ -42,10 +45,11 @@ public class FiveUpdater extends ScheduledTask {
     private final Builder parser = new Builder();
     private SimpleHttpClient streamHttpClient;
 
-    public FiveUpdater(ContentWriter contentWriter, ChannelResolver channelResolver, int socketTimeout) {
+    public FiveUpdater(ContentWriter contentWriter, ChannelResolver channelResolver, ContentResolver contentResolver, 
+            int socketTimeout) {
         this.socketTimeout = socketTimeout;
         this.streamHttpClient = buildFetcher();
-        this.processor = new FiveBrandProcessor(contentWriter, BASE_API_URL, 
+        this.processor = new FiveBrandProcessor(contentWriter, contentResolver, BASE_API_URL, 
             new RequestLimitingRemoteSiteClient<HttpResponse>(new HttpRemoteSiteClient(buildFetcher()), 20), 
             channelMap(channelResolver)
         );

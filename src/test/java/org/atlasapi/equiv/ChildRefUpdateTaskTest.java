@@ -17,11 +17,13 @@ import org.atlasapi.media.entity.Brand;
 import org.atlasapi.media.entity.ChildRef;
 import org.atlasapi.media.entity.Container;
 import org.atlasapi.media.entity.Content;
+import org.atlasapi.media.entity.Described;
 import org.atlasapi.media.entity.Episode;
 import org.atlasapi.media.entity.Item;
 import org.atlasapi.media.entity.ParentRef;
 import org.atlasapi.media.entity.Series;
 import org.atlasapi.media.entity.SeriesRef;
+import org.atlasapi.persistence.audit.PersistenceAuditLog;
 import org.atlasapi.persistence.content.ContentResolver;
 import org.atlasapi.persistence.content.ContentWriter;
 import org.atlasapi.persistence.content.LookupResolvingContentResolver;
@@ -49,7 +51,23 @@ public class ChildRefUpdateTaskTest extends TestCase {
     ScheduleTaskProgressStore progressStore = new MongoScheduleTaskProgressStore(mongo);
     MongoLookupEntryStore lookupStore = new MongoLookupEntryStore(mongo.collection("lookup"));
     ContentResolver resolver = new LookupResolvingContentResolver(new MongoContentResolver(mongo, lookupStore), lookupStore);
-    ContentWriter writer = new MongoContentWriter(mongo, lookupStore, new SystemClock());
+    
+    private final PersistenceAuditLog persistenceAuditLog = new PersistenceAuditLog() {
+
+        @Override
+        public void logWrite(Described described) {
+            
+        }
+
+        @Override
+        public void logNoWrite(Described described) {
+            
+        }
+        
+    
+    };
+    
+    ContentWriter writer = new MongoContentWriter(mongo, lookupStore, persistenceAuditLog, new SystemClock());
     ContentLister lister = new MongoContentLister(mongo);
     
     ChildRefUpdateTask task = new ChildRefUpdateTask(lister, resolver, mongo, progressStore).forPublishers(BBC);

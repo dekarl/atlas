@@ -16,8 +16,9 @@ import org.atlasapi.persistence.content.ContentWriter;
 import org.atlasapi.persistence.content.ResolvedContent;
 import org.atlasapi.persistence.content.people.ItemsPeopleWriter;
 import org.atlasapi.remotesite.channel4.pmlsd.epg.ContentHierarchyAndBroadcast;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
@@ -34,6 +35,8 @@ import com.google.common.collect.Sets;
  */
 public class ContentBuffer implements ContentResolver {
 
+    private static final Logger log = LoggerFactory.getLogger(ContentBuffer.class);
+    
     private static ThreadLocal<Map<String, Identified>> contentCache = new ThreadLocal<Map<String, Identified>>() {
         
         @Override 
@@ -87,47 +90,59 @@ public class ContentBuffer implements ContentResolver {
     
     public void flush() {
         Set<Identified> written = Sets.newHashSet();
+        try {
+            for(ContentHierarchyAndBroadcast hierarchy : ImmutableList.copyOf(hierarchies.get()).reverse()) {
+                try {
+                    process(hierarchy, written);
+                } catch (Exception e) {
+                    log.error(String.format("Failed writing item %s, broadcast %s on %s", 
+                                hierarchy.getItem().getCanonicalUri(),
+                                hierarchy.getBroadcast().getTransmissionTime(), 
+                                hierarchy.getBroadcast().getBroadcastOn()), e);
+                }
+            }
+        } finally {
+            hierarchies.get().clear();
+            contentCache.get().clear();
+        }
+    }
+
+    private void process(ContentHierarchyAndBroadcast hierarchy, Set<Identified> alreadyWritten) {
+        if (hierarchy.getBrand().isPresent()) {
+            Brand brand = hierarchy.getBrand().get();
+            if (!alreadyWritten.contains(brand)) {
+                writer.createOrUpdate(brand);
+                alreadyWritten.add(brand);
+            }
+            hierarchy.getItem().setContainer(brand);
+        }
         
-        for(ContentHierarchyAndBroadcast hierarchy : ImmutableList.copyOf(hierarchies.get()).reverse()) {
-            if (hierarchy.getBrand().isPresent()) {
-                Brand brand = hierarchy.getBrand().get();
-                if (!written.contains(brand)) {
-                    writer.createOrUpdate(brand);
-                    written.add(brand);
+        if (hierarchy.getSeries().isPresent()) {
+            Series series = hierarchy.getSeries().get();
+            if (!alreadyWritten.contains(series)) {
+                if (hierarchy.getBrand().isPresent()) {
+                    series.setParent(hierarchy.getBrand().get());
                 }
-                hierarchy.getItem().setContainer(brand);
+                writer.createOrUpdate(series);
+                alreadyWritten.add(series);
             }
             
-            if (hierarchy.getSeries().isPresent()) {
-                Series series = hierarchy.getSeries().get();
-                if (!written.contains(series)) {
-                    if (hierarchy.getBrand().isPresent()) {
-                        series.setParent(hierarchy.getBrand().get());
-                    }
-                    writer.createOrUpdate(series);
-                    written.add(series);
+            if (!hierarchy.getBrand().isPresent()) {
+                hierarchy.getItem().setContainer(series);
+            } else {
+                if (hierarchy.getItem() instanceof Episode) {
+                    ((Episode) hierarchy.getItem()).setSeries(series);
                 }
-                
-                if (!hierarchy.getBrand().isPresent()) {
-                    hierarchy.getItem().setContainer(series);
-                } else {
-                    if (hierarchy.getItem() instanceof Episode) {
-                        ((Episode) hierarchy.getItem()).setSeries(series);
-                    }
-                }
-            }
-            
-            if (!written.contains(hierarchy.getItem())) {
-                Item item = hierarchy.getItem();
-                
-                writer.createOrUpdate(item);
-                peopleWriter.createOrUpdatePeople(item);
-                written.add(item);
             }
         }
         
-        hierarchies.get().clear();
-        contentCache.get().clear();
+        if (!alreadyWritten.contains(hierarchy.getItem())) {
+            Item item = hierarchy.getItem();
+            
+            writer.createOrUpdate(item);
+            peopleWriter.createOrUpdatePeople(item);
+            alreadyWritten.add(item);
+        }
     }
     
 }

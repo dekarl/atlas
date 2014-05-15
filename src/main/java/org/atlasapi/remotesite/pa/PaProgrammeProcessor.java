@@ -29,7 +29,6 @@ import org.atlasapi.media.entity.Publisher;
 import org.atlasapi.media.entity.Series;
 import org.atlasapi.media.entity.Specialization;
 import org.atlasapi.media.entity.Version;
-import org.atlasapi.media.entity.simple.ContentIdentifier.FilmIdentifier;
 import org.atlasapi.media.util.ItemAndBroadcast;
 import org.atlasapi.persistence.content.ContentResolver;
 import org.atlasapi.persistence.content.ContentWriter;
@@ -83,7 +82,6 @@ public class PaProgrammeProcessor implements PaProgDataProcessor {
     
     private static final List<String> IGNORED_BRANDS = ImmutableList.of("70214", "84575");    // 70214 is 'TBA' brand, 84575 is 'Film TBA'
     
-    private final ContentWriter contentWriter;
     private final ContentResolver contentResolver;
     private final AdapterLog log;
     private final PaCountryMap countryMap = new PaCountryMap();
@@ -93,7 +91,6 @@ public class PaProgrammeProcessor implements PaProgDataProcessor {
     public PaProgrammeProcessor(ContentWriter contentWriter, ContentResolver contentResolver, AdapterLog log) {
         this.contentResolver = contentResolver;
         this.log = log;
-        this.contentWriter = contentWriter;
     }
 
     @Override
@@ -103,25 +100,17 @@ public class PaProgrammeProcessor implements PaProgDataProcessor {
                 return null;
             }
             
-            Brand brandSummary = null;
-            Series seriesSummary = null;
 
             Optional<Brand> possibleBrand = getBrand(progData, channel, updatedAt);
-            if (possibleBrand.isPresent()) {
-                Brand originalBrand = possibleBrand.get();
-                if (hasBrandSummary(progData)) {
-                    brandSummary = extractSummaryBrand(progData, originalBrand.getCanonicalUri(), updatedAt);
-                    brandSummary.setEquivalentTo(ImmutableSet.of(LookupRef.from(originalBrand)));
-                }
+            Brand brandSummary = null;
+            if (possibleBrand.isPresent() && hasBrandSummary(progData)) {
+                brandSummary = getBrandSummary(progData, possibleBrand.get(), updatedAt);
             }
 
             Optional<Series> possibleSeries = getSeries(progData, channel, updatedAt);
-            if (possibleSeries.isPresent()) {
-                Series originalSeries = possibleSeries.get();
-                if (hasSeriesSummary(progData)) {
-                    seriesSummary = extractSummarySeries(progData, originalSeries.getCanonicalUri(), updatedAt);
-                    seriesSummary.setEquivalentTo(ImmutableSet.of(LookupRef.from(originalSeries)));
-                }
+            Series seriesSummary = null;
+            if (possibleSeries.isPresent() && hasSeriesSummary(progData)) {
+                seriesSummary = getSeriesSummary(progData, possibleSeries.get(), updatedAt);                    
             }
 
             ItemAndBroadcast itemAndBroadcast = isClosedBrand(possibleBrand) ? 
@@ -144,28 +133,50 @@ public class PaProgrammeProcessor implements PaProgDataProcessor {
 
     private Boolean isGenericDescription(ProgData progData) {
         String generic = progData.getGeneric();
-        if (generic != null && "1".equals(generic)) {
+        if ("1".equals(generic)) {
             return true;
         }
         return null;
     }
 
-    private Brand extractSummaryBrand(ProgData progData, String originalURI, Timestamp updatedAt) {
-        Brand summaryBrand = new Brand();
-        summaryBrand.setCanonicalUri(originalURI.replace(Publisher.PA.key(), Publisher.PA_SERIES_SUMMARIES.key()));
-        summaryBrand.setPublisher(Publisher.PA_SERIES_SUMMARIES);
-        summaryBrand.setLongDescription(progData.getSeriesSummary());
-        summaryBrand.setLastUpdated(updatedAt.toDateTimeUTC());
-        return summaryBrand;
+    private Brand getBrandSummary(ProgData progData, Brand brand, Timestamp updatedAt) {
+        String uri = brand.getCanonicalUri().replace(Publisher.PA.key(), Publisher.PA_SERIES_SUMMARIES.key());
+        Maybe<Identified> maybeBrandSummary = contentResolver.findByCanonicalUris(ImmutableList.of(uri)).getFirstValue();
+        Brand brandSummary;
+        
+        if (maybeBrandSummary.isNothing()) {
+            brandSummary = new Brand();
+            brandSummary.setCanonicalUri(uri);
+            brandSummary.setPublisher(Publisher.PA_SERIES_SUMMARIES);
+        } else {
+            brandSummary = (Brand) maybeBrandSummary.requireValue();
+        }
+        
+        brandSummary.setEquivalentTo(ImmutableSet.of(LookupRef.from(brand)));
+        brandSummary.setLongDescription(progData.getSeriesSummary());
+        brandSummary.setLastUpdated(updatedAt.toDateTimeUTC());
+        
+        return brandSummary;
     }
 
-    private Series extractSummarySeries(ProgData progData, String originalUri, Timestamp updatedAt) {
-        Series summarySeries = new Series();
-        summarySeries.setCanonicalUri(originalUri.replace(Publisher.PA.key(), Publisher.PA_SERIES_SUMMARIES.key()));
-        summarySeries.setPublisher(Publisher.PA_SERIES_SUMMARIES);
-        summarySeries.setLongDescription(progData.getSeason().getSeasonSummary());
-        summarySeries.setLastUpdated(updatedAt.toDateTimeUTC());
-        return summarySeries;
+    private Series getSeriesSummary(ProgData progData, Series series, Timestamp updatedAt) {
+        String uri = series.getCanonicalUri().replace(Publisher.PA.key(), Publisher.PA_SERIES_SUMMARIES.key());
+        Maybe<Identified> maybeSeriesSummary = contentResolver.findByCanonicalUris(ImmutableList.of(uri)).getFirstValue();
+        Series seriesSummary;
+        
+        if (maybeSeriesSummary.isNothing()) {
+            seriesSummary = new Series();
+            seriesSummary.setCanonicalUri(uri);
+            seriesSummary.setPublisher(Publisher.PA_SERIES_SUMMARIES);
+        } else {
+            seriesSummary = (Series) maybeSeriesSummary.requireValue();
+        }
+       
+        seriesSummary.setEquivalentTo(ImmutableSet.of(LookupRef.from(series)));
+        seriesSummary.setLongDescription(progData.getSeason().getSeasonSummary());
+        seriesSummary.setLastUpdated(updatedAt.toDateTimeUTC());
+        
+        return seriesSummary;
     }
 
     private boolean hasSeriesSummary(ProgData progData) {

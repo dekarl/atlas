@@ -1,5 +1,7 @@
 package org.atlasapi.remotesite.youview;
 
+import static com.google.common.base.Preconditions.checkNotNull;
+
 import java.util.List;
 
 import nu.xom.Elements;
@@ -20,15 +22,19 @@ import com.metabroadcast.common.scheduling.UpdateProgress;
 
 public class DefaultYouViewChannelProcessor implements YouViewChannelProcessor {
 
+    private static final Logger log = LoggerFactory.getLogger(DefaultYouViewChannelProcessor.class);
+    
     private final ScheduleWriter scheduleWriter;
     private final YouViewElementProcessor processor;
     private final BroadcastTrimmer trimmer;
-    private final Logger log = LoggerFactory.getLogger(DefaultYouViewChannelProcessor.class);
+    private final Publisher publisher;
     
-    public DefaultYouViewChannelProcessor(ScheduleWriter scheduleWriter, YouViewElementProcessor processor, BroadcastTrimmer trimmer) {
-        this.scheduleWriter = scheduleWriter;
-        this.processor = processor;
-        this.trimmer = trimmer;
+    public DefaultYouViewChannelProcessor(ScheduleWriter scheduleWriter, YouViewElementProcessor processor, 
+            BroadcastTrimmer trimmer, Publisher publisher) {
+        this.scheduleWriter = checkNotNull(scheduleWriter);
+        this.processor = checkNotNull(processor);
+        this.trimmer = checkNotNull(trimmer);
+        this.publisher = checkNotNull(publisher);
     }
     
     @Override
@@ -61,7 +67,7 @@ public class DefaultYouViewChannelProcessor implements YouViewChannelProcessor {
                     getYouViewId(channel), schedulePeriod.getStart().toString()));
         } else {
             try {
-                scheduleWriter.replaceScheduleBlock(Publisher.YOUVIEW, channel, broadcasts);
+                scheduleWriter.replaceScheduleBlock(publisher, channel, broadcasts);
             } catch (IllegalArgumentException e) {
                 log.error(String.format("Failed to update schedule for channel %s (%s) on %s: %s", 
                         channel.getTitle(), getYouViewId(channel), 

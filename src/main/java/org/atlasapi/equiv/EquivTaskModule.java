@@ -15,6 +15,7 @@ import static org.atlasapi.media.entity.Publisher.ROVI_EN_GB;
 import static org.atlasapi.media.entity.Publisher.ROVI_EN_US;
 import static org.atlasapi.media.entity.Publisher.TALK_TALK;
 import static org.atlasapi.media.entity.Publisher.YOUVIEW;
+import static org.atlasapi.media.entity.Publisher.YOUVIEW_STAGE;
 
 import java.util.Set;
 
@@ -38,7 +39,9 @@ import org.atlasapi.media.channel.ChannelResolver;
 import org.atlasapi.media.entity.Container;
 import org.atlasapi.media.entity.Content;
 import org.atlasapi.media.entity.Publisher;
-import org.atlasapi.messaging.v3.AtlasMessagingModule;
+import org.atlasapi.messaging.v3.EntityUpdatedMessage;
+import org.atlasapi.messaging.v3.JacksonMessageSerializer;
+import org.atlasapi.messaging.v3.KafkaMessagingModule;
 import org.atlasapi.persistence.content.ContentResolver;
 import org.atlasapi.persistence.content.ScheduleResolver;
 import org.atlasapi.persistence.content.listing.ContentLister;
@@ -52,6 +55,8 @@ import org.atlasapi.remotesite.youview.DefaultYouViewChannelResolver;
 import org.atlasapi.remotesite.youview.YouViewChannelResolver;
 import org.joda.time.Duration;
 import org.joda.time.LocalTime;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
@@ -59,29 +64,37 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 import org.springframework.context.annotation.Lazy;
-import org.springframework.jms.listener.DefaultMessageListenerContainer;
 
 import com.google.common.base.Function;
+import com.google.common.base.Optional;
 import com.google.common.base.Predicate;
 import com.google.common.base.Predicates;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Iterables;
+import com.google.common.util.concurrent.MoreExecutors;
+import com.google.common.util.concurrent.Service.Listener;
+import com.google.common.util.concurrent.Service.State;
 import com.metabroadcast.common.persistence.mongo.DatabasedMongo;
+import com.metabroadcast.common.queue.kafka.KafkaConsumer;
 import com.metabroadcast.common.scheduling.RepetitionRule;
 import com.metabroadcast.common.scheduling.RepetitionRules;
 import com.metabroadcast.common.scheduling.SimpleScheduler;
 
 @Configuration
-@Import({EquivModule.class, AtlasMessagingModule.class})
+@Import({EquivModule.class, KafkaMessagingModule.class})
 public class EquivTaskModule {
+    
+    private final Logger log = LoggerFactory.getLogger(getClass());
 
     private static final Set<String> ignored = ImmutableSet.of("http://www.bbc.co.uk/programmes/b006mgyl"); 
 //  private static final RepetitionRule EQUIVALENCE_REPETITION = RepetitionRules.daily(new LocalTime(9, 00));
     private static final RepetitionRule RT_EQUIVALENCE_REPETITION = RepetitionRules.daily(new LocalTime(7, 00));
     private static final RepetitionRule TALKTALK_EQUIVALENCE_REPETITION = RepetitionRules.daily(new LocalTime(11, 15));
     private static final RepetitionRule YOUVIEW_EQUIVALENCE_REPETITION = RepetitionRules.daily(new LocalTime(15, 00));
+    private static final RepetitionRule YOUVIEW_STAGE_EQUIVALENCE_REPETITION = RepetitionRules.daily(new LocalTime(8, 00));
     private static final RepetitionRule YOUVIEW_SCHEDULE_EQUIVALENCE_REPETITION = RepetitionRules.daily(new LocalTime(13, 00));
+    private static final RepetitionRule YOUVIEW_STAGE_SCHEDULE_EQUIVALENCE_REPETITION = RepetitionRules.daily(new LocalTime(9, 00));
     private static final RepetitionRule BBC_SCHEDULE_EQUIVALENCE_REPETITION = RepetitionRules.daily(new LocalTime(9, 00));
     private static final RepetitionRule ITV_SCHEDULE_EQUIVALENCE_REPETITION = RepetitionRules.daily(new LocalTime(11, 00));
     private static final RepetitionRule ITV_EQUIVALENCE_REPETITION = RepetitionRules.daily(new LocalTime(12, 00));
@@ -108,7 +121,7 @@ public class EquivTaskModule {
     private @Autowired @Qualifier("contentUpdater") EquivalenceUpdater<Content> equivUpdater;
     private @Autowired RecentEquivalenceResultStore equivalenceResultStore;
     
-    private @Autowired AtlasMessagingModule messaging;
+    private @Autowired KafkaMessagingModule messaging;
     
     @PostConstruct
     public void scheduleUpdater() {
@@ -125,6 +138,7 @@ public class EquivTaskModule {
             taskScheduler.schedule(publisherUpdateTask(LOVEFILM).withName("Lovefilm Equivalence Updater"), RepetitionRules.every(Duration.standardHours(12)).withOffset(Duration.standardHours(10)));
             taskScheduler.schedule(publisherUpdateTask(NETFLIX).withName("Netflix Equivalence Updater"), RepetitionRules.NEVER);
             taskScheduler.schedule(publisherUpdateTask(YOUVIEW).withName("YouView Equivalence Updater"), YOUVIEW_EQUIVALENCE_REPETITION);
+            taskScheduler.schedule(publisherUpdateTask(YOUVIEW_STAGE).withName("YouView Stage Equivalence Updater"), YOUVIEW_STAGE_EQUIVALENCE_REPETITION);
             taskScheduler.schedule(publisherUpdateTask(TALK_TALK).withName("TalkTalk Equivalence Updater"), TALKTALK_EQUIVALENCE_REPETITION);
             taskScheduler.schedule(publisherUpdateTask(ROVI_EN_GB).withName("Rovi EN-GB Equivalence Updater"), ROVI_EN_GB_EQUIVALENCE_REPETITION);
             taskScheduler.schedule(publisherUpdateTask(ROVI_EN_US).withName("Rovi EN-US Equivalence Updater"), ROVI_EN_GB_EQUIVALENCE_REPETITION);
@@ -136,6 +150,11 @@ public class EquivTaskModule {
                     .withChannels(youViewChannelResolver().getAllChannels())
                     .build().withName("YouView Schedule Equivalence (8 day) Updater"), 
                 YOUVIEW_SCHEDULE_EQUIVALENCE_REPETITION);
+            taskScheduler.schedule(taskBuilder(0, 7)
+                    .withPublishers(YOUVIEW_STAGE)
+                    .withChannels(youViewChannelResolver().getAllChannels())
+                    .build().withName("YouView Stage Schedule Equivalence (8 day) Updater"), 
+                YOUVIEW_STAGE_SCHEDULE_EQUIVALENCE_REPETITION);
             taskScheduler.schedule(taskBuilder(0, 7)
                     .withPublishers(BBC)
                     .withChannels(bbcChannels())
@@ -245,7 +264,7 @@ public class EquivTaskModule {
     private EquivalenceUpdatingWorker equivUpdatingWorker() {
         return new EquivalenceUpdatingWorker(contentResolver, lookupStore, equivalenceResultStore, equivUpdater,
             Predicates.or(ImmutableList.<Predicate<? super Content>>of(
-                sourceIsIn(BBC_REDUX, YOUVIEW),
+                sourceIsIn(BBC_REDUX, YOUVIEW, YOUVIEW_STAGE),
                 Predicates.and(Predicates.instanceOf(Container.class),
                     sourceIsIn(BBC, C4, C4_PMLSD, ITV, FIVE, BBC_REDUX, ITUNES, 
                         RADIO_TIMES, LOVEFILM, TALK_TALK, YOUVIEW,NETFLIX))
@@ -265,13 +284,35 @@ public class EquivTaskModule {
 
     @Bean
     @Lazy(true)
-    public DefaultMessageListenerContainer equivalenceUpdatingMessageListener() {
+    public Optional<KafkaConsumer> equivalenceUpdatingMessageListener() {
         if (streamedChangesUpdateEquiv) {
-            return messaging.queueHelper().makeVirtualTopicConsumer(
-                    equivUpdatingWorker(), "EquivUpdater", contentChanges, 
-                    defaultStreamedEquivUpdateConsumers, maxStreamedEquivUpdateConsumers);
+            return Optional.of(messaging.messageConsumerFactory().createConsumer(
+                    equivUpdatingWorker(), JacksonMessageSerializer.forType(EntityUpdatedMessage.class), 
+                    contentChanges, "EquivUpdater")
+                .withDefaultConsumers(defaultStreamedEquivUpdateConsumers)
+                .withMaxConsumers(maxStreamedEquivUpdateConsumers)
+                .build());
         } else {
-            return messaging.queueHelper().noopContainer();
+            return Optional.absent();
+        }
+    }
+    
+    @PostConstruct
+    public void startConsumer() {
+        Optional<KafkaConsumer> consumer = equivalenceUpdatingMessageListener();
+        if (consumer.isPresent()) {
+            consumer.get().addListener(new Listener() {
+                @Override
+                public void failed(State from, Throwable failure) {
+                    log.warn("equiv update listener failed to transition from " + from, failure);
+                }
+                @Override
+                public void running() {
+                    log.info("equiv update listener running");
+                }
+                
+            }, MoreExecutors.sameThreadExecutor());
+            consumer.get().startAsync();
         }
     }
     

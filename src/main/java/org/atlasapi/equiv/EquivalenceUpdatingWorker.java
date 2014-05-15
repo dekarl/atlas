@@ -7,7 +7,6 @@ import org.atlasapi.equiv.update.EquivalenceUpdater;
 import org.atlasapi.media.entity.Content;
 import org.atlasapi.media.entity.Identified;
 import org.atlasapi.messaging.v3.EntityUpdatedMessage;
-import org.atlasapi.messaging.worker.v3.AbstractWorker;
 import org.atlasapi.persistence.content.ContentResolver;
 import org.atlasapi.persistence.content.ResolvedContent;
 import org.atlasapi.persistence.lookup.entry.LookupEntry;
@@ -19,8 +18,10 @@ import com.google.common.base.Predicate;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Iterables;
 import com.metabroadcast.common.base.Maybe;
+import com.metabroadcast.common.ids.SubstitutionTableNumberCodec;
+import com.metabroadcast.common.queue.Worker;
 
-public class EquivalenceUpdatingWorker extends AbstractWorker {
+public class EquivalenceUpdatingWorker implements Worker<EntityUpdatedMessage> {
 
     private final Logger log = LoggerFactory.getLogger(getClass());
     
@@ -29,6 +30,9 @@ public class EquivalenceUpdatingWorker extends AbstractWorker {
     private final EquivalenceResultStore resultStore;
     private final EquivalenceUpdater<Content> equivUpdater;
     private final Predicate<Content> filter;
+    
+    private final SubstitutionTableNumberCodec idCodec
+        = SubstitutionTableNumberCodec.lowerCaseOnly();
 
     public EquivalenceUpdatingWorker(ContentResolver contentResolver,
             LookupEntryStore entryStore,
@@ -45,24 +49,22 @@ public class EquivalenceUpdatingWorker extends AbstractWorker {
     @Override
     public void process(EntityUpdatedMessage message) {
         String eid = message.getEntityId();
-        Content content;
-        try {
-            content = resolveId(Long.valueOf(eid));
-        } catch (NumberFormatException nfe) {
-            content = resolveUri(eid);
-        }
+        Content content = resolveId(idCodec.decode(eid).longValue());
         if (content == null) {
-            log.warn("Resolved null/not Content for {} {} {}", 
-                new Object[]{message.getEntitySource(), message.getEntityType(), eid});
+            log.warn("{} resolved null/not Content for {} {} {}", 
+                new Object[]{message.getMessageId(), 
+                    message.getEntitySource(), message.getEntityType(), eid});
             return;
         }
         if (filter.apply(content) && noPreviousResult(content)) {
-            log.debug("Updating equivalence: {} {} {}", 
-                new Object[]{message.getEntitySource(), message.getEntityType(), eid});
+            log.debug("{} updating equivalence: {} {} {}", 
+                new Object[]{message.getMessageId(), 
+                    message.getEntitySource(), message.getEntityType(), eid});
             equivUpdater.updateEquivalences(content);
         } else {
-            log.trace("Skipping equiv update: {} {} {}", 
-                new Object[]{message.getEntitySource(), message.getEntityType(), eid});
+            log.trace("{} skipping equiv update: {} {} {}", 
+                new Object[]{message.getMessageId(), 
+                    message.getEntitySource(), message.getEntityType(), eid});
         }
     }
 

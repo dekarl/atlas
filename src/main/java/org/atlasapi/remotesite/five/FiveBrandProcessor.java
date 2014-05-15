@@ -1,5 +1,6 @@
 package org.atlasapi.remotesite.five;
 
+import static com.google.common.base.Preconditions.checkNotNull;
 import static org.atlasapi.media.entity.Specialization.FILM;
 
 import java.io.StringReader;
@@ -17,14 +18,19 @@ import nu.xom.Nodes;
 import org.atlasapi.genres.GenreMap;
 import org.atlasapi.media.channel.Channel;
 import org.atlasapi.media.entity.Brand;
+import org.atlasapi.media.entity.Container;
 import org.atlasapi.media.entity.Film;
+import org.atlasapi.media.entity.Identified;
 import org.atlasapi.media.entity.Item;
 import org.atlasapi.media.entity.MediaType;
 import org.atlasapi.media.entity.Publisher;
 import org.atlasapi.media.entity.Series;
 import org.atlasapi.media.entity.Specialization;
+import org.atlasapi.persistence.content.ContentResolver;
 import org.atlasapi.persistence.content.ContentWriter;
 import org.atlasapi.persistence.system.RemoteSiteClient;
+import org.atlasapi.remotesite.ContentMerger;
+import org.atlasapi.remotesite.ContentMerger.MergeStrategy;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -37,72 +43,113 @@ import com.metabroadcast.common.base.Maybe;
 import com.metabroadcast.common.http.HttpResponse;
 
 public class FiveBrandProcessor {
-    
+
     private static final Logger log = LoggerFactory.getLogger(FiveBrandProcessor.class);
-    
+
     private final static String WATCHABLES_URL_SUFFIX = "/watchables?expand=season%7Ctransmissions";
     private final ContentWriter writer;
     private final GenreMap genreMap = new FiveGenreMap();
     private final FiveEpisodeProcessor episodeProcessor;
     private final String baseApiUrl;
     private final RemoteSiteClient<HttpResponse> httpClient;
+    private final ContentResolver contentResolver;
+    private final ContentMerger contentMerger;
 
-    public FiveBrandProcessor(ContentWriter writer, String baseApiUrl, RemoteSiteClient<HttpResponse> httpClient, Multimap<String, Channel> channelMap) {
-        this.writer = writer;
-        this.baseApiUrl = baseApiUrl;
-        this.httpClient = httpClient;
+    public FiveBrandProcessor(ContentWriter writer, ContentResolver contentResolver, 
+            String baseApiUrl, RemoteSiteClient<HttpResponse> httpClient, Multimap<String, Channel> channelMap) {
+        this.writer = checkNotNull(writer);
+        this.baseApiUrl = checkNotNull(baseApiUrl);
+        this.httpClient = checkNotNull(httpClient);
+        this.contentResolver = checkNotNull(contentResolver);
         this.episodeProcessor = new FiveEpisodeProcessor(baseApiUrl, httpClient, channelMap);
+        this.contentMerger = new ContentMerger(MergeStrategy.REPLACE);
     }
-    
+
     public void processShow(Element element) {
-        
+
+        Brand brand = extractBrand(element);
+
         String id = childValue(element, "id");
-        Brand brand = new Brand(getShowUri(id), getBrandCurie(id), Publisher.FIVE);
-        
-        brand.setTitle(childValue(element, "title"));
-        
-        Maybe<String> description = getDescription(element);
-        if (description.hasValue()) {
-            brand.setDescription(description.requireValue());
-        }
-        
-        brand.setGenres(getGenres(element));
-        
-        Maybe<String> image = getImage(element);
-        if (image.hasValue()) {
-            brand.setImage(image.requireValue());
-        }
-        
-        Specialization specialization = specializationFrom(element);
-        
-        brand.setMediaType(MediaType.VIDEO);
-        brand.setSpecialization(specialization);
-        
-        EpisodeProcessingNodeFactory nodeFactory = new EpisodeProcessingNodeFactory(episodeProcessor, specialization);
+        EpisodeProcessingNodeFactory nodeFactory 
+            = new EpisodeProcessingNodeFactory(brand, episodeProcessor);
+
         try {
-        	    String responseBody = httpClient.get(getShowUri(id) + WATCHABLES_URL_SUFFIX).body();
+            String responseBody = httpClient.get(getShowUri(id) + WATCHABLES_URL_SUFFIX).body();
             new Builder(nodeFactory).build(new StringReader(responseBody));
         } catch(Exception e) {
             log.error("Exception parsing episodes for brand " + brand.getTitle(), e);
             return;
         }
-        
-        if(specialization == FILM && nodeFactory.items.size() == 1) {
+
+        if(FILM.equals(brand.getSpecialization()) 
+                && nodeFactory.items.size() == 1) {
+
             setFilmDescription((Film)Iterables.getOnlyElement(nodeFactory.items), element);
         }
-        
-        writer.createOrUpdate(brand);
+
+        write(brand);
+
         for (Series series : episodeProcessor.getSeriesMap().values()) {
-            writer.createOrUpdate(series);
+            write(series);
         }
         for (Item item : nodeFactory.items) {
-            item.setContainer(brand);
-        	writer.createOrUpdate(item);
+            write(brand, item);
         }
     }
-    
+
+    private void write(Brand brand, Item itemToWrite) {
+        itemToWrite.setContainer(brand);
+        Maybe<Identified> maybeExisting = 
+                contentResolver.findByCanonicalUris(ImmutableSet.of(itemToWrite.getCanonicalUri()))
+                               .getFirstValue();
+
+        if (maybeExisting.hasValue()) {
+            itemToWrite = contentMerger.merge((Item) maybeExisting.requireValue(), itemToWrite);
+        }
+        writer.createOrUpdate(itemToWrite);
+    }
+
+    private void write(Container containerToWrite) {
+        Maybe<Identified> maybeExisting = 
+                contentResolver.findByCanonicalUris(ImmutableSet.of(containerToWrite.getCanonicalUri()))
+                               .getFirstValue();
+
+        if (maybeExisting.hasValue()) {
+            containerToWrite = contentMerger.merge((Container) maybeExisting.requireValue(), containerToWrite);
+        }
+        writer.createOrUpdate(containerToWrite);
+    }
+
+    private Brand extractBrand(Element element) {
+        String id = childValue(element, "id");
+        String uri = getShowUri(id);
+        Maybe<Identified> maybeBrand = contentResolver.findByCanonicalUris(ImmutableSet.of(uri)).getFirstValue();
+
+        if (maybeBrand.hasValue()) {
+            return (Brand) maybeBrand.requireValue();
+        } else {
+            return createBrand(element);
+        }
+
+    }
+
+    private Brand createBrand(Element element) {
+        String id = childValue(element, "id");
+        String uri = getShowUri(id);
+        
+        Brand brand = new Brand(uri, getBrandCurie(id), Publisher.FIVE);
+        brand.setTitle(childValue(element, "title"));
+        brand.setDescription(getDescription(element).valueOrNull());
+        brand.setGenres(getGenres(element));
+        brand.setImage(getImage(element).valueOrNull());
+        brand.setMediaType(MediaType.VIDEO);
+        brand.setSpecialization(specializationFrom(element));
+
+        return brand;  
+    }
+
     private static final Pattern FILM_YEAR = Pattern.compile(".*\\((\\d{4})\\)$");
-    
+
     private void setFilmDescription(Film film, Element element) {
         Maybe<String> description = getDescription(element);
         if(description.hasValue()) {
@@ -128,11 +175,11 @@ public class FiveBrandProcessor {
     private String getShowUri(String id) {
         return baseApiUrl + "/shows/" + id;
     }
-    
+
     private String getBrandCurie(String id) {
         return "five:b-" + id;
     }
-    
+
     private String childValue(Element element, String childName) {
         Element firstChild = element.getFirstChildElement(childName);
         if(firstChild != null) {
@@ -140,55 +187,55 @@ public class FiveBrandProcessor {
         }
         return null;
     }
-    
+
     private Maybe<String> getDescription(Element element) {
         String longDescription = element.getFirstChildElement("long_description").getValue();
         if (!Strings.isNullOrEmpty(longDescription)) {
             return Maybe.just(longDescription);
         }
-        
+
         String shortDescription = element.getFirstChildElement("short_description").getValue();
         if (!Strings.isNullOrEmpty(shortDescription)) {
             return Maybe.just(shortDescription);
         }
-        
+
         return Maybe.nothing();
     }
-    
+
     private Set<String> getGenres(Element element) {
         return genreMap.mapRecognised(ImmutableSet.of("http://www.five.tv/genres/" + element.getFirstChildElement("genre").getValue()));
     }
-    
+
     private Maybe<String> getImage(Element element) {
         Elements imageElements = element.getFirstChildElement("images").getChildElements("image");
         if (imageElements.size() > 0) {
             return Maybe.just(imageElements.get(0).getValue());
         }
-        
+
         return Maybe.nothing();
     }
-    
-    private class EpisodeProcessingNodeFactory extends NodeFactory {
-        
-        private final FiveEpisodeProcessor episodeProcessor;
-		private final List<Item> items = Lists.newArrayList();
-        private final Specialization specialization;
 
-        public EpisodeProcessingNodeFactory(FiveEpisodeProcessor episodeProcessor, Specialization specialization) {
-			this.episodeProcessor = episodeProcessor;
-            this.specialization = specialization;
+    private class EpisodeProcessingNodeFactory extends NodeFactory {
+
+        private final FiveEpisodeProcessor episodeProcessor;
+        private final List<Item> items = Lists.newArrayList();
+        private final Brand brand;
+
+        public EpisodeProcessingNodeFactory(Brand brand, FiveEpisodeProcessor episodeProcessor) {
+            this.brand = checkNotNull(brand);
+            this.episodeProcessor = checkNotNull(episodeProcessor);
         }
-        
+
         @Override
         public Nodes finishMakingElement(Element element) {
             if (element.getLocalName().equalsIgnoreCase("watchable")) {
                 try {
-                    items.add(episodeProcessor.processEpisode(element, specialization));
+                    items.add(episodeProcessor.processEpisode(element, brand));
                 }
                 catch (Exception e) {
                     log.error("Exception when processing episode", e);
                 }
-                
+
                 return new Nodes();
             }
             else {

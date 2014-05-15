@@ -11,6 +11,7 @@ import org.atlasapi.media.entity.Version;
 import org.atlasapi.persistence.content.ContentResolver;
 import org.atlasapi.persistence.content.ContentWriter;
 import org.atlasapi.remotesite.ContentMerger;
+import org.atlasapi.remotesite.ContentMerger.MergeStrategy;
 
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Iterables;
@@ -22,11 +23,13 @@ public class DefaultYouViewElementProcessor implements YouViewElementProcessor {
     private final YouViewContentExtractor extractor;
     private final ContentResolver resolver;
     private final ContentWriter writer;
+    private final ContentMerger contentMerger;
     
     public DefaultYouViewElementProcessor(YouViewContentExtractor extractor, ContentResolver resolver, ContentWriter writer) {
         this.extractor = extractor;
         this.resolver = resolver;
         this.writer = writer;
+        this.contentMerger = new ContentMerger(MergeStrategy.MERGE);
     }
     
     @Override
@@ -37,7 +40,7 @@ public class DefaultYouViewElementProcessor implements YouViewElementProcessor {
             write(item);
         } else {
             Identified identified = existing.requireValue();
-                write(ContentMerger.merge(ContentMerger.asItem(identified), item));
+                write(contentMerger.merge(ContentMerger.asItem(identified), item));
         }
         return new ItemRefAndBroadcast(item, getBroadcastFromItem(item));
     }

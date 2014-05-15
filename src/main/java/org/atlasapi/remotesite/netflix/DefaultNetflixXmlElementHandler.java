@@ -19,6 +19,7 @@ import org.atlasapi.persistence.content.ContentResolver;
 import org.atlasapi.persistence.content.ContentWriter;
 import org.atlasapi.remotesite.ContentExtractor;
 import org.atlasapi.remotesite.ContentMerger;
+import org.atlasapi.remotesite.ContentMerger.MergeStrategy;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -36,11 +37,13 @@ public class DefaultNetflixXmlElementHandler implements NetflixXmlElementHandler
     private final ContentWriter writer;
     private final ContentResolver resolver;
     private final Logger log = LoggerFactory.getLogger(DefaultNetflixXmlElementHandler.class);
+    private final ContentMerger contentMerger;
     
     public DefaultNetflixXmlElementHandler(ContentExtractor<Element, Set<? extends Content>> extractor, ContentResolver resolver, ContentWriter writer) {
         this.extractor = extractor;
         this.resolver = resolver;
         this.writer = writer;
+        this.contentMerger = new ContentMerger(MergeStrategy.MERGE);
     }
 
     @Override
@@ -56,9 +59,9 @@ public class DefaultNetflixXmlElementHandler implements NetflixXmlElementHandler
             } else {
                 Identified identified = existing.requireValue();
                 if (content instanceof Item) {
-                    write(ContentMerger.merge(ContentMerger.asItem(identified), (Item) content));
+                    write(contentMerger.merge(ContentMerger.asItem(identified), (Item) content));
                 } else if (content instanceof Container) {
-                    write(ContentMerger.merge(ContentMerger.asContainer(identified), (Container) content));
+                    write(contentMerger.merge(ContentMerger.asContainer(identified), (Container) content));
                 }
             }
         }

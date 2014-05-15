@@ -1,7 +1,6 @@
 package org.atlasapi.remotesite.youview;
 
-import java.util.Map;
-
+import static com.google.common.base.Preconditions.checkNotNull;
 import nu.xom.Attribute;
 import nu.xom.Element;
 import nu.xom.Elements;
@@ -50,12 +49,10 @@ public class YouViewContentExtractor implements ContentExtractor<Element, Item> 
     private static final String MEDIA_CONTENT_KEY = "content";
     private static final String DURATION_KEY = "duration";
     private static final String YOUVIEW_PREFIX = "youview:";
-    private static final String YOUVIEW_URI_PREFIX = "http://youview.com/programme/";
     private static final String SCHEDULE_SLOT_KEY = "scheduleSlot";
     private static final String AVAILABLE_KEY = "available";
     private static final String START_KEY = "start";
     private static final String END_KEY = "end";
-    private static final String SCHEDULE_EVENT_PREFIX = "http://youview.com/scheduleevent/";
 
     private static final OptionalMap<Publisher, Platform> BROADCASTER_TO_PLATFORM = 
             ImmutableOptionalMap.fromMap(ImmutableMap.of(
@@ -70,9 +67,17 @@ public class YouViewContentExtractor implements ContentExtractor<Element, Item> 
     private final YouViewChannelResolver channelResolver;
     
     private final DateTimeFormatter dateFormatter = ISODateTimeFormat.dateTimeNoMillis();
+    private final Publisher publisher;
+    private final String scheduleEventPrefix;
+    private final String programmeAliasPrefix;
+    private final String aliasPrefix;
     
-    public YouViewContentExtractor(YouViewChannelResolver channelResolver) {
-        this.channelResolver = channelResolver;
+    public YouViewContentExtractor(YouViewChannelResolver channelResolver, Publisher publisher, String aliasPrefix) {
+        this.aliasPrefix = aliasPrefix;
+        this.channelResolver = checkNotNull(channelResolver);
+        this.publisher = checkNotNull(publisher);
+        this.scheduleEventPrefix = String.format("http://%s/scheduleevent/", publisher.key());
+        this.programmeAliasPrefix = String.format("http://%s/programme/", publisher.key());
     }
     
     @Override
@@ -81,16 +86,16 @@ public class YouViewContentExtractor implements ContentExtractor<Element, Item> 
         Item item = new Item();
 
         String id = getId(source);
-        item.setCanonicalUri(SCHEDULE_EVENT_PREFIX + id);
-        item.addAlias(new Alias("youview:scheduleevent", id));
+        item.setCanonicalUri(scheduleEventPrefix + id);
+        item.addAlias(new Alias(aliasPrefix + ":scheduleevent", id));
         item.setTitle(getTitle(source));
         item.setMediaType(getMediaType(source));
-        item.setPublisher(Publisher.YOUVIEW);
+        item.setPublisher(publisher);
 
         Optional<String> programmeId = getProgrammeId(source);
         if (programmeId.isPresent()) {
-            item.addAliasUrl(YOUVIEW_URI_PREFIX + programmeId.get());
-            item.addAlias(new Alias("youview:programme", programmeId.get()));
+            item.addAliasUrl(programmeAliasPrefix + programmeId.get());
+            item.addAlias(new Alias(aliasPrefix + ":programme", programmeId.get()));
         }
         
         item.addVersion(getVersion(source));

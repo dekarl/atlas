@@ -16,7 +16,18 @@ import com.google.common.collect.Sets;
 
 public class ContentMerger {
     
-    public static Item merge(Item current, Item extracted) {
+    public enum MergeStrategy {
+        REPLACE,
+        MERGE
+    }
+
+    private final MergeStrategy versionMergeStrategy;
+    
+    public ContentMerger(MergeStrategy versionMergeStrategy) {
+        this.versionMergeStrategy = versionMergeStrategy;
+    }
+    
+    public Item merge(Item current, Item extracted) {
 
         current = mergeVersions(current, extracted);
         current = mergeContents(current, extracted);
@@ -48,7 +59,7 @@ public class ContentMerger {
         return current;
     }
 
-    public static Container merge(Container current, Container extracted) {
+    public Container merge(Container current, Container extracted) {
         current = mergeContents(current, extracted);
         if (current instanceof Series && extracted instanceof Series) {
             ((Series) current).withSeriesNumber(((Series) extracted).getSeriesNumber());
@@ -57,7 +68,7 @@ public class ContentMerger {
         return current;
     }
 
-    private static <C extends Content> C mergeContents(C current, C extracted) {
+    private <C extends Content> C mergeContents(C current, C extracted) {
         current.setActivelyPublished(extracted.isActivelyPublished());
         current.setAliasUrls(extracted.getAliasUrls());
         current.setAliases(extracted.getAliases());
@@ -80,8 +91,13 @@ public class ContentMerger {
         return current;
     }
 
-    public static Item mergeVersions(Item current, Item extracted) {
+    private Item mergeVersions(Item current, Item extracted) {
         // need to merge broadcasts on versions with same uri
+        if (versionMergeStrategy.equals(MergeStrategy.REPLACE)) {
+            current.setVersions(extracted.getVersions());
+            return current;
+        }
+        
         Map<String, Version> mergedVersions = Maps.newHashMap();
         for (Version version : current.getVersions()) {
             mergedVersions.put(version.getCanonicalUri(), version);

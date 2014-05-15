@@ -19,6 +19,7 @@ import org.atlasapi.persistence.content.ContentResolver;
 import org.atlasapi.persistence.content.ContentWriter;
 import org.atlasapi.persistence.content.ResolvedContent;
 import org.atlasapi.remotesite.ContentMerger;
+import org.atlasapi.remotesite.ContentMerger.MergeStrategy;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -49,6 +50,8 @@ public class BtFeaturedContentUpdater extends ScheduledTask {
 
     private final String rootDocumentUri;
 
+    private final ContentMerger contentMerger;
+
     public BtFeaturedContentUpdater(BtFeaturedClient client, 
             SimpleElementHandler handler, 
             ContentGroupResolver groupResolver, 
@@ -66,6 +69,7 @@ public class BtFeaturedContentUpdater extends ScheduledTask {
         this.contentWriter = contentWriter;
         this.productBaseUri = productBaseUri;
         this.rootDocumentUri = rootDocumentUri;
+        this.contentMerger = new ContentMerger(MergeStrategy.MERGE);
         
     }
     
@@ -163,11 +167,11 @@ public class BtFeaturedContentUpdater extends ScheduledTask {
                         else {
                             Content resolvedContent = (Content)resolved.get(content2.getCanonicalUri()).requireValue();
                             if (content2 instanceof Item) {
-                                ContentMerger.merge((Item)resolvedContent, (Item)content2);
+                                contentMerger.merge((Item)resolvedContent, (Item)content2);
                                 contentWriter.createOrUpdate((Item)resolvedContent);
                             }
                             else {
-                                ContentMerger.merge((Container)resolvedContent, (Container)content2);
+                                contentMerger.merge((Container)resolvedContent, (Container)content2);
                                 contentWriter.createOrUpdate((Container)resolvedContent);
                             }
                         }

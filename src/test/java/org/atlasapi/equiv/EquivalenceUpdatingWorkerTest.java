@@ -32,6 +32,7 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
 import com.metabroadcast.common.time.DateTimeZones;
+import com.metabroadcast.common.time.Timestamp;
 
 @RunWith(MockitoJUnitRunner.class)
 public class EquivalenceUpdatingWorkerTest {
@@ -51,12 +52,15 @@ public class EquivalenceUpdatingWorkerTest {
     @Test
     public void testWorkerThatOnlyUpdatesItemsUpdatesAnItem() {
         
-        String uri = "uri";
-        Item item = new Item(uri, uri, BBC);
-        when(resolver.findByCanonicalUris(ImmutableSet.of(uri)))
-            .thenReturn(ResolvedContent.builder().put(uri, item).build());
+        String eid = "cyp";
+        Item item = new Item(eid, eid, BBC);
+        item.setId(1225L);
+        when(entryStore.entriesForIds(ImmutableSet.of(item.getId())))
+            .thenReturn(ImmutableList.of(LookupEntry.lookupEntryFrom(item)));
+        when(resolver.findByCanonicalUris(ImmutableSet.of(eid)))
+            .thenReturn(ResolvedContent.builder().put(eid, item).build());
         
-        EntityUpdatedMessage msg = new EntityUpdatedMessage("1", 1L, "uri", "item", "bbc.co.uk");
+        EntityUpdatedMessage msg = new EntityUpdatedMessage("1", Timestamp.of(1L), eid, "item", "bbc.co.uk");
         workerThatOnlyUpdatesItems.process(msg);
         
         verify(updater).updateEquivalences(item);
@@ -65,12 +69,15 @@ public class EquivalenceUpdatingWorkerTest {
     @Test
     public void testWorkerThatOnlyUpdatesItemsDoesntUpdateAnContainer() {
         
-        String uri = "uri";
-        Brand brand = new Brand(uri, uri, BBC);
-        when(resolver.findByCanonicalUris(ImmutableSet.of(uri)))
-            .thenReturn(ResolvedContent.builder().put(uri, brand).build());
+        String eid = "cyp";
+        Brand brand = new Brand(eid, eid, BBC);
+        brand.setId(1225L);
+        when(entryStore.entriesForIds(ImmutableSet.of(brand.getId())))
+            .thenReturn(ImmutableList.of(LookupEntry.lookupEntryFrom(brand)));
+        when(resolver.findByCanonicalUris(ImmutableSet.of(eid)))
+            .thenReturn(ResolvedContent.builder().put(eid, brand).build());
         
-        EntityUpdatedMessage msg = new EntityUpdatedMessage("1", 1L, "uri", "brand", "bbc.co.uk");
+        EntityUpdatedMessage msg = new EntityUpdatedMessage("1", Timestamp.of(1L), eid, "brand", "bbc.co.uk");
         workerThatOnlyUpdatesItems.process(msg);
         
         verify(updater, never()).updateEquivalences(brand);
@@ -79,11 +86,15 @@ public class EquivalenceUpdatingWorkerTest {
     @Test
     public void testWorkerThatOnlyUpdatesItemsHandlesResolvingNothing() {
         
-        String uri = "uri";
-        when(resolver.findByCanonicalUris(ImmutableSet.of(uri)))
-            .thenReturn(ResolvedContent.builder().put(uri, null).build());
+        String eid = "cyp";
+        Item item = new Item(eid, eid, BBC);
+        item.setId(1225L);
+        when(entryStore.entriesForIds(ImmutableSet.of(item.getId())))
+            .thenReturn(ImmutableList.of(LookupEntry.lookupEntryFrom(item)));
+        when(resolver.findByCanonicalUris(ImmutableSet.of(eid)))
+            .thenReturn(ResolvedContent.builder().put(eid, null).build());
         
-        EntityUpdatedMessage msg = new EntityUpdatedMessage("1", 1L, "uri", "brand", "bbc.co.uk");
+        EntityUpdatedMessage msg = new EntityUpdatedMessage("1", Timestamp.of(1L), eid, "brand", "bbc.co.uk");
         workerThatOnlyUpdatesItems.process(msg);
         
         verify(updater, never()).updateEquivalences(null);
@@ -92,12 +103,15 @@ public class EquivalenceUpdatingWorkerTest {
     @Test
     public void testWorkerThatOnlyUpdatesItemsHandlesResolvingNotContent() {
         
-        String uri = "uri";
-        Topic topic = new Topic(1L);
-        when(resolver.findByCanonicalUris(ImmutableSet.of(uri)))
-            .thenReturn(ResolvedContent.builder().put(uri, topic).build());
+        String eid = "cyp";
+        Topic topic = new Topic(1225L);
+        topic.setCanonicalUri(eid);
+        when(entryStore.entriesForIds(ImmutableSet.of(topic.getId())))
+            .thenReturn(ImmutableList.of(LookupEntry.lookupEntryFrom(topic)));
+        when(resolver.findByCanonicalUris(ImmutableSet.of(eid)))
+            .thenReturn(ResolvedContent.builder().put(eid, topic).build());
         
-        EntityUpdatedMessage msg = new EntityUpdatedMessage("1", 1L, "uri", "brand", "bbc.co.uk");
+        EntityUpdatedMessage msg = new EntityUpdatedMessage("1", Timestamp.of(1L), eid, "brand", "bbc.co.uk");
         workerThatOnlyUpdatesItems.process(msg);
         
         verify(updater, never()).updateEquivalences(any(Content.class));
@@ -106,15 +120,15 @@ public class EquivalenceUpdatingWorkerTest {
     @Test
     public void testWorkerThatOnlyUpdatesItemsHandlesResolvingById() {
         
-        String uri = "uri";
-        Item item = new Item(uri, uri, BBC);
-        item.setId(2L);
+        String eid = "cyp";
+        Item item = new Item(eid, eid, BBC);
+        item.setId(1225L);
         when(entryStore.entriesForIds(ImmutableSet.of(item.getId())))
             .thenReturn(ImmutableList.of(LookupEntry.lookupEntryFrom(item)));
-        when(resolver.findByCanonicalUris(ImmutableSet.of(uri)))
-            .thenReturn(ResolvedContent.builder().put(uri, item).build());
+        when(resolver.findByCanonicalUris(ImmutableSet.of(eid)))
+            .thenReturn(ResolvedContent.builder().put(eid, item).build());
         
-        EntityUpdatedMessage msg = new EntityUpdatedMessage("1", 1L, "2", "item", "bbc.co.uk");
+        EntityUpdatedMessage msg = new EntityUpdatedMessage("1", Timestamp.of(1L), eid, "item", "bbc.co.uk");
         workerThatOnlyUpdatesItems.process(msg);
         
         verify(updater).updateEquivalences(item);
@@ -124,17 +138,20 @@ public class EquivalenceUpdatingWorkerTest {
     @Test
     public void testWorkerDoesntUpdateItemWithAnEquivalenceResult() {
         
-        String uri = "uri";
-        Item item = new Item(uri, uri, BBC);
-        when(resolver.findByCanonicalUris(ImmutableSet.of(uri)))
-            .thenReturn(ResolvedContent.builder().put(uri, item).build());
-        when(resultStore.forId(uri))
-            .thenReturn(new StoredEquivalenceResult(uri, "title", 
+        String eid = "cyp";
+        Item item = new Item(eid, eid, BBC);
+        item.setId(1225L);
+        when(entryStore.entriesForIds(ImmutableSet.of(item.getId())))
+            .thenReturn(ImmutableList.of(LookupEntry.lookupEntryFrom(item)));
+        when(resolver.findByCanonicalUris(ImmutableSet.of(eid)))
+            .thenReturn(ResolvedContent.builder().put(eid, item).build());
+        when(resultStore.forId(eid))
+            .thenReturn(new StoredEquivalenceResult(eid, "title", 
                     HashBasedTable.<String, String, Double>create(), 
                     Lists.<CombinedEquivalenceScore>newArrayList(), 
                     new DateTime(DateTimeZones.UTC), Lists.newArrayList()));
         
-        EntityUpdatedMessage msg = new EntityUpdatedMessage("1", 1L, "uri", "item", "bbc.co.uk");
+        EntityUpdatedMessage msg = new EntityUpdatedMessage("1", Timestamp.of(1L), eid, "item", "bbc.co.uk");
         workerThatOnlyUpdatesItems.process(msg);
         
         verify(updater, never()).updateEquivalences(any(Content.class));

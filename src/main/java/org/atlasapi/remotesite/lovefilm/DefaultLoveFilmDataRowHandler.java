@@ -24,6 +24,7 @@ import org.atlasapi.persistence.content.listing.ContentLister;
 import org.atlasapi.persistence.content.listing.ContentListingCriteria;
 import org.atlasapi.remotesite.ContentExtractor;
 import org.atlasapi.remotesite.ContentMerger;
+import org.atlasapi.remotesite.ContentMerger.MergeStrategy;
 import org.atlasapi.remotesite.lovefilm.LoveFilmData.LoveFilmDataRow;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -72,7 +73,8 @@ public class DefaultLoveFilmDataRowHandler implements LoveFilmDataRowHandler {
     private final Map<String, Brand> unwrittenBrands = Maps.newHashMap();
     private final Set<Content> seenContent = Sets.newHashSet();
     private final int missingContentPercentage;
-
+    private final ContentMerger contentMerger;
+    
     public DefaultLoveFilmDataRowHandler(ContentResolver resolver, ContentWriter writer, ContentLister lister, int missingContentPercentage) {
         this(resolver, writer, lister, new LoveFilmDataRowContentExtractor(), missingContentPercentage);
     }
@@ -84,6 +86,7 @@ public class DefaultLoveFilmDataRowHandler implements LoveFilmDataRowHandler {
         this.lister = lister;
         this.extractor = extractor;
         this.missingContentPercentage = missingContentPercentage;
+        this.contentMerger = new ContentMerger(MergeStrategy.MERGE);
     }
 
     @Override
@@ -104,9 +107,9 @@ public class DefaultLoveFilmDataRowHandler implements LoveFilmDataRowHandler {
         } else {
             Identified identified = existing.requireValue();
             if (content instanceof Item) {
-                write(ContentMerger.merge(ContentMerger.asItem(identified), (Item) content));
+                write(contentMerger.merge(ContentMerger.asItem(identified), (Item) content));
             } else if (content instanceof Container) {
-                write(ContentMerger.merge(ContentMerger.asContainer(identified), (Container) content));
+                write(contentMerger.merge(ContentMerger.asContainer(identified), (Container) content));
             }
         }
     }

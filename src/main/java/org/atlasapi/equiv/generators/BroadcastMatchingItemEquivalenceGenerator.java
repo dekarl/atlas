@@ -20,6 +20,7 @@ import org.joda.time.DateTime;
 import org.joda.time.Duration;
 
 import com.google.common.base.Function;
+import com.google.common.base.Predicate;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Maps.EntryTransformer;
@@ -32,13 +33,25 @@ public class BroadcastMatchingItemEquivalenceGenerator implements EquivalenceGen
     private final ScheduleResolver resolver;
     private final Set<Publisher> supportedPublishers;
     private final Duration flexibility;
-	private ChannelResolver channelResolver;
+	private final ChannelResolver channelResolver;
+    private final Predicate<? super Broadcast> filter;
 
-    public BroadcastMatchingItemEquivalenceGenerator(ScheduleResolver resolver, ChannelResolver channelResolver, Set<Publisher> supportedPublishers, Duration flexibility) {
+    public BroadcastMatchingItemEquivalenceGenerator(ScheduleResolver resolver, ChannelResolver channelResolver, Set<Publisher> supportedPublishers, Duration flexibility, Predicate<? super Broadcast> filter) {
         this.resolver = resolver;
         this.channelResolver = channelResolver;
         this.supportedPublishers = supportedPublishers;
         this.flexibility = flexibility;
+        this.filter = filter;
+    }
+    
+    public BroadcastMatchingItemEquivalenceGenerator(ScheduleResolver resolver, ChannelResolver channelResolver, Set<Publisher> supportedPublishers, Duration flexibility) {
+        this(resolver, channelResolver, supportedPublishers, flexibility, new Predicate<Broadcast>() {
+            @Override
+            public boolean apply(Broadcast input) {
+                DateTime eightDaysInFuture = new DateTime(DateTimeZones.UTC).plusDays(8);
+                return input.getTransmissionTime().isBefore(eightDaysInFuture);
+            }
+        });
     }
     
     public BroadcastMatchingItemEquivalenceGenerator(ScheduleResolver resolver, ChannelResolver channelResolver, Set<Publisher> supportedPublishers) {
@@ -61,7 +74,7 @@ public class BroadcastMatchingItemEquivalenceGenerator implements EquivalenceGen
                 totalBroadcasts++;
                 if (broadcast.isActivelyPublished() 
                         && (!onIgnoredChannel(broadcast) || broadcastCount == 1) 
-                        && isWithinAboutAWeek(broadcast)) {
+                        && filter.apply(broadcast)) {
                     processedBroadcasts++;
                     findMatchesForBroadcast(scores, broadcast, validPublishers);
                 }
@@ -85,10 +98,6 @@ public class BroadcastMatchingItemEquivalenceGenerator implements EquivalenceGen
                 }
             }
         }
-    }
-
-    private boolean isWithinAboutAWeek(Broadcast broadcast) {
-        return broadcast.getTransmissionTime().isBefore(new DateTime(DateTimeZones.UTC).plusDays(8));
     }
 
     private boolean onIgnoredChannel(Broadcast broadcast) {

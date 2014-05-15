@@ -15,6 +15,7 @@ import org.atlasapi.media.entity.Series;
 import org.atlasapi.persistence.content.ContentResolver;
 import org.atlasapi.persistence.content.ContentWriter;
 import org.atlasapi.remotesite.ContentMerger;
+import org.atlasapi.remotesite.ContentMerger.MergeStrategy;
 import org.atlasapi.remotesite.talktalk.TalkTalkClient.TalkTalkVodListCallback;
 import org.atlasapi.remotesite.talktalk.vod.bindings.ItemDetailType;
 import org.atlasapi.remotesite.talktalk.vod.bindings.ItemTypeType;
@@ -49,11 +50,14 @@ public class ContentUpdatingTalkTalkVodEntityProcessor implements
     
     private final TalkTalkItemDetailContainerExtractor containerExtractor = new TalkTalkItemDetailContainerExtractor();
 
+    private final ContentMerger contentMerger;
+
     public ContentUpdatingTalkTalkVodEntityProcessor(TalkTalkClient client, ContentResolver resolver, ContentWriter writer) {
         this.client = checkNotNull(client);
         this.resolver = checkNotNull(resolver);
         this.writer = checkNotNull(writer);
         this.itemExtractor = new TalkTalkItemDetailItemExtractor(resolver);
+        this.contentMerger = new ContentMerger(MergeStrategy.MERGE);
     }
 
     private void logProcessing(VODEntityType entity) {
@@ -96,7 +100,7 @@ public class ContentUpdatingTalkTalkVodEntityProcessor implements
         if (existing.isPresent()) {
             Identified identifiedExisting = existing.get();
             checkState(identifiedExisting instanceof Brand, "%s not Brand", existing);
-            brand = (Brand) ContentMerger.merge((Brand) existing.get(), brand);
+            brand = (Brand) contentMerger.merge((Brand) existing.get(), brand);
         }
         
         writer.createOrUpdate(brand);
@@ -118,7 +122,7 @@ public class ContentUpdatingTalkTalkVodEntityProcessor implements
         if (existing.isPresent()) {
             Identified identifiedExisting = existing.get();
             checkState(identifiedExisting instanceof Series, "%s not Series", existing);
-            Container merged = ContentMerger.merge((Series) existing.get(), series);
+            Container merged = contentMerger.merge((Series) existing.get(), series);
             series = (Series) merged;
         }
         writer.createOrUpdate(series);
@@ -196,7 +200,7 @@ public class ContentUpdatingTalkTalkVodEntityProcessor implements
                 && existing.get().getClass().getName().equals(extracted.getClass().getName())) {
             Identified identifiedExisting = existing.get();
             checkState(identifiedExisting instanceof Item, "%s not Item", existing);
-            extracted = ContentMerger.merge((Item) existing.get(), extracted);
+            extracted = contentMerger.merge((Item) existing.get(), extracted);
         }
         // If the type has changed, we will just bail rather than attempt a merge
         return extracted;

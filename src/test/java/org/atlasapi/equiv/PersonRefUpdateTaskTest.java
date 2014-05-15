@@ -10,11 +10,13 @@ import org.atlasapi.equiv.update.tasks.ScheduleTaskProgressStore;
 import org.atlasapi.media.entity.Brand;
 import org.atlasapi.media.entity.ChildRef;
 import org.atlasapi.media.entity.CrewMember;
+import org.atlasapi.media.entity.Described;
 import org.atlasapi.media.entity.Identified;
 import org.atlasapi.media.entity.Item;
 import org.atlasapi.media.entity.ParentRef;
 import org.atlasapi.media.entity.Person;
 import org.atlasapi.media.entity.Publisher;
+import org.atlasapi.persistence.audit.PersistenceAuditLog;
 import org.atlasapi.persistence.content.ContentCategory;
 import org.atlasapi.persistence.content.ContentResolver;
 import org.atlasapi.persistence.content.ContentWriter;
@@ -56,11 +58,26 @@ public class PersonRefUpdateTaskTest {
     private final PersonRefUpdateTask updateTask = new PersonRefUpdateTask(lister, mongo, progressStore)
         .forPublishers(Publisher.BBC);
     
-    private final ContentWriter contentWriter = new MongoContentWriter(mongo, contentLookup, new SystemClock());
+    private final PersistenceAuditLog persistenceAuditLog = new PersistenceAuditLog() {
+
+        @Override
+        public void logWrite(Described described) {
+            
+        }
+
+        @Override
+        public void logNoWrite(Described described) {
+            
+        }
+        
+    
+    };
+    
+    private final ContentWriter contentWriter = new MongoContentWriter(mongo, contentLookup, persistenceAuditLog, new SystemClock());
     private final ContentResolver contentResolver = new LookupResolvingContentResolver(new MongoContentResolver(mongo, contentLookup), contentLookup);
 
     private final LookupEntryStore peopleLookup = new MongoLookupEntryStore(mongo.collection("peopleLookup"));
-    private final PersonStore personStore = new MongoPersonStore(mongo, TransitiveLookupWriter.explicitTransitiveLookupWriter(peopleLookup), peopleLookup);
+    private final PersonStore personStore = new MongoPersonStore(mongo, TransitiveLookupWriter.explicitTransitiveLookupWriter(peopleLookup), peopleLookup, persistenceAuditLog);
 
     private Item item1;
     private Item item2;

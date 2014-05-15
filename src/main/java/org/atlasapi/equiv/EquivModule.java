@@ -34,6 +34,7 @@ import static org.atlasapi.media.entity.Publisher.SPOTIFY;
 import static org.atlasapi.media.entity.Publisher.TALK_TALK;
 import static org.atlasapi.media.entity.Publisher.YOUTUBE;
 import static org.atlasapi.media.entity.Publisher.YOUVIEW;
+import static org.atlasapi.media.entity.Publisher.YOUVIEW_STAGE;
 
 import java.io.File;
 import java.util.Set;
@@ -71,7 +72,6 @@ import org.atlasapi.equiv.results.filters.SpecializationFilter;
 import org.atlasapi.equiv.results.persistence.FileEquivalenceResultStore;
 import org.atlasapi.equiv.results.persistence.RecentEquivalenceResultStore;
 import org.atlasapi.equiv.results.scores.Score;
-import org.atlasapi.equiv.scorers.BroadcastItemTitleScorer;
 import org.atlasapi.equiv.scorers.ContainerHierarchyMatchingScorer;
 import org.atlasapi.equiv.scorers.CrewMemberScorer;
 import org.atlasapi.equiv.scorers.EquivalenceScorer;
@@ -88,32 +88,38 @@ import org.atlasapi.equiv.update.EquivalenceUpdaters;
 import org.atlasapi.equiv.update.NullEquivalenceUpdater;
 import org.atlasapi.equiv.update.SourceSpecificEquivalenceUpdater;
 import org.atlasapi.media.channel.ChannelResolver;
+import org.atlasapi.media.entity.Broadcast;
 import org.atlasapi.media.entity.Container;
 import org.atlasapi.media.entity.Content;
 import org.atlasapi.media.entity.Item;
 import org.atlasapi.media.entity.Publisher;
 import org.atlasapi.media.entity.Song;
-import org.atlasapi.messaging.v3.AtlasMessagingModule;
+import org.atlasapi.messaging.v3.ContentEquivalenceAssertionMessage;
+import org.atlasapi.messaging.v3.JacksonMessageSerializer;
+import org.atlasapi.messaging.v3.KafkaMessagingModule;
 import org.atlasapi.persistence.content.ContentResolver;
 import org.atlasapi.persistence.content.ScheduleResolver;
 import org.atlasapi.persistence.content.SearchResolver;
 import org.atlasapi.persistence.lookup.LookupWriter;
+import org.joda.time.DateTime;
 import org.joda.time.Duration;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
-import org.springframework.jms.core.JmsTemplate;
 
 import com.google.common.base.Predicate;
+import com.google.common.base.Predicates;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Sets;
+import com.metabroadcast.common.queue.MessageSender;
+import com.metabroadcast.common.time.DateTimeZones;
 
 @Configuration
-@Import({AtlasMessagingModule.class})
+@Import({KafkaMessagingModule.class})
 public class EquivModule {
 
 	private @Value("${equiv.results.directory}") String equivResultsDirectory;
@@ -126,7 +132,7 @@ public class EquivModule {
     private @Autowired EquivalenceSummaryStore equivSummaryStore;
     private @Autowired LookupWriter lookupWriter;
     
-    private @Autowired AtlasMessagingModule messaging;
+    private @Autowired KafkaMessagingModule messaging;
 
     public @Bean RecentEquivalenceResultStore equivalenceResultStore() {
         return new RecentEquivalenceResultStore(new FileEquivalenceResultStore(new File(equivResultsDirectory)));
@@ -143,8 +149,10 @@ public class EquivModule {
     }
 
     @Bean 
-    protected JmsTemplate equivAssertDestination() {
-        return messaging.queueHelper().makeVirtualTopicProducer(equivAssertDest);
+    protected MessageSender<ContentEquivalenceAssertionMessage> equivAssertDestination() {
+        return messaging.messageSenderFactory()
+                .makeMessageSender(equivAssertDest, 
+                        JacksonMessageSerializer.forType(ContentEquivalenceAssertionMessage.class));
     }
     
     private <T extends Content> EquivalenceFilter<T> standardFilter() {
@@ -161,10 +169,14 @@ public class EquivModule {
     }
     
     private ContentEquivalenceUpdater.Builder<Item> standardItemUpdater(Set<Publisher> acceptablePublishers, Set<? extends EquivalenceScorer<Item>> scorers) {
+        return standardItemUpdater(acceptablePublishers, scorers, Predicates.alwaysTrue());
+    }
+    
+    private ContentEquivalenceUpdater.Builder<Item> standardItemUpdater(Set<Publisher> acceptablePublishers, Set<? extends EquivalenceScorer<Item>> scorers, Predicate<? super Broadcast> filter) {
         return ContentEquivalenceUpdater.<Item> builder()
             .withGenerators(ImmutableSet.<EquivalenceGenerator<Item>> of(
                 new BroadcastMatchingItemEquivalenceGenerator(scheduleResolver, 
-                    channelResolver, acceptablePublishers, Duration.standardMinutes(10))
+                    channelResolver, acceptablePublishers, Duration.standardMinutes(10), filter)
             ))
             .withScorers(scorers)
             .withCombiner(new NullScoreAwareAveragingCombiner<Item>())
@@ -220,7 +232,7 @@ public class EquivModule {
         Set<Publisher> acceptablePublishers = ImmutableSet.copyOf(Sets.difference(
             Publisher.all(), 
             Sets.union(
-                ImmutableSet.of(PREVIEW_NETWORKS, BBC_REDUX, RADIO_TIMES, LOVEFILM, NETFLIX, YOUVIEW), 
+                ImmutableSet.of(PREVIEW_NETWORKS, BBC_REDUX, RADIO_TIMES, LOVEFILM, NETFLIX, YOUVIEW, YOUVIEW_STAGE), 
                 Sets.union(musicPublishers, roviPublishers)
             )
         ));
@@ -230,7 +242,7 @@ public class EquivModule {
         EquivalenceUpdater<Container> topLevelContainerUpdater = topLevelContainerUpdater(acceptablePublishers);
 
         Set<Publisher> nonStandardPublishers = ImmutableSet.copyOf(Sets.union(
-            ImmutableSet.of(ITUNES, BBC_REDUX, RADIO_TIMES, FACEBOOK, LOVEFILM, NETFLIX, YOUVIEW, TALK_TALK, PA), 
+            ImmutableSet.of(ITUNES, BBC_REDUX, RADIO_TIMES, FACEBOOK, LOVEFILM, NETFLIX, YOUVIEW, YOUVIEW_STAGE, TALK_TALK, PA), 
             Sets.union(musicPublishers, roviPublishers)
         ));
         final EquivalenceUpdaters updaters = new EquivalenceUpdaters();
@@ -242,31 +254,37 @@ public class EquivModule {
                 .build());
         }
         
-        Set<Publisher> paPublishers = Sets.union(acceptablePublishers, ImmutableSet.of(YOUVIEW));
-        
-        updaters.register(PA, SourceSpecificEquivalenceUpdater.builder(PA)
-                .withItemUpdater(standardItemUpdater(paPublishers, ImmutableSet.<EquivalenceScorer<Item>>of()).build())
-                .withTopLevelContainerUpdater(topLevelContainerUpdater(paPublishers))
-                .withNonTopLevelContainerUpdater(NullEquivalenceUpdater.<Container>get())
-                .build());
-        
         updaters.register(RADIO_TIMES, SourceSpecificEquivalenceUpdater.builder(RADIO_TIMES)
                 .withItemUpdater(rtItemEquivalenceUpdater())
                 .withTopLevelContainerUpdater(NullEquivalenceUpdater.<Container>get())
                 .withNonTopLevelContainerUpdater(NullEquivalenceUpdater.<Container>get())
                 .build());
         
-        Set<Publisher> youViewPublishers = Sets.union(acceptablePublishers, ImmutableSet.of(YOUVIEW));
+        Set<Publisher> youViewPublishers = Sets.union(Sets.difference(acceptablePublishers, ImmutableSet.of(YOUVIEW_STAGE)), ImmutableSet.of(YOUVIEW));
+        Predicate<Broadcast> youviewBroadcastFilter = new Predicate<Broadcast>(){
+            @Override
+            public boolean apply(Broadcast input) {
+                DateTime twoWeeksAgo = new DateTime(DateTimeZones.UTC).minusDays(15);
+                return input.getTransmissionTime().isAfter(twoWeeksAgo);
+            }
+        };
         updaters.register(YOUVIEW, SourceSpecificEquivalenceUpdater.builder(YOUVIEW)
-                .withItemUpdater(broadcastItemEquivalenceUpdater(youViewPublishers, Score.negativeOne()))
+                .withItemUpdater(broadcastItemEquivalenceUpdater(youViewPublishers, Score.negativeOne(),youviewBroadcastFilter))
                 .withTopLevelContainerUpdater(broadcastItemContainerEquivalenceUpdater(youViewPublishers))
+                .withNonTopLevelContainerUpdater(NullEquivalenceUpdater.<Container>get())
+                .build());
+        
+        Set<Publisher> youViewStagePublishers = Sets.union(Sets.difference(acceptablePublishers, ImmutableSet.of(YOUVIEW)), ImmutableSet.of(YOUVIEW_STAGE));
+        updaters.register(YOUVIEW_STAGE, SourceSpecificEquivalenceUpdater.builder(YOUVIEW_STAGE)
+                .withItemUpdater(broadcastItemEquivalenceUpdater(youViewStagePublishers, Score.negativeOne(),youviewBroadcastFilter))
+                .withTopLevelContainerUpdater(broadcastItemContainerEquivalenceUpdater(youViewStagePublishers))
                 .withNonTopLevelContainerUpdater(NullEquivalenceUpdater.<Container>get())
                 .build());
 
         Set<Publisher> reduxPublishers = Sets.union(acceptablePublishers, ImmutableSet.of(BBC_REDUX));
 
         updaters.register(BBC_REDUX, SourceSpecificEquivalenceUpdater.builder(BBC_REDUX)
-                .withItemUpdater(broadcastItemEquivalenceUpdater(reduxPublishers, Score.nullScore()))
+                .withItemUpdater(broadcastItemEquivalenceUpdater(reduxPublishers, Score.nullScore(), Predicates.alwaysTrue()))
                 .withTopLevelContainerUpdater(broadcastItemContainerEquivalenceUpdater(reduxPublishers))
                 .withNonTopLevelContainerUpdater(NullEquivalenceUpdater.<Container>get())
                 .build());
@@ -466,12 +484,13 @@ public class EquivModule {
             .build();
     }
 
-    private EquivalenceUpdater<Item> broadcastItemEquivalenceUpdater(Set<Publisher> sources, Score titleMismatch) {
+    private EquivalenceUpdater<Item> broadcastItemEquivalenceUpdater(Set<Publisher> sources, Score titleMismatch,
+            Predicate<? super Broadcast> filter) {
         return standardItemUpdater(sources, ImmutableSet.of(
             new TitleMatchingItemScorer(), 
             new SequenceItemScorer(), 
             new TitleSubsetBroadcastItemScorer(contentResolver, titleMismatch, 80/*percent*/)
-        )).build();
+        ), filter).build();
     }
 
     private EquivalenceUpdater<Item> rtItemEquivalenceUpdater() {

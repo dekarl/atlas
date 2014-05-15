@@ -11,6 +11,7 @@ import org.atlasapi.genres.GenreMap;
 import org.atlasapi.media.TransportSubType;
 import org.atlasapi.media.TransportType;
 import org.atlasapi.media.channel.Channel;
+import org.atlasapi.media.entity.Brand;
 import org.atlasapi.media.entity.Broadcast;
 import org.atlasapi.media.entity.Encoding;
 import org.atlasapi.media.entity.Episode;
@@ -58,12 +59,12 @@ public class FiveEpisodeProcessor {
         this.channelMap = channelMap;
     }
     
-    public Item processEpisode(Element element, Specialization specialization) throws Exception {
+    public Item processEpisode(Element element, Brand brand) throws Exception {
         
         String id = childValue(element, "id");
 
         Item item;
-        if(specialization == Specialization.FILM) {
+        if (brand.getSpecialization() == Specialization.FILM) {
             item = new Film(getEpisodeUri(id), getEpisodeCurie(id), Publisher.FIVE);
             item.setMediaType(MediaType.VIDEO);
             item.setSpecialization(Specialization.FILM);
@@ -76,7 +77,7 @@ public class FiveEpisodeProcessor {
             if (!Strings.isNullOrEmpty(episodeNumber)) {
                 episode.setEpisodeNumber(Integer.valueOf(episodeNumber));
             }
-            processSeries(episode, element);
+            processSeries(episode, element, brand);
             item = episode;
         }
         
@@ -169,7 +170,7 @@ public class FiveEpisodeProcessor {
     }
     
 
-    private void processSeries(Episode episode, Element element) {
+    private void processSeries(Episode episode, Element element, Brand brand) {
         Element seasonLinkElement = element.getFirstChildElement("season_link");
         if (seasonLinkElement != null) {
             Element seasonElement = seasonLinkElement.getFirstChildElement("season");
@@ -177,6 +178,7 @@ public class FiveEpisodeProcessor {
             Series series = getSeriesMap().get(id);
             if (series == null){ 
                 series = new Series(seasonLinkElement.getAttributeValue("href"), getSeriesCurie(id), Publisher.FIVE);
+                series.setParent(brand);
                 series.setGenres(genreMap.mapRecognised(ImmutableSet.of(childValue(seasonElement, "genre"))));
                 
                 Maybe<String> image = getImage(seasonElement);

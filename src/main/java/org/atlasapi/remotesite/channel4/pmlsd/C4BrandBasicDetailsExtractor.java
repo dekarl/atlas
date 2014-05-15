@@ -83,7 +83,7 @@ public class C4BrandBasicDetailsExtractor implements ContentExtractor<Feed, Bran
         return C4AtomApi.canonicalizeBrandFeedId(source);
     }
 
-    private final Pattern CATEGORY_PATTERN = Pattern.compile("https?://[^.]+\\.channel4\\.com/[^/]+/(tags/[^.]+)\\.atom.*");
+    private final Pattern CATEGORY_PATTERN = Pattern.compile("https?://[^.]+\\.channel4\\.com/[^/]+/(categories/[^.]+)\\.atom.*");
 
     private String canonicalise(Category category) {
         Matcher matcher = CATEGORY_PATTERN.matcher(category.getTerm());

@@ -3,6 +3,7 @@ package org.atlasapi.remotesite.five;
 import javax.annotation.PostConstruct;
 
 import org.atlasapi.media.channel.ChannelResolver;
+import org.atlasapi.persistence.content.ContentResolver;
 import org.atlasapi.persistence.content.ContentWriter;
 import org.joda.time.LocalTime;
 import org.slf4j.Logger;
@@ -24,6 +25,7 @@ public class FiveModule {
     
     private @Autowired SimpleScheduler scheduler;
     private @Autowired ContentWriter contentWriter;
+    private @Autowired ContentResolver contentResolver;
     private @Autowired ChannelResolver channelResolver;
 
     @PostConstruct
@@ -35,7 +37,7 @@ public class FiveModule {
     @Bean
     public FiveUpdater fiveUpdater() {
         Integer soTimeout = Configurer.get("five.timeout.socket", "180").toInt();
-        return new FiveUpdater(contentWriter, channelResolver, soTimeout);
+        return new FiveUpdater(contentWriter, channelResolver, contentResolver, soTimeout);
     }
     
     @Bean

@@ -77,6 +77,12 @@ public class ItemModelSimplifier extends ContentModelSimplifier<Item, org.atlasa
                                                                                .put("cbPK", "cbdq") // Channel 5
                                                                                .put("cbPW", "cbhf") // Sky 1 
                                                                                .put("cbRT", "cbny") // Sky living
+                                                                               .put("cbQm", "cbdZ")// ITV2
+                                                                               .put("cbRN", "cbd2")// ITV3
+                                                                               .put("cbRX", "cbd5")// ITV4
+                                                                               .put("cbWw", "cbbG")// BBC Two HD
+                                                                               .put("cbj8", "cbhs") // Sky Sports 1 HD
+                                                                               .put("cbj9", "cbht") // Sky Sports 2 HD
                                                                                .build();
     
     private final NumberToShortStringCodec idCodec;
